@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #12213A;
+  --color-ink-soft: #2A3B5C;
+  --color-paper: #F1F3F1;
+  --color-paper-raised: #FFFFFF;
+  --color-line: #DADFE0;
+  --color-saffron: #E0631B;
+  --color-saffron-soft: #FBE7D8;
+  --color-signal: #1F7A5C;
+  --color-signal-soft: #DCEFE7;
+  --color-alert: #B23A2E;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html.dark {
+  --color-ink: #F1F5F9;
+  --color-ink-soft: #94A3B8;
+  --color-paper: #0B0F19;
+  --color-paper-raised: #151D2A;
+  --color-line: #2D3D54;
+  --color-saffron: #FF7D33;
+  --color-saffron-soft: #3A1E11;
+  --color-signal: #2DD4BF;
+  --color-signal-soft: #0F352E;
+  --color-alert: #F87171;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Global Interactive Cursor Pointer */
+button,
+[role="button"],
+select,
+a,
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+input[type="color"],
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+select option {
+  background-color: var(--color-paper-raised);
+  color: var(--color-ink);
+}
+
+input, select, textarea {
+  color: var(--color-ink);
+}
+
+/* Fix inner input double-border issue when focused */
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Hide ugly default spin buttons cleanly */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.6;
+  cursor: pointer;
+}
+input[type="number"]::-webkit-inner-spin-button:hover,
+input[type="number"]::-webkit-outer-spin-button:hover {
+  opacity: 1;
+}
+
+::selection { background: var(--color-saffron-soft); color: var(--color-ink); }
+
+:focus-visible:not(input):not(select):not(textarea) {
+  outline: 2px solid var(--color-saffron);
+  outline-offset: 2px;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+.tabular-num { font-variant-numeric: tabular-nums; }
