@@ -7,7 +7,7 @@ const SITE_URL = 'https://calciverse.in'
 export default function SEO({ title, description, path = '', type = 'website' }) {
   const fullTitle = title 
     ? `${title} — Free Online Tool & Calculator | ${SITE_DOMAIN}` 
-    : `${SITE_NAME} — #1 Free Online Calculators, Financial & Utility Tools (${SITE_DOMAIN})`
+    : `${SITE_NAME} — Free Online Calculators, Financial & Utility Tools (${SITE_DOMAIN})`
 
   const url = `${SITE_URL}${path}`
   const defaultDesc = description || 'Free online calculators, converters and generators for GST, EMI, SIP, Income Tax, Health, Education, and Everyday Utilities. Instant, accurate calculations on Calciverse.in.'
