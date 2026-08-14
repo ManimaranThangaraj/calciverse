@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
 import AdSlot from '../components/AdSlot.jsx'
 import ToolCard from '../components/ToolCard.jsx'
+import ToolGuide from '../components/ToolGuide.jsx'
 import { toolBySlug, toolsByCategory } from '../data/tools.js'
 import { categoryBySlug } from '../data/categories.js'
 
@@ -38,8 +39,11 @@ export default function ToolPage() {
 
         <AdSlot slot="0000000004" className="my-10 print:hidden no-print" />
 
+        {/* Detailed SEO Guide & FAQ Section below calculator */}
+        <ToolGuide tool={tool} category={category} />
+
         {related.length > 0 && (
-          <div className="mt-4 print:hidden no-print">
+          <div className="mt-12 border-t border-line pt-8 print:hidden no-print">
             <h2 className="font-display text-lg font-semibold text-ink">Related tools</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
               {related.map((t) => <ToolCard key={t.slug} tool={t} />)}
