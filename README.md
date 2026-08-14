@@ -5,6 +5,8 @@ Calculators, converters, generators and SEO articles, built as a React SPA
 right now; the architecture is built so growing to 250+/100+/50+/500+ is a
 matter of adding entries to a registry, not rebuilding pages.
 
+now the site in live https://calciverse.in/
+
 ## Run it
 
 ```
