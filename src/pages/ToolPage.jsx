@@ -19,7 +19,7 @@ export default function ToolPage() {
 
   return (
     <>
-      <SEO title={tool.name} description={tool.description} path={`/tool/${tool.slug}`} />
+      <SEO title={tool.name} description={tool.description} path={`/tool/${tool.slug}`} kind={tool.kind} />
       <div className="mx-auto max-w-4xl px-5 py-10">
         <div className="print:hidden no-print">
           <nav className="text-xs text-ink-soft/60">
