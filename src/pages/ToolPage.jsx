@@ -20,24 +20,26 @@ export default function ToolPage() {
     <>
       <SEO title={tool.name} description={tool.description} path={`/tool/${tool.slug}`} />
       <div className="mx-auto max-w-4xl px-5 py-10">
-        <nav className="text-xs text-ink-soft/60">
-          <Link to="/" className="hover:text-saffron">Home</Link> / <Link to={`/category/${tool.category}`} className="hover:text-saffron">{category?.name}</Link> / {tool.name}
-        </nav>
-        <h1 className="mt-2 font-display text-3xl font-bold text-ink">{tool.name}</h1>
-        <p className="mt-1.5 text-ink-soft">{tool.description}</p>
+        <div className="print:hidden no-print">
+          <nav className="text-xs text-ink-soft/60">
+            <Link to="/" className="hover:text-saffron">Home</Link> / <Link to={`/category/${tool.category}`} className="hover:text-saffron">{category?.name}</Link> / {tool.name}
+          </nav>
+          <h1 className="mt-2 font-display text-3xl font-bold text-ink">{tool.name}</h1>
+          <p className="mt-1.5 text-ink-soft">{tool.description}</p>
+        </div>
 
-        <AdSlot slot="0000000003" className="my-6" />
+        <AdSlot slot="0000000003" className="my-6 print:hidden no-print" />
 
-        <div className="rounded-2xl border border-line bg-paper-raised p-5 sm:p-7">
+        <div className="rounded-2xl border border-line bg-paper-raised p-5 sm:p-7 printable-invoice-wrapper">
           <Suspense fallback={<div className="py-10 text-center text-sm text-ink-soft/60">Loading tool…</div>}>
             <Component />
           </Suspense>
         </div>
 
-        <AdSlot slot="0000000004" className="my-10" />
+        <AdSlot slot="0000000004" className="my-10 print:hidden no-print" />
 
         {related.length > 0 && (
-          <div className="mt-4">
+          <div className="mt-4 print:hidden no-print">
             <h2 className="font-display text-lg font-semibold text-ink">Related tools</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
               {related.map((t) => <ToolCard key={t.slug} tool={t} />)}

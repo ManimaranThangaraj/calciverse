@@ -89,6 +89,19 @@ input[type="number"]::-webkit-outer-spin-button:hover {
   opacity: 1;
 }
 
+/* Collapse unfilled or empty AdSense ad slots and their containers automatically */
+.ad-slot-wrapper:has(ins.adsbygoogle:empty),
+.ad-slot-wrapper:has(ins.adsbygoogle[data-ad-status="unfilled"]),
+.ad-slot-wrapper:empty,
+ins.adsbygoogle[data-ad-status="unfilled"],
+ins.adsbygoogle:empty {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
 ::selection { background: var(--color-saffron-soft); color: var(--color-ink); }
 
 :focus-visible:not(input):not(select):not(textarea) {
@@ -104,3 +117,98 @@ input[type="number"]::-webkit-outer-spin-button:hover {
 }
 
 .tabular-num { font-variant-numeric: tabular-nums; }
+
+/* Global PDF Export & Print Styles - Bulletproof Invoice Isolation */
+@media print {
+  @page {
+    size: auto;
+    margin: 0mm;
+  }
+
+  /* Hide absolutely everything on the web page by default */
+  body * {
+    visibility: hidden !important;
+  }
+
+  header,
+  footer,
+  nav,
+  aside,
+  ins.adsbygoogle,
+  .ad-slot-wrapper,
+  .no-print,
+  .print\:hidden {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Force clean white background for PDF output */
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Make ONLY #printable-invoice and its content visible and fixed at page 1 top */
+  #printable-invoice,
+  #printable-invoice * {
+    visibility: visible !important;
+  }
+
+  #printable-invoice {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    z-index: 99999 !important;
+  }
+
+  /* Hide action buttons and edit controls inside printable invoice */
+  #printable-invoice .no-print,
+  #printable-invoice .print\:hidden,
+  #printable-invoice button {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Style form inputs, textareas, date fields cleanly for PDF document */
+  #printable-invoice input,
+  #printable-invoice textarea,
+  #printable-invoice select {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+
+  #printable-invoice .bg-paper,
+  #printable-invoice .bg-paper-raised {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+  }
+
+  #printable-invoice .text-ink {
+    color: #0f172a !important;
+  }
+
+  #printable-invoice .text-ink-soft {
+    color: #475569 !important;
+  }
+}
+
+

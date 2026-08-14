@@ -40,7 +40,7 @@ export default function InvoiceGenerator() {
   }
 
   return (
-    <div className="space-y-6">
+    <div id="printable-invoice" className="printable-invoice space-y-6">
       {/* Header Info */}
       <div className="grid gap-4 sm:grid-cols-2">
         <TextField label="Invoice Number" value={invoiceNo} onChange={setInvoiceNo} />
@@ -85,7 +85,7 @@ export default function InvoiceGenerator() {
           <button
             type="button"
             onClick={addItem}
-            className="flex items-center gap-1 text-xs font-semibold text-saffron hover:underline cursor-pointer"
+            className="flex items-center gap-1 text-xs font-semibold text-saffron hover:underline cursor-pointer print:hidden no-print"
           >
             <Plus size={14} /> Add Item
           </button>
@@ -94,7 +94,7 @@ export default function InvoiceGenerator() {
         <div className="space-y-2">
           {items.map((item) => (
             <div key={item.id} className="grid grid-cols-12 gap-2 items-center rounded-lg border border-line bg-paper p-2.5">
-              <div className="col-span-5 sm:col-span-6">
+              <div className="col-span-5 sm:col-span-6 print:col-span-6">
                 <input
                   type="text"
                   value={item.desc}
@@ -103,7 +103,7 @@ export default function InvoiceGenerator() {
                   className="w-full rounded border border-line bg-paper-raised px-2 py-1.5 text-sm text-ink outline-none focus:border-saffron"
                 />
               </div>
-              <div className="col-span-2 sm:col-span-2">
+              <div className="col-span-2 sm:col-span-2 print:col-span-2">
                 <input
                   type="number"
                   min="1"
@@ -112,7 +112,7 @@ export default function InvoiceGenerator() {
                   className="w-full rounded border border-line bg-paper-raised px-2 py-1.5 font-mono text-sm text-ink outline-none focus:border-saffron"
                 />
               </div>
-              <div className="col-span-3 sm:col-span-3">
+              <div className="col-span-3 sm:col-span-3 print:col-span-4">
                 <input
                   type="number"
                   min="0"
@@ -121,7 +121,7 @@ export default function InvoiceGenerator() {
                   className="w-full rounded border border-line bg-paper-raised px-2 py-1.5 font-mono text-sm text-ink outline-none focus:border-saffron"
                 />
               </div>
-              <div className="col-span-2 sm:col-span-1 text-right">
+              <div className="col-span-2 sm:col-span-1 text-right print:hidden no-print">
                 <button
                   type="button"
                   onClick={() => removeItem(item.id)}
@@ -152,7 +152,7 @@ export default function InvoiceGenerator() {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 print:hidden no-print">
         <button
           type="button"
           onClick={handlePrint}

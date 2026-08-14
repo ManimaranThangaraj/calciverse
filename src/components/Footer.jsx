@@ -3,7 +3,7 @@ import { categories } from '../data/categories.js'
 
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t border-line bg-paper-raised">
+    <footer className="mt-20 border-t border-line bg-paper-raised print:hidden no-print">
       <div className="mx-auto max-w-6xl px-5 py-12 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         <div>
           <Link to="/" className="inline-block">

@@ -25,7 +25,7 @@ export default function Header() {
   const toggleTheme = () => setIsDark(!isDark)
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur transition-colors">
+    <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur transition-colors print:hidden no-print">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5">
         <Link to="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="Calciverse Logo" className="h-20 w-auto object-contain" />
