@@ -4,7 +4,7 @@ import { Download } from 'lucide-react'
 import { TextField } from '../../components/ui/Field.jsx'
 
 export default function QRCodeGenerator() {
-  const [text, setText] = useState('https://www.calciverse.in')
+  const [text, setText] = useState('https://calciverse.in')
   const canvasRef = useRef(null)
 
   useEffect(() => {

@@ -5,7 +5,7 @@ import { dirname, resolve } from 'path'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const SITE_URL = 'https://www.calciverse.in'
+const SITE_URL = 'https://calciverse.in'
 
 // Read categories, tools, and articles
 const toolsJs = readFileSync(resolve(__dirname, '../src/data/tools.js'), 'utf8')

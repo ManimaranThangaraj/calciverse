@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.calciverse.in/sitemap.xml
+Sitemap: https://calciverse.in/sitemap.xml

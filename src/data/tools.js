@@ -395,6 +395,14 @@ export const tools = [
   { slug: 'exponent-calculator', name: 'Exponent & Power Calculator', category: 'math', kind: 'calculator', status: 'live',
     description: 'Calculate base numbers raised to positive or negative exponents.',
     component: lazy(() => import('../tools/math/ExponentCalculator.jsx')) },
+
+  // ---------------- Unique High-Demand Tools ----------------
+  { slug: 'ev-vs-petrol-calculator', name: 'EV vs Petrol Fuel Cost & Carbon Calculator', category: 'everyday', kind: 'calculator', status: 'live',
+    description: 'Compare monthly running costs, fuel savings, and CO2 carbon reduction between EV and Petrol vehicles.',
+    component: lazy(() => import('../tools/everyday/EVVsPetrolCalculator.jsx')) },
+  { slug: 'freelance-tax-hourly-rate-calculator', name: 'Freelance & Side-Hustle Net Hourly Rate Calculator', category: 'business', kind: 'calculator', status: 'live',
+    description: 'Calculate your true net hourly rate after unpaid hours, operational expenses, income tax and GST.',
+    component: lazy(() => import('../tools/business/FreelanceTaxHourlyRateCalculator.jsx')) },
 ]
 
 export const liveTools = tools.filter((t) => t.status === 'live')
