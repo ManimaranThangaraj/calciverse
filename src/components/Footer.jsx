@@ -36,8 +36,9 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-line px-5 py-4 text-center text-xs text-ink-soft/60">
-        © {new Date().getFullYear()} Calciverse. Results are estimates for informational purposes only, not financial, medical or legal advice.
+      <div className="border-t border-line px-5 py-4 text-center text-xs text-ink-soft/60 space-y-1">
+        <div>© {new Date().getFullYear()} Calciverse.in. Developed by Manimaran Thangaraj</div>
+        <div className="text-[11px] opacity-75">Results are estimates for informational purposes only, not financial, medical or legal advice.</div>
       </div>
     </footer>
   )
