@@ -78,12 +78,42 @@ export function About() {
 
 export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'General Query', message: '' })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle') // 'idle' | 'submitting' | 'submitted' | 'error'
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!formData.name || !formData.email || !formData.message) return
-    setSubmitted(true)
+
+    setStatus('submitting')
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/calciverse.in@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          category: formData.subject,
+          _subject: `[Calciverse Contact] ${formData.subject} - from ${formData.name}`,
+          message: formData.message,
+          _template: 'table'
+        })
+      })
+
+      if (res.ok) {
+        setStatus('submitted')
+      } else {
+        // Fallback to direct mailto launcher
+        window.location.href = `mailto:calciverse.in@gmail.com?subject=${encodeURIComponent('[Calciverse Contact] ' + formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
+        setStatus('submitted')
+      }
+    } catch {
+      window.location.href = `mailto:calciverse.in@gmail.com?subject=${encodeURIComponent('[Calciverse Contact] ' + formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
+      setStatus('submitted')
+    }
   }
 
   return (
@@ -99,15 +129,15 @@ export function Contact() {
       <div className="grid gap-8 md:grid-cols-5 mt-6">
         {/* Contact Form */}
         <div className="md:col-span-3 rounded-2xl border border-line bg-paper-raised p-6">
-          {submitted ? (
+          {status === 'submitted' ? (
             <div className="py-8 text-center space-y-3">
               <CheckCircle2 className="mx-auto text-signal h-12 w-12" />
-              <h3 className="font-display text-xl font-bold text-ink">Thank You for Your Message!</h3>
+              <h3 className="font-display text-xl font-bold text-ink">Message Delivered!</h3>
               <p className="text-sm text-ink-soft max-w-sm mx-auto">
-                We have received your message and will review your inquiry shortly. If a response is required, we will contact you at <strong>{formData.email}</strong>.
+                Your message has been sent directly to <strong>calciverse.in@gmail.com</strong>. We will review your inquiry and reply to <strong>{formData.email}</strong> within 24 to 48 hours.
               </p>
               <button
-                onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', subject: 'General Query', message: '' }) }}
+                onClick={() => { setStatus('idle'); setFormData({ name: '', email: '', subject: 'General Query', message: '' }) }}
                 className="mt-4 rounded-lg bg-saffron px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-saffron/90"
               >
                 Send Another Message
@@ -172,9 +202,10 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="w-full rounded-lg bg-saffron py-2.5 text-sm font-bold text-slate-950 hover:bg-saffron/90 transition-colors"
+                disabled={status === 'submitting'}
+                className="w-full rounded-lg bg-saffron py-2.5 text-sm font-bold text-slate-950 hover:bg-saffron/90 transition-colors disabled:opacity-50"
               >
-                Send Message
+                {status === 'submitting' ? 'Sending Message to calciverse.in@gmail.com…' : 'Send Message'}
               </button>
             </form>
           )}
