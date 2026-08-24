@@ -7,347 +7,347 @@ const SITE_URL = 'https://calciverse.in'
 // Explicit SEO Title and Meta Description map for all tools
 const TOOL_SEO_MAP = {
   'emi-calculator': {
-    title: `EMI Calculator — Calculate Monthly Loan EMI & Interest | ${SITE_DOMAIN}`,
-    desc: `Calculate monthly loan EMI, interest payable, and payment schedule for home, car, and personal loans with Calciverse EMI Calculator.`
+    title: `Home Loan EMI Calculator — Monthly Loan Payment & Interest | ${SITE_DOMAIN}`,
+    desc: `Calculate monthly EMI, interest payable, and annual repayment schedule for home, car, and personal loans with Calciverse EMI Calculator.`
   },
   'gst-calculator': {
-    title: `GST Calculator — Calculate Inclusive & Exclusive GST Rates | ${SITE_DOMAIN}`,
-    desc: `Add or remove GST at 5%, 12%, 18%, and 28% slab rates instantly with Calciverse GST Calculator.`
+    title: `GST Calculator Online India — 5%, 12%, 18%, 28% Slab Rates | ${SITE_DOMAIN}`,
+    desc: `Calculate GST inclusive and exclusive prices instantly. Add or remove CGST, SGST, IGST for Indian business invoices on Calciverse.in.`
   },
   'income-tax-calculator': {
-    title: `Income Tax Calculator FY 2026-27 — Compare Tax Regimes | ${SITE_DOMAIN}`,
-    desc: `Estimate income tax payable under the new and old tax regimes for FY 2026-27 with detailed slab breakdowns on Calciverse.in.`
+    title: `Income Tax Calculator FY 2024-25 & FY 2025-26 — New vs Old Regime | ${SITE_DOMAIN}`,
+    desc: `Calculate income tax payable under New & Old Tax Regimes for FY 2024-25 and FY 2025-26 (AY 2025-26 & AY 2026-27) with Section 87A rebate and slab breakdowns.`
   },
   'sip-calculator': {
-    title: `SIP Calculator — Calculate Mutual Fund SIP Returns & Wealth | ${SITE_DOMAIN}`,
+    title: `Mutual Fund SIP Return Calculator — Monthly Wealth Growth | ${SITE_DOMAIN}`,
     desc: `Calculate expected maturity value, wealth gained, and total returns on monthly mutual fund SIP investments.`
   },
   'fd-calculator': {
-    title: `FD Calculator — Calculate Fixed Deposit Maturity & Interest | ${SITE_DOMAIN}`,
-    desc: `Estimate fixed deposit (FD) maturity value and total interest earned with quarterly/annual compounding.`
+    title: `Fixed Deposit (FD) Calculator — Maturity Value & Interest Rate | ${SITE_DOMAIN}`,
+    desc: `Estimate fixed deposit (FD) maturity value and total interest earned with quarterly, monthly, or annual compounding.`
   },
   'rd-calculator': {
-    title: `RD Calculator — Calculate Recurring Deposit Maturity | ${SITE_DOMAIN}`,
-    desc: `Calculate recurring deposit (RD) maturity value and interest earned with compounding.`
+    title: `Recurring Deposit (RD) Calculator — Monthly RD Maturity Amount | ${SITE_DOMAIN}`,
+    desc: `Calculate recurring deposit (RD) maturity value and total interest earned with quarterly compounding.`
   },
   'ppf-calculator': {
-    title: `PPF Calculator — Calculate Public Provident Fund Corpus | ${SITE_DOMAIN}`,
-    desc: `Project your Public Provident Fund (PPF) corpus and total interest earned over 15 years.`
+    title: `PPF Calculator — Public Provident Fund 15-Year Maturity Corpus | ${SITE_DOMAIN}`,
+    desc: `Project your Public Provident Fund (PPF) maturity corpus, annual compounding interest, and tax-free returns over 15 years.`
   },
   'epf-calculator': {
-    title: `EPF Calculator — Calculate Employee Provident Fund Balance | ${SITE_DOMAIN}`,
-    desc: `Calculate Provident Fund corpus from monthly salary contributions and annual interest rates.`
+    title: `EPF Calculator — Employee Provident Fund Balance & Growth | ${SITE_DOMAIN}`,
+    desc: `Calculate total Provident Fund corpus from monthly salary contributions and annual EPF interest rates.`
   },
   'nps-calculator': {
-    title: `NPS Calculator — Calculate National Pension System Corpus | ${SITE_DOMAIN}`,
-    desc: `Estimate National Pension System retirement corpus and monthly pension payout.`
+    title: `NPS Calculator — National Pension System Corpus & Pension Payout | ${SITE_DOMAIN}`,
+    desc: `Estimate National Pension System (NPS) retirement corpus, lump-sum withdrawal, and monthly annuity pension.`
   },
   'lumpsum-calculator': {
-    title: `Lumpsum Investment Calculator — Calculate Mutual Fund Returns | ${SITE_DOMAIN}`,
-    desc: `Calculate future value of a one-time lumpsum mutual fund investment at an expected return rate.`
+    title: `Lumpsum Mutual Fund Investment Calculator — Future Wealth Value | ${SITE_DOMAIN}`,
+    desc: `Calculate future value of a one-time lumpsum mutual fund investment based on expected annual compound growth rate.`
   },
   'cagr-calculator': {
-    title: `CAGR Calculator — Calculate Compound Annual Growth Rate | ${SITE_DOMAIN}`,
-    desc: `Calculate compound annual growth rate (CAGR) between two investment values over time.`
+    title: `CAGR Calculator — Compound Annual Growth Rate Formula & Return | ${SITE_DOMAIN}`,
+    desc: `Calculate compound annual growth rate (CAGR) between starting and ending investment values over time.`
   },
   'roi-calculator': {
-    title: `ROI Calculator — Calculate Return on Investment % | ${SITE_DOMAIN}`,
-    desc: `Calculate return on investment as a percentage and annualised return figure.`
+    title: `ROI Calculator — Return on Investment Percentage & Annualized Gain | ${SITE_DOMAIN}`,
+    desc: `Calculate return on investment (ROI %) and annualized profit percentage for real estate, stocks, or business.`
   },
   'retirement-calculator': {
-    title: `Retirement Calculator — Calculate Retirement Corpus Needed | ${SITE_DOMAIN}`,
-    desc: `How much you need saved to retire on a target monthly income after inflation.`
+    title: `Retirement Corpus Calculator — Estimate Retirement Savings Needed | ${SITE_DOMAIN}`,
+    desc: `Calculate exact retirement corpus needed to maintain target monthly living style after inflation.`
   },
   'inflation-calculator': {
-    title: `Inflation Calculator — Calculate Future Purchasing Power | ${SITE_DOMAIN}`,
-    desc: `Find what today's money will be worth after years of inflation.`
+    title: `Inflation Calculator India — Calculate Future Purchasing Power | ${SITE_DOMAIN}`,
+    desc: `Find what today's money will be worth after years of inflation and estimate future purchasing power.`
   },
   'salary-calculator': {
-    title: `Salary & CTC Calculator — Calculate In-Hand Monthly Pay | ${SITE_DOMAIN}`,
-    desc: `Calculate take-home monthly salary from CTC after EPF, Professional Tax, and TDS deductions.`
+    title: `Salary CTC to In-Hand Calculator — Monthly Take-Home Pay Breakdown | ${SITE_DOMAIN}`,
+    desc: `Convert Annual CTC to monthly in-hand take-home salary after EPF, Professional Tax, TDS, and deductions in India.`
   },
   'salary-hike-calculator': {
-    title: `Salary Hike Calculator — Calculate Salary Raise & Increment % | ${SITE_DOMAIN}`,
-    desc: `Calculate new revised salary and percentage raise from an appraisal hike.`
+    title: `Salary Hike Calculator — Calculate Increment % & Revised Salary | ${SITE_DOMAIN}`,
+    desc: `Calculate salary increment percentage, appraisal hike amount, and new monthly take-home pay.`
   },
   'hra-calculator': {
-    title: `HRA Calculator — Calculate Tax Exempt House Rent Allowance | ${SITE_DOMAIN}`,
-    desc: `Calculate how much of your House Rent Allowance (HRA) is exempt from income tax.`
+    title: `HRA Exemption Calculator — Tax-Free Rent Allowance Sec 10(13A) | ${SITE_DOMAIN}`,
+    desc: `Calculate how much of your House Rent Allowance (HRA) is tax-exempt under Section 10(13A) of Income Tax Act.`
   },
   'gratuity-calculator': {
-    title: `Gratuity Calculator — Calculate Gratuity Payble on Retirement | ${SITE_DOMAIN}`,
-    desc: `Calculate gratuity payout based on last drawn basic salary and completed years of service.`
+    title: `Gratuity Calculator — Calculate Gratuity Payout on Resignation | ${SITE_DOMAIN}`,
+    desc: `Calculate gratuity payout based on last drawn basic salary and completed years of continuous service.`
   },
   'tds-calculator': {
-    title: `TDS Calculator — Calculate Tax Deducted at Source | ${SITE_DOMAIN}`,
-    desc: `Calculate tax deducted at source (TDS) on salary, fixed deposit interest, or professional fees.`
+    title: `TDS Calculator — Tax Deducted at Source on Salary & Interest | ${SITE_DOMAIN}`,
+    desc: `Calculate tax deducted at source (TDS) on salary, fixed deposit interest, or professional contractor fees.`
   },
   'capital-gains-calculator': {
-    title: `Capital Gains Tax Calculator — Calculate STCG & LTCG Tax | ${SITE_DOMAIN}`,
-    desc: `Calculate short-term and long-term capital gains tax on stock, equity, or real estate sales.`
+    title: `Capital Gains Tax Calculator — STCG & LTCG Tax on Stocks & Property | ${SITE_DOMAIN}`,
+    desc: `Calculate short-term (STCG) and long-term capital gains (LTCG) tax on stock equity or real estate property sales.`
   },
   'credit-card-interest-calculator': {
-    title: `Credit Card Interest Calculator — Calculate Payoff Time | ${SITE_DOMAIN}`,
-    desc: `Calculate interest owed and payoff schedule on revolving credit card balance.`
+    title: `Credit Card Interest Calculator — Calculate Payoff Time & APR | ${SITE_DOMAIN}`,
+    desc: `Calculate monthly credit card interest charges, APR compounding, and exact payoff timeline.`
   },
   'loan-eligibility-calculator': {
-    title: `Loan Eligibility Calculator — Check How Much Loan You Get | ${SITE_DOMAIN}`,
-    desc: `Estimate max home or personal loan amount you qualify for based on monthly income.`
+    title: `Home Loan Eligibility Calculator — Max Loan by Salary & FOIR | ${SITE_DOMAIN}`,
+    desc: `Estimate maximum home or personal loan amount you qualify for based on monthly income and existing EMIs.`
   },
   'prepayment-calculator': {
-    title: `Loan Prepayment Calculator — Calculate Interest Savings | ${SITE_DOMAIN}`,
-    desc: `Calculate total interest saved and tenure cut by prepaying a loan.`
+    title: `Loan Prepayment Calculator — Calculate Interest Savings & Tenure Cut | ${SITE_DOMAIN}`,
+    desc: `Calculate total interest saved and tenure cut achieved by making partial principal loan prepayments.`
   },
   'stamp-duty-calculator': {
-    title: `Stamp Duty Calculator — Calculate Property Registration Fees | ${SITE_DOMAIN}`,
-    desc: `Estimate stamp duty and property registration costs across states.`
+    title: `Stamp Duty & Property Registration Fee Calculator India | ${SITE_DOMAIN}`,
+    desc: `Estimate state-wise stamp duty charges and property registration fees for buying real estate in India.`
   },
   'property-tax-calculator': {
-    title: `Property Tax Calculator — Calculate Annual House Tax | ${SITE_DOMAIN}`,
-    desc: `Calculate annual property tax from assessed value and local rate.`
+    title: `Property Tax Calculator — Calculate Municipal House Tax Bill | ${SITE_DOMAIN}`,
+    desc: `Calculate annual property tax bill based on assessed property area, location, and municipal unit rates.`
   },
   'rent-vs-buy-calculator': {
-    title: `Rent vs Buy Calculator — Compare Buying vs Renting a Home | ${SITE_DOMAIN}`,
-    desc: `Compare the long-term financial cost of renting against buying a home.`
+    title: `Rent vs Buy Home Calculator — Financial Cost Comparison | ${SITE_DOMAIN}`,
+    desc: `Compare the long-term total financial cost of renting and investing vs buying a home with a mortgage.`
   },
   'home-affordability-calculator': {
     title: `Home Affordability Calculator — How Much House Can You Afford | ${SITE_DOMAIN}`,
-    desc: `Find the maximum home price you can afford based on income and down payment.`
+    desc: `Find the maximum home purchase price you can afford based on income, monthly debts, and down payment.`
   },
   'break-even-calculator': {
-    title: `Break-Even Calculator — Calculate Break-Even Point Units | ${SITE_DOMAIN}`,
-    desc: `Calculate units required to sell to cover fixed and variable costs.`
+    title: `Break-Even Point Calculator — Calculate Units & Sales Revenue | ${SITE_DOMAIN}`,
+    desc: `Calculate required break-even sales volume in units and dollar revenue to cover fixed and variable costs.`
   },
   'profit-margin-calculator': {
-    title: `Profit Margin Calculator — Calculate Gross & Net Margins | ${SITE_DOMAIN}`,
-    desc: `Calculate gross margin and net profit margin from cost price and selling price.`
+    title: `Profit Margin Calculator — Calculate Gross & Net Margins % | ${SITE_DOMAIN}`,
+    desc: `Calculate gross profit margin percentage and net profit margin from cost price and selling price.`
   },
   'markup-calculator': {
-    title: `Markup Calculator — Calculate Selling Price from Cost | ${SITE_DOMAIN}`,
-    desc: `Calculate target selling price from cost price and desired markup percentage.`
+    title: `Markup Calculator — Calculate Selling Price & Markup % | ${SITE_DOMAIN}`,
+    desc: `Calculate target selling price and profit markup percentage from unit cost price.`
   },
   'freelance-rate-calculator': {
-    title: `Freelance Rate Calculator — Calculate Hourly & Daily Rate | ${SITE_DOMAIN}`,
-    desc: `Calculate minimum hourly rate required to hit target annual freelance income.`
+    title: `Freelance Hourly Rate Calculator — Target Income & Day Rate | ${SITE_DOMAIN}`,
+    desc: `Calculate minimum billable hourly rate required to reach target annual freelance income after expenses.`
   },
   'bmi-calculator': {
-    title: `BMI Calculator — Calculate Body Mass Index & Weight Status | ${SITE_DOMAIN}`,
-    desc: `Calculate Body Mass Index (BMI) from height and weight with WHO classifications.`
+    title: `BMI Calculator for Men & Women — Body Mass Index Chart & Range | ${SITE_DOMAIN}`,
+    desc: `Calculate Body Mass Index (BMI) from height and weight. View WHO health classification and ideal weight range.`
   },
   'calorie-calculator': {
-    title: `Calorie Calculator — Calculate Daily Calorie Needs & TDEE | ${SITE_DOMAIN}`,
-    desc: `Calculate daily calorie intake for weight loss, maintenance, or muscle gain.`
+    title: `Daily Calorie Calculator — TDEE & Calorie Intake for Weight Loss | ${SITE_DOMAIN}`,
+    desc: `Calculate Total Daily Energy Expenditure (TDEE) and exact daily calorie deficit target for weight loss.`
   },
   'water-intake-calculator': {
-    title: `Water Intake Calculator — Calculate Daily Water Target | ${SITE_DOMAIN}`,
-    desc: `Find recommended daily water intake based on body weight and activity level.`
+    title: `Daily Water Intake Calculator — Calculate Recommended Liters | ${SITE_DOMAIN}`,
+    desc: `Find recommended daily water intake target in liters based on body weight and activity level.`
   },
   'bmr-calculator': {
-    title: `BMR Calculator — Calculate Basal Metabolic Rate | ${SITE_DOMAIN}`,
-    desc: `Calculate basal metabolic rate (BMR) — calories burned at complete rest.`
+    title: `BMR Calculator — Basal Metabolic Rate Formula (Mifflin-St Jeor) | ${SITE_DOMAIN}`,
+    desc: `Calculate basal metabolic rate (BMR) — total calories burned by your body at complete rest.`
   },
   'ideal-weight-calculator': {
-    title: `Ideal Weight Calculator — Calculate Healthy Weight Range | ${SITE_DOMAIN}`,
-    desc: `Find healthy ideal weight range based on height, age, and gender.`
+    title: `Ideal Body Weight Calculator — Healthy Weight Range by Height | ${SITE_DOMAIN}`,
+    desc: `Find healthy ideal body weight range based on height, age, and gender using clinical formulas.`
   },
   'body-fat-calculator': {
-    title: `Body Fat Calculator — Estimate Body Fat % (US Navy Method) | ${SITE_DOMAIN}`,
-    desc: `Estimate body fat percentage using US Navy body circumference methods.`
+    title: `Body Fat Percentage Calculator — US Navy Circumference Method | ${SITE_DOMAIN}`,
+    desc: `Estimate body fat percentage and lean body mass using US Navy body circumference methods.`
   },
   'pregnancy-due-date-calculator': {
-    title: `Pregnancy Due Date Calculator — Estimate Delivery Date | ${SITE_DOMAIN}`,
-    desc: `Estimate pregnancy due date from the first day of last menstrual period.`
+    title: `Pregnancy Due Date Calculator — Estimate Delivery Date & LMP | ${SITE_DOMAIN}`,
+    desc: `Estimate pregnancy delivery due date and gestational age from first day of last menstrual period.`
   },
   'ovulation-calculator': {
-    title: `Ovulation Calculator — Predict Fertile Days & Cycle | ${SITE_DOMAIN}`,
-    desc: `Predict your most fertile days and ovulation window based on cycle length.`
+    title: `Ovulation Calculator & Fertile Window Tracker for Pregnancy | ${SITE_DOMAIN}`,
+    desc: `Predict your most fertile days and ovulation window based on average menstrual cycle length.`
   },
   'period-calculator': {
-    title: `Period Calculator — Predict Menstrual Cycle Dates | ${SITE_DOMAIN}`,
-    desc: `Predict upcoming menstrual cycle dates and period start days.`
+    title: `Period Calculator — Predict Menstrual Cycle & Next Period Date | ${SITE_DOMAIN}`,
+    desc: `Predict upcoming menstrual cycle dates and period start days with PMS cycle tracker.`
   },
   'macro-calculator': {
-    title: `Macro Calculator — Calculate Protein, Carbs & Fat Targets | ${SITE_DOMAIN}`,
-    desc: `Calculate daily protein, carbohydrate, and fat targets from your calorie goal.`
+    title: `Macro Calculator — Daily Protein, Carb & Fat Targets Grams | ${SITE_DOMAIN}`,
+    desc: `Calculate daily protein, carbohydrate, and fat targets in grams based on your calorie goal.`
   },
   'heart-rate-zone-calculator': {
-    title: `Heart Rate Zone Calculator — Fat Burn & Cardio Zones | ${SITE_DOMAIN}`,
-    desc: `Calculate target heart rate zones for fat burn, cardio, and peak effort.`
+    title: `Heart Rate Zone Calculator — Fat Burn & Cardio BPM Zones | ${SITE_DOMAIN}`,
+    desc: `Calculate target workout heart rate zones for fat burn, aerobic cardio, and peak effort.`
   },
   'waist-hip-ratio-calculator': {
-    title: `Waist to Hip Ratio Calculator — Health Risk Indicator | ${SITE_DOMAIN}`,
-    desc: `Calculate waist-to-hip ratio as a quick indicator of cardiometabolic health risk.`
+    title: `Waist to Hip Ratio Calculator — Visceral Fat Health Risk | ${SITE_DOMAIN}`,
+    desc: `Calculate waist-to-hip ratio (WHR) as a quick indicator of cardiometabolic health risk.`
   },
   'sleep-calculator': {
-    title: `Sleep Calculator — Calculate 90-Min Sleep Cycles & Wake Times | ${SITE_DOMAIN}`,
-    desc: `Find optimal times to fall asleep or wake up based on 90-minute sleep cycles.`
+    title: `Sleep Cycle Calculator — 90-Min Sleep Cycles & Wake Times | ${SITE_DOMAIN}`,
+    desc: `Find optimal times to fall asleep or wake up based on 90-minute natural sleep cycles.`
   },
   'calories-burned-calculator': {
-    title: `Calories Burned Calculator — Walking, Running & Cycling | ${SITE_DOMAIN}`,
-    desc: `Calculate calories burned walking, running, or cycling a given distance.`
+    title: `Calories Burned Calculator — Walking, Running & Cycling Pace | ${SITE_DOMAIN}`,
+    desc: `Calculate calories burned walking, running, or cycling a given distance and duration.`
   },
   'percentage-calculator': {
-    title: `Percentage Calculator — Calculate Marks %, Increase & Decrease | ${SITE_DOMAIN}`,
-    desc: `Calculate percentages, marks to percentage, percentage change, and differences.`
+    title: `Percentage Calculator — Marks to %, Percentage Change & Difference | ${SITE_DOMAIN}`,
+    desc: `Calculate percentages, marks to percentage, percentage change, increase, and difference.`
   },
   'cgpa-calculator': {
-    title: `CGPA Calculator — Calculate Grade Points & Percentage | ${SITE_DOMAIN}`,
-    desc: `Convert grade points per subject into overall CGPA score and percentage.`
+    title: `CGPA Calculator — Grade Point Average & Percentage Conversion | ${SITE_DOMAIN}`,
+    desc: `Convert subject grade points into overall CGPA score and equivalent percentage.`
   },
   'attendance-calculator': {
-    title: `Attendance Calculator — How Many Classes Can You Skip | ${SITE_DOMAIN}`,
-    desc: `Calculate classes you can skip — or must attend — to maintain target percentage.`
+    title: `Attendance Calculator — Classes to Attend for 75% Requirement | ${SITE_DOMAIN}`,
+    desc: `Calculate how many classes you can skip — or must attend — to maintain 75% or 85% attendance.`
   },
   'gpa-calculator': {
-    title: `GPA Calculator — Calculate Grade Point Average | ${SITE_DOMAIN}`,
-    desc: `Calculate overall GPA and equivalent percentage from subject grades.`
+    title: `GPA Calculator — Cumulative Grade Point Average (4.0 & 10.0 Scale) | ${SITE_DOMAIN}`,
+    desc: `Calculate overall GPA and equivalent percentage from subject course grades.`
   },
   'grade-calculator': {
     title: `Grade Calculator — Final Exam Score Needed for Target Grade | ${SITE_DOMAIN}`,
-    desc: `Find what score you need on a final exam to reach a target course grade.`
+    desc: `Find what score you need on a final exam to reach your target overall course grade.`
   },
   'cgpa-to-percentage-calculator': {
-    title: `CGPA to Percentage Converter — Convert CGPA to % | ${SITE_DOMAIN}`,
-    desc: `Convert CGPA (out of 10) to an equivalent percentage score.`
+    title: `CGPA to Percentage Calculator — Convert 10 Point CGPA to % | ${SITE_DOMAIN}`,
+    desc: `Convert CGPA (out of 10) to an equivalent percentage score using official board formulas.`
   },
   'age-calculator': {
-    title: `Age Calculator — Calculate Exact Age in Years, Months & Days | ${SITE_DOMAIN}`,
+    title: `Age Calculator Online — Exact Age in Years, Months, Days & Hours | ${SITE_DOMAIN}`,
     desc: `Calculate exact age in years, months, weeks, days, and hours from date of birth.`
   },
   'date-difference-calculator': {
-    title: `Date Difference Calculator — Days & Months Between Dates | ${SITE_DOMAIN}`,
-    desc: `Calculate days, weeks, and months between any two dates.`
+    title: `Date Difference Calculator — Days & Months Between Two Dates | ${SITE_DOMAIN}`,
+    desc: `Calculate total days, business working days, weeks, and months between any two dates.`
   },
   'password-generator': {
-    title: `Password Generator — Generate Secure Random Passwords | ${SITE_DOMAIN}`,
-    desc: `Generate strong, unhackable random passwords with customizable length.`
+    title: `Random Password Generator — Create Strong & Secure Passwords | ${SITE_DOMAIN}`,
+    desc: `Generate strong, unhackable random passwords with customizable length and character sets.`
   },
   'qr-code-generator': {
-    title: `QR Code Generator — Create Custom Downloadable QR Codes | ${SITE_DOMAIN}`,
-    desc: `Generate free downloadable PNG QR codes from text, links, or contact info.`
+    title: `QR Code Generator — Create & Download Custom PNG QR Codes | ${SITE_DOMAIN}`,
+    desc: `Generate free downloadable PNG QR codes from text, website links, or contact info.`
   },
   'uuid-generator': {
-    title: `UUID Generator — Bulk Version 4 UUID Generator | ${SITE_DOMAIN}`,
+    title: `UUID / GUID Generator — Bulk Version 4 Random UUID Generator | ${SITE_DOMAIN}`,
     desc: `Generate random RFC4122 version-4 UUIDs in bulk for software development.`
   },
   'random-number-generator': {
-    title: `Random Number Generator — Generate Random Integers | ${SITE_DOMAIN}`,
-    desc: `Generate random integers in a range, with or without duplicates.`
+    title: `Random Number Generator — Generate Integers in Min-Max Range | ${SITE_DOMAIN}`,
+    desc: `Generate random integers in a custom range, with or without duplicate numbers.`
   },
   'barcode-generator': {
-    title: `Barcode Generator — Generate Free CODE128 Barcodes | ${SITE_DOMAIN}`,
+    title: `Barcode Generator — Generate Free CODE128 Barcodes SVG/PNG | ${SITE_DOMAIN}`,
     desc: `Generate CODE128 standard barcodes online and download SVG/PNG barcode images.`
   },
   'discount-calculator': {
     title: `Discount Calculator — Calculate Final Price & Amount Saved | ${SITE_DOMAIN}`,
-    desc: `Calculate final sale price and total money saved after percentage discounts.`
+    desc: `Calculate final sale checkout price and total money saved after percentage discounts.`
   },
   'tip-calculator': {
-    title: `Tip Calculator — Split Bill & Calculate Tip Per Person | ${SITE_DOMAIN}`,
+    title: `Tip Calculator — Split Restaurant Bill & Calculate Tip Amount | ${SITE_DOMAIN}`,
     desc: `Split restaurant bills and calculate tip amount per person easily.`
   },
   'fuel-cost-calculator': {
-    title: `Fuel Cost Calculator — Calculate Trip Fuel Cost & Mileage | ${SITE_DOMAIN}`,
-    desc: `Calculate trip fuel cost from distance, vehicle mileage, and fuel price.`
+    title: `Fuel Cost Calculator — Trip Petrol/Diesel Expense & Mileage | ${SITE_DOMAIN}`,
+    desc: `Calculate trip fuel cost from distance, vehicle mileage (kmpl), and fuel price per liter.`
   },
   'word-counter': {
-    title: `Word Counter — Count Words, Characters & Sentences | ${SITE_DOMAIN}`,
-    desc: `Count words, characters, and sentences live as you type.`
+    title: `Word Counter Online — Count Words, Characters & Sentences Live | ${SITE_DOMAIN}`,
+    desc: `Count words, characters, sentences, and paragraphs live as you type.`
   },
   'case-converter': {
-    title: `Case Converter — Convert UPPERCASE, lowercase, Title Case | ${SITE_DOMAIN}`,
-    desc: `Convert text case between UPPERCASE, lowercase, Title Case, and camelCase.`
+    title: `Text Case Converter — Convert UPPERCASE, lowercase, Title Case | ${SITE_DOMAIN}`,
+    desc: `Convert text case between UPPERCASE, lowercase, Title Case, camelCase, and snake_case.`
   },
   'typing-speed-test': {
-    title: `Typing Speed Test — Measure WPM & Accuracy Online | ${SITE_DOMAIN}`,
+    title: `Typing Speed Test Online — Measure WPM & Accuracy Percentage | ${SITE_DOMAIN}`,
     desc: `Measure typing speed in WPM (words per minute) and accuracy against sample text.`
   },
   'unit-converter': {
-    title: `Unit Converter — Convert Length, Weight, Temp & Volume | ${SITE_DOMAIN}`,
-    desc: `Convert units instantly for length, mass, temperature, area, and volume.`
+    title: `Unit Converter Online — Convert Length, Weight, Temp & Volume | ${SITE_DOMAIN}`,
+    desc: `Convert units instantly for length, mass, weight, temperature, area, and volume.`
   },
   'time-zone-converter': {
-    title: `Time Zone Converter — Convert Times Across Global Timezones | ${SITE_DOMAIN}`,
+    title: `Time Zone Converter — Convert Times Across IST, EST, PST, UTC | ${SITE_DOMAIN}`,
     desc: `Convert time between IST, EST, PST, GMT, UTC, and global timezones.`
   },
   'time-duration-calculator': {
     title: `Time Duration Calculator — Hours & Minutes Between Times | ${SITE_DOMAIN}`,
-    desc: `Calculate hours and minutes elapsed between two clock times.`
+    desc: `Calculate exact hours and minutes elapsed between two clock times.`
   },
   'electricity-bill-calculator': {
-    title: `Electricity Bill Calculator — Estimate Monthly Power Bill | ${SITE_DOMAIN}`,
-    desc: `Estimate monthly electricity bill from appliance wattage and usage hours.`
+    title: `Electricity Bill Calculator — Estimate Monthly Power Bill kWh | ${SITE_DOMAIN}`,
+    desc: `Estimate monthly electricity bill in kWh units from appliance wattage and usage hours.`
   },
   'rent-split-calculator': {
-    title: `Rent Split Calculator — Fair Roommate Rent Splitter | ${SITE_DOMAIN}`,
-    desc: `Fairly split rent among roommates by room size or income.`
+    title: `Rent Split Calculator — Fair Roommate Rent Splitter Tool | ${SITE_DOMAIN}`,
+    desc: `Fairly split rent and utilities among roommates by room size or income.`
   },
   'countdown-timer': {
-    title: `Countdown Timer — Online Countdown to Any Date & Event | ${SITE_DOMAIN}`,
-    desc: `Days, hours, and minutes remaining until any target date or event.`
+    title: `Countdown Timer Online — Count Days & Hours to Any Event | ${SITE_DOMAIN}`,
+    desc: `Days, hours, and minutes remaining until any target date or future event.`
   },
   'notice-period-calculator': {
-    title: `Notice Period Calculator — Find Last Working Day | ${SITE_DOMAIN}`,
-    desc: `Calculate your last working day based on resignation date and notice period.`
+    title: `Notice Period Calculator — Calculate Last Working Day | ${SITE_DOMAIN}`,
+    desc: `Calculate your exact last working day based on resignation date and notice period days.`
   },
   'percentage-change-calculator': {
-    title: `Percentage Change Calculator — % Increase & Decrease | ${SITE_DOMAIN}`,
-    desc: `Calculate percentage increase or decrease between two numbers.`
+    title: `Percentage Change Calculator — % Increase & Decrease Formula | ${SITE_DOMAIN}`,
+    desc: `Calculate percentage increase or decrease between two numbers with steps.`
   },
   'average-calculator': {
-    title: `Average Calculator — Calculate Mean, Median & Mode | ${SITE_DOMAIN}`,
-    desc: `Calculate mean, median, and mode of a list of numbers.`
+    title: `Average Calculator — Calculate Mean, Median, Mode & Range | ${SITE_DOMAIN}`,
+    desc: `Calculate mean, median, mode, and range of a list of numbers.`
   },
   'ratio-calculator': {
-    title: `Ratio Calculator — Simplify Ratios & Find Missing Terms | ${SITE_DOMAIN}`,
-    desc: `Simplify ratios or solve for missing values in proportion equations.`
+    title: `Ratio Calculator — Simplify Ratios & Find Missing Variables | ${SITE_DOMAIN}`,
+    desc: `Simplify ratios to lowest terms or solve for missing values in proportion equations.`
   },
   'lcm-hcf-calculator': {
-    title: `LCM & HCF Calculator — Least Common Multiple & HCF | ${SITE_DOMAIN}`,
-    desc: `Calculate least common multiple (LCM) and highest common factor (HCF).`
+    title: `LCM & HCF Calculator — Least Common Multiple & GCD Factor | ${SITE_DOMAIN}`,
+    desc: `Calculate least common multiple (LCM) and highest common factor (HCF / GCD).`
   },
   'fraction-calculator': {
-    title: `Fraction Calculator — Add, Subtract & Multiply Fractions | ${SITE_DOMAIN}`,
+    title: `Fraction Calculator — Add, Subtract, Multiply & Divide Fractions | ${SITE_DOMAIN}`,
     desc: `Add, subtract, multiply, and divide fractions with step-by-step solutions.`
   },
   'square-root-calculator': {
-    title: `Square Root Calculator — Find Square & Cube Roots | ${SITE_DOMAIN}`,
+    title: `Square Root Calculator — Find Square & Cube Roots Online | ${SITE_DOMAIN}`,
     desc: `Calculate square roots and cube roots for perfect and non-perfect numbers.`
   },
   'standard-deviation-calculator': {
-    title: `Standard Deviation Calculator — Mean & Variance | ${SITE_DOMAIN}`,
-    desc: `Calculate mean, variance, and standard deviation of a dataset.`
+    title: `Standard Deviation Calculator — Sample & Population Variance | ${SITE_DOMAIN}`,
+    desc: `Calculate mean, variance, and standard deviation of a sample or population dataset.`
   },
   'scientific-calculator': {
-    title: `Scientific Calculator — Free Full Online Scientific Calculator | ${SITE_DOMAIN}`,
-    desc: `Trigonometric, logarithmic, exponential, and scientific calculations.`
+    title: `Scientific Calculator Online — Trig, Log, Exponent & Math | ${SITE_DOMAIN}`,
+    desc: `Trigonometric, logarithmic, exponential, and scientific calculations online.`
   },
   'percentage-to-fraction-calculator': {
     title: `Percentage to Fraction Converter — Convert % to Fractions | ${SITE_DOMAIN}`,
     desc: `Convert between percentages, fractions, and decimal numbers.`
   },
   'prime-number-checker': {
-    title: `Prime Number Checker — Test If a Number Is Prime | ${SITE_DOMAIN}`,
+    title: `Prime Number Checker — Test If a Number Is Prime & Factors | ${SITE_DOMAIN}`,
     desc: `Test if a number is prime and list all factors if composite.`
   },
   'factorial-calculator': {
-    title: `Factorial Calculator — Calculate Factorials of Numbers | ${SITE_DOMAIN}`,
+    title: `Factorial Calculator (n!) — Calculate Factorials of Numbers | ${SITE_DOMAIN}`,
     desc: `Calculate factorial (n!) of any non-negative integer.`
   },
   'permutation-combination-calculator': {
-    title: `Permutation & Combination Calculator — nPr & nCr | ${SITE_DOMAIN}`,
+    title: `Permutation & Combination Calculator — nPr & nCr Formulas | ${SITE_DOMAIN}`,
     desc: `Calculate nPr permutations and nCr combinations for set sizes.`
   },
   'quadratic-equation-solver': {
-    title: `Quadratic Equation Solver — Find Real & Complex Roots | ${SITE_DOMAIN}`,
-    desc: `Find roots of ax² + bx + c = 0 quadratic equations.`
+    title: `Quadratic Equation Solver — Find Real & Complex Roots ax²+bx+c | ${SITE_DOMAIN}`,
+    desc: `Find roots of ax² + bx + c = 0 quadratic equations with discriminant steps.`
   },
   'number-to-words-converter': {
-    title: `Number to Words Converter — Spell Numbers in Words | ${SITE_DOMAIN}`,
-    desc: `Convert numbers into written words in Indian and International numbering scales.`
+    title: `Number to Words Converter — Spell Out Numbers in Indian & Words | ${SITE_DOMAIN}`,
+    desc: `Convert numbers into written words in Indian (Lakhs) and International numbering scales.`
   },
   'json-formatter': {
-    title: `JSON Formatter — Pretty Print, Minify & Validate JSON | ${SITE_DOMAIN}`,
+    title: `JSON Formatter & Validator — Pretty Print & Minify JSON | ${SITE_DOMAIN}`,
     desc: `Pretty-print, format, minify, and validate JSON code online.`
   },
   'base64-encoder-decoder': {
@@ -355,19 +355,19 @@ const TOOL_SEO_MAP = {
     desc: `Encode text strings into Base64 format or decode Base64 strings back to text.`
   },
   'color-picker': {
-    title: `Color Picker — HEX, RGB & HSL Color Code Finder | ${SITE_DOMAIN}`,
+    title: `Color Picker Online — Convert HEX, RGB & HSL Color Codes | ${SITE_DOMAIN}`,
     desc: `Pick colors visually and convert instantly between HEX, RGB, and HSL.`
   },
   'regex-tester': {
-    title: `Regex Tester — Test Regular Expressions Online | ${SITE_DOMAIN}`,
+    title: `Regex Tester & Debugger — Test Regular Expressions Online | ${SITE_DOMAIN}`,
     desc: `Test regular expressions against sample text with live match highlighting.`
   },
   'html-formatter': {
-    title: `HTML Formatter — Indent & Beautify Messy HTML | ${SITE_DOMAIN}`,
+    title: `HTML Formatter & Beautifier — Indent Clean HTML Code | ${SITE_DOMAIN}`,
     desc: `Format, indent, and clean up unformatted HTML markup.`
   },
   'sql-formatter': {
-    title: `SQL Formatter — Format & Beautify SQL Queries | ${SITE_DOMAIN}`,
+    title: `SQL Formatter — Format & Indent SQL Queries Online | ${SITE_DOMAIN}`,
     desc: `Format and beautify SQL queries with proper keywords and indentation.`
   },
   'css-minifier': {
@@ -375,7 +375,7 @@ const TOOL_SEO_MAP = {
     desc: `Compress CSS stylesheets by stripping whitespace and comments.`
   },
   'js-minifier': {
-    title: `JS Minifier — Compress & Minify JavaScript Code | ${SITE_DOMAIN}`,
+    title: `JS Minifier — Compress JavaScript Files Online | ${SITE_DOMAIN}`,
     desc: `Compress JavaScript files by removing unnecessary whitespace and comments.`
   },
   'markdown-previewer': {
@@ -383,15 +383,15 @@ const TOOL_SEO_MAP = {
     desc: `Write Markdown text and preview rendered HTML side by side.`
   },
   'url-encoder-decoder': {
-    title: `URL Encoder & Decoder — Percent Encode URLs | ${SITE_DOMAIN}`,
+    title: `URL Encoder & Decoder — Percent Encode Web URLs | ${SITE_DOMAIN}`,
     desc: `Percent-encode or decode URLs, URI parameters, and query strings.`
   },
   'html-entity-converter': {
-    title: `HTML Entity Converter — Encode & Decode Special Chars | ${SITE_DOMAIN}`,
+    title: `HTML Entity Converter — Encode & Decode Special Characters | ${SITE_DOMAIN}`,
     desc: `Convert special characters to HTML entities and back.`
   },
   'jwt-decoder': {
-    title: `JWT Decoder — Decode JSON Web Tokens Header & Payload | ${SITE_DOMAIN}`,
+    title: `JWT Decoder Online — Decode JSON Web Token Header & Claims | ${SITE_DOMAIN}`,
     desc: `Decode JSON Web Token (JWT) header, payload claims, and signatures.`
   },
   'unix-timestamp-converter': {
@@ -403,11 +403,11 @@ const TOOL_SEO_MAP = {
     desc: `Compare two blocks of text and highlight line-by-line differences.`
   },
   'css-gradient-generator': {
-    title: `CSS Gradient Generator — Linear & Radial Gradients | ${SITE_DOMAIN}`,
+    title: `CSS Gradient Generator — Linear & Radial CSS Gradients | ${SITE_DOMAIN}`,
     desc: `Design linear and radial CSS color gradients and copy CSS code.`
   },
   'box-shadow-generator': {
-    title: `CSS Box Shadow Generator — Visual Box Shadow Tool | ${SITE_DOMAIN}`,
+    title: `CSS Box Shadow Generator — Visual Drop Shadow Tool | ${SITE_DOMAIN}`,
     desc: `Create visual CSS box-shadow effects and copy CSS code.`
   },
   'lorem-ipsum-generator': {
@@ -415,15 +415,15 @@ const TOOL_SEO_MAP = {
     desc: `Generate dummy placeholder text by paragraph, sentence, or word count.`
   },
   'number-base-converter': {
-    title: `Binary / Hex / Octal Converter — Base Conversions | ${SITE_DOMAIN}`,
+    title: `Binary / Hex / Octal Converter — Number Base Tool | ${SITE_DOMAIN}`,
     desc: `Convert numbers between binary, decimal, hexadecimal, and octal bases.`
   },
   'px-to-rem-converter': {
-    title: `PX to REM Converter — Convert Pixels to REM/EM | ${SITE_DOMAIN}`,
+    title: `PX to REM Converter — Convert Pixels to REM/EM Units | ${SITE_DOMAIN}`,
     desc: `Convert pixel values to REM/EM units for responsive CSS layouts.`
   },
   'invoice-generator': {
-    title: `Invoice & GST Bill Generator — Create Free Tax Invoices PDF | ${SITE_DOMAIN}`,
+    title: `Invoice & GST Bill Generator — Download Free Tax Invoice PDF | ${SITE_DOMAIN}`,
     desc: `Create itemized GST invoices, tax bills, and download or print clean PDF invoices.`
   },
   'profit-and-loss-calculator': {
@@ -431,11 +431,11 @@ const TOOL_SEO_MAP = {
     desc: `Calculate gross profit, operating margin, and net profit after tax.`
   },
   'sales-tax-calculator': {
-    title: `Sales Tax & VAT Calculator — Add or Remove Sales Tax | ${SITE_DOMAIN}`,
+    title: `Sales Tax & VAT Calculator — Add or Extract Sales Tax | ${SITE_DOMAIN}`,
     desc: `Add or extract sales tax and VAT from transaction amounts.`
   },
   'payroll-calculator': {
-    title: `Payroll Calculator — Calculate Take-Home Salary | ${SITE_DOMAIN}`,
+    title: `Payroll Calculator — Take-Home Salary Breakdown with Tax | ${SITE_DOMAIN}`,
     desc: `Calculate employee take-home salary after EPF, Professional Tax, and TDS.`
   },
   'commission-calculator': {
@@ -447,47 +447,47 @@ const TOOL_SEO_MAP = {
     desc: `Convert between markup percentage and profit margin percentage.`
   },
   'mortgage-calculator': {
-    title: `Mortgage Loan Calculator — Estimate Monthly Payments | ${SITE_DOMAIN}`,
+    title: `Mortgage Loan Calculator — Monthly House Payments & Interest | ${SITE_DOMAIN}`,
     desc: `Estimate home mortgage monthly payments, principal, and interest.`
   },
   'pace-calculator': {
-    title: `Pace Calculator — Running & Walking Speed Calculator | ${SITE_DOMAIN}`,
+    title: `Running & Walking Pace Calculator — Speed & Finish Times | ${SITE_DOMAIN}`,
     desc: `Calculate running and walking pace, speed, and projected 5k/10k finish times.`
   },
   'body-surface-area-calculator': {
-    title: `Body Surface Area Calculator — Estimate BSA Online | ${SITE_DOMAIN}`,
+    title: `Body Surface Area (BSA) Calculator — Mosteller Formula | ${SITE_DOMAIN}`,
     desc: `Estimate body surface area (BSA) using Mosteller and Du Bois formulas.`
   },
   'gpa-to-percentage-converter': {
-    title: `GPA to Percentage Converter — Convert GPA Scores | ${SITE_DOMAIN}`,
+    title: `GPA to Percentage Converter — Convert 4.0 & 10.0 Scale GPA | ${SITE_DOMAIN}`,
     desc: `Convert GPA scores (4.0, 5.0, 10.0 scales) to percentages and letter grades.`
   },
   'aspect-ratio-calculator': {
-    title: `Aspect Ratio Calculator — 16:9, 4:3 Image Dimensions | ${SITE_DOMAIN}`,
+    title: `Aspect Ratio Calculator — 16:9, 4:3 Screen Dimensions | ${SITE_DOMAIN}`,
     desc: `Find 16:9, 4:3, 1:1 image and display screen dimensions.`
   },
   'exponent-calculator': {
-    title: `Exponent & Power Calculator — Exponents & Powers | ${SITE_DOMAIN}`,
+    title: `Exponent & Power Calculator — Exponents & Powers x^y | ${SITE_DOMAIN}`,
     desc: `Calculate base numbers raised to positive or negative exponents.`
   },
   'ev-vs-petrol-calculator': {
-    title: `EV vs Petrol Fuel Cost & Carbon Calculator | ${SITE_DOMAIN}`,
+    title: `EV vs Petrol Fuel Cost & Carbon Calculator — Compare Savings | ${SITE_DOMAIN}`,
     desc: `Compare monthly running costs, fuel savings, and CO2 carbon reduction between EV and Petrol vehicles.`
   },
   'freelance-tax-hourly-rate-calculator': {
-    title: `Freelance & Side-Hustle Net Hourly Rate Calculator | ${SITE_DOMAIN}`,
+    title: `Freelance Net Hourly Rate Calculator — Calculate Tax & Rates | ${SITE_DOMAIN}`,
     desc: `Calculate minimum hourly rate required after unpaid hours, operational expenses, income tax, and GST.`
   },
   'loan-calculator': {
-    title: `Loan Calculator — Calculate Monthly Loan Repayment & Interest | ${SITE_DOMAIN}`,
+    title: `Loan Interest Calculator — Monthly Repayment & Total Interest | ${SITE_DOMAIN}`,
     desc: `Calculate monthly loan payments, total interest payable, and repayment schedule for personal, auto, or home loans on Calciverse.in.`
   },
   'simple-interest-calculator': {
-    title: `Simple Interest Calculator — Calculate Principal, Rate & Interest | ${SITE_DOMAIN}`,
+    title: `Simple Interest Calculator (SI=P×R×T/100) — Principal & Rate | ${SITE_DOMAIN}`,
     desc: `Calculate simple interest, final maturity amount, annual rate, or loan tenure in years instantly on Calciverse.in.`
   },
   'compound-interest-calculator': {
-    title: `Compound Interest Calculator — Investment Growth & Returns | ${SITE_DOMAIN}`,
+    title: `Compound Interest Calculator — Calculate Returns & Compounding | ${SITE_DOMAIN}`,
     desc: `Calculate compound interest growth daily, monthly, quarterly, or annually with total interest and return breakdowns on Calciverse.in.`
   }
 }
@@ -847,8 +847,9 @@ export default function SEO({ title, description, path = '', kind = '', type = '
     pageKeywords = pageKeywords || `Calciverse, ${title || 'calculators'}, online tools`
   }
 
-  const url = `${SITE_URL}${path}`
-  const canonicalUrl = `${SITE_URL}${cleanPath || path}`
+  const normalizedPath = (cleanPath || path || '').replace(/\/+$/, '') || '/'
+  const url = `${SITE_URL}${cleanPath || path}`
+  const canonicalUrl = normalizedPath === '/' ? `${SITE_URL}/` : `${SITE_URL}${normalizedPath}`
 
   // Schema.org Structured Data Array
   const schemas = []

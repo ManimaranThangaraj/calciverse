@@ -7,8 +7,10 @@ export default function AdSlot({ slot, format = 'auto', className = '', label = 
   const pushed = useRef(false)
   const [isFilled, setIsFilled] = useState(false)
 
+  const isRealSlot = slot && !slot.startsWith('000000')
+
   useEffect(() => {
-    if (!ADSENSE_CLIENT) return
+    if (!ADSENSE_CLIENT || !isRealSlot) return
 
     // Automatically inject AdSense script into head if not already present
     const scriptId = 'google-adsense-script'
@@ -48,9 +50,9 @@ export default function AdSlot({ slot, format = 'auto', className = '', label = 
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [isRealSlot])
 
-  if (!ADSENSE_CLIENT) {
+  if (!ADSENSE_CLIENT || !isRealSlot) {
     return null
   }
 

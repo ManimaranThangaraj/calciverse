@@ -12,10 +12,10 @@ const toolsJs = readFileSync(resolve(__dirname, '../src/data/tools.js'), 'utf8')
 const articlesJs = readFileSync(resolve(__dirname, '../src/data/articles.js'), 'utf8')
 const categoriesJs = readFileSync(resolve(__dirname, '../src/data/categories.js'), 'utf8')
 
-// Extract slugs using regex
-const toolSlugs = [...toolsJs.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1])
-const articleSlugs = [...articlesJs.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1])
-const categorySlugs = [...categoriesJs.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1])
+// Extract slugs using flexible quote matching regex
+const toolSlugs = [...toolsJs.matchAll(/slug:\s*['"`]([^'"`]+)['"`]/g)].map((m) => m[1])
+const articleSlugs = [...articlesJs.matchAll(/slug:\s*['"`]([^'"`]+)['"`]/g)].map((m) => m[1])
+const categorySlugs = [...categoriesJs.matchAll(/slug:\s*['"`]([^'"`]+)['"`]/g)].map((m) => m[1])
 
 const staticPages = [
   '/',
