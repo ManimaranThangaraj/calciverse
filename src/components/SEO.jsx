@@ -35,8 +35,8 @@ const TOOL_SEO_MAP = {
     desc: `Project your Public Provident Fund (PPF) maturity corpus, annual compounding interest, and tax-free returns over 15 years.`
   },
   'epf-calculator': {
-    title: `EPF Calculator — Employee Provident Fund Balance & Growth | ${SITE_DOMAIN}`,
-    desc: `Calculate total Provident Fund corpus from monthly salary contributions and annual EPF interest rates.`
+    title: `EPF & EPS Pension Calculator Online — Provident Fund Balance | ${SITE_DOMAIN}`,
+    desc: `Calculate Employee Provident Fund (EPF) balance, EPS pension scheme, and employer monthly salary contributions online.`
   },
   'nps-calculator': {
     title: `NPS Calculator — National Pension System Corpus & Pension Payout | ${SITE_DOMAIN}`,
@@ -51,8 +51,8 @@ const TOOL_SEO_MAP = {
     desc: `Calculate compound annual growth rate (CAGR) between starting and ending investment values over time.`
   },
   'roi-calculator': {
-    title: `ROI Calculator — Return on Investment Percentage & Annualized Gain | ${SITE_DOMAIN}`,
-    desc: `Calculate return on investment (ROI %) and annualized profit percentage for real estate, stocks, or business.`
+    title: `ROI Calculator — Return on Investment % & Annualized Gain Formula | ${SITE_DOMAIN}`,
+    desc: `Calculate Return on Investment (ROI %) and annualized gain percentage for real estate, stocks, or business.`
   },
   'retirement-calculator': {
     title: `Retirement Corpus Calculator — Estimate Retirement Savings Needed | ${SITE_DOMAIN}`,
@@ -103,8 +103,8 @@ const TOOL_SEO_MAP = {
     desc: `Estimate state-wise stamp duty charges and property registration fees for buying real estate in India.`
   },
   'property-tax-calculator': {
-    title: `Property Tax Calculator — Calculate Municipal House Tax Bill | ${SITE_DOMAIN}`,
-    desc: `Calculate annual property tax bill based on assessed property area, location, and municipal unit rates.`
+    title: `Property Tax Calculator & Formula — Municipal House Tax Bill | ${SITE_DOMAIN}`,
+    desc: `Calculate annual property tax bill using the property tax calculation formula based on unit area, age, and location.`
   },
   'rent-vs-buy-calculator': {
     title: `Rent vs Buy Home Calculator — Financial Cost Comparison | ${SITE_DOMAIN}`,
@@ -143,8 +143,8 @@ const TOOL_SEO_MAP = {
     desc: `Find recommended daily water intake target in liters based on body weight and activity level.`
   },
   'bmr-calculator': {
-    title: `BMR Calculator — Basal Metabolic Rate Formula (Mifflin-St Jeor) | ${SITE_DOMAIN}`,
-    desc: `Calculate basal metabolic rate (BMR) — total calories burned by your body at complete rest.`
+    title: `BMR Calculator — Basal Metabolic Rate Formula (BMR vs TDEE) | ${SITE_DOMAIN}`,
+    desc: `Calculate basal metabolic rate (BMR) and understand BMR vs TDEE calories burned at complete rest.`
   },
   'ideal-weight-calculator': {
     title: `Ideal Body Weight Calculator — Healthy Weight Range by Height | ${SITE_DOMAIN}`,
@@ -167,8 +167,8 @@ const TOOL_SEO_MAP = {
     desc: `Predict upcoming menstrual cycle dates and period start days with PMS cycle tracker.`
   },
   'macro-calculator': {
-    title: `Macro Calculator — Daily Protein, Carb & Fat Targets Grams | ${SITE_DOMAIN}`,
-    desc: `Calculate daily protein, carbohydrate, and fat targets in grams based on your calorie goal.`
+    title: `Macro Calculator — Carbs, Protein & Fat Grams Breakdown | ${SITE_DOMAIN}`,
+    desc: `Calculate daily macronutrient targets (carbs, protein, fat grams) and calories for weight loss or muscle gain goals.`
   },
   'heart-rate-zone-calculator': {
     title: `Heart Rate Zone Calculator — Fat Burn & Cardio BPM Zones | ${SITE_DOMAIN}`,
@@ -467,8 +467,8 @@ const TOOL_SEO_MAP = {
     desc: `Find 16:9, 4:3, 1:1 image and display screen dimensions.`
   },
   'exponent-calculator': {
-    title: `Exponent & Power Calculator — Exponents & Powers x^y | ${SITE_DOMAIN}`,
-    desc: `Calculate base numbers raised to positive or negative exponents.`
+    title: `Exponent & Power of Calculator — Calculate Base to Power (x^y) | ${SITE_DOMAIN}`,
+    desc: `Calculate base numbers to the power of exponents (x^y), negative powers, and calculate power in normal calculator online.`
   },
   'ev-vs-petrol-calculator': {
     title: `EV vs Petrol Fuel Cost & Carbon Calculator — Compare Savings | ${SITE_DOMAIN}`,
