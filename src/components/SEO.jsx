@@ -79,16 +79,16 @@ const TOOL_SEO_MAP = {
     desc: `Calculate gratuity payout based on last drawn basic salary and completed years of continuous service.`
   },
   'tds-calculator': {
-    title: `TDS Calculator — Tax Deducted at Source on Salary & Interest | ${SITE_DOMAIN}`,
-    desc: `Calculate tax deducted at source (TDS) on salary, fixed deposit interest, or professional contractor fees.`
+    title: `Online TDS Tax Calculator India — Calculate TDS Amount & Rate | ${SITE_DOMAIN}`,
+    desc: `Calculate Tax Deducted at Source (TDS) amount online for salary, bank fixed deposit interest, or professional contractor fees.`
   },
   'capital-gains-calculator': {
-    title: `Capital Gains Tax Calculator — STCG & LTCG Tax on Stocks & Property | ${SITE_DOMAIN}`,
-    desc: `Calculate short-term (STCG) and long-term capital gains (LTCG) tax on stock equity or real estate property sales.`
+    title: `STCG & LTCG Capital Gains Tax Calculator (Short & Long Term) | ${SITE_DOMAIN}`,
+    desc: `Calculate short term capital gains tax (STCG) and long term capital gains tax (LTCG) on equity stocks, mutual funds, and real estate property sales in India.`
   },
   'credit-card-interest-calculator': {
-    title: `Credit Card Interest Calculator — Calculate Payoff Time & APR | ${SITE_DOMAIN}`,
-    desc: `Calculate monthly credit card interest charges, APR compounding, and exact payoff timeline.`
+    title: `Credit Card Interest & Repayment Calculator — CC Rate & Charges | ${SITE_DOMAIN}`,
+    desc: `Calculate credit card interest rate charges, cc interest, daily APR compounding, minimum payment traps, and credit card repayment schedule.`
   },
   'loan-eligibility-calculator': {
     title: `Home Loan Eligibility Calculator — Max Loan by Salary & FOIR | ${SITE_DOMAIN}`,
@@ -111,8 +111,8 @@ const TOOL_SEO_MAP = {
     desc: `Compare the long-term total financial cost of renting and investing vs buying a home with a mortgage.`
   },
   'home-affordability-calculator': {
-    title: `Home Affordability Calculator — How Much House Can You Afford | ${SITE_DOMAIN}`,
-    desc: `Find the maximum home purchase price you can afford based on income, monthly debts, and down payment.`
+    title: `Home & House Affordability Calculator India — Calculate Max Price | ${SITE_DOMAIN}`,
+    desc: `Calculate house affordability and maximum home price you can afford in India based on gross salary, monthly debts, and down payment.`
   },
   'break-even-calculator': {
     title: `Break-Even Point Calculator — Calculate Units & Sales Revenue | ${SITE_DOMAIN}`,
@@ -207,8 +207,8 @@ const TOOL_SEO_MAP = {
     desc: `Find what score you need on a final exam to reach your target overall course grade.`
   },
   'cgpa-to-percentage-calculator': {
-    title: `CGPA to Percentage Calculator — Convert 10 Point CGPA to % | ${SITE_DOMAIN}`,
-    desc: `Convert CGPA (out of 10) to an equivalent percentage score using official board formulas.`
+    title: `CGPA to Percentage Converter — 9.5 CGPA to % Formula & Convert | ${SITE_DOMAIN}`,
+    desc: `Convert 10-point CGPA and 9.5 CGPA to equivalent percentage score using official CBSE (multiply by 9.5), Mumbai University, and VTU board formulas.`
   },
   'age-calculator': {
     title: `Age Calculator Online — Exact Age in Years, Months, Days & Hours | ${SITE_DOMAIN}`,
@@ -275,8 +275,8 @@ const TOOL_SEO_MAP = {
     desc: `Calculate exact hours and minutes elapsed between two clock times.`
   },
   'electricity-bill-calculator': {
-    title: `Electricity Bill Calculator — Estimate Monthly Power Bill kWh | ${SITE_DOMAIN}`,
-    desc: `Estimate monthly electricity bill in kWh units from appliance wattage and usage hours.`
+    title: `Electricity Bill Calculator — How Electricity Bill is Calculated | ${SITE_DOMAIN}`,
+    desc: `Calculate monthly electric bill power consumption in kWh units from device wattage and learn how power bills are estimated.`
   },
   'rent-split-calculator': {
     title: `Rent Split Calculator — Fair Roommate Rent Splitter Tool | ${SITE_DOMAIN}`,
