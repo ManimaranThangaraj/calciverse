@@ -1,21 +1,19 @@
-import { writeFileSync, readFileSync } from 'fs'
+import { writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'path'
+import { tools } from '../src/data/tools.js'
+import { articles } from '../src/data/articles.js'
+import { categories } from '../src/data/categories.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const SITE_URL = 'https://calciverse.in'
 
-// Read categories, tools, and articles
-const toolsJs = readFileSync(resolve(__dirname, '../src/data/tools.js'), 'utf8')
-const articlesJs = readFileSync(resolve(__dirname, '../src/data/articles.js'), 'utf8')
-const categoriesJs = readFileSync(resolve(__dirname, '../src/data/categories.js'), 'utf8')
-
-// Extract slugs using flexible quote matching regex
-const toolSlugs = [...toolsJs.matchAll(/slug:\s*['"`]([^'"`]+)['"`]/g)].map((m) => m[1])
-const articleSlugs = [...articlesJs.matchAll(/slug:\s*['"`]([^'"`]+)['"`]/g)].map((m) => m[1])
-const categorySlugs = [...categoriesJs.matchAll(/slug:\s*['"`]([^'"`]+)['"`]/g)].map((m) => m[1])
+// Extract live slugs directly from data objects
+const toolSlugs = tools.filter((t) => t.status === 'live').map((t) => t.slug)
+const articleSlugs = articles.filter((a) => a.status === 'live').map((a) => a.slug)
+const categorySlugs = categories.map((c) => c.slug)
 
 const staticPages = [
   '/',

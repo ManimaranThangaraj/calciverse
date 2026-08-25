@@ -7,6 +7,7 @@ import CategoryPage from './pages/CategoryPage.jsx'
 import ToolPage from './pages/ToolPage.jsx'
 import ArticlesPage from './pages/ArticlesPage.jsx'
 import ArticlePage from './pages/ArticlePage.jsx'
+import NotFoundPage from './pages/NotFoundPage.jsx'
 import { About, Contact, Privacy, Terms, Disclaimer } from './pages/StaticPages.jsx'
 
 export default function App() {
@@ -25,7 +26,7 @@ export default function App() {
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
       <Analytics />

@@ -3,6 +3,7 @@ import SEO from '../components/SEO.jsx'
 import ToolCard from '../components/ToolCard.jsx'
 import CategoryIcon from '../components/CategoryIcon.jsx'
 import AdSlot from '../components/AdSlot.jsx'
+import NotFoundPage from './NotFoundPage.jsx'
 import { categoryBySlug } from '../data/categories.js'
 import { toolsByCategory } from '../data/tools.js'
 import { articlesByCategory } from '../data/articles.js'
@@ -13,9 +14,7 @@ export default function CategoryPage() {
   const toolList = toolsByCategory(slug)
   const articleList = articlesByCategory(slug)
 
-  if (!category) {
-    return <div className="mx-auto max-w-3xl px-5 py-20 text-center text-ink-soft">Category not found.</div>
-  }
+  if (!category) return <NotFoundPage />
 
   return (
     <>

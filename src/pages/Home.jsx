@@ -85,9 +85,12 @@ export default function Home() {
           <h2 className="font-display text-2xl font-semibold text-ink">Popular right now</h2>
         </div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {liveTools.slice(0, 6).map((t) => (
-            <ToolCard key={t.slug} tool={t} />
-          ))}
+          {['emi-calculator', 'gst-calculator', 'income-tax-calculator', 'sip-calculator', 'bmi-calculator', 'age-calculator']
+            .map((slug) => tools.find((t) => t.slug === slug && t.status === 'live'))
+            .filter(Boolean)
+            .map((t) => (
+              <ToolCard key={t.slug} tool={t} />
+            ))}
         </div>
       </section>
 

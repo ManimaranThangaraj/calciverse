@@ -7,19 +7,19 @@ const SITE_URL = 'https://calciverse.in'
 // Explicit SEO Title and Meta Description map for all tools
 const TOOL_SEO_MAP = {
   'emi-calculator': {
-    title: `Home Loan EMI Calculator — Monthly Loan Payment & Interest | ${SITE_DOMAIN}`,
+    title: `EMI Calculator – Monthly Loan Payment | ${SITE_DOMAIN}`,
     desc: `Calculate monthly EMI, interest payable, and annual repayment schedule for home, car, and personal loans with Calciverse EMI Calculator.`
   },
   'gst-calculator': {
-    title: `GST Calculator Online India — 5%, 12%, 18%, 28% Slab Rates | ${SITE_DOMAIN}`,
+    title: `GST Calculator Online – Add or Remove GST | ${SITE_DOMAIN}`,
     desc: `Calculate GST inclusive and exclusive prices instantly. Add or remove CGST, SGST, IGST for Indian business invoices on Calciverse.in.`
   },
   'income-tax-calculator': {
-    title: `Income Tax Calculator FY 2024-25 & FY 2025-26 — New vs Old Regime | ${SITE_DOMAIN}`,
-    desc: `Calculate income tax payable under New & Old Tax Regimes for FY 2024-25 and FY 2025-26 (AY 2025-26 & AY 2026-27) with Section 87A rebate and slab breakdowns.`
+    title: `Income Tax Calculator FY 2026-27 – Old vs New Regime | ${SITE_DOMAIN}`,
+    desc: `Calculate income tax payable under New & Old Tax Regimes for FY 2025-26 and FY 2026-27 (AY 2026-27 & AY 2027-28) with Section 87A rebate and slab breakdowns.`
   },
   'sip-calculator': {
-    title: `Mutual Fund SIP Return Calculator — Monthly Wealth Growth | ${SITE_DOMAIN}`,
+    title: `SIP Calculator – Mutual Fund Wealth Growth | ${SITE_DOMAIN}`,
     desc: `Calculate expected maturity value, wealth gained, and total returns on monthly mutual fund SIP investments.`
   },
   'fd-calculator': {
@@ -79,15 +79,15 @@ const TOOL_SEO_MAP = {
     desc: `Calculate gratuity payout based on last drawn basic salary and completed years of continuous service.`
   },
   'tds-calculator': {
-    title: `Online TDS Tax Calculator India — Calculate TDS Amount & Rate | ${SITE_DOMAIN}`,
+    title: `TDS Calculator Online – Tax Deducted at Source | ${SITE_DOMAIN}`,
     desc: `Calculate Tax Deducted at Source (TDS) amount online for salary, bank fixed deposit interest, or professional contractor fees.`
   },
   'capital-gains-calculator': {
-    title: `STCG & LTCG Capital Gains Tax Calculator (Short & Long Term) | ${SITE_DOMAIN}`,
+    title: `Capital Gains Tax Calculator – STCG & LTCG | ${SITE_DOMAIN}`,
     desc: `Calculate short term capital gains tax (STCG) and long term capital gains tax (LTCG) on equity stocks, mutual funds, and real estate property sales in India.`
   },
   'credit-card-interest-calculator': {
-    title: `Credit Card Interest & Repayment Calculator — CC Rate & Charges | ${SITE_DOMAIN}`,
+    title: `Credit Card Interest Calculator – Finance Charges | ${SITE_DOMAIN}`,
     desc: `Calculate credit card interest rate charges, cc interest, daily APR compounding, minimum payment traps, and credit card repayment schedule.`
   },
   'loan-eligibility-calculator': {
@@ -327,7 +327,7 @@ const TOOL_SEO_MAP = {
     desc: `Convert between percentages, fractions, and decimal numbers.`
   },
   'prime-number-checker': {
-    title: `Prime Number Checker — Test If a Number Is Prime & Factors | ${SITE_DOMAIN}`,
+    title: `Prime Number Checker & Factor Calculator | ${SITE_DOMAIN}`,
     desc: `Test if a number is prime and list all factors if composite.`
   },
   'factorial-calculator': {
@@ -343,7 +343,7 @@ const TOOL_SEO_MAP = {
     desc: `Find roots of ax² + bx + c = 0 quadratic equations with discriminant steps.`
   },
   'number-to-words-converter': {
-    title: `Number to Words Converter — Spell Out Numbers in Indian & Words | ${SITE_DOMAIN}`,
+    title: `Number to Words Converter – Indian & International | ${SITE_DOMAIN}`,
     desc: `Convert numbers into written words in Indian (Lakhs) and International numbering scales.`
   },
   'json-formatter': {
@@ -773,7 +773,7 @@ const ARTICLE_SEO_MAP = {
   }
 }
 
-export default function SEO({ title, description, path = '', kind = '', type = 'website', keywords = '' }) {
+export default function SEO({ title, description, path = '', kind = '', type = 'website', keywords = '', noindex = false, publishedAt = '', updatedAt = '' }) {
   let pageTitle = ''
   let pageDesc = description || 'Free online calculators, converters and generators for GST, EMI, SIP, Income Tax, Health, Education, and Everyday Utilities.'
   let pageKeywords = keywords
@@ -871,11 +871,6 @@ export default function SEO({ title, description, path = '', kind = '', type = '
         price: '0',
         priceCurrency: 'INR'
       },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        ratingCount: '1280'
-      }
     })
 
     schemas.push({
@@ -932,8 +927,7 @@ export default function SEO({ title, description, path = '', kind = '', type = '
       ]
     })
   } else if (cleanPath.startsWith('/articles/')) {
-    const articleTitle = title || 'Article'
-    schemas.push({
+    const articleSchema = {
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: articleTitle,
@@ -957,7 +951,12 @@ export default function SEO({ title, description, path = '', kind = '', type = '
           url: `${SITE_URL}/logo.png`
         }
       }
-    })
+    }
+
+    if (publishedAt) articleSchema.datePublished = publishedAt
+    if (updatedAt || publishedAt) articleSchema.dateModified = updatedAt || publishedAt
+
+    schemas.push(articleSchema)
 
     schemas.push({
       '@context': 'https://schema.org',
@@ -990,12 +989,7 @@ export default function SEO({ title, description, path = '', kind = '', type = '
       '@id': `${SITE_URL}/#website`,
       name: SITE_NAME,
       url: SITE_URL,
-      description: pageDesc,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${SITE_URL}/?s={search_term_string}`,
-        'query-input': 'required name=search_term_string'
-      }
+      description: pageDesc
     })
   }
 
@@ -1004,7 +998,7 @@ export default function SEO({ title, description, path = '', kind = '', type = '
       <title>{pageTitle}</title>
       <meta name="description" content={pageDesc} />
       <meta name="keywords" content={pageKeywords} />
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph / Facebook */}

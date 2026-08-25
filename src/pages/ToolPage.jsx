@@ -1,9 +1,10 @@
 import { Suspense } from 'react'
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
 import AdSlot from '../components/AdSlot.jsx'
 import ToolCard from '../components/ToolCard.jsx'
 import ToolGuide from '../components/ToolGuide.jsx'
+import NotFoundPage from './NotFoundPage.jsx'
 import { toolBySlug, toolsByCategory } from '../data/tools.js'
 import { categoryBySlug } from '../data/categories.js'
 
@@ -11,7 +12,7 @@ export default function ToolPage() {
   const { slug } = useParams()
   const tool = toolBySlug(slug)
 
-  if (!tool || tool.status !== 'live') return <Navigate to="/" replace />
+  if (!tool || tool.status !== 'live') return <NotFoundPage />
 
   const category = categoryBySlug(tool.category)
   const related = toolsByCategory(tool.category).filter((t) => t.slug !== tool.slug && t.status === 'live').slice(0, 3)

@@ -1,20 +1,28 @@
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
 import AdSlot from '../components/AdSlot.jsx'
+import NotFoundPage from './NotFoundPage.jsx'
 import { articleBySlug } from '../data/articles.js'
 import { toolBySlug } from '../data/tools.js'
 
 export default function ArticlePage() {
   const { slug } = useParams()
   const article = articleBySlug(slug)
-  if (!article || article.status !== 'live') return <Navigate to="/articles" replace />
+  if (!article || article.status !== 'live') return <NotFoundPage />
 
   const relatedTool = article.relatedTool ? toolBySlug(article.relatedTool) : null
   const mid = Math.ceil(article.content.length / 2)
 
   return (
     <>
-      <SEO title={article.title} description={article.excerpt} path={`/articles/${article.slug}`} type="article" />
+      <SEO
+        title={article.title}
+        description={article.excerpt}
+        path={`/articles/${article.slug}`}
+        type="article"
+        publishedAt={article.publishedAt || '2026-08-10'}
+        updatedAt={article.updatedAt || '2026-08-25'}
+      />
       <article className="mx-auto max-w-2xl px-5 py-10">
         <nav className="text-xs text-ink-soft/60"><Link to="/articles" className="hover:text-saffron">Articles</Link> / {article.title}</nav>
         <h1 className="mt-2 font-display text-3xl font-bold leading-tight text-ink">{article.title}</h1>

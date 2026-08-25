@@ -21,7 +21,7 @@ const TOOL_GUIDE_DATABASE = {
       { question: 'What is a reducing-balance loan EMI?', answer: 'In a reducing balance EMI, interest is charged only on the remaining outstanding principal balance each month rather than the original loan principal amount.' },
       { question: 'How can I lower my monthly EMI payment?', answer: 'You can lower your monthly EMI by opting for a longer loan tenure, making a larger initial down payment, or negotiating a lower interest rate with your lender.' },
       { question: 'Does prepaying a loan reduce EMI or tenure?', answer: 'Lenders usually default to keeping your EMI fixed and shortening your total loan tenure, saving you substantial total interest. You can also request a lower EMI.' },
-      { question: 'Is the Calciverse EMI Calculator accurate for all Indian banks?', answer: 'Yes, our formula uses the standard mathematical reducing-balance model mandated by RBI and utilized by HDFC, SBI, ICICI, Axis Bank, and leading NBFCs.' }
+      { question: 'Is the Calciverse EMI Calculator accurate for all Indian banks?', answer: 'Yes, our formula uses the standard mathematical reducing-balance model utilized by HDFC, SBI, ICICI, Axis Bank, and leading lenders.' }
     ]
   },
   'sip-calculator': {
@@ -39,7 +39,7 @@ const TOOL_GUIDE_DATABASE = {
     },
     metricsText: 'Compound growth accelerates exponentially in later years. Doubling your tenure from 10 to 20 years can increase your final wealth by over 300%.',
     faqs: [
-      { question: 'What is a Systematic Investment Plan (SIP)?', answer: 'A SIP allows you to invest a fixed dollar or rupee amount regularly into mutual funds, dollar-cost averaging market volatility over time.' },
+      { question: 'What is a Systematic Investment Plan (SIP)?', answer: 'A SIP allows you to invest a fixed dollar or rupee amount regularly into mutual funds, rupee-cost averaging market volatility over time.' },
       { question: 'What rate of return should I assume for equity SIPs in India?', answer: 'Historically, broad Indian equity indices (Nifty 50, BSE Sensex) have delivered 12% to 14% CAGR over long 10+ year horizons.' },
       { question: 'Are mutual fund SIP returns guaranteed?', answer: 'No, mutual fund investments are subject to market risks. SIP projections are mathematical estimates based on your chosen expected annual return.' },
       { question: 'Can I step up my SIP amount every year?', answer: 'Yes, stepping up your SIP by 10% annually can boost your final retirement corpus by over 50% compared to a fixed SIP.' }
@@ -47,22 +47,87 @@ const TOOL_GUIDE_DATABASE = {
   },
   'gst-calculator': {
     formula: 'GST Amount = (Base Price × Rate) / 100 | Inclusive Base = Total Price / (1 + Rate / 100)',
-    explanation: 'Calculates both tax addition (exclusive price) and tax extraction (inclusive price) at standard slab rates (5%, 12%, 18%, 28%).',
+    explanation: 'Calculates both tax addition (exclusive price) and tax extraction (inclusive price) across standard statutory slab rates (5%, 12%, 18%, 28%).',
     example: {
-      title: 'Worked Example: Extracting GST from Inclusive Price',
-      inputs: 'Total Invoice Price = ₹5,900 | Applicable GST Slab Rate = 18%',
+      title: 'Worked Example: Extracting 18% GST from Inclusive Invoice',
+      inputs: 'Total Invoice Price = ₹5,900 | GST Slab Rate = 18%',
       steps: [
-        'Base Price before GST = 5,900 / (1 + 0.18) = 5,900 / 1.18 = ₹5,000',
-        'GST Amount = 5,900 - 5,000 = ₹900',
-        'Intrastate Split: CGST (9%) = ₹450 | SGST (9%) = ₹450'
+        'Base Price before tax = ₹5,900 / (1 + 0.18) = ₹5,900 / 1.18 = ₹5,000',
+        'Total GST Charged = ₹5,900 - ₹5,000 = ₹900',
+        'Intrastate Billing Split: CGST (9%) = ₹450 | SGST (9%) = ₹450 (or IGST 18% = ₹900 for interstate)'
       ],
-      summary: 'Pre-tax Base Price = ₹5,000 | CGST = ₹450 | SGST = ₹450 | Invoice Total = ₹5,900'
+      summary: 'Pre-tax Base Price = ₹5,000 | CGST (9%) = ₹450 | SGST (9%) = ₹450 | Invoice Total = ₹5,900'
     },
-    metricsText: 'Always check whether a quoted price is GST-inclusive or GST-exclusive to avoid miscalculating base product margins.',
+    metricsText: 'Adding 18% to a base price multiplies by 1.18. But extracting 18% GST requires dividing by 1.18 — subtracting 18% of the inclusive bill directly undercounts the base price every single time.',
     faqs: [
-      { question: 'What is the difference between CGST, SGST, and IGST?', answer: 'CGST and SGST split tax equally for transactions within the same state. IGST applies fully to interstate transactions.' },
-      { question: 'How do I extract GST from a bill total?', answer: 'To extract GST from an inclusive price, divide the total price by (1 + GST rate / 100). For 18% GST, divide the total by 1.18.' },
-      { question: 'What are the current GST tax slabs in India?', answer: 'Goods and services in India are taxed under four primary slabs: 5% (essential goods), 12% (processed items), 18% (standard services), and 28% (luxury items).' }
+      { question: 'What is the difference between CGST, SGST, and IGST?', answer: 'CGST (Central) and SGST (State) split the tax rate equally (e.g. 9% + 9% for 18% GST) on intrastate sales. IGST (Integrated) applies full rate (18%) on interstate sales.' },
+      { question: 'How do I extract GST from a bill total?', answer: 'Divide the inclusive bill total by (1 + GST Rate / 100). For an 18% bill of ₹1,180: Base = 1180 / 1.18 = ₹1,000. GST = ₹180.' },
+      { question: 'What are the official GST slab rates in India?', answer: 'India has 4 primary GST slab rates: 5% (household essentials & food), 12% (processed food & electronics), 18% (standard services & IT), and 28% (luxury items & automobiles).' },
+      { question: 'How does Input Tax Credit (ITC) work under GST?', answer: 'Registered businesses can deduct GST paid on business inputs from the GST collected on sales, ensuring tax is charged only on value added at each supply stage.' }
+    ]
+  },
+  'number-to-words-converter': {
+    formula: 'Words = GroupDigitsByScale(Number, Scale: "Indian" | "International")',
+    explanation: 'Converts numeric values into written word notation using the Indian numbering system (Lakhs, Crores) or International system (Millions, Billions), with optional currency formatting for cheques and invoices.',
+    example: {
+      title: 'Worked Example: ₹12,34,567.50 in Indian Words',
+      inputs: 'Number = 1234567.50 | Scale = Indian Lakhs | Currency = INR (Rupees)',
+      steps: [
+        'Integer Part Grouping: 12,34,567 → 12 Lakhs + 34 Thousands + 5 Hundreds + 67',
+        'Words conversion: Twelve Lakh Thirty Four Thousand Five Hundred Sixty Seven',
+        'Decimal Part: 0.50 → Fifty Paise',
+        'Cheque Format Output: Rupees Twelve Lakh Thirty Four Thousand Five Hundred Sixty Seven and Fifty Paise Only'
+      ],
+      summary: 'Number = ₹12,34,567.50 | Indian Words = Twelve Lakh Thirty Four Thousand Five Hundred Sixty Seven Rupees and Fifty Paise Only'
+    },
+    metricsText: 'In the Indian scale, commas separate the first thousand (3 digits) and then every 2 digits (Lakhs, Crores). In the International scale, numbers are grouped in sets of 3 digits (Thousands, Millions, Billions).',
+    faqs: [
+      { question: 'What is the difference between Lakhs/Crores and Millions/Billions?', answer: '1 Lakh = 100,000 (100 Thousand). 10 Lakhs = 1 Million (1,000,000). 1 Crore = 10 Million (10,000,000). 100 Crores = 1 Billion (1,000,000,000).' },
+      { question: 'How should bank cheque amounts be written in words?', answer: 'Bank cheques require the prefix "Rupees" (or currency name), exact words for amounts, decimal paise, and the word "Only" at the end to prevent unauthorized text additions.' },
+      { question: 'How are decimal paise formatted in written words?', answer: 'Decimals are converted into fractional sub-units (e.g. 50 paise for 0.50 INR or 50 Cents for 0.50 USD), connected using "and".' }
+    ]
+  },
+  'prime-number-checker': {
+    formula: 'IsPrime(n) = true if n > 1 and n mod d ≠ 0 for all integers 2 ≤ d ≤ ⌊√n⌋',
+    explanation: 'Tests whether a positive integer is prime (divisible only by 1 and itself) using optimized trial division up to √n, displaying prime status, factor trees, and prime factorization.',
+    example: {
+      title: 'Worked Example: Testing if 143 is Prime',
+      inputs: 'Number (n) = 143',
+      steps: [
+        'Calculate upper limit: √143 ≈ 11.95 → Test prime divisors up to 11 (2, 3, 5, 7, 11)',
+        '143 / 2 = 71.5 (No)',
+        '143 / 3 = 47.66 (No)',
+        '143 / 7 = 20.42 (No)',
+        '143 / 11 = 13 (Exact division! Factors are 11 and 13)'
+      ],
+      summary: 'Result: 143 is COMPOSITE | Prime Factors = 11 × 13 | All Factors = 1, 11, 13, 143'
+    },
+    metricsText: 'Trial division only needs to check divisors up to √n. If a composite number had no prime divisor ≤ √n, the product of its factors would exceed n.',
+    faqs: [
+      { question: 'Why is 1 not considered a prime number?', answer: 'By mathematical definition, prime numbers must have exactly two distinct positive divisors: 1 and the number itself. 1 has only one divisor, so it is neither prime nor composite.' },
+      { question: 'What is the fastest way to check if a large number is prime?', answer: 'For small to medium numbers, trial division up to √n is instant. For large numbers in cryptography, algorithms like Miller-Rabin or Baillie-PSW primality tests are used.' },
+      { question: 'What are twin primes?', answer: 'Twin primes are pairs of prime numbers that differ by exactly 2, such as (3, 5), (11, 13), (17, 19), and (41, 43).' }
+    ]
+  },
+  'credit-card-interest-calculator': {
+    formula: 'Daily Interest = (Outstanding Balance × APR / 365) × Days | APR = Monthly Rate × 12',
+    explanation: 'Calculates credit card finance charges, daily compounding APR, minimum payment traps, and total payoff schedules.',
+    example: {
+      title: 'Worked Example: Credit Card Balance Paid via Minimum Payments',
+      inputs: 'Balance = ₹1,00,000 | Monthly Interest = 3.5% (42% p.a. APR) | Min Payment = 5% of balance',
+      steps: [
+        'Daily Interest Rate = 42% / 365 = 0.115% per day',
+        'First Month Interest = ₹1,00,000 × (3.5% / 100) = ₹3,500',
+        'First Minimum Payment (5%) = ₹5,000 (only ₹1,500 reduces principal!)',
+        'New Balance for Month 2 = ₹98,500'
+      ],
+      summary: 'Payoff Time on Min Payments = 14+ Years | Total Finance Charges Paid = ₹1,35,000+ (More than initial balance!)'
+    },
+    metricsText: 'Carrying forward even ₹1 of unpaid credit card balance forfeits the 45-day interest-free grace period on ALL new purchases immediately.',
+    faqs: [
+      { question: 'Why is credit card interest so high?', answer: 'Credit card debt is unsecured (no collateral). Banks charge high APRs (typically 36% to 45% annually in India) to offset default risk.' },
+      { question: 'What happens if I only pay the Minimum Amount Due?', answer: 'Paying only minimum due (usually 5%) prevents late fees and credit score damage, but most of the payment goes toward interest, locking you in debt for years.' },
+      { question: 'Does paying off credit card balance early save interest?', answer: 'Yes! Credit card finance charges accrue daily. Clearing your balance early eliminates daily APR interest immediately.' }
     ]
   },
   'income-tax-calculator': {
@@ -74,7 +139,7 @@ const TOOL_GUIDE_DATABASE = {
       steps: [
         'Net Taxable Income = 10,00,000 - 75,000 = ₹9,25,000',
         'Slab ₹0 - ₹3L: 0% = ₹0',
-        'Slab ₹3L - ₹7L: 5% of ₹4,00,000 = ₹20,00,000',
+        'Slab ₹3L - ₹7L: 5% of ₹4,00,000 = ₹20,000',
         'Slab ₹7L - ₹9.25L: 10% of ₹2,25,000 = ₹22,500',
         'Basic Tax = ₹42,500 + 4% Cess (₹1,700) = ₹44,200 Total Tax'
       ],
@@ -85,6 +150,49 @@ const TOOL_GUIDE_DATABASE = {
       { question: 'Which tax regime is better for salaried individuals?', answer: 'If your total eligible deductions under Old Regime (80C, HRA, Home Loan Interest) cross ₹4 Lakhs, Old Regime may save more tax; otherwise New Regime is simpler and cheaper.' },
       { question: 'What is the Standard Deduction for FY 2026-27?', answer: 'The standard deduction for salaried employees and pensioners under the New Tax Regime is ₹75,000.' },
       { question: 'How is Section 87A tax rebate calculated?', answer: 'Under the New Regime, if taxable income does not exceed ₹7,00,000, you receive a full tax rebate of up to ₹25,000, reducing tax payable to zero.' }
+    ]
+  },
+  'tds-calculator': {
+    formula: 'TDS Amount = Payment Amount × (TDS Section Rate / 100) | Higher 20% rate applies without PAN',
+    explanation: 'Calculates Tax Deducted at Source (TDS) under Indian Income Tax Act Sections 194A (FD Interest), 194J (Professional fees), 194C (Contracts), and 192 (Salary).',
+    example: {
+      title: 'Worked Example: Section 194J Professional Services TDS',
+      inputs: 'Invoice Value = ₹1,00,000 | Section 194J (Professional Fees) Rate = 10% | Valid PAN Provided',
+      steps: [
+        'Applicable TDS Rate under Sec 194J = 10%',
+        'TDS Deduction = ₹1,00,000 × (10 / 100) = ₹10,000',
+        'Net Payment to Professional = ₹1,00,000 - ₹10,000 = ₹90,000',
+        'Deductor deposits ₹10,000 explicitly into Tax Department mapped to payee PAN.'
+      ],
+      summary: 'Gross Payment = ₹1,00,000 | TDS Deducted (10%) = ₹10,000 | Net Payee Receipt = ₹90,000'
+    },
+    metricsText: 'Under Section 206AA, if the deductee fails to furnish a valid Permanent Account Number (PAN), TDS must be deducted at a flat penal rate of 20%.',
+    faqs: [
+      { question: 'What is Tax Deducted at Source (TDS)?', answer: 'TDS is a spot-tax mechanism where the payer deducts tax at statutory rates before releasing payment to the payee and deposits it directly with the Tax Department.' },
+      { question: 'What is the TDS limit on Fixed Deposit (FD) interest under Section 194A?', answer: 'Banks deduct 10% TDS on FD interest exceeding ₹40,000 per financial year for individuals (₹50,000 threshold for senior citizens).' },
+      { question: 'How do I claim a refund for TDS deducted?', answer: 'If your total annual income is below the taxable slab or your tax liability is lower than TDS deducted, file your Income Tax Return (ITR) to claim a full refund.' },
+      { question: 'What are Form 15G and Form 15H?', answer: 'Form 15G (for individuals <60 years) and Form 15H (for senior citizens) are self-declaration forms submitted to banks to prevent TDS deduction when annual income is below taxable limits.' }
+    ]
+  },
+  'capital-gains-calculator': {
+    formula: 'Capital Gain = Sale Consideration - Transfer Expenses - Cost of Acquisition',
+    explanation: 'Calculates Short-Term (STCG) and Long-Term (LTCG) Capital Gains tax on Equity Stocks, Mutual Funds, and Real Estate property under Union Budget 2024 revisions.',
+    example: {
+      title: 'Worked Example: LTCG on Equity Mutual Fund Sale (Budget 2024 Rules)',
+      inputs: 'Purchase Price = ₹5,00,000 | Sale Price = ₹8,00,000 | Holding Period = 2 Years (Long Term)',
+      steps: [
+        'Total Capital Gain = ₹8,00,000 - ₹5,00,000 = ₹3,00,000',
+        'Statutory LTCG Exemption under Section 112A = ₹1,25,000',
+        'Taxable LTCG = ₹3,00,000 - ₹1,25,000 = ₹1,75,000',
+        'LTCG Tax at revised 12.5% = ₹1,75,000 × 12.5% = ₹21,875 (+ 4% Cess = ₹22,750)'
+      ],
+      summary: 'Total Capital Gain = ₹3,00,000 | Tax-Free Exemption = ₹1,25,000 | Net LTCG Tax = ₹22,750'
+    },
+    metricsText: 'Under Union Budget 2024 rules: Equity LTCG tax rate is 12.5% (with ₹1.25L annual exemption), STCG equity tax rate is 20%. Real estate property LTCG is taxed at 12.5% without indexation or 20% with indexation for pre-2024 purchases.',
+    faqs: [
+      { question: 'What is the difference between STCG and LTCG?', answer: 'Short-Term Capital Gains (STCG) apply when assets are sold within a short holding period (12 months for equity, 24 months for real estate). Long-Term Capital Gains (LTCG) apply for longer holding periods.' },
+      { question: 'What are the equity capital gains tax rates after Budget 2024?', answer: 'Equity STCG (held <12 months) is taxed at 20%. Equity LTCG (held >12 months) is taxed at 12.5% on gains exceeding ₹1.25 Lakh per financial year.' },
+      { question: 'How can I save tax on real estate capital gains under Section 54?', answer: 'You can save LTCG tax on house property by reinvesting net gains in purchasing or constructing another residential house property within statutory time limits.' }
     ]
   },
   'bmi-calculator': {
@@ -155,24 +263,8 @@ export default function ToolGuide({ tool, category }) {
     }
   ]
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer
-      }
-    }))
-  }
-
   return (
     <div className="mt-12 space-y-10 print:hidden no-print text-ink border-t border-line pt-10">
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
 
       {/* Guide Section 1: Overview & Usage Instructions */}
       <section className="space-y-4">
