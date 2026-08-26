@@ -27,7 +27,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 pt-12 pb-10 grid gap-10 md:grid-cols-2 md:items-center md:pt-16">
         <div>
           <div className="inline-flex items-center gap-1.5 rounded-full bg-saffron-soft px-3 py-1 text-xs font-semibold text-saffron">
-            Made in India
+            Calciverse
           </div>
           <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] text-ink sm:text-5xl">
             One tool for the number you need <span className="text-saffron">right now.</span>
