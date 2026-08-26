@@ -34,9 +34,9 @@ export function About() {
       <div className="grid gap-6 sm:grid-cols-2 mt-6">
         <div className="rounded-xl border border-line bg-paper-raised p-5 space-y-2">
           <ShieldCheck className="text-signal" size={24} />
-          <h3 className="font-display text-base font-bold text-ink">100% Client-Side Privacy</h3>
+          <h3 className="font-display text-base font-bold text-ink">Client-Side Calculator Processing</h3>
           <p className="text-sm text-ink-soft">
-            Every calculation executed on Calciverse runs entirely in your local browser memory using modern JavaScript. Your financial inputs, income figures, personal metrics, and health data are <strong>never stored, saved, or transmitted to any external server</strong>.
+            Every calculator tool executed on Calciverse runs locally within your browser memory using modern JavaScript. Calculator inputs are processed locally in your browser and are <strong>not sent to Calciverse's own application server for calculation</strong>.
           </p>
         </div>
 
@@ -56,10 +56,10 @@ export function About() {
         </p>
 
         <div className="rounded-xl border border-line bg-paper p-6 space-y-3">
-          <h3 className="font-display text-lg font-semibold text-ink">Why Millions Choose Calciverse</h3>
+          <h3 className="font-display text-lg font-semibold text-ink">Why Choose Calciverse?</h3>
           <ul className="space-y-2 text-sm text-ink-soft list-disc list-inside">
             <li><strong>Zero Mandatory Registration:</strong> Instant access to all calculators without creating an account or logging in.</li>
-            <li><strong>No Backend Data Storage:</strong> Pure client-side calculations guarantee maximum data privacy.</li>
+            <li><strong>Local Calculator Processing:</strong> Pure client-side calculations guarantee maximum data privacy for your parameters.</li>
             <li><strong>Cross-Platform Responsiveness:</strong> Fully optimized for desktop, tablet, and mobile browsers.</li>
             <li><strong>Educational Context:</strong> Each calculator includes explicit mathematical formulas, step-by-step guides, worked real-world examples, and FAQs.</li>
           </ul>
@@ -272,12 +272,12 @@ export function Privacy() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-display text-xl font-bold text-ink">2. Zero Client-Side Data Collection</h2>
+          <h2 className="font-display text-xl font-bold text-ink">2. Client-Side Calculator Processing</h2>
           <p>
-            The fundamental design principle of Calciverse.in is privacy by design. All calculator tools—including financial EMI, SIP, Income Tax, GST, health BMI, BMR, and developer generators—execute <strong>100% locally within your browser client memory</strong>.
+            The fundamental design principle of Calciverse.in is privacy by design. All calculator tools—including financial EMI, SIP, Income Tax, GST, health BMI, BMR, and developer generators—execute <strong>locally within your browser client memory</strong>.
           </p>
           <ul className="list-disc list-inside space-y-1 text-sm text-ink-soft">
-            <li>We do NOT transmit your input numerical values to any server.</li>
+            <li>Calculator inputs are processed locally in your browser and are not sent to Calciverse's application server for calculation.</li>
             <li>We do NOT store financial numbers, salary data, loan details, or personal metrics in database storage.</li>
             <li>No user accounts, password credentials, or sensitive identification data are required to use Calciverse.in.</li>
           </ul>
@@ -299,7 +299,14 @@ export function Privacy() {
         <section className="space-y-2">
           <h2 className="font-display text-xl font-bold text-ink">4. Log Files and Web Analytics</h2>
           <p>
-            Like almost all standard web server hosting environments, Calciverse.in utilizes standard log files and anonymized web analytics (such as Google Analytics). The information inside the log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and number of clicks. This information is used strictly to analyze trends, administer the site, track user movement on the website in aggregate, and gather broad demographic information. IP addresses and log data are not linked to any personally identifiable information.
+            Calciverse.in utilizes <strong>Vercel Analytics</strong> to gather aggregate, non-personally identifiable website performance telemetry (such as page view counts, geographical region, and device viewport dimensions). We do NOT use Google Analytics. No user numerical inputs or calculator data are ever captured by analytics services. Standard web server log files may record IP addresses, browser types, and timestamp data for security and server health maintenance.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="font-display text-xl font-bold text-ink">5. Contact Form Data Processing</h2>
+          <p>
+            When you voluntarily submit inquiries via our Contact Us form, your provided name, email address, message subject, and text content are processed securely through <strong>FormSubmit.co</strong> to deliver your message to `calciverse.in@gmail.com`. This information is used strictly to reply to your inquiry and is never sold or used for marketing.
           </p>
         </section>
 
