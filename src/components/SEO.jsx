@@ -927,6 +927,7 @@ export default function SEO({ title, description, path = '', kind = '', type = '
       ]
     })
   } else if (cleanPath.startsWith('/articles/')) {
+    const articleTitle = title || 'Article'
     const articleSchema = {
       '@context': 'https://schema.org',
       '@type': 'Article',
