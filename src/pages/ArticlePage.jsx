@@ -20,8 +20,8 @@ export default function ArticlePage() {
         description={article.excerpt}
         path={`/articles/${article.slug}`}
         type="article"
-        publishedAt={article.publishedAt || '2026-08-10'}
-        updatedAt={article.updatedAt || '2026-08-25'}
+        publishedAt={article.publishedAt}
+        updatedAt={article.updatedAt}
       />
       <article className="mx-auto max-w-2xl px-5 py-10">
         <nav className="text-xs text-ink-soft/60"><Link to="/articles" className="hover:text-saffron">Articles</Link> / {article.title}</nav>

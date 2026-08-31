@@ -1,108 +1,14 @@
 import { Helmet } from 'react-helmet-async'
 import { getGuideBySlug } from '../data/toolGuides.js'
+import { TOOL_SEO } from '../data/seo.js'
+import { toolBySlug } from '../data/tools.js'
+import { categoryBySlug } from '../data/categories.js'
 
 const SITE_NAME = 'Calciverse'
 const SITE_DOMAIN = 'Calciverse.in'
 const SITE_URL = 'https://calciverse.in'
 
-// Explicit SEO Title and Meta Description map for all tools
 const TOOL_SEO_MAP = {
-  'emi-calculator': {
-    title: `EMI Calculator – Monthly Loan Payment | ${SITE_DOMAIN}`,
-    desc: `Calculate monthly EMI, interest payable, and annual repayment schedule for home, car, and personal loans with Calciverse EMI Calculator.`
-  },
-  'gst-calculator': {
-    title: `GST Calculator India – Add, Remove GST, CGST & SGST | Calciverse`,
-    desc: `Calculate GST online in India. Add or remove 5%, 12%, 18% or 28% GST and calculate CGST, SGST and IGST instantly with our free GST calculator.`
-  },
-  'income-tax-calculator': {
-    title: `Income Tax Calculator FY 2026-27 – Old vs New Regime | ${SITE_DOMAIN}`,
-    desc: `Calculate your income tax for FY 2026-27 under the New and Old Tax Regimes. Compare tax liability, deductions, rebates, and applicable tax slabs.`
-  },
-  'sip-calculator': {
-    title: `SIP Calculator – Mutual Fund Wealth Growth | ${SITE_DOMAIN}`,
-    desc: `Calculate expected maturity value, wealth gained, and total returns on monthly mutual fund SIP investments.`
-  },
-  'fd-calculator': {
-    title: `Fixed Deposit (FD) Calculator — Maturity Value & Interest Rate | ${SITE_DOMAIN}`,
-    desc: `Estimate fixed deposit (FD) maturity value and total interest earned with quarterly, monthly, or annual compounding.`
-  },
-  'rd-calculator': {
-    title: `Recurring Deposit (RD) Calculator — Monthly RD Maturity Amount | ${SITE_DOMAIN}`,
-    desc: `Calculate recurring deposit (RD) maturity value and total interest earned with quarterly compounding.`
-  },
-  'ppf-calculator': {
-    title: `PPF Calculator — Public Provident Fund 15-Year Maturity Corpus | ${SITE_DOMAIN}`,
-    desc: `Project your Public Provident Fund (PPF) maturity corpus, annual compounding interest, and tax-free returns over 15 years.`
-  },
-  'epf-calculator': {
-    title: `EPF & EPS Pension Calculator Online — Provident Fund Balance | ${SITE_DOMAIN}`,
-    desc: `Calculate Employee Provident Fund (EPF) balance, EPS pension scheme, and employer monthly salary contributions online.`
-  },
-  'nps-calculator': {
-    title: `NPS Calculator — National Pension System Corpus & Pension Payout | ${SITE_DOMAIN}`,
-    desc: `Estimate National Pension System (NPS) retirement corpus, lump-sum withdrawal, and monthly annuity pension.`
-  },
-  'lumpsum-calculator': {
-    title: `Lumpsum Mutual Fund Investment Calculator — Future Wealth Value | ${SITE_DOMAIN}`,
-    desc: `Calculate future value of a one-time lumpsum mutual fund investment based on expected annual compound growth rate.`
-  },
-  'cagr-calculator': {
-    title: `CAGR Calculator — Compound Annual Growth Rate Formula & Return | ${SITE_DOMAIN}`,
-    desc: `Calculate compound annual growth rate (CAGR) between starting and ending investment values over time.`
-  },
-  'roi-calculator': {
-    title: `ROI Calculator — Return on Investment % & Annualized Gain Formula | ${SITE_DOMAIN}`,
-    desc: `Calculate Return on Investment (ROI %) and annualized gain percentage for real estate, stocks, or business.`
-  },
-  'retirement-calculator': {
-    title: `Retirement Corpus Calculator — Estimate Retirement Savings Needed | ${SITE_DOMAIN}`,
-    desc: `Calculate exact retirement corpus needed to maintain target monthly living style after inflation.`
-  },
-  'inflation-calculator': {
-    title: `Inflation Calculator India — Calculate Future Purchasing Power | ${SITE_DOMAIN}`,
-    desc: `Find what today's money will be worth after years of inflation and estimate future purchasing power.`
-  },
-  'salary-calculator': {
-    title: `Salary CTC to In-Hand Calculator — Monthly Take-Home Pay Breakdown | ${SITE_DOMAIN}`,
-    desc: `Convert Annual CTC to monthly in-hand take-home salary after EPF, Professional Tax, TDS, and deductions in India.`
-  },
-  'salary-hike-calculator': {
-    title: `Salary Hike Calculator — Calculate Increment % & Revised Salary | ${SITE_DOMAIN}`,
-    desc: `Calculate salary increment percentage, appraisal hike amount, and new monthly take-home pay.`
-  },
-  'hra-calculator': {
-    title: `HRA Exemption Calculator — Tax-Free Rent Allowance Sec 10(13A) | ${SITE_DOMAIN}`,
-    desc: `Calculate how much of your House Rent Allowance (HRA) is tax-exempt under Section 10(13A) of Income Tax Act.`
-  },
-  'gratuity-calculator': {
-    title: `Gratuity Calculator — Calculate Gratuity Payout on Resignation | ${SITE_DOMAIN}`,
-    desc: `Calculate gratuity payout based on last drawn basic salary and completed years of continuous service.`
-  },
-  'tds-calculator': {
-    title: `TDS Calculator Online – Tax Deducted at Source | ${SITE_DOMAIN}`,
-    desc: `Calculate Tax Deducted at Source (TDS) amount online for salary, bank fixed deposit interest, or professional contractor fees.`
-  },
-  'capital-gains-calculator': {
-    title: `Capital Gains Tax Calculator – STCG & LTCG | ${SITE_DOMAIN}`,
-    desc: `Calculate short term capital gains tax (STCG) and long term capital gains tax (LTCG) on equity stocks, mutual funds, and real estate property sales in India.`
-  },
-  'credit-card-interest-calculator': {
-    title: `Credit Card Interest Calculator – Finance Charges | ${SITE_DOMAIN}`,
-    desc: `Calculate credit card interest rate charges, cc interest, daily APR compounding, minimum payment traps, and credit card repayment schedule.`
-  },
-  'loan-eligibility-calculator': {
-    title: `Home Loan Eligibility Calculator — Max Loan by Salary & FOIR | ${SITE_DOMAIN}`,
-    desc: `Estimate maximum home or personal loan amount you qualify for based on monthly income and existing EMIs.`
-  },
-  'prepayment-calculator': {
-    title: `Loan Prepayment Calculator — Calculate Interest Savings & Tenure Cut | ${SITE_DOMAIN}`,
-    desc: `Calculate total interest saved and tenure cut achieved by making partial principal loan prepayments.`
-  },
-  'stamp-duty-calculator': {
-    title: `Stamp Duty & Property Registration Fee Calculator India | ${SITE_DOMAIN}`,
-    desc: `Estimate state-wise stamp duty charges and property registration fees for buying real estate in India.`
-  },
   'property-tax-calculator': {
     title: `Property Tax Calculator & Formula — Municipal House Tax Bill | ${SITE_DOMAIN}`,
     desc: `Calculate annual property tax bill using the property tax calculation formula based on unit area, age, and location.`
@@ -789,16 +695,15 @@ export default function SEO({ title, description, path = '', kind = '', type = '
     : ''
 
   if (cleanPath === '/' || cleanPath === '') {
-    pageTitle = `Calciverse — Free Online Calculators, Financial & Utility Tools (${SITE_DOMAIN})`
-    pageDesc = 'Calciverse.in offers 90+ free online calculators, converters and generators for finance, GST, income tax, EMI, SIP, health, education, and daily utilities. Fast, accurate, and privacy-focused.'
-    pageKeywords = pageKeywords || 'Calciverse, Calciverse.in, online calculator, GST calculator, EMI calculator, income tax calculator India, SIP calculator, percentage calculator, age calculator, free online tools, developer tools'
+    pageTitle = `Free Online Calculators & Tools | Calciverse`
+    pageDesc = 'Free online calculators for finance, GST, EMI, math, education, health, business and everyday calculations. Get fast results with Calciverse.'
   } else if (cleanPath.startsWith('/tool/')) {
     const toolName = title || SITE_NAME
-    const mappedSEO = TOOL_SEO_MAP[slugFromPath]
+    const mappedSEO = TOOL_SEO[slugFromPath]
 
     if (mappedSEO) {
       pageTitle = mappedSEO.title
-      pageDesc = mappedSEO.desc
+      pageDesc = mappedSEO.description || mappedSEO.desc
     } else {
       if (kind === 'converter' || toolName.toLowerCase().includes('converter')) {
         pageTitle = `${toolName} — Free Online Converter | ${SITE_DOMAIN}`
