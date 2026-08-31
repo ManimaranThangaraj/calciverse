@@ -5,7 +5,7 @@ import { tools } from '../src/data/tools.js'
 import { articles } from '../src/data/articles.js'
 import { categories } from '../src/data/categories.js'
 import { toolGuides } from '../src/data/toolGuides.js'
-import { TOOL_SEO } from '../src/data/seo.js'
+import { TOOL_SEO, CATEGORY_SEO, ARTICLE_SEO, STATIC_SEO } from '../src/data/seo.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -30,60 +30,20 @@ const esc = (value = '') =>
  * Add/update entries here as you optimize more pages.
  */
 
-const STATIC_SEO = {
-  '/': {
-    title: 'Free Online Calculators & Tools | Calciverse.in',
-    description:
-      'Calciverse offers free online calculators, converters, and useful tools for finance, health, math, education, business, and everyday calculations.'
-  },
-
-  '/articles': {
-    title: 'Calculator Guides & Articles | Calciverse.in',
-    description:
-      'Helpful guides explaining calculator formulas, financial calculations, mathematics, health calculations, and everyday topics.'
-  },
-
-  '/about': {
-    title: 'About Calciverse – Free Online Calculators',
-    description:
-      'Learn about Calciverse and our collection of free online calculators, converters, and practical digital tools.'
-  },
-
-  '/contact': {
-    title: 'Contact Calciverse',
-    description:
-      'Contact the Calciverse team with questions, suggestions, corrections, or feedback about our calculators and tools.'
-  },
-
-  '/privacy-policy': {
-    title: 'Privacy Policy | Calciverse.in',
-    description:
-      'Read the Calciverse privacy policy and learn how information is handled when you use our website.'
-  },
-
-  '/terms': {
-    title: 'Terms of Use | Calciverse.in',
-    description:
-      'Read the terms and conditions governing the use of Calciverse calculators and website services.'
-  },
-
-  '/disclaimer': {
-    title: 'Disclaimer | Calciverse.in',
-    description:
-      'Read the Calciverse disclaimer regarding calculator results, financial information, health information, and general content.'
-  }
-}
-
 function getToolSEO(tool) {
-  return TOOL_SEO[tool.slug] || {
-    title: `${tool.name} – Calciverse.in`,
+  const mapped = TOOL_SEO[tool.slug]
+  if (mapped) return mapped
+  return {
+    title: `${tool.name} – Calciverse`,
     description:
       tool.description ||
-      `Use the free ${tool.name} online from Calciverse.in for fast and accurate calculations.`
+      `Use the free ${tool.name} online from Calciverse for fast and accurate calculations.`
   }
 }
 
 function getArticleSEO(article) {
+  const mapped = ARTICLE_SEO[article.slug]
+  if (mapped) return mapped
   const description =
     article.metaDescription ||
     article.description ||
@@ -91,7 +51,7 @@ function getArticleSEO(article) {
     `Learn ${article.title.toLowerCase()} with clear explanations, examples, formulas, and practical guidance from Calciverse.`
 
   return {
-    title: `${article.title} | Calciverse.in`,
+    title: `${article.title} | Calciverse`,
     description: description.length > 160
       ? `${description.substring(0, 157).trim()}...`
       : description

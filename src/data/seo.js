@@ -484,3 +484,84 @@ export const TOOL_SEO = {
     "description": "Calculate your true net hourly rate after unpaid hours, operational expenses, income tax and GST. Free online freelance & side-hustle net hourly rate calculator with instant results on Calciverse."
   }
 };
+
+export const CATEGORY_SEO = {
+  finance: {
+    title: 'Finance Calculators India — EMI, GST, SIP, Loan & Tax | Calciverse',
+    description: 'Free online financial calculators for loan EMI, GST, income tax, SIP returns, FD, RD, PPF, inflation, salary take-home, and mortgages in India.'
+  },
+  health: {
+    title: 'Health & Fitness Calculators — BMI, Calories, BMR & Ideal Weight | Calciverse',
+    description: 'Calculate Body Mass Index (BMI), daily calorie needs (TDEE), BMR, ideal body weight, water intake targets, and target heart rate zones.'
+  },
+  math: {
+    title: 'Mathematics Calculators — Percentages, Prime Checker, LCM & Fractions | Calciverse',
+    description: 'Free online math tools for percentage calculations, prime number checking, LCM/HCF, fractions, square roots, and standard deviation.'
+  },
+  education: {
+    title: 'Education Calculators – GPA, CGPA, Percentage & Attendance | Calciverse',
+    description: 'Free GPA, CGPA, percentage, grade and attendance calculators for students.'
+  },
+  business: {
+    title: 'Business & Commerce Calculators — Invoices, Margins & Tax | Calciverse',
+    description: 'Free online business utility tools for tax invoices, profit margin, markup vs margin, break-even analysis, and freelance hourly rates.'
+  },
+  everyday: {
+    title: 'Everyday Utility Tools & Daily Calculators — Age, Time & Password | Calciverse',
+    description: 'Practical daily calculators for exact age computation, store discount savings, fuel trip costs, tip splitting, and date differences.'
+  },
+  developer: {
+    title: 'Developer Tools & Code Formatters — JSON, Regex, Base64 & CSS | Calciverse',
+    description: 'Free client-side developer utilities for JSON formatting, Base64 encoding/decoding, JWT inspection, Unix timestamps, and regex testing.'
+  }
+};
+
+export const ARTICLE_SEO = {
+  'how-emi-is-calculated': {
+    title: 'How Loan EMI is Calculated: Formula & Amortization Math | Calciverse',
+    description: 'Learn how banks calculate loan EMI using the reducing balance formula. Complete guide with formulas, monthly split math, and early prepayment tips.'
+  },
+  'old-vs-new-tax-regime': {
+    title: 'Old vs New Tax Regime FY 2026-27: Which Saves More Tax? | Calciverse',
+    description: 'Compare Old vs New Income Tax Regime slabs and deductions (80C, HRA, home loan interest). Find your break-even deduction point to save maximum tax.'
+  },
+  'how-gst-actually-works': {
+    title: 'How GST Works in India: Rates, Inclusive & Exclusive Math | Calciverse',
+    description: 'Understand GST calculation in India. Learn exact formulas to add 18% GST or extract base prices from GST-inclusive bills without calculation errors.'
+  },
+  'how-to-check-if-a-number-is-prime': {
+    title: 'How to Check if a Number Is Prime – Methods & Examples | Calciverse',
+    description: 'Learn how to test if a number is prime using trial division up to √n, understand factors of 91 and 97, and use our prime checker.'
+  }
+};
+
+export const STATIC_SEO = {
+  '/': {
+    title: 'Free Online Calculators & Tools | Calciverse',
+    description: 'Free online calculators for finance, GST, EMI, math, education, health, business and everyday calculations. Get fast results with Calciverse.'
+  },
+  '/articles': {
+    title: 'Calculators & Finance Articles — Guides & Math Explainers | Calciverse',
+    description: 'In-depth guides and plain-English explainers behind EMI, tax regimes, GST, BMI, CGPA conversions, and developer tools.'
+  },
+  '/about': {
+    title: 'About Us — Free High-Precision Utility Calculators | Calciverse',
+    description: 'Learn about Calciverse mission to provide fast, privacy-focused, zero-ads online tools for finance, education, and health calculations.'
+  },
+  '/contact': {
+    title: 'Contact Us — Feedback & Calculator Requests | Calciverse',
+    description: 'Get in touch with the Calciverse team for feedback, feature requests, bug reports, or calculator partnerships.'
+  },
+  '/privacy-policy': {
+    title: 'Privacy Policy — Privacy-First Client-Side Calculators | Calciverse',
+    description: 'Read the Calciverse Privacy Policy. All calculations are executed 100% locally in your browser with zero data collection.'
+  },
+  '/terms': {
+    title: 'Terms of Service — Online Tools Usage Terms | Calciverse',
+    description: 'Review the Terms of Service for using Calciverse free online calculators and web tools.'
+  },
+  '/disclaimer': {
+    title: 'Disclaimer — Financial & Health Calculation Disclaimer | Calciverse',
+    description: 'Disclaimer regarding estimates provided by financial, tax, health, and academic calculation tools on Calciverse.'
+  }
+};

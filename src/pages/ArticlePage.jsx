@@ -5,6 +5,25 @@ import NotFoundPage from './NotFoundPage.jsx'
 import { articleBySlug } from '../data/articles.js'
 import { toolBySlug } from '../data/tools.js'
 
+function renderBlock(p, i) {
+  if (typeof p !== 'string') return null
+  if (p.startsWith('## ')) {
+    return <h2 key={i} className="mt-8 font-display text-2xl font-bold leading-tight text-ink">{p.replace('## ', '')}</h2>
+  }
+  if (p.startsWith('### ')) {
+    return <h3 key={i} className="mt-6 font-display text-xl font-semibold leading-tight text-ink">{p.replace('### ', '')}</h3>
+  }
+  if (p.startsWith('- ')) {
+    const items = p.split('\n- ').map(item => item.replace(/^- /, ''))
+    return (
+      <ul key={i} className="my-4 list-disc space-y-2 pl-6 text-[15px] leading-relaxed text-ink-soft">
+        {items.map((item, idx) => <li key={idx}>{item}</li>)}
+      </ul>
+    )
+  }
+  return <p key={i}>{p}</p>
+}
+
 export default function ArticlePage() {
   const { slug } = useParams()
   const article = articleBySlug(slug)
@@ -35,13 +54,13 @@ export default function ArticlePage() {
         )}
 
         <div className="prose-content mt-6 space-y-4 text-[15px] leading-relaxed text-ink-soft">
-          {article.content.slice(0, mid).map((p, i) => <p key={i}>{p}</p>)}
+          {article.content.slice(0, mid).map((p, i) => renderBlock(p, i))}
         </div>
 
         <AdSlot slot="0000000006" className="my-8" />
 
         <div className="prose-content space-y-4 text-[15px] leading-relaxed text-ink-soft">
-          {article.content.slice(mid).map((p, i) => <p key={i}>{p}</p>)}
+          {article.content.slice(mid).map((p, i) => renderBlock(p, i + mid))}
         </div>
       </article>
     </>
