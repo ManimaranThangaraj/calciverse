@@ -15,6 +15,17 @@ const toolSlugs = tools.filter((t) => t.status === 'live').map((t) => t.slug)
 const articleSlugs = articles.filter((a) => a.status === 'live').map((a) => a.slug)
 const categorySlugs = categories.map((c) => c.slug)
 
+// Map of route path to lastmod date string if available
+const articleDateMap = new Map()
+articles.forEach((a) => {
+  if (a.slug) {
+    const date = a.updatedAt || a.publishedAt
+    if (date) {
+      articleDateMap.set(`/articles/${a.slug}`, date)
+    }
+  }
+})
+
 const staticPages = [
   '/',
   '/articles',
@@ -31,19 +42,18 @@ const articlePages = articleSlugs.map((slug) => `/articles/${slug}`)
 
 const allUrls = [...new Set([...staticPages, ...categoryPages, ...toolPages, ...articlePages])]
 
-const now = new Date().toISOString().split('T')[0]
-
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allUrls
-  .map(
-    (u) => `  <url>
-    <loc>${SITE_URL}${u}</loc>
-    <lastmod>${now}</lastmod>
+  .map((u) => {
+    const lastmodDate = articleDateMap.get(u)
+    const lastmodTag = lastmodDate ? `\n    <lastmod>${lastmodDate}</lastmod>` : ''
+    return `  <url>
+    <loc>${SITE_URL}${u}</loc>${lastmodTag}
     <changefreq>${u === '/' ? 'daily' : u.startsWith('/tool/') ? 'weekly' : 'monthly'}</changefreq>
     <priority>${u === '/' ? '1.0' : u.startsWith('/tool/') ? '0.8' : '0.6'}</priority>
   </url>`
-  )
+  })
   .join('\n')}
 </urlset>
 `

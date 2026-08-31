@@ -33,7 +33,7 @@ export default function ToolGuide({ tool, category }) {
           {formula}
         </div>
         <p className="text-xs text-ink-soft leading-relaxed">
-          {explanation} All calculations follow official regulatory guidelines, statutory standards, and verified mathematical frameworks.
+          {explanation}
         </p>
       </section>
 
@@ -154,8 +154,8 @@ export default function ToolGuide({ tool, category }) {
           <div className="flex items-start gap-2.5 rounded-lg border border-line bg-paper-raised p-3">
             <CheckCircle2 className="text-signal mt-0.5 shrink-0" size={16} />
             <div>
-              <strong className="block text-ink font-medium">Verified Precision</strong>
-              <span className="text-ink-soft">Cross-checked against statutory standards for maximum numerical accuracy.</span>
+              <strong className="block text-ink font-medium">Clear & Consistent Calculations</strong>
+              <span className="text-ink-soft">Results are calculated directly in your browser using the formulas shown above.</span>
             </div>
           </div>
           <div className="flex items-start gap-2.5 rounded-lg border border-line bg-paper-raised p-3">

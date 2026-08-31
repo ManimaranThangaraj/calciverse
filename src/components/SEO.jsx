@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { getGuideBySlug } from '../data/toolGuides.js'
 
 const SITE_NAME = 'Calciverse'
 const SITE_DOMAIN = 'Calciverse.in'
@@ -11,12 +12,12 @@ const TOOL_SEO_MAP = {
     desc: `Calculate monthly EMI, interest payable, and annual repayment schedule for home, car, and personal loans with Calciverse EMI Calculator.`
   },
   'gst-calculator': {
-    title: `GST Calculator Online – Add or Remove GST | ${SITE_DOMAIN}`,
+    title: `GST Calculator – Add or Remove GST Online | ${SITE_DOMAIN}`,
     desc: `Calculate GST inclusive and exclusive prices instantly. Add or remove CGST, SGST, IGST for Indian business invoices on Calciverse.in.`
   },
   'income-tax-calculator': {
     title: `Income Tax Calculator FY 2026-27 – Old vs New Regime | ${SITE_DOMAIN}`,
-    desc: `Calculate income tax payable under New & Old Tax Regimes for FY 2025-26 and FY 2026-27 (AY 2026-27 & AY 2027-28) with Section 87A rebate and slab breakdowns.`
+    desc: `Calculate your income tax for FY 2026-27 under the New and Old Tax Regimes. Compare tax liability, deductions, rebates, and applicable tax slabs.`
   },
   'sip-calculator': {
     title: `SIP Calculator – Mutual Fund Wealth Growth | ${SITE_DOMAIN}`,
@@ -873,6 +874,23 @@ export default function SEO({ title, description, path = '', kind = '', type = '
       },
     })
 
+    const toolSlug = cleanPath.replace('/tool/', '')
+    const guide = getGuideBySlug(toolSlug)
+    if (guide && guide.faqs && guide.faqs.length > 0) {
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': guide.faqs.map(faq => ({
+          '@type': 'Question',
+          'name': faq.question,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': faq.answer
+          }
+        }))
+      })
+    }
+
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
@@ -998,7 +1016,6 @@ export default function SEO({ title, description, path = '', kind = '', type = '
     <Helmet>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDesc} />
-      <meta name="keywords" content={pageKeywords} />
       <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       <link rel="canonical" href={canonicalUrl} />
 
@@ -1006,7 +1023,7 @@ export default function SEO({ title, description, path = '', kind = '', type = '
       <meta property="og:type" content={type} />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={SITE_DOMAIN} />
       <meta property="og:image" content={`${SITE_URL}/logo.png`} />
 

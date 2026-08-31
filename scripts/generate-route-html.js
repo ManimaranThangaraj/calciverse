@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url'
 import { tools } from '../src/data/tools.js'
 import { articles } from '../src/data/articles.js'
 import { categories } from '../src/data/categories.js'
+import { toolGuides } from '../src/data/toolGuides.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -378,12 +379,34 @@ function createHtml(template, {
     )
   }
 
+  let faqSchemaTag = ''
+  if (path.startsWith('/tool/')) {
+    const toolSlug = path.replace('/tool/', '')
+    const guide = toolGuides[toolSlug]
+    if (guide && guide.faqs && guide.faqs.length > 0) {
+      const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: guide.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.answer
+          }
+        }))
+      }
+      faqSchemaTag = `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`
+    }
+  }
+
   html = html.replace(
     '</head>',
     `
     <link rel="canonical" href="${canonical}" />
     ${articleMeta}
     <script type="application/ld+json">${cleanSchema}</script>
+    ${faqSchemaTag}
     </head>
     `
   )
