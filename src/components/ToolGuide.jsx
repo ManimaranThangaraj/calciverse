@@ -1,4 +1,5 @@
-import { HelpCircle, CheckCircle2, BookOpen, Calculator, ShieldCheck, Zap, ArrowRight, Lightbulb, ExternalLink, FileText, AlertTriangle, Briefcase } from 'lucide-react'
+import { HelpCircle, CheckCircle2, BookOpen, Calculator, ShieldCheck, Zap, ArrowRight, Lightbulb, ExternalLink, FileText, AlertTriangle, Briefcase, Link2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { getGuideBySlug } from '../data/toolGuides.js'
 
 export default function ToolGuide({ tool, category }) {
@@ -8,7 +9,7 @@ export default function ToolGuide({ tool, category }) {
   const guide = getGuideBySlug(tool.slug)
   if (!guide) return null
 
-  const { overview, formula, explanation, example, metricsText, useCases, commonMistakes, faqs, sources } = guide
+  const { overview, formula, explanation, example, metricsText, useCases, commonMistakes, faqs, sources, relatedLinks } = guide
 
   return (
     <div className="mt-12 border-t border-line pt-10 space-y-10">
@@ -181,6 +182,31 @@ export default function ToolGuide({ tool, category }) {
                 <h4 className="text-sm font-semibold text-ink">{faq.question}</h4>
                 <p className="text-xs text-ink-soft leading-relaxed">{faq.answer}</p>
               </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Section 10: Contextual Related Calculators & Guides */}
+      {relatedLinks && relatedLinks.length > 0 && (
+        <section className="space-y-4 rounded-xl border border-line bg-paper p-6">
+          <div className="flex items-center gap-2 text-base font-bold font-display text-ink">
+            <Link2 className="text-saffron" size={20} />
+            <h3>Related Calculators & Resources</h3>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {relatedLinks.map((rl, idx) => (
+              <Link
+                key={idx}
+                to={rl.path || `/tool/${rl.slug}`}
+                className="group flex flex-col justify-between rounded-lg border border-line bg-paper-raised p-3.5 transition-colors hover:border-saffron/50 hover:bg-paper"
+              >
+                <span className="font-semibold text-sm text-saffron group-hover:underline flex items-center gap-1.5">
+                  {rl.name}
+                  <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                </span>
+                <span className="text-xs text-ink-soft mt-1 leading-relaxed">{rl.note}</span>
+              </Link>
             ))}
           </div>
         </section>

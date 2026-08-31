@@ -53,6 +53,12 @@ export const toolGuides = {
         "name": "Income Tax Department of India Statutory Tax Slabs",
         "url": "https://www.incometax.gov.in"
       }
+    ],
+    "relatedLinks": [
+      { "name": "Mortgage Calculator", "slug": "mortgage-calculator", "note": "Estimate monthly home mortgage payments and interest amortization." },
+      { "name": "Credit Card Interest Calculator", "slug": "credit-card-interest-calculator", "note": "Calculate monthly credit card interest charges and pay-off timeline." },
+      { "name": "Loan Eligibility Calculator", "slug": "loan-eligibility-calculator", "note": "Calculate your maximum home loan borrowing limit based on income." },
+      { "name": "Prepayment Calculator", "slug": "prepayment-calculator", "note": "See how making extra lump-sum loan payments cuts total interest." }
     ]
   },
   "sip-calculator": {
@@ -6271,6 +6277,12 @@ export const toolGuides = {
         "name": "Federal Reserve Housing & Mortgage Information",
         "url": "https://www.federalreserve.gov"
       }
+    ],
+    "relatedLinks": [
+      { "name": "EMI Calculator", "slug": "emi-calculator", "note": "Calculate monthly loan EMI payments and total interest." },
+      { "name": "Home Affordability Calculator", "slug": "home-affordability-calculator", "note": "Estimate maximum home purchase price based on monthly income." },
+      { "name": "Rent vs Buy Calculator", "slug": "rent-vs-buy-calculator", "note": "Compare net financial wealth gained from renting vs buying a home." },
+      { "name": "Prepayment Calculator", "slug": "prepayment-calculator", "note": "Calculate interest savings from early home loan prepayments." }
     ]
   },
   "pace-calculator": {
