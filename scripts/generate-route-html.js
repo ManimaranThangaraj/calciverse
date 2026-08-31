@@ -25,11 +25,6 @@ const esc = (value = '') =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;')
 
-/*
- * SEO titles/descriptions for important pages.
- * Add/update entries here as you optimize more pages.
- */
-
 function getToolSEO(tool) {
   const mapped = TOOL_SEO[tool.slug]
   if (mapped) return mapped
@@ -56,6 +51,176 @@ function getArticleSEO(article) {
       ? `${description.substring(0, 157).trim()}...`
       : description
   }
+}
+
+function renderBodyHtml(path, seo, article = null) {
+  if (path.startsWith('/tool/')) {
+    const slug = path.replace('/tool/', '')
+    const tool = tools.find((t) => t.slug === slug) || { name: 'Tool', description: seo.description }
+    const guide = toolGuides[slug]
+    const relatedTools = tools
+      .filter((t) => t.category === tool.category && t.slug !== slug && t.status === 'live')
+      .slice(0, 6)
+
+    let content = `
+      <div class="mx-auto max-w-4xl px-5 py-8">
+        <h1>${esc(tool.name)}</h1>
+        <p>${esc(tool.description || seo.description)}</p>
+    `
+
+    if (guide) {
+      if (guide.overview) {
+        content += `<section><h2>Overview</h2><p>${esc(guide.overview)}</p></section>`
+      }
+      if (guide.formula) {
+        content += `<section><h2>Formula & Calculation Method</h2><p><code>${esc(guide.formula)}</code></p><p>${esc(guide.explanation || '')}</p></section>`
+      }
+      if (guide.example) {
+        content += `
+          <section>
+            <h2>${esc(guide.example.title || 'Worked Real-World Example')}</h2>
+            <p><strong>Inputs:</strong> ${esc(guide.example.inputs || '')}</p>
+            <ul>
+              ${(guide.example.steps || []).map((step) => `<li>${esc(step)}</li>`).join('')}
+            </ul>
+            <p><strong>Summary:</strong> ${esc(guide.example.summary || '')}</p>
+          </section>
+        `
+      }
+      if (guide.useCases && guide.useCases.length) {
+        content += `
+          <section>
+            <h2>Common Use Cases</h2>
+            <ul>
+              ${guide.useCases.map((uc) => `<li>${esc(uc)}</li>`).join('')}
+            </ul>
+          </section>
+        `
+      }
+      if (guide.faqs && guide.faqs.length) {
+        content += `
+          <section>
+            <h2>Frequently Asked Questions</h2>
+            ${guide.faqs
+              .map(
+                (f) => `
+              <article>
+                <h3>${esc(f.question)}</h3>
+                <p>${esc(f.answer)}</p>
+              </article>
+            `
+              )
+              .join('')}
+          </section>
+        `
+      }
+    }
+
+    if (relatedTools.length) {
+      content += `
+        <section>
+          <h2>Related Calculators & Tools</h2>
+          <ul>
+            ${relatedTools
+              .map(
+                (rt) => `
+              <li>
+                <a href="/tool/${rt.slug}">${esc(rt.name)}</a> - ${esc(rt.description)}
+              </li>
+            `
+              )
+              .join('')}
+          </ul>
+        </section>
+      `
+    }
+
+    content += `</div>`
+    return content
+  }
+
+  if (path.startsWith('/articles/')) {
+    if (!article) return ''
+    let content = `
+      <article class="mx-auto max-w-2xl px-5 py-10">
+        <nav><a href="/articles">Articles</a> / ${esc(article.title)}</nav>
+        <h1>${esc(article.title)}</h1>
+        <p><em>${esc(article.readMinutes || 5)} min read</em></p>
+        <p>${esc(article.excerpt || '')}</p>
+        <div class="prose">
+    `
+
+    for (const p of article.content) {
+      if (typeof p !== 'string') continue
+      if (p.startsWith('## ')) {
+        content += `<h2>${esc(p.replace('## ', ''))}</h2>`
+      } else if (p.startsWith('### ')) {
+        content += `<h3>${esc(p.replace('### ', ''))}</h3>`
+      } else if (p.startsWith('- ')) {
+        const items = p.split('\n- ').map((i) => i.replace(/^- /, ''))
+        content += `<ul>${items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>`
+      } else {
+        content += `<p>${esc(p)}</p>`
+      }
+    }
+
+    content += `</div></article>`
+    return content
+  }
+
+  if (path.startsWith('/category/')) {
+    const slug = path.replace('/category/', '')
+    const category = categories.find((c) => c.slug === slug)
+    const categoryTools = tools.filter((t) => t.category === slug && t.status === 'live')
+
+    let content = `
+      <div class="mx-auto max-w-4xl px-5 py-8">
+        <h1>${esc(category ? category.name : 'Category')} Calculators & Tools</h1>
+        <p>${esc(seo.description)}</p>
+        <section>
+          <h2>Popular Tools in ${esc(category ? category.name : 'this category')}</h2>
+          <ul>
+            ${categoryTools
+              .map(
+                (t) => `
+              <li>
+                <a href="/tool/${t.slug}">${esc(t.name)}</a> - ${esc(t.description)}
+              </li>
+            `
+              )
+              .join('')}
+          </ul>
+        </section>
+      </div>
+    `
+    return content
+  }
+
+  if (path === '/') {
+    let content = `
+      <div class="mx-auto max-w-4xl px-5 py-8">
+        <h1>Free Online Calculators & Tools</h1>
+        <p>${esc(seo.description)}</p>
+        <section>
+          <h2>Calculator Categories</h2>
+          <ul>
+            ${categories
+              .map(
+                (c) => `
+              <li>
+                <a href="/category/${c.slug}">${esc(c.name)} Calculators</a>
+              </li>
+            `
+              )
+              .join('')}
+          </ul>
+        </section>
+      </div>
+    `
+    return content
+  }
+
+  return ''
 }
 
 function createHtml(template, {
@@ -203,6 +368,15 @@ function createHtml(template, {
     `
   )
 
+  // Inject pre-rendered initial static content inside <div id="root"></div>
+  const bodyContent = renderBodyHtml(path, { title, description }, article)
+  if (bodyContent) {
+    html = html.replace(
+      '<div id="root"></div>',
+      `<div id="root">${bodyContent}</div>`
+    )
+  }
+
   return html
 }
 
@@ -244,15 +418,15 @@ for (const [path, seo] of Object.entries(STATIC_SEO)) {
   writeRoute(template, path, seo)
 }
 
-// Categories
+// Categories - FIX: Use CATEGORY_SEO from src/data/seo.js
 for (const category of categories) {
   const path = `/category/${category.slug}`
+  const seo = CATEGORY_SEO[category.slug] || {
+    title: `${category.name} Calculators & Tools | Calciverse`,
+    description: `Free ${category.name.toLowerCase()} calculators and online tools from Calciverse.`
+  }
 
-  writeRoute(template, path, {
-    title: `${category.name} Calculators & Tools | Calciverse.in`,
-    description:
-      `Free ${category.name.toLowerCase()} calculators and online tools from Calciverse.in.`
-  })
+  writeRoute(template, path, seo)
 }
 
 // Tools
@@ -278,4 +452,4 @@ for (const article of articles.filter((a) => a.status === 'live')) {
   )
 }
 
-console.log('Route-specific SEO HTML generation complete.')
+console.log('Route-specific SEO HTML generation complete with static body content.')
