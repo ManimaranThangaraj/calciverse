@@ -251,11 +251,17 @@ function getToolSEO(tool) {
 }
 
 function getArticleSEO(article) {
+  const description =
+    article.metaDescription ||
+    article.description ||
+    article.excerpt ||
+    `Learn ${article.title.toLowerCase()} with clear explanations, examples, formulas, and practical guidance from Calciverse.`
+
   return {
     title: `${article.title} | Calciverse.in`,
-    description:
-      article.excerpt ||
-      `Read this helpful guide on Calciverse.in.`
+    description: description.length > 160
+      ? `${description.substring(0, 157).trim()}...`
+      : description
   }
 }
 
