@@ -36,15 +36,15 @@ const TOOL_SEO = {
   },
 
   'gst-calculator': {
-    title: 'GST Calculator – Add or Remove GST Online | Calciverse.in',
+    title: 'GST Calculator India – Add, Remove GST, CGST & SGST | Calciverse',
     description:
-      'Calculate GST inclusive and exclusive prices instantly. Add or remove CGST, SGST, and IGST for Indian invoices.'
+      'Calculate GST online in India. Add or remove 5%, 12%, 18% or 28% GST and calculate CGST, SGST and IGST instantly with our free GST calculator.'
   },
 
   'income-tax-calculator': {
     title: 'Income Tax Calculator FY 2026-27 – Old vs New Regime | Calciverse.in',
     description:
-      'Calculate income tax under the Old and New Tax Regimes for FY 2026-27 with slab breakdowns and applicable rebates.'
+      'Calculate your income tax for FY 2026-27 under the New and Old Tax Regimes. Compare tax liability, deductions, rebates, and applicable tax slabs.'
   },
 
   'sip-calculator': {
@@ -78,9 +78,9 @@ const TOOL_SEO = {
   },
 
   'ideal-weight-calculator': {
-    title: 'Ideal Weight Calculator – Healthy Weight by Height | Calciverse.in',
+    title: 'Ideal Weight Calculator – Healthy Weight Range by Height | Calciverse',
     description:
-      'Calculate an estimated ideal and healthy weight range based on your height and other personal measurements.'
+      'Calculate an estimated ideal and healthy weight range based on your height, biological sex, and clinical formulas.'
   },
 
   'calorie-calculator': {
@@ -90,15 +90,15 @@ const TOOL_SEO = {
   },
 
   'prime-number-checker': {
-    title: 'Prime Number Checker – Check if a Number Is Prime | Calciverse.in',
+    title: 'Prime Number Checker – Is This Number Prime? | Calciverse',
     description:
-      'Check whether a number is prime, composite, or neither. Use the free prime number checker to test numbers and understand their factors.'
+      'Check whether a number is prime or composite instantly using trial division up to the square root.'
   },
 
   'number-to-words-converter': {
-    title: 'Number to Words Converter – Convert Numbers to Words | Calciverse.in',
+    title: 'Number to Words Converter – Indian & International | Calciverse',
     description:
-      'Convert numbers into words instantly using Indian and International numbering systems, including lakh, crore, million, and billion.'
+      'Convert numbers to words online using Indian and International numbering systems. Convert amounts such as ₹1,25,000 into words instantly.'
   },
 
   'credit-card-interest-calculator': {
@@ -108,9 +108,9 @@ const TOOL_SEO = {
   },
 
   'mortgage-calculator': {
-    title: 'Mortgage Calculator – Monthly Payment & Interest | Calciverse.in',
+    title: 'Home Loan EMI & Mortgage Calculator India | Calciverse',
     description:
-      'Calculate monthly mortgage payments, total interest, principal, and repayment costs for a home loan.'
+      'Calculate home loan EMI, monthly payment, total interest and repayment amount. Compare loan amounts, interest rates and repayment periods with Calciverse.'
   },
 
   'tds-calculator': {

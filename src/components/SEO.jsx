@@ -12,8 +12,8 @@ const TOOL_SEO_MAP = {
     desc: `Calculate monthly EMI, interest payable, and annual repayment schedule for home, car, and personal loans with Calciverse EMI Calculator.`
   },
   'gst-calculator': {
-    title: `GST Calculator – Add or Remove GST Online | ${SITE_DOMAIN}`,
-    desc: `Calculate GST inclusive and exclusive prices instantly. Add or remove CGST, SGST, IGST for Indian business invoices on Calciverse.in.`
+    title: `GST Calculator India – Add, Remove GST, CGST & SGST | Calciverse`,
+    desc: `Calculate GST online in India. Add or remove 5%, 12%, 18% or 28% GST and calculate CGST, SGST and IGST instantly with our free GST calculator.`
   },
   'income-tax-calculator': {
     title: `Income Tax Calculator FY 2026-27 – Old vs New Regime | ${SITE_DOMAIN}`,

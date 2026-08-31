@@ -15,7 +15,7 @@ export default function ToolPage() {
   if (!tool || tool.status !== 'live') return <NotFoundPage />
 
   const category = categoryBySlug(tool.category)
-  const related = toolsByCategory(tool.category).filter((t) => t.slug !== tool.slug && t.status === 'live').slice(0, 3)
+  const related = toolsByCategory(tool.category).filter((t) => t.slug !== tool.slug && t.status === 'live').slice(0, 6)
   const Component = tool.component
 
   return (

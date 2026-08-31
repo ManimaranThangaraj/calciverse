@@ -2755,6 +2755,12 @@ export const toolGuides = {
         "name": "Standard Mathematical & Statistical Frameworks",
         "url": "https://nces.ed.gov"
       }
+    ],
+    "relatedLinks": [
+      { "name": "CGPA to Percentage Calculator", "slug": "cgpa-to-percentage-calculator", "note": "Convert your cumulative CGPA score to percentage using CBSE 9.5 or 10-point scale." },
+      { "name": "GPA Calculator", "slug": "gpa-calculator", "note": "Calculate semester Grade Point Average from subject grades and credit hours." },
+      { "name": "Grade Calculator", "slug": "grade-calculator", "note": "Calculate final exam target scores needed to achieve your desired course grade." },
+      { "name": "Attendance Calculator", "slug": "attendance-calculator", "note": "Calculate how many classes you can skip or must attend to maintain 75% attendance." }
     ]
   },
   "attendance-calculator": {
