@@ -105,6 +105,54 @@ export default function NumberToWordsConverter() {
           </div>
         </div>
       </div>
+
+      {/* Reference Conversion Table */}
+      <div className="mt-8 border-t border-line pt-6">
+        <h3 className="text-lg font-semibold text-ink mb-3">Number to Words Quick Examples</h3>
+        <div className="overflow-x-auto rounded-lg border border-line bg-paper">
+          <table className="w-full text-left text-sm">
+            <thead className="border-b border-line bg-paper-raised text-xs font-semibold uppercase text-ink-soft">
+              <tr>
+                <th className="px-4 py-3">Number</th>
+                <th className="px-4 py-3">Indian System (Rupees)</th>
+                <th className="px-4 py-3">International System</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-line text-ink">
+              <tr>
+                <td className="px-4 py-2.5 font-mono">1</td>
+                <td className="px-4 py-2.5">One Rupee Only</td>
+                <td className="px-4 py-2.5">One</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2.5 font-mono">100</td>
+                <td className="px-4 py-2.5">One Hundred Rupees Only</td>
+                <td className="px-4 py-2.5">One Hundred</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2.5 font-mono">1,000</td>
+                <td className="px-4 py-2.5">One Thousand Rupees Only</td>
+                <td className="px-4 py-2.5">One Thousand</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2.5 font-mono">1,00,000</td>
+                <td className="px-4 py-2.5">One Lakh Rupees Only</td>
+                <td className="px-4 py-2.5">One Hundred Thousand</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2.5 font-mono">10,00,000</td>
+                <td className="px-4 py-2.5">Ten Lakh Rupees Only</td>
+                <td className="px-4 py-2.5">One Million</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2.5 font-mono">1,00,00,000</td>
+                <td className="px-4 py-2.5">One Crore Rupees Only</td>
+                <td className="px-4 py-2.5">Ten Million</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   )
 }

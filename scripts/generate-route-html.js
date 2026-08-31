@@ -35,7 +35,7 @@ const TOOL_SEO = {
   },
 
   'gst-calculator': {
-    title: 'GST Calculator Online – Add or Remove GST | Calciverse.in',
+    title: 'GST Calculator – Add or Remove GST Online | Calciverse.in',
     description:
       'Calculate GST inclusive and exclusive prices instantly. Add or remove CGST, SGST, and IGST for Indian invoices.'
   },
