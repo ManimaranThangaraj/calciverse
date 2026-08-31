@@ -24,10 +24,12 @@ export default function SEO({
     description ||
     'Free online calculators, converters and generators for GST, EMI, SIP, Income Tax, Health, Education, and Everyday Utilities.'
 
+  const hasPageQuery = path && path.includes('?page=')
   const cleanPath = path ? path.split('?')[0] : ''
   const normalizedPath = (cleanPath || path || '').replace(/\/+$/, '') || '/'
-  const canonicalUrl =
-    normalizedPath === '/' ? `${SITE_URL}/` : `${SITE_URL}${normalizedPath}`
+  const canonicalUrl = hasPageQuery
+    ? `${SITE_URL}${path}`
+    : normalizedPath === '/' ? `${SITE_URL}/` : `${SITE_URL}${normalizedPath}`
 
   const slugFromPath = cleanPath.startsWith('/tool/')
     ? cleanPath.replace('/tool/', '')

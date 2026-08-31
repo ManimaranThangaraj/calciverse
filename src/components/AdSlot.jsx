@@ -12,17 +12,6 @@ export default function AdSlot({ slot, format = 'auto', className = '', label = 
   useEffect(() => {
     if (!ADSENSE_CLIENT || !isRealSlot) return
 
-    // Automatically inject AdSense script into head if not already present
-    const scriptId = 'google-adsense-script'
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script')
-      script.id = scriptId
-      script.async = true
-      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`
-      script.crossOrigin = 'anonymous'
-      document.head.appendChild(script)
-    }
-
     if (!pushed.current) {
       try {
         ;(window.adsbygoogle = window.adsbygoogle || []).push({})

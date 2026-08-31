@@ -9,6 +9,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const SITE_URL = 'https://calciverse.in'
+const TODAY = '2026-08-31'
 
 // Extract live slugs directly from data objects
 const toolSlugs = tools.filter((t) => t.status === 'live').map((t) => t.slug)
@@ -46,12 +47,10 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allUrls
   .map((u) => {
-    const lastmodDate = articleDateMap.get(u)
-    const lastmodTag = lastmodDate ? `\n    <lastmod>${lastmodDate}</lastmod>` : ''
+    const lastmodDate = articleDateMap.get(u) || TODAY
     return `  <url>
-    <loc>${SITE_URL}${u}</loc>${lastmodTag}
-    <changefreq>${u === '/' ? 'daily' : u.startsWith('/tool/') ? 'weekly' : 'monthly'}</changefreq>
-    <priority>${u === '/' ? '1.0' : u.startsWith('/tool/') ? '0.8' : '0.6'}</priority>
+    <loc>${SITE_URL}${u}</loc>
+    <lastmod>${lastmodDate}</lastmod>
   </url>`
   })
   .join('\n')}

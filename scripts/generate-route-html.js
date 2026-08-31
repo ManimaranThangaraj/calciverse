@@ -287,18 +287,55 @@ function renderBodyHtml(path, seo, article = null) {
   }
 
   if (path === '/') {
+    const popularTools = tools.filter((t) => t.status === 'live' && t.featured).slice(0, 24)
+    const featuredArticles = articles.filter((a) => a.status === 'live').slice(0, 10)
+
     let content = `
-      <div class="mx-auto max-w-4xl px-5 py-8">
-        <h1>Free Online Calculators & Tools</h1>
-        <p>${esc(seo.description)}</p>
-        <section>
-          <h2>Calculator Categories</h2>
-          <ul>
+      <div class="mx-auto max-w-6xl px-5 py-8">
+        <section class="py-4">
+          <h1>One tool for the number you need right now.</h1>
+          <p>No sign-up, no clutter. Free calculators, converters and generators for money, marks, health and code — plus articles that explain the math behind the numbers.</p>
+        </section>
+
+        <section class="py-6">
+          <h2>Browse Calculator Categories</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             ${categories
               .map(
                 (c) => `
+              <div class="p-4 border border-gray-200 rounded-lg">
+                <h3><a href="/category/${c.slug}">${esc(c.name)} Calculators</a></h3>
+                <p>${esc(c.tagline || c.description || '')}</p>
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+        </section>
+
+        <section class="py-6">
+          <h2>Popular Calculators & Tools</h2>
+          <ul>
+            ${popularTools
+              .map(
+                (t) => `
               <li>
-                <a href="/category/${c.slug}">${esc(c.name)} Calculators</a>
+                <a href="/tool/${t.slug}">${esc(t.name)}</a> - ${esc(t.description)}
+              </li>
+            `
+              )
+              .join('')}
+          </ul>
+        </section>
+
+        <section class="py-6">
+          <h2>Featured Educational Articles</h2>
+          <ul>
+            ${featuredArticles
+              .map(
+                (a) => `
+              <li>
+                <a href="/articles/${a.slug}">${esc(a.title)}</a> - ${esc(a.excerpt)}
               </li>
             `
               )
