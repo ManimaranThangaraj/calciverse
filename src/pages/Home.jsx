@@ -9,10 +9,10 @@ import { tools, liveTools, counts } from '../data/tools.js'
 import { liveArticles } from '../data/articles.js'
 
 const STATS = [
-  { label: 'Calculators', live: tools.filter(t => t.kind === 'calculator' && t.status === 'live').length, target: 250 },
-  { label: 'Converters', live: tools.filter(t => t.kind === 'converter' && t.status === 'live').length, target: 100 },
-  { label: 'Generators', live: tools.filter(t => t.kind === 'generator' && t.status === 'live').length, target: 50 },
-  { label: 'Articles', live: liveArticles.length, target: 500 },
+  { label: 'Calculators', live: tools.filter(t => t.kind === 'calculator' && t.status === 'live').length },
+  { label: 'Converters', live: tools.filter(t => t.kind === 'converter' && t.status === 'live').length },
+  { label: 'Generators', live: tools.filter(t => t.kind === 'generator' && t.status === 'live').length },
+  { label: 'Articles', live: liveArticles.length },
 ]
 
 export default function Home() {
@@ -52,7 +52,7 @@ export default function Home() {
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
               <div className="font-mono tabular-num text-2xl font-bold text-ink">{s.live}</div>
-              <div className="text-xs text-ink-soft/70">live now · {s.target}+ planned</div>
+              <div className="text-xs text-ink-soft/70">active & verified</div>
               <div className="mt-1 text-sm font-semibold text-saffron">{s.label}</div>
             </div>
           ))}

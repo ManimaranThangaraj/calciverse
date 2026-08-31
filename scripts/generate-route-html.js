@@ -196,6 +196,96 @@ function renderBodyHtml(path, seo, article = null) {
     return content
   }
 
+  if (path === '/articles') {
+    let content = `
+      <div class="mx-auto max-w-4xl px-5 py-8">
+        <h1>Calculators & Finance Articles</h1>
+        <p>${esc(seo.description)}</p>
+        <section>
+          <h2>All Published Explainers & Guides</h2>
+          <ul>
+            ${articles
+              .filter((a) => a.status === 'live')
+              .map(
+                (a) => `
+              <li>
+                <a href="/articles/${a.slug}">${esc(a.title)}</a> - ${esc(a.excerpt)}
+              </li>
+            `
+              )
+              .join('')}
+          </ul>
+        </section>
+      </div>
+    `
+    return content
+  }
+
+  if (path === '/about') {
+    return `
+      <div class="mx-auto max-w-3xl px-5 py-10">
+        <h1>About Calciverse</h1>
+        <p>${esc(seo.description)}</p>
+        <section>
+          <h2>Our Mission</h2>
+          <p>Calciverse provides fast, accurate, and privacy-focused online calculators, converters, and financial planning utilities. All computations execute locally in your browser memory without server data logging or invasive sign-up forms.</p>
+        </section>
+      </div>
+    `
+  }
+
+  if (path === '/contact') {
+    return `
+      <div class="mx-auto max-w-3xl px-5 py-10">
+        <h1>Contact Calciverse</h1>
+        <p>${esc(seo.description)}</p>
+        <section>
+          <h2>Get in Touch</h2>
+          <p>Have suggestions for new calculators, bug reports, or partnership inquiries? Reach out to our team at support@calciverse.in.</p>
+        </section>
+      </div>
+    `
+  }
+
+  if (path === '/privacy-policy') {
+    return `
+      <div class="mx-auto max-w-3xl px-5 py-10">
+        <h1>Privacy Policy</h1>
+        <p>${esc(seo.description)}</p>
+        <section>
+          <h2>100% Client-Side Computation</h2>
+          <p>At Calciverse, your data privacy is paramount. Numerical inputs, personal parameters, and financial figures entered into our tools are processed entirely within your web browser. We do not store, log, or transmit calculation data to external application servers.</p>
+        </section>
+      </div>
+    `
+  }
+
+  if (path === '/terms') {
+    return `
+      <div class="mx-auto max-w-3xl px-5 py-10">
+        <h1>Terms of Service</h1>
+        <p>${esc(seo.description)}</p>
+        <section>
+          <h2>Terms of Use</h2>
+          <p>Calciverse provides free digital tools for educational, informational, and general calculation purposes. Users are encouraged to verify critical financial, tax, or medical results with certified professionals.</p>
+        </section>
+      </div>
+    `
+  }
+
+  if (path === '/disclaimer') {
+    return `
+      <div class="mx-auto max-w-3xl px-5 py-10">
+        <h1>Financial & Medical Disclaimer</h1>
+        <p>${esc(seo.description)}</p>
+        <section>
+          <h2>General Information Disclaimer</h2>
+          <p>Calculators and guides on Calciverse are provided for informational and illustrative purposes only. They do not constitute formal financial advice, tax filing instructions, or clinical medical diagnosis.</p>
+        </section>
+      </div>
+    `
+  }
+
   if (path === '/') {
     let content = `
       <div class="mx-auto max-w-4xl px-5 py-8">

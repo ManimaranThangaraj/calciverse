@@ -32,6 +32,9 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-ink-soft md:flex">
+          <NavLink to="/" className={({ isActive }) => `hover:text-saffron transition-colors ${isActive ? 'text-saffron font-semibold' : ''}`}>
+            All Tools
+          </NavLink>
           {categories.map((c) => (
             <NavLink
               key={c.slug}
@@ -70,6 +73,9 @@ export default function Header() {
 
       {open && (
         <nav className="flex flex-col gap-1 border-t border-line px-5 py-3 md:hidden">
+          <Link to="/" onClick={() => setOpen(false)} className="rounded-lg px-2 py-2 text-sm font-medium text-ink-soft hover:bg-paper-raised">
+            All Tools
+          </Link>
           {categories.map((c) => (
             <Link key={c.slug} to={`/category/${c.slug}`} onClick={() => setOpen(false)} className="rounded-lg px-2 py-2 text-sm font-medium text-ink-soft hover:bg-paper-raised">
               {c.name}
