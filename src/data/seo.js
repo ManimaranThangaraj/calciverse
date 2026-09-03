@@ -1,103 +1,103 @@
 export const TOOL_SEO = {
   "emi-calculator": {
-    "title": "EMI Calculator – Monthly Loan Payment | Calciverse.in",
-    "description": "Calculate your monthly EMI, total interest, and total repayment for home, car, and personal loans. Free EMI calculator with instant results."
+    "title": "Home Loan EMI Calculator | Calciverse",
+    "description": "Calculate monthly loan EMI, total interest, and amortisation schedule for home, car, and personal loans."
   },
   "gst-calculator": {
-    "title": "GST Calculator India – Add, Remove GST, CGST & SGST | Calciverse",
-    "description": "Calculate GST online in India. Add or remove 5%, 12%, 18% or 28% GST and calculate CGST, SGST and IGST instantly with our free GST calculator."
+    "title": "GST Calculator India | Calciverse",
+    "description": "Calculate GST online in India. Add or remove 5%, 12%, 18% or 28% GST, CGST and SGST instantly."
   },
   "income-tax-calculator": {
-    "title": "Income Tax Calculator FY 2026-27 – Old vs New Regime | Calciverse.in",
-    "description": "Calculate your income tax for FY 2026-27 under the New and Old Tax Regimes. Compare tax liability, deductions, rebates, and applicable tax slabs."
+    "title": "Income Tax Calculator FY 2026 | Calciverse",
+    "description": "Calculate income tax for FY 2026-27 under Old and New Tax Regimes. Compare tax liability and deductions."
   },
   "sip-calculator": {
-    "title": "SIP Calculator – Mutual Fund Returns & Wealth Growth | Calciverse.in",
-    "description": "Calculate SIP maturity value, total investment, estimated returns, and wealth gained from monthly mutual fund investments."
+    "title": "SIP Return Calculator | Calciverse",
+    "description": "Calculate SIP maturity value, total investment, and estimated mutual fund wealth returns."
   },
   "fd-calculator": {
-    "title": "FD Calculator – Fixed Deposit Maturity & Interest | Calciverse.in",
-    "description": "Calculate fixed deposit maturity value and total interest earned using different compounding frequencies."
+    "title": "FD Maturity Calculator | Calciverse",
+    "description": "Calculate fixed deposit maturity value and total compounding interest earned."
   },
   "rd-calculator": {
-    "title": "RD Calculator – Recurring Deposit Maturity Amount | Calciverse.in",
-    "description": "Calculate recurring deposit maturity value and total interest earned from monthly RD investments."
+    "title": "RD Maturity Calculator | Calciverse",
+    "description": "Calculate recurring deposit maturity value and total interest earned from monthly RD deposits."
   },
   "ppf-calculator": {
-    "title": "PPF Calculator – Public Provident Fund Maturity | Calciverse.in",
-    "description": "Calculate PPF maturity corpus, total investment, and interest earned over the investment period."
+    "title": "PPF Corpus Calculator | Calciverse",
+    "description": "Calculate Public Provident Fund (PPF) maturity corpus and interest earned over 15 years."
   },
   "epf-calculator": {
-    "title": "EPF & EPS Pension Calculator Online — Provident Fund Balance | Calciverse.in",
-    "description": "Calculate Employee Provident Fund (EPF) balance, EPS pension scheme, and employer monthly salary contributions online."
+    "title": "EPF Balance Calculator | Calciverse",
+    "description": "Calculate Employee Provident Fund (EPF) balance, EPS pension scheme, and employer monthly contributions."
   },
   "nps-calculator": {
-    "title": "NPS Calculator — National Pension System Corpus & Pension Payout | Calciverse.in",
-    "description": "Estimate National Pension System (NPS) retirement corpus, lump-sum withdrawal, and monthly annuity pension."
+    "title": "NPS Pension Calculator | Calciverse",
+    "description": "Estimate National Pension System (NPS) retirement corpus, lump-sum withdrawal, and monthly pension."
   },
   "lumpsum-calculator": {
-    "title": "Lumpsum Mutual Fund Investment Calculator — Future Wealth Value | Calciverse.in",
-    "description": "Calculate future value of a one-time lumpsum mutual fund investment based on expected annual compound growth rate."
+    "title": "Lumpsum Return Calculator | Calciverse",
+    "description": "Calculate future value of a one-time lumpsum mutual fund investment based on expected annual return."
   },
   "cagr-calculator": {
-    "title": "CAGR Calculator — Compound Annual Growth Rate Formula & Return | Calciverse.in",
-    "description": "Calculate compound annual growth rate (CAGR) between starting and ending investment values over time."
+    "title": "CAGR Return Calculator | Calciverse",
+    "description": "Calculate compound annual growth rate (CAGR) between starting and ending investment values."
   },
   "roi-calculator": {
-    "title": "ROI Calculator — Return on Investment % & Annualized Gain Formula | Calciverse.in",
-    "description": "Calculate Return on Investment (ROI %) and annualized gain percentage for real estate, stocks, or business."
+    "title": "ROI Return Calculator | Calciverse",
+    "description": "Calculate Return on Investment (ROI %) and annualized gain for real estate, stocks, or business."
   },
   "retirement-calculator": {
-    "title": "Retirement Corpus Calculator — Estimate Retirement Savings Needed | Calciverse.in",
-    "description": "Calculate exact retirement corpus needed to maintain target monthly living style after inflation."
+    "title": "Retirement Corpus Calculator | Calciverse",
+    "description": "Calculate exact retirement corpus needed to maintain target monthly lifestyle after inflation."
   },
   "inflation-calculator": {
-    "title": "Inflation Calculator India — Calculate Future Purchasing Power | Calciverse.in",
+    "title": "Inflation Calculator India | Calciverse",
     "description": "Find what today money will be worth after years of inflation and estimate future purchasing power."
   },
   "salary-calculator": {
-    "title": "Salary CTC to In-Hand Calculator — Monthly Take-Home Pay Breakdown | Calciverse.in",
-    "description": "Convert Annual CTC to monthly in-hand take-home salary after EPF, Professional Tax, TDS, and deductions in India."
+    "title": "Salary Take-Home Calculator | Calciverse",
+    "description": "Convert Annual CTC to monthly in-hand take-home salary after EPF, Professional Tax, and TDS."
   },
   "salary-hike-calculator": {
-    "title": "Salary Hike Calculator — Calculate Increment % & Revised Salary | Calciverse.in",
+    "title": "Salary Hike Calculator | Calciverse",
     "description": "Calculate salary increment percentage, appraisal hike amount, and new monthly take-home pay."
   },
   "hra-calculator": {
-    "title": "HRA Exemption Calculator — Tax-Free Rent Allowance Sec 10(13A) | Calciverse.in",
-    "description": "Calculate how much of your House Rent Allowance (HRA) is tax-exempt under Section 10(13A) of Income Tax Act."
+    "title": "HRA Exemption Calculator | Calciverse",
+    "description": "Calculate how much of your House Rent Allowance (HRA) is tax-exempt under Section 10(13A)."
   },
   "gratuity-calculator": {
-    "title": "Gratuity Calculator — Calculate Gratuity Payout on Resignation | Calciverse.in",
-    "description": "Calculate gratuity payout based on last drawn basic salary and completed years of continuous service."
+    "title": "Gratuity Calculator Online | Calciverse",
+    "description": "Calculate gratuity payout based on last drawn basic salary and completed years of service."
   },
   "tds-calculator": {
-    "title": "TDS Calculator Online – Tax Deducted at Source | Calciverse.in",
-    "description": "Calculate Tax Deducted at Source (TDS) amount online for salary, bank fixed deposit interest, or professional contractor fees."
+    "title": "TDS Calculator Online | Calciverse",
+    "description": "Calculate Tax Deducted at Source (TDS) amount online for salary, bank FD interest, or contractor fees."
   },
   "capital-gains-calculator": {
-    "title": "Capital Gains Tax Calculator – STCG & LTCG | Calciverse.in",
-    "description": "Calculate short term capital gains tax (STCG) and long term capital gains tax (LTCG) on equity stocks, mutual funds, and real estate property sales in India."
+    "title": "Capital Gains Tax Calculator | Calciverse",
+    "description": "Calculate STCG and LTCG tax on stocks, mutual funds, and real estate property sales in India."
   },
   "credit-card-interest-calculator": {
-    "title": "Credit Card Interest Calculator – Finance Charges | Calciverse.in",
-    "description": "Calculate credit card interest rate charges, cc interest, daily APR compounding, minimum payment traps, and credit card repayment schedule."
+    "title": "Credit Card Interest Calculator | Calciverse",
+    "description": "Calculate credit card interest charges, daily APR compounding, and payoff schedules."
   },
   "loan-eligibility-calculator": {
-    "title": "Home Loan Eligibility Calculator — Max Loan by Salary & FOIR | Calciverse.in",
-    "description": "Estimate maximum home or personal loan amount you qualify for based on monthly income and existing EMIs."
+    "title": "Loan Eligibility Calculator | Calciverse",
+    "description": "Estimate maximum home or personal loan amount you qualify for based on monthly income and FOIR."
   },
   "prepayment-calculator": {
-    "title": "Loan Prepayment Calculator — Calculate Interest Savings & Tenure Cut | Calciverse.in",
+    "title": "Loan Prepayment Calculator | Calciverse",
     "description": "Calculate total interest saved and tenure cut achieved by making partial principal loan prepayments."
   },
   "mortgage-calculator": {
-    "title": "Home Loan EMI Calculator India – Mortgage Calculator | Calciverse",
-    "description": "Calculate home loan EMI, monthly payment, total interest and total repayment. Compare loan amount, interest rate and tenure."
+    "title": "Mortgage Payment Calculator | Calciverse",
+    "description": "Calculate monthly mortgage payments, principal vs interest schedule, and total loan cost."
   },
   "number-to-words-converter": {
-    "title": "Number to Words Converter – Indian & International | Calciverse",
-    "description": "Convert numbers to words using Indian and International numbering systems. Convert amounts such as ₹1,25,000 into words instantly."
+    "title": "Number to Words Converter | Calciverse",
+    "description": "Convert numbers to words using Indian and International numbering systems instantly."
   },
   "prime-number-checker": {
     "title": "Prime Number Checker – Is This Number Prime? | Calciverse",
@@ -476,62 +476,86 @@ export const TOOL_SEO = {
     "description": "Calculate base numbers raised to positive or negative exponents. Free online exponent & power calculator with instant results on Calciverse."
   },
   "ev-vs-petrol-calculator": {
-    "title": "EV vs Petrol Fuel Cost & Carbon Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Compare monthly running costs, fuel savings, and CO2 carbon reduction between EV and Petrol vehicles. Free online ev vs petrol fuel cost & carbon calculator with instant results on Calciverse."
+    "title": "EV vs Petrol Calculator | Calciverse",
+    "description": "Compare monthly running costs, fuel savings, and CO2 carbon reduction between EV and Petrol vehicles."
   },
   "freelance-tax-hourly-rate-calculator": {
-    "title": "Freelance & Side-Hustle Net Hourly Rate Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Calculate your true net hourly rate after unpaid hours, operational expenses, income tax and GST. Free online freelance & side-hustle net hourly rate calculator with instant results on Calciverse."
+    "title": "Freelance Hourly Rate Calculator | Calciverse",
+    "description": "Calculate your true net hourly rate after unpaid hours, operational expenses, income tax and GST."
   }
 };
 
 export const CATEGORY_SEO = {
   finance: {
-    title: 'Finance Calculators India — EMI, GST, SIP, Loan & Tax | Calciverse',
+    title: 'Finance & Loan Calculators | Calciverse',
     description: 'Free online financial calculators for loan EMI, GST, income tax, SIP returns, FD, RD, PPF, inflation, salary take-home, and mortgages in India.'
   },
   health: {
-    title: 'Health & Fitness Calculators — BMI, Calories, BMR & Ideal Weight | Calciverse',
+    title: 'Health & BMI Calculators | Calciverse',
     description: 'Calculate Body Mass Index (BMI), daily calorie needs (TDEE), BMR, ideal body weight, water intake targets, and target heart rate zones.'
   },
   math: {
-    title: 'Mathematics Calculators — Percentages, Prime Checker, LCM & Fractions | Calciverse',
+    title: 'Math & Percentage Calculators | Calciverse',
     description: 'Free online math tools for percentage calculations, prime number checking, LCM/HCF, fractions, square roots, and standard deviation.'
   },
   education: {
-    title: 'Education Calculators – GPA, CGPA, Percentage & Attendance | Calciverse',
+    title: 'Education & Grade Calculators | Calciverse',
     description: 'Free GPA, CGPA, percentage, grade and attendance calculators for students.'
   },
   business: {
-    title: 'Business & Commerce Calculators — Invoices, Margins & Tax | Calciverse',
+    title: 'Business & Invoice Calculators | Calciverse',
     description: 'Free online business utility tools for tax invoices, profit margin, markup vs margin, break-even analysis, and freelance hourly rates.'
   },
   everyday: {
-    title: 'Everyday Utility Tools & Daily Calculators — Age, Time & Password | Calciverse',
+    title: 'Everyday Calculators & Tools | Calciverse',
     description: 'Practical daily calculators for exact age computation, store discount savings, fuel trip costs, tip splitting, and date differences.'
   },
   developer: {
-    title: 'Developer Tools & Code Formatters — JSON, Regex, Base64 & CSS | Calciverse',
+    title: 'Developer Tools & Formatters | Calciverse',
     description: 'Free client-side developer utilities for JSON formatting, Base64 encoding/decoding, JWT inspection, Unix timestamps, and regex testing.'
   }
 };
 
 export const ARTICLE_SEO = {
   'how-emi-is-calculated': {
-    title: 'How Loan EMI is Calculated: Formula & Amortization Math | Calciverse',
+    title: 'How Loan EMI is Calculated | Calciverse',
     description: 'Learn how banks calculate loan EMI using the reducing balance formula. Complete guide with formulas, monthly split math, and early prepayment tips.'
   },
   'old-vs-new-tax-regime': {
-    title: 'Old vs New Tax Regime FY 2026-27: Which Saves More Tax? | Calciverse',
+    title: 'Old vs New Tax Regime Guide | Calciverse',
     description: 'Compare Old vs New Income Tax Regime slabs and deductions (80C, HRA, home loan interest). Find your break-even deduction point to save maximum tax.'
   },
   'how-gst-actually-works': {
-    title: 'How GST Works in India: Rates, Inclusive & Exclusive Math | Calciverse',
+    title: 'How GST Works in India | Calciverse',
     description: 'Understand GST calculation in India. Learn exact formulas to add 18% GST or extract base prices from GST-inclusive bills without calculation errors.'
   },
   'how-to-check-if-a-number-is-prime': {
-    title: 'How to Check if a Number Is Prime – Methods & Examples | Calciverse',
+    title: 'How to Check Prime Numbers | Calciverse',
     description: 'Learn how to test if a number is prime using trial division up to √n, understand factors of 91 and 97, and use our prime checker.'
+  },
+  'how-prepayment-changes-your-loan': {
+    title: 'How Loan Prepayment Works | Calciverse',
+    description: 'Learn how loan prepayments reduce total interest paid and shorten tenure.'
+  },
+  'how-tip-splitting-math-works': {
+    title: 'Tip Splitting Math Guide | Calciverse',
+    description: 'Learn the math behind restaurant tip calculations and bill splitting.'
+  },
+  'how-to-calculate-what-you-need-on-a-final': {
+    title: 'What I Need on Final Calculator | Calciverse',
+    description: 'Calculate what grade you need on your final exam to achieve your target course grade.'
+  },
+  'mean-median-mode-when-to-use-which': {
+    title: 'Mean, Median & Mode Guide | Calciverse',
+    description: 'Learn the mathematical difference between mean, median, and mode with practical examples.'
+  },
+  'what-a-jwt-actually-contains': {
+    title: 'What a JWT Contains | Calciverse',
+    description: 'Understand JWT headers, payload JSON, and cryptographic signatures in web authentication.'
+  },
+  'why-placeholder-text-is-called-lorem-ipsum': {
+    title: 'Why Text Is Called Lorem Ipsum | Calciverse',
+    description: 'Learn the origin and meaning of Lorem Ipsum dummy placeholder text in printing and web design.'
   }
 };
 

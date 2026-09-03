@@ -8,6 +8,23 @@ const SITE_NAME = 'Calciverse'
 const SITE_DOMAIN = 'Calciverse.in'
 const SITE_URL = 'https://calciverse.in'
 
+function formatTitle(title) {
+  if (!title) return 'Free Online Calculators & Tools | Calciverse'
+  const str = String(title).replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim()
+  if (str.length <= 55) return str
+
+  const parts = str.split(/\s+[\|\—\–\-]\s+/)
+  const core = parts[0].trim()
+  const suffix = ' | Calciverse'
+
+  if (core.length + suffix.length <= 55) {
+    return `${core}${suffix}`
+  }
+
+  const maxCore = 55 - suffix.length // 42 chars
+  return `${core.substring(0, maxCore - 3).trim()}...${suffix}`
+}
+
 export default function SEO({
   title,
   description,
@@ -53,17 +70,17 @@ export default function SEO({
       pageDesc = mappedSEO.description || mappedSEO.desc
     } else {
       if (kind === 'converter' || toolName.toLowerCase().includes('converter')) {
-        pageTitle = `${toolName} — Free Online Converter | ${SITE_DOMAIN}`
+        pageTitle = `${toolName} Converter | Calciverse`
         pageDesc = description
           ? `${description} Convert values instantly on Calciverse.in.`
           : `Free online ${toolName} for fast, accurate conversions on Calciverse.in.`
       } else if (kind === 'generator' || toolName.toLowerCase().includes('generator')) {
-        pageTitle = `${toolName} — Free Online Generator | ${SITE_DOMAIN}`
+        pageTitle = `${toolName} Generator | Calciverse`
         pageDesc = description
           ? `${description} Generate results instantly on Calciverse.in.`
           : `Free online ${toolName} for instant generation on Calciverse.in.`
       } else {
-        pageTitle = `${toolName} — Free Online Calculator | ${SITE_DOMAIN}`
+        pageTitle = `${toolName} | Calciverse`
         pageDesc = description
           ? `${description} Calculate instantly on Calciverse.in.`
           : `Free online ${toolName} for fast, accurate, and privacy-focused calculations on Calciverse.in.`
@@ -75,7 +92,7 @@ export default function SEO({
       pageTitle = mappedCategory.title
       pageDesc = mappedCategory.description || mappedCategory.desc
     } else {
-      pageTitle = `${title || 'Tools'} Calculators & Utilities | ${SITE_DOMAIN}`
+      pageTitle = `${title || 'Tools'} Calculators | Calciverse`
       pageDesc = `Explore free online ${title || ''} calculators, converters, and generators on Calciverse.in.`
     }
   } else if (cleanPath.startsWith('/articles/')) {
@@ -84,15 +101,17 @@ export default function SEO({
       pageTitle = mappedArticle.title
       pageDesc = mappedArticle.description || mappedArticle.desc
     } else {
-      pageTitle = `${title || 'Article'} | ${SITE_DOMAIN} Articles`
+      pageTitle = `${title || 'Article'} | Calciverse`
       pageDesc = description || `Read guide on ${title || 'finance and calculations'} on Calciverse.in.`
     }
   } else if (staticMatch) {
     pageTitle = staticMatch.title
     pageDesc = staticMatch.description
   } else {
-    pageTitle = title ? `${title} | ${SITE_DOMAIN}` : `${SITE_NAME} — Free Online Calculators`
+    pageTitle = title ? `${title} | Calciverse` : `${SITE_NAME} — Free Online Calculators`
   }
+
+  const finalTitle = formatTitle(pageTitle)
 
   const schemas = []
 
@@ -201,17 +220,17 @@ export default function SEO({
 
   return (
     <Helmet>
-      <title>{pageTitle}</title>
+      <title>{finalTitle}</title>
       <meta name="description" content={pageDesc} />
       {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
       <link rel="canonical" href={canonicalUrl} />
-      <meta property="og:title" content={pageTitle} />
+      <meta property="og:title" content={finalTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={cleanPath.startsWith('/articles/') ? 'article' : type} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={pageDesc} />
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json">

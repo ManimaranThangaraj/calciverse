@@ -25,11 +25,28 @@ const esc = (value = '') =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;')
 
+function formatTitle(title) {
+  if (!title) return 'Free Online Calculators & Tools | Calciverse'
+  const str = String(title).replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim()
+  if (str.length <= 55) return str
+
+  const parts = str.split(/\s+[\|\—\–\-]\s+/)
+  const core = parts[0].trim()
+  const suffix = ' | Calciverse'
+
+  if (core.length + suffix.length <= 55) {
+    return `${core}${suffix}`
+  }
+
+  const maxCore = 55 - suffix.length // 42 chars
+  return `${core.substring(0, maxCore - 3).trim()}...${suffix}`
+}
+
 function getToolSEO(tool) {
   const mapped = TOOL_SEO[tool.slug]
-  if (mapped) return mapped
+  if (mapped) return { ...mapped, title: formatTitle(mapped.title) }
   return {
-    title: `${tool.name} – Calciverse`,
+    title: formatTitle(`${tool.name} | Calciverse`),
     description:
       tool.description ||
       `Use the free ${tool.name} online from Calciverse for fast and accurate calculations.`
@@ -38,7 +55,7 @@ function getToolSEO(tool) {
 
 function getArticleSEO(article) {
   const mapped = ARTICLE_SEO[article.slug]
-  if (mapped) return mapped
+  if (mapped) return { ...mapped, title: formatTitle(mapped.title) }
   const description =
     article.metaDescription ||
     article.description ||
@@ -46,7 +63,7 @@ function getArticleSEO(article) {
     `Learn ${article.title.toLowerCase()} with clear explanations, examples, formulas, and practical guidance from Calciverse.`
 
   return {
-    title: `${article.title} | Calciverse`,
+    title: formatTitle(`${article.title} | Calciverse`),
     description: description.length > 160
       ? `${description.substring(0, 157).trim()}...`
       : description
@@ -357,6 +374,7 @@ function createHtml(template, {
   type = 'website',
   article = null
 }) {
+  title = formatTitle(title)
   const canonical =
     path === '/'
       ? `${SITE_URL}/`
