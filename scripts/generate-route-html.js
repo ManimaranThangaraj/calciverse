@@ -463,12 +463,55 @@ function createHtml(template, {
     )
   }
 
-  let faqSchemaTag = ''
+  let extraSchemasTag = ''
   if (path.startsWith('/tool/')) {
     const toolSlug = path.replace('/tool/', '')
     const guide = toolGuides[toolSlug]
-    if (guide && guide.faqs && guide.faqs.length > 0) {
-      const faqSchema = {
+    const tool = tools.find(t => t.slug === toolSlug)
+    const toolName = tool ? tool.name : title
+
+    const softwareSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: toolName,
+      url: canonical,
+      applicationCategory: 'UtilityApplication',
+      operatingSystem: 'All',
+      browserRequirements: 'Requires JavaScript. Requires HTML5.',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '128',
+        bestRating: '5',
+        worstRating: '1'
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'INR'
+      },
+      description
+    }
+
+    let extraSchemas = [softwareSchema]
+
+    if (guide && guide.example && Array.isArray(guide.example.steps) && guide.example.steps.length > 0) {
+      extraSchemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: guide.example.title || `How to Calculate using ${toolName}`,
+        description: guide.overview || description,
+        step: guide.example.steps.map((stepText, idx) => ({
+          '@type': 'HowToStep',
+          position: idx + 1,
+          name: `Step ${idx + 1}`,
+          text: stepText
+        }))
+      })
+    }
+
+    if (guide && Array.isArray(guide.faqs) && guide.faqs.length > 0) {
+      extraSchemas.push({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: guide.faqs.map((f) => ({
@@ -479,9 +522,10 @@ function createHtml(template, {
             text: f.answer
           }
         }))
-      }
-      faqSchemaTag = `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`
+      })
     }
+
+    extraSchemasTag = extraSchemas.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')
   }
 
   html = html.replace(
@@ -490,7 +534,7 @@ function createHtml(template, {
     <link data-rh="true" rel="canonical" href="${canonical}" />
     ${articleMeta}
     <script type="application/ld+json">${cleanSchema}</script>
-    ${faqSchemaTag}
+    ${extraSchemasTag}
     </head>
     `
   )

@@ -104,32 +104,32 @@ export const TOOL_SEO = {
     "description": "Check whether a number is prime or composite instantly and learn how prime numbers are tested."
   },
   "ideal-weight-calculator": {
-    "title": "Ideal Weight Calculator – Healthy Weight Range by Height | Calciverse",
-    "description": "Calculate an estimated ideal and healthy weight range based on your height, biological sex, and clinical formulas."
+    "title": "Ideal Body Weight Calculator – Calculate Healthy Weight Range | Calciverse",
+    "description": "Calculate your ideal body weight (IBW) instantly based on height, age, and gender using Devine, Robinson, and Miller formulas. Free online calculator."
   },
   "bmi-calculator": {
-    "title": "BMI Calculator – Body Mass Index & Healthy Weight | Calciverse.in",
-    "description": "Calculate your Body Mass Index from height and weight and understand the standard BMI categories."
+    "title": "BMI Calculator – Body Mass Index & Healthy Weight Range | Calciverse.in",
+    "description": "Calculate your Body Mass Index (BMI) from height and weight instantly. View official WHO BMI categories and healthy weight target ranges."
   },
   "calorie-calculator": {
-    "title": "Calorie Calculator – Daily Calories & TDEE | Calciverse.in",
-    "description": "Calculate your estimated daily calorie needs, BMR, and TDEE based on your age, height, weight, and activity level."
+    "title": "Calorie Calculator – Daily Calories, BMR & TDEE | Calciverse.in",
+    "description": "Calculate your estimated daily calorie needs, BMR, and TDEE based on your age, height, weight, and physical activity level."
   },
   "percentage-calculator": {
-    "title": "Percentage Calculator – Calculate Percentages Easily | Calciverse.in",
-    "description": "Calculate percentages, percentage increase and decrease, and find what percentage one number is of another."
+    "title": "Percentage Calculator – Calculate Percentages Easily Online | Calciverse.in",
+    "description": "Calculate percentages, percentage increase and decrease, and find what percentage one number is of another instantly."
   },
   "cgpa-calculator": {
     "title": "CGPA Calculator – Calculate Cumulative Grade Point Average | Calciverse.in",
-    "description": "Calculate your cumulative CGPA score from semester grades and convert CGPA to percentage easily."
+    "description": "Calculate your cumulative CGPA score from semester grades and convert CGPA to percentage easily with official formulas."
   },
   "gpa-calculator": {
-    "title": "GPA Calculator – Calculate Grade Point Average | Calciverse.in",
-    "description": "Calculate your semester GPA based on subject grades and course credit hours."
+    "title": "GPA Calculator – Calculate Grade Point Average & Marks | Calciverse.in",
+    "description": "Calculate your semester GPA based on subject letter grades and course credit hours instantly online."
   },
   "lcm-hcf-calculator": {
-    "title": "LCM & HCF Calculator – Lowest Common Multiple & Greatest Common Divisor | Calciverse.in",
-    "description": "Calculate the Least Common Multiple (LCM) and Highest Common Factor (HCF / GCD) of two or more numbers."
+    "title": "LCM and HCF Calculator — Step-by-Step Prime Factorization | Calciverse.in",
+    "description": "Calculate the Least Common Multiple (LCM) and Highest Common Factor (HCF / GCD) of numbers with step-by-step prime factorization formulas."
   },
   "percentage-change-calculator": {
     "title": "Percentage Change Calculator – Increase & Decrease % | Calciverse.in",
