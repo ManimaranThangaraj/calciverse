@@ -82,10 +82,11 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-5 py-14">
         <div className="flex items-center justify-between">
-          <h2 className="font-display text-2xl font-semibold text-ink">Popular right now</h2>
+          <h2 className="font-display text-2xl font-semibold text-ink">Popular Calculators & Text Tools</h2>
+          <Link to="/category/everyday" className="text-xs font-semibold text-saffron hover:underline">View All →</Link>
         </div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {['emi-calculator', 'gst-calculator', 'income-tax-calculator', 'sip-calculator', 'bmi-calculator', 'age-calculator']
+          {['case-converter', 'lcm-hcf-calculator', 'tip-calculator', 'emi-calculator', 'gst-calculator', 'income-tax-calculator', 'sip-calculator', 'bmi-calculator', 'age-calculator']
             .map((slug) => tools.find((t) => t.slug === slug && t.status === 'live'))
             .filter(Boolean)
             .map((t) => (

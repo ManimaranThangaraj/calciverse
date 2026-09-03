@@ -624,19 +624,26 @@ export const articles = [
   },
   {
     "slug": "how-tip-splitting-math-works",
-    "title": "Splitting a Bill and Tip Between Friends, Without the Awkward Napkin Math",
+    "title": "Tip Calculator & Bill Splitting Math: Equal vs Itemized Splits",
     "category": "everyday",
     "status": "live",
-    "excerpt": "Equal splits and itemized splits give different answers — and only one is fair when orders vary a lot.",
-    "readMinutes": 6,
+    "excerpt": "Learn how tip calculator formulas work, how to calculate tip before or after tax, and how to split restaurant bills fairly among friends.",
+    "readMinutes": 7,
     "relatedTool": "tip-calculator",
     "content": [
-      "The simplest split — total bill plus tip, divided evenly by headcount — is fair only when everyone ordered roughly the same amount. When one person had a starter, drinks and dessert while another had a single dish, an equal split effectively has the light eater subsidizing the heavy one.",
-      "Tip percentage itself is usually calculated on the pre-tax subtotal, not the tax-inclusive total, though plenty of people tip on the final total out of convenience — the difference is usually small in absolute terms but can matter on a large bill with a high local tax rate.",
-      "For itemized fairness, the calculation is really two steps: each person's tip is their own subtotal times the tip rate, then everyone pays their own subtotal plus their own tip share — which requires knowing individual order amounts, the one piece of information an equal split conveniently avoids needing."
+      "Splitting a group restaurant check often leads to awkward napkin calculations. Understanding the math behind tipping percentages and bill division ensures everyone pays their fair share.",
+      "## Tip Calculator Formulas",
+      "Calculating a tip requires three core steps:",
+      "1. Tip Amount = Pre-Tax Subtotal × (Tip Percentage ÷ 100)",
+      "2. Total Bill = Subtotal + Tax Amount + Tip Amount",
+      "3. Per Person Payment = Total Bill ÷ Number of Diners",
+      "## Equal Split vs Itemized Split",
+      "An equal split divides the total check evenly by headcount. This works well when everyone ordered similar items.",
+      "An itemized split assigns tax and tip proportionally based on each person's exact subtotal. If Person A ordered ₹1,000 and Person B ordered ₹500, Person A pays two-thirds of the total tax and tip.",
+      "Using an interactive tip calculator eliminates manual rounding errors and makes group bill splitting transparent."
     ],
     "publishedAt": "2026-02-20",
-    "updatedAt": "2026-08-28"
+    "updatedAt": "2026-09-03"
   },
   {
     "slug": "how-to-calculate-true-fuel-cost",
@@ -672,19 +679,26 @@ export const articles = [
   },
   {
     "slug": "when-to-use-which-text-case",
-    "title": "Title Case, Sentence Case, or ALL CAPS: When Each One Is Actually Correct",
+    "title": "Sentence Case vs Title Case vs Camel Case: Complete Usage & Conversion Guide",
     "category": "everyday",
     "status": "live",
-    "excerpt": "Style guides disagree on title case rules more than most people expect.",
-    "readMinutes": 6,
+    "excerpt": "A complete comparison of Sentence case vs Title case vs Camel case with clear rules for writing, design, and programming.",
+    "readMinutes": 7,
     "relatedTool": "case-converter",
     "content": [
-      "Sentence case capitalizes only the first word and proper nouns — the standard for regular prose, most headings in modern web design, and any UI text meant to read naturally rather than formally.",
-      "Title case capitalizes most words but conventionally lowercases short articles, conjunctions and prepositions (a, the, and, of, in) unless they start or end the title — which is why different style guides (APA, Chicago, AP) occasionally disagree on borderline words, since each defines its own exception list slightly differently.",
-      "ALL CAPS is readable for very short bursts — a button label, a warning, an acronym — but measurably slows reading speed for longer stretches of text, since capital letters remove the varied word-shape cues (ascenders, descenders) that readers rely on for fast recognition. It is a deliberate emphasis tool, not a default formatting choice."
+      "Text capitalization rules can seem subtle until a inconsistent title or syntax error breaks your work. Choosing between Sentence case, Title case, and Camel case depends entirely on whether you are writing editorial content, designing user interfaces, or coding software components.",
+      "## Sentence Case vs Title Case vs Camel Case: Summary",
+      "Sentence case capitalizes only the first word of a sentence and any proper nouns (for example: \"This is sentence case in practice\"). It is the default standard for body text, blog paragraph copy, and modern minimal UI headers.",
+      "Title case capitalizes the first letter of all major words while leaving short conjunctions, articles, and prepositions lowercase (for example: \"This Is Title Case in Practice\"). It is widely used in book titles, traditional headline journalism, and formal navigation menus.",
+      "Camel case removes all spaces entirely and capitalizes the first letter of each concatenated word except the very first (lowerCamelCase, e.g. \"thisIsCamelCaseInPractice\"). It is the fundamental naming convention across modern programming languages like JavaScript, Java, TypeScript, and C#.",
+      "## When to Use Sentence Case vs Camel Case",
+      "Sentence case is designed for human legibility. Eye-tracking studies confirm that sentence case is easiest for readers to scan quickly because it matches standard sentence structure without visual friction.",
+      "Camel case is designed for code syntax. Compilers and interpreters cannot process spaces inside variable identifiers. By concatenating words into `myUserAccountBalance`, developers preserve readability without violating code parsing rules.",
+      "## Title Case vs Camel Case in Web Development",
+      "When building web applications, developers frequently convert strings between Title Case for display headings (e.g. \"User Settings\") and camelCase for data properties (e.g. `userSettings`). Using an automated case converter prevents manual typo errors when mapping backend API keys to UI titles."
     ],
     "publishedAt": "2026-03-04",
-    "updatedAt": "2026-08-28"
+    "updatedAt": "2026-09-03"
   },
   {
     "slug": "how-typing-speed-is-measured",
@@ -807,19 +821,27 @@ export const articles = [
   },
   {
     "slug": "lcm-and-hcf-explained-with-examples",
-    "title": "LCM and HCF: What They're Actually Used For Outside the Classroom",
+    "title": "What is LCM and HCF? Formulas, Differences & Worked Examples",
     "category": "math",
     "status": "live",
-    "excerpt": "These two concepts show up constantly in scheduling and fraction problems, just not usually by name.",
-    "readMinutes": 6,
+    "excerpt": "Learn what is LCM and HCF, their fundamental formulas, prime factorization method, and real-world applications in scheduling and fractions.",
+    "readMinutes": 7,
     "relatedTool": "lcm-hcf-calculator",
     "content": [
-      "The Highest Common Factor (HCF, also called GCD) is the largest number that divides two or more numbers evenly. The Least Common Multiple (LCM) is the smallest number that all of them divide into evenly — the two are related by the identity LCM(a,b) × HCF(a,b) = a × b, which is the fastest way to compute one once you know the other.",
-      "HCF shows up whenever something needs to be split into the largest possible equal groups — dividing two lengths of rope into the longest possible equal pieces with none left over, for instance, or reducing a fraction to its simplest form by dividing numerator and denominator by their HCF.",
-      "LCM shows up whenever events need to be synced up — two events that repeat every 4 days and every 6 days will next coincide on day 12, the LCM of 4 and 6. Adding fractions with different denominators also relies on LCM: finding the lowest common denominator is precisely an LCM calculation."
+      "Whether solving school algebra or organizing periodic tasks in real life, understanding what is LCM and HCF unlocks fast mathematical problem-solving.",
+      "## What is LCM and HCF?",
+      "The Highest Common Factor (HCF, also known as Greatest Common Divisor or GCD) is the largest positive integer that divides two or more numbers cleanly without leaving a remainder.",
+      "The Least Common Multiple (LCM) is the smallest positive integer that is divisible by two or more numbers without leaving a remainder.",
+      "## Relationship Formula Between LCM and HCF",
+      "For any two positive integers A and B, the product of their HCF and LCM is strictly equal to the product of the two numbers:",
+      "HCF(A, B) × LCM(A, B) = A × B",
+      "For example, for numbers 12 and 18: HCF is 6 and LCM is 36. Multiplying 6 × 36 gives 216, which exactly matches 12 × 18 = 216.",
+      "## Real-World Applications of HCF and LCM",
+      "HCF is used when dividing items into the largest equal groups — such as splitting 24 apples and 36 oranges into identical fruit baskets without leftovers.",
+      "LCM is used when synchronizing repeating cycles — such as calculating when two bus lines running every 15 minutes and 20 minutes will arrive at the station simultaneously."
     ],
     "publishedAt": "2026-04-05",
-    "updatedAt": "2026-08-28"
+    "updatedAt": "2026-09-03"
   },
   {
     "slug": "fraction-arithmetic-the-rules-that-trip-people-up",
