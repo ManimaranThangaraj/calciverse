@@ -535,27 +535,227 @@ export const ARTICLE_SEO = {
   },
   'how-prepayment-changes-your-loan': {
     title: 'How Loan Prepayment Works | Calciverse',
-    description: 'Learn how loan prepayments reduce total interest paid and shorten tenure.'
+    description: 'Learn how loan prepayments reduce total interest paid and shorten loan tenure with practical amortization examples.'
   },
   'how-tip-splitting-math-works': {
     title: 'Tip Splitting Math Guide | Calciverse',
-    description: 'Learn the math behind restaurant tip calculations and bill splitting.'
+    description: 'Learn the math behind restaurant tip calculations, itemized bill splitting, and per-person group payment calculations.'
   },
   'how-to-calculate-what-you-need-on-a-final': {
     title: 'What I Need on Final Calculator | Calciverse',
-    description: 'Calculate what grade you need on your final exam to achieve your target course grade.'
+    description: 'Calculate what grade you need on your final exam to achieve your target overall course grade based on current assignment averages.'
   },
   'mean-median-mode-when-to-use-which': {
     title: 'Mean, Median & Mode Guide | Calciverse',
-    description: 'Learn the mathematical difference between mean, median, and mode with practical examples.'
+    description: 'Learn the mathematical difference between mean average, median midpoint, and mode frequency with practical statistical examples.'
   },
   'what-a-jwt-actually-contains': {
     title: 'What a JWT Contains | Calciverse',
-    description: 'Understand JWT headers, payload JSON, and cryptographic signatures in web authentication.'
+    description: 'Understand JSON Web Token (JWT) structure: base64 encoded header, payload claims, and HMAC cryptographic signatures.'
   },
   'why-placeholder-text-is-called-lorem-ipsum': {
     title: 'Why Text Is Called Lorem Ipsum | Calciverse',
-    description: 'Learn the origin and meaning of Lorem Ipsum dummy placeholder text in printing and web design.'
+    description: 'Learn the origin and history of Cicero Lorem Ipsum dummy text used in printing, graphic design, and web typography layout.'
+  },
+  'sip-vs-lumpsum-investing': {
+    title: 'SIP vs Lumpsum Investment | Calciverse',
+    description: 'Compare SIP vs Lumpsum mutual fund returns. Learn which investment strategy yields higher compound wealth growth across market cycles.'
+  },
+  'how-compound-interest-really-grows-money': {
+    title: 'How Compound Interest Grows | Calciverse',
+    description: 'Discover how compound interest multiplies wealth over time. Formulas, compounding frequency math, and exponential growth examples.'
+  },
+  'fixed-deposit-vs-recurring-deposit': {
+    title: 'FD vs RD Comparison Guide | Calciverse',
+    description: 'Compare Fixed Deposit (FD) vs Recurring Deposit (RD) interest rates, tenure rules, and compounding returns for smart savings.'
+  },
+  'what-affects-your-loan-eligibility': {
+    title: 'Loan Eligibility Factors | Calciverse',
+    description: 'Learn key factors that determine home and personal loan eligibility: CIBIL credit score, FOIR ratio, monthly income, and existing EMIs.'
+  },
+  'understanding-credit-card-interest-traps': {
+    title: 'Credit Card Interest Traps | Calciverse',
+    description: 'Understand how credit card daily APR compounding interest traps work. Learn exact payoff formulas to avoid high finance charges.'
+  },
+  'ppf-vs-nps-retirement-planning': {
+    title: 'PPF vs NPS Retirement Guide | Calciverse',
+    description: 'Compare Public Provident Fund (PPF) vs National Pension System (NPS) tax benefits under 80C, lock-in periods, and annuity returns.'
+  },
+  'bmi-limitations': {
+    title: 'BMI Limitations & Accuracy | Calciverse',
+    description: 'Understand clinical limitations of Body Mass Index (BMI). Learn why muscle mass, bone density, and waist ratio matter alongside BMI.'
+  },
+  'bmr-vs-tdee-explained': {
+    title: 'BMR vs TDEE Explained | Calciverse',
+    description: 'Learn the difference between Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) for weight loss and muscle gain.'
+  },
+  'water-intake-how-much-is-enough': {
+    title: 'Daily Water Intake Guide | Calciverse',
+    description: 'Find out how much water you should drink daily based on body weight, exercise activity, climate, and clinical hydration formulas.'
+  },
+  'understanding-macros-protein-carbs-fat': {
+    title: 'Understanding Macros Guide | Calciverse',
+    description: 'Learn how to calculate daily macronutrients: protein, carbs, and healthy fat ratios for fitness goals, fat loss, and muscle growth.'
+  },
+  'why-heart-rate-zones-matter-for-training': {
+    title: 'Heart Rate Zones Guide | Calciverse',
+    description: 'Understand 5 target heart rate zones for cardio training, fat burn, and aerobic performance based on age and max heart rate.'
+  },
+  'waist-to-hip-ratio-vs-bmi': {
+    title: 'Waist to Hip Ratio vs BMI | Calciverse',
+    description: 'Compare Waist-to-Hip Ratio (WHR) vs BMI for health risk evaluation. Learn body shape classification standards and visceral fat risks.'
+  },
+  'how-ovulation-tracking-works': {
+    title: 'How Ovulation Tracking Works | Calciverse',
+    description: 'Understand menstrual cycle phases, luteal phase timing, and how ovulation calculators pinpoint peak fertility windows.'
+  },
+  'sleep-cycles-and-when-to-wake-up': {
+    title: 'Sleep Cycles & Wake Times | Calciverse',
+    description: 'Learn how 90-minute REM sleep cycles work. Calculate optimal bedtimes and wake times to wake up feeling refreshed and energized.'
+  },
+  'ideal-weight-formulas-explained': {
+    title: 'Ideal Weight Formulas | Calciverse',
+    description: 'Understand clinical Ideal Body Weight (IBW) equations: Devine, Robinson, Miller, and Hamwi formulas for men and women.'
+  },
+  'calories-burned-walking-vs-running': {
+    title: 'Calories: Walk vs Run Math | Calciverse',
+    description: 'Compare calories burned walking vs running the same distance. Understand MET values, body weight impact, and speed multipliers.'
+  },
+  'cgpa-vs-percentage': {
+    title: 'CGPA vs Percentage Guide | Calciverse',
+    description: 'Learn official formulas to convert CGPA to percentage across CBSE, Mumbai University, VTU, and Anna University grading systems.'
+  },
+  'attendance-percentage-explained': {
+    title: 'Attendance Percentage Math | Calciverse',
+    description: 'Calculate exact classes needed to reach 75% or 85% mandatory college attendance. Avoid low attendance condonation traps.'
+  },
+  'gpa-vs-cgpa-difference': {
+    title: 'GPA vs CGPA Difference | Calciverse',
+    description: 'Understand the distinction between semester Grade Point Average (GPA) and cumulative CGPA. Credit weightage formulas explained.'
+  },
+  'how-weighted-grades-are-calculated': {
+    title: 'How Weighted Grades Work | Calciverse',
+    description: 'Learn step-by-step how to calculate weighted course grades using percentage weights, assignments, midterms, and final exams.'
+  },
+  'understanding-grading-curves': {
+    title: 'Grading Curves Explained | Calciverse',
+    description: 'Understand how professors curve exam grades using bell curves, standard deviation, and square root normalization formulas.'
+  },
+  'percentage-vs-percentile-in-exams': {
+    title: 'Percentage vs Percentile | Calciverse',
+    description: 'Understand the crucial math difference between percentage marks and rank percentile scores in JEE, NEET, and CAT competitive exams.'
+  },
+  'how-credit-hours-affect-gpa': {
+    title: 'How Credit Hours Affect GPA | Calciverse',
+    description: 'Learn how course credit unit weightage impacts overall GPA calculations. Worked examples for 3-credit vs 4-credit subjects.'
+  },
+  'common-mistakes-in-marks-to-percentage-conversion': {
+    title: 'Marks to Percentage Rules | Calciverse',
+    description: 'Avoid common calculation mistakes when converting exam total marks to overall percentage across multi-subject report cards.'
+  },
+  'why-different-boards-grade-differently': {
+    title: 'Why Boards Grade Differ | Calciverse',
+    description: 'Compare grading criteria across CBSE, ICSE, State Boards, and IB. Learn how university admission normalized cutoffs work.'
+  },
+  'how-age-is-calculated': {
+    title: 'How Exact Age Is Calculated | Calciverse',
+    description: 'Discover how exact age in years, months, and days is calculated considering leap years and varying month lengths.'
+  },
+  'discount-math-explained': {
+    title: 'Discount Math & Savings | Calciverse',
+    description: 'Learn formulas for double discounts, stacked sale offers, and flat percentage off to calculate true final purchase savings.'
+  },
+  'how-to-calculate-true-fuel-cost': {
+    title: 'How to Calculate Fuel Cost | Calciverse',
+    description: 'Calculate real-world vehicle trip fuel costs based on distance, fuel price per liter, and city vs highway mileage.'
+  },
+  'why-word-count-limits-exist': {
+    title: 'Why Word Count Limits Exist | Calciverse',
+    description: 'Understand why essays, articles, and social posts enforce character and word count limits. Formatting and SEO readability tips.'
+  },
+  'when-to-use-which-text-case': {
+    title: 'Sentence vs Title Case | Calciverse',
+    description: 'Learn when to use Sentence case, Title Case, UPPERCASE, camelCase, and snake_case in writing, headlines, and programming code.'
+  },
+  'how-typing-speed-is-measured': {
+    title: 'How WPM Speed Is Tested | Calciverse',
+    description: 'Learn how Words Per Minute (WPM) and typing accuracy percentage are calculated. Error penalty formulas explained.'
+  },
+  'why-unit-conversion-factors-look-odd': {
+    title: 'Unit Conversion Math | Calciverse',
+    description: 'Understand the history and exact scientific formulas behind metric and imperial unit conversion factors.'
+  },
+  'time-zones-and-daylight-saving-explained': {
+    title: 'Time Zones & DST Explained | Calciverse',
+    description: 'Understand UTC offsets, Greenwich Mean Time (GMT), and why Daylight Saving Time (DST) shifts local meeting times.'
+  },
+  'how-to-estimate-your-electricity-bill': {
+    title: 'Estimate Electricity Bill | Calciverse',
+    description: 'Learn how electric power utilities calculate monthly electricity bills using kWh slab rates and fixed appliance wattage math.'
+  },
+  'percentage-points-vs-percent': {
+    title: 'Percentage Points vs % | Calciverse',
+    description: 'Understand the difference between percentage point increases and percent change in finance, interest rates, and stats.'
+  },
+  'how-to-simplify-and-solve-ratios': {
+    title: 'How to Simplify Ratios | Calciverse',
+    description: 'Learn step-by-step how to simplify ratios to lowest terms and solve missing ratio proportion values easily.'
+  },
+  'lcm-and-hcf-explained-with-examples': {
+    title: 'What is LCM and HCF? | Calciverse',
+    description: 'Learn Least Common Multiple (LCM) and Highest Common Factor (HCF/GCD) using prime factorization and division algorithms.'
+  },
+  'fraction-arithmetic-the-rules-that-trip-people-up': {
+    title: 'Fraction Arithmetic Rules | Calciverse',
+    description: 'Master fraction addition, subtraction, multiplication, and division rules using common denominators and cross-multiplication.'
+  },
+  'estimating-square-roots-without-a-calculator': {
+    title: 'Estimate Square Roots | Calciverse',
+    description: 'Learn fast mental math techniques and linear approximation formulas to estimate non-perfect square roots accurately.'
+  },
+  'what-standard-deviation-actually-tells-you': {
+    title: 'Standard Deviation Guide | Calciverse',
+    description: 'Understand standard deviation and variance formulas. Learn what low vs high spread tells you about data sets.'
+  },
+  'permutations-vs-combinations-explained': {
+    title: 'Permutations vs Combination | Calciverse',
+    description: 'Learn the difference between permutations (order matters) and combinations (grouping). Formulas nPr and nCr explained.'
+  },
+  'solving-quadratic-equations-three-ways': {
+    title: 'Solving Quadratic Equations | Calciverse',
+    description: 'Learn three methods to solve quadratic equations: factoring, completing the square, and using the quadratic formula.'
+  },
+  'json-vs-yaml': {
+    title: 'JSON vs YAML Comparison | Calciverse',
+    description: 'Compare JSON vs YAML data formats for API payloads, config files, developer readability, and parsing speed.'
+  },
+  'regex-basics-that-cover-most-cases': {
+    title: 'Regex Basics Explained | Calciverse',
+    description: 'Learn essential regular expression patterns, character classes, quantifiers, and regex matching for developers.'
+  },
+  'markdown-vs-rich-text-editors': {
+    title: 'Markdown vs Rich Text | Calciverse',
+    description: 'Compare Markdown plain text formatting vs Rich Text Editors. Learn syntax rules and productivity advantages.'
+  },
+  'why-url-encoding-exists': {
+    title: 'Why URL Encoding Exists | Calciverse',
+    description: 'Understand why percent-encoding converts spaces and special characters in web URLs. Security and HTTP standards explained.'
+  },
+  'unix-timestamps-explained': {
+    title: 'Unix Timestamps Guide | Calciverse',
+    description: 'Learn what Epoch time is, how Unix timestamps track seconds since Jan 1 1970, and how to convert epoch to human dates.'
+  },
+  'how-diff-algorithms-find-changes': {
+    title: 'How Diff Algorithms Work | Calciverse',
+    description: 'Understand Myers diff algorithm and line-by-line comparison logic used in Git and text comparison utilities.'
+  },
+  'css-gradients-linear-vs-radial': {
+    title: 'CSS Gradients Guide | Calciverse',
+    description: 'Learn CSS linear, radial, and conic gradient syntax, color stops, and angle directions for modern web styling.'
+  },
+  'binary-hex-and-decimal-why-programmers-use-all-three': {
+    title: 'Binary Hex Decimal Guide | Calciverse',
+    description: 'Understand Base 2 (Binary), Base 10 (Decimal), and Base 16 (Hexadecimal) numbering systems and conversion formulas.'
   }
 };
 
