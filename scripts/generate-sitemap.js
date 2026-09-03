@@ -43,14 +43,26 @@ const articlePages = articleSlugs.map((slug) => `/articles/${slug}`)
 
 const allUrls = [...new Set([...staticPages, ...categoryPages, ...toolPages, ...articlePages])]
 
+function getPriorityAndChangeFreq(path) {
+  if (path === '/') return { priority: '1.0', changefreq: 'daily' }
+  if (path.startsWith('/tool/')) return { priority: '0.9', changefreq: 'daily' }
+  if (path.startsWith('/category/')) return { priority: '0.8', changefreq: 'daily' }
+  if (path.startsWith('/articles/')) return { priority: '0.8', changefreq: 'weekly' }
+  if (path === '/articles') return { priority: '0.8', changefreq: 'daily' }
+  return { priority: '0.5', changefreq: 'monthly' }
+}
+
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allUrls
   .map((u) => {
     const lastmodDate = articleDateMap.get(u) || TODAY
+    const { priority, changefreq } = getPriorityAndChangeFreq(u)
     return `  <url>
     <loc>${SITE_URL}${u}</loc>
     <lastmod>${lastmodDate}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
   </url>`
   })
   .join('\n')}

@@ -43,6 +43,19 @@ export default function Home() {
               Read the articles
             </Link>
           </div>
+          <div className="mt-6 pt-4 border-t border-line/50">
+            <div className="text-xs font-semibold text-ink-soft/80 uppercase tracking-wider mb-2">Popular Quick Calculators:</div>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <Link to="/tool/emi-calculator" className="rounded-full bg-paper-raised border border-line px-3 py-1 text-ink-soft hover:border-saffron hover:text-saffron transition-colors">Home Loan EMI</Link>
+              <Link to="/tool/gst-calculator" className="rounded-full bg-paper-raised border border-line px-3 py-1 text-ink-soft hover:border-saffron hover:text-saffron transition-colors">GST Tax Calculator</Link>
+              <Link to="/tool/income-tax-calculator" className="rounded-full bg-paper-raised border border-line px-3 py-1 text-ink-soft hover:border-saffron hover:text-saffron transition-colors">Income Tax FY 2026</Link>
+              <Link to="/tool/case-converter" className="rounded-full bg-paper-raised border border-line px-3 py-1 text-ink-soft hover:border-saffron hover:text-saffron transition-colors">Text Case Converter</Link>
+              <Link to="/tool/lcm-hcf-calculator" className="rounded-full bg-paper-raised border border-line px-3 py-1 text-ink-soft hover:border-saffron hover:text-saffron transition-colors">LCM & HCF Calculator</Link>
+              <Link to="/tool/ideal-weight-calculator" className="rounded-full bg-paper-raised border border-line px-3 py-1 text-ink-soft hover:border-saffron hover:text-saffron transition-colors">Ideal Body Weight</Link>
+              <Link to="/tool/cgpa-calculator" className="rounded-full bg-paper-raised border border-line px-3 py-1 text-ink-soft hover:border-saffron hover:text-saffron transition-colors">CGPA to % Converter</Link>
+              <Link to="/tool/sip-calculator" className="rounded-full bg-paper-raised border border-line px-3 py-1 text-ink-soft hover:border-saffron hover:text-saffron transition-colors">SIP Return Calculator</Link>
+            </div>
+          </div>
         </div>
         <LiveTicker />
       </section>
