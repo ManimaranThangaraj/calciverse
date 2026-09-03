@@ -1,7 +1,7 @@
 // Master dataset containing explicit, unique, keyword-rich tool guides for all 121 tools
 export const toolGuides = {
   "emi-calculator": {
-    "title": "EMI Calculator — Online FINANCE Tool",
+    "title": "Equated Monthly Instalment (EMI) Guide & Amortization Formulas",
     "overview": "Equated Monthly Instalment (EMI) is the fixed monthly payment made by a borrower to a bank or lender to repay an active loan. Each monthly EMI consists of both principal repayment and accrued interest under the reducing balance method. Early EMIs consist predominantly of interest, while later EMIs cover mostly principal.",
     "formula": "EMI = P × r × (1 + r)^n / ((1 + r)^n - 1)",
     "explanation": "P = Loan Principal Amount, r = Monthly Interest Rate (Annual Rate / 12 / 100), n = Loan Tenure in Total Months.",
@@ -70,7 +70,7 @@ export const toolGuides = {
     ]
   },
   "sip-calculator": {
-    "title": "SIP Calculator — Online FINANCE Tool",
+    "title": "Systematic Investment Plan (SIP) Compound Growth Guide",
     "overview": "The SIP Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Project the maturity value of a monthly SIP investment.",
     "formula": "M = P × ({[1 + i]^n - 1} / i) × (1 + i)",
     "explanation": "Where P = Monthly SIP amount, i = Periodic monthly return rate (Annual Return / 12 / 100), n = Total duration in months.",
@@ -125,7 +125,7 @@ export const toolGuides = {
     ]
   },
   "gst-calculator": {
-    "title": "GST Calculator — Add or Remove GST Online",
+    "title": "GST Calculation Guide — Add & Remove GST Formulas",
     "overview": "Goods and Services Tax (GST) is a comprehensive indirect tax levied on the supply of goods and services in India. This GST calculator allows you to add GST to a net base price or extract GST from a gross total price across official GST tax slabs (5%, 12%, 18%, and 28%). It automatically breaks down Central GST (CGST), State GST (SGST) for intra-state sales, and Integrated GST (IGST) for inter-state transactions.",
     "formula": "Add GST: GST Amount = Net Price × (GST Rate / 100) | Total Price = Net Price + GST Amount. Remove GST: Base Price = Gross Price / (1 + GST Rate / 100) | GST Amount = Gross Price - Base Price.",
     "explanation": "For intra-state sales within the same state, GST is split equally into CGST (50%) and SGST (50%). For inter-state sales across state boundaries, 100% of the tax rate is levied as IGST.",
@@ -173,7 +173,7 @@ export const toolGuides = {
     ]
   },
   "fd-calculator": {
-    "title": "FD Calculator — Online FINANCE Tool",
+    "title": "Fixed Deposit (FD) Compounding Interest Calculation Guide",
     "overview": "The FD Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Estimate fixed deposit maturity with compounding.",
     "formula": "Result = Compute_fd_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for fd calculator.",
@@ -228,7 +228,7 @@ export const toolGuides = {
     ]
   },
   "loan-calculator": {
-    "title": "Loan Calculator — Online FINANCE Tool",
+    "title": "Personal & Auto Loan Payment Calculation Guide",
     "overview": "The Loan Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Compare total interest and payoff across loan terms.",
     "formula": "Result = Compute_loan_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for loan calculator.",
@@ -283,7 +283,7 @@ export const toolGuides = {
     ]
   },
   "income-tax-calculator": {
-    "title": "Income Tax Calculator — Online FINANCE Tool",
+    "title": "Income Tax FY 2026-27 Regime Comparison Guide",
     "overview": "The Income Tax Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Estimate tax payable under the old and new regimes (FY 2026-27 slabs).",
     "formula": "Result = Compute_income_tax_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for income tax calculator.",
@@ -338,7 +338,7 @@ export const toolGuides = {
     ]
   },
   "simple-interest-calculator": {
-    "title": "Simple Interest Calculator — Online FINANCE Tool",
+    "title": "Simple Interest (SI) Principal & Rate Calculation Guide",
     "overview": "The Simple Interest Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Interest on a principal amount at a flat annual rate.",
     "formula": "Result = Compute_simple_interest_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for simple interest calculator.",
@@ -393,7 +393,7 @@ export const toolGuides = {
     ]
   },
   "compound-interest-calculator": {
-    "title": "Compound Interest Calculator — Online FINANCE Tool",
+    "title": "Compound Interest (CI) Exponential Growth Calculation Guide",
     "overview": "The Compound Interest Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. See how interest compounds monthly, quarterly or yearly.",
     "formula": "Result = Compute_compound_interest_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for compound interest calculator.",
@@ -448,7 +448,7 @@ export const toolGuides = {
     ]
   },
   "rd-calculator": {
-    "title": "RD Calculator — Online FINANCE Tool",
+    "title": "Recurring Deposit (RD) Monthly Compound Maturity Guide",
     "overview": "The RD Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Maturity value of a recurring deposit.",
     "formula": "Result = Compute_rd_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for rd calculator.",
@@ -503,7 +503,7 @@ export const toolGuides = {
     ]
   },
   "ppf-calculator": {
-    "title": "PPF Calculator — Online FINANCE Tool",
+    "title": "Public Provident Fund (PPF) 15-Year Corpus Guide",
     "overview": "The PPF Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Project your PPF corpus over the 15-year lock-in.",
     "formula": "Result = Compute_ppf_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for ppf calculator.",
@@ -558,7 +558,7 @@ export const toolGuides = {
     ]
   },
   "nps-calculator": {
-    "title": "NPS Calculator — Online FINANCE Tool",
+    "title": "National Pension System (NPS) Corpus & Annuity Guide",
     "overview": "The NPS Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Estimate your NPS corpus and monthly pension at retirement.",
     "formula": "Result = Compute_nps_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for nps calculator.",
@@ -613,7 +613,7 @@ export const toolGuides = {
     ]
   },
   "epf-calculator": {
-    "title": "EPF Calculator — Online FINANCE Tool",
+    "title": "EPF & EPS Pension Fund Balance Calculation Guide",
     "overview": "The EPF Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Provident fund corpus from monthly contributions and years of service.",
     "formula": "Result = Compute_epf_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for epf calculator.",
@@ -668,7 +668,7 @@ export const toolGuides = {
     ]
   },
   "lumpsum-calculator": {
-    "title": "Lumpsum Investment Calculator — Online FINANCE Tool",
+    "title": "Lumpsum Mutual Fund Future Value Calculation Guide",
     "overview": "The Lumpsum Investment Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Future value of a one-time investment at an expected return rate.",
     "formula": "Result = Compute_lumpsum_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for lumpsum investment calculator.",
@@ -723,7 +723,7 @@ export const toolGuides = {
     ]
   },
   "cagr-calculator": {
-    "title": "CAGR Calculator — Online FINANCE Tool",
+    "title": "Compound Annual Growth Rate (CAGR) Formula Guide",
     "overview": "The CAGR Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Compound annual growth rate between two investment values.",
     "formula": "Result = Compute_cagr_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for cagr calculator.",
@@ -778,7 +778,7 @@ export const toolGuides = {
     ]
   },
   "roi-calculator": {
-    "title": "ROI Calculator — Online FINANCE Tool",
+    "title": "Return on Investment (ROI %) Calculation Guide",
     "overview": "The ROI Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Return on investment as a percentage and annualised figure.",
     "formula": "Result = Compute_roi_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for roi calculator.",
@@ -833,7 +833,7 @@ export const toolGuides = {
     ]
   },
   "retirement-calculator": {
-    "title": "Retirement Corpus Calculator — Online FINANCE Tool",
+    "title": "Retirement Inflation-Adjusted Corpus Planning Guide",
     "overview": "The Retirement Corpus Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. How much you need saved to retire on a target monthly income.",
     "formula": "Result = Compute_retirement_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for retirement corpus calculator.",
@@ -888,7 +888,7 @@ export const toolGuides = {
     ]
   },
   "inflation-calculator": {
-    "title": "Inflation Calculator — Online FINANCE Tool",
+    "title": "Purchasing Power & Inflation Rate Calculation Guide",
     "overview": "The Inflation Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. What today's money will be worth after years of inflation.",
     "formula": "Result = Compute_inflation_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for inflation calculator.",
@@ -943,7 +943,7 @@ export const toolGuides = {
     ]
   },
   "salary-calculator": {
-    "title": "Salary / CTC Calculator — Online FINANCE Tool",
+    "title": "CTC to Monthly In-Hand Salary Calculation Guide",
     "overview": "The Salary / CTC Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Break down CTC into in-hand monthly salary.",
     "formula": "Result = Compute_salary_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for salary / ctc calculator.",
@@ -998,7 +998,7 @@ export const toolGuides = {
     ]
   },
   "salary-hike-calculator": {
-    "title": "Salary Hike Calculator — Online FINANCE Tool",
+    "title": "Salary Increment Percentage & Appraisal Guide",
     "overview": "The Salary Hike Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. New salary and percentage increase from a hike.",
     "formula": "Result = Compute_salary_hike_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for salary hike calculator.",
@@ -1053,7 +1053,7 @@ export const toolGuides = {
     ]
   },
   "hra-calculator": {
-    "title": "HRA Exemption Calculator — Online FINANCE Tool",
+    "title": "House Rent Allowance (HRA) Sec 10(13A) Exemption Guide",
     "overview": "The HRA Exemption Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. How much of your HRA is tax-exempt.",
     "formula": "Result = Compute_hra_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for hra exemption calculator.",
@@ -1108,7 +1108,7 @@ export const toolGuides = {
     ]
   },
   "gratuity-calculator": {
-    "title": "Gratuity Calculator — Online FINANCE Tool",
+    "title": "Gratuity Resignation Payout Calculation Guide",
     "overview": "The Gratuity Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Gratuity payout based on last drawn salary and years served.",
     "formula": "Result = Compute_gratuity_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for gratuity calculator.",
@@ -1163,7 +1163,7 @@ export const toolGuides = {
     ]
   },
   "tds-calculator": {
-    "title": "TDS Calculator — Online FINANCE Tool",
+    "title": "Tax Deducted at Source (TDS) Slabs & Deductions Guide",
     "overview": "The TDS Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Tax deducted at source on salary, interest or professional fees.",
     "formula": "Result = Compute_tds_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for tds calculator.",
@@ -1218,7 +1218,7 @@ export const toolGuides = {
     ]
   },
   "capital-gains-calculator": {
-    "title": "Capital Gains Tax Calculator — Online FINANCE Tool",
+    "title": "STCG & LTCG Capital Gains Tax Calculation Guide",
     "overview": "The Capital Gains Tax Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Short-term and long-term capital gains tax on an investment sale.",
     "formula": "Result = Compute_capital_gains_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for capital gains tax calculator.",
@@ -1273,7 +1273,7 @@ export const toolGuides = {
     ]
   },
   "credit-card-interest-calculator": {
-    "title": "Credit Card Interest Calculator — Online FINANCE Tool",
+    "title": "Credit Card Daily APR & Finance Charge Guide",
     "overview": "Credit card interest is charged on revolving unpaid balance when you carry a balance past the monthly due date. Card issuers calculate interest using Daily Periodic Rates (DPR = Annual APR / 365) compounded daily. Carrying minimum payments leads to compounding interest traps.",
     "formula": "Daily Interest = Balance × (APR / 365) | Monthly Interest = Balance × (APR / 12)",
     "explanation": "Multiplying your balance by the monthly interest rate gives the finance charge. Paying only the minimum payment leaves most of the principal balance untouched.",
@@ -1320,7 +1320,7 @@ export const toolGuides = {
     ]
   },
   "loan-eligibility-calculator": {
-    "title": "Loan Eligibility Calculator — Online FINANCE Tool",
+    "title": "Loan Eligibility & FOIR Calculation Guide",
     "overview": "The Loan Eligibility Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Estimated loan amount you qualify for based on income and obligations.",
     "formula": "Result = Compute_loan_eligibility_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for loan eligibility calculator.",
@@ -1375,7 +1375,7 @@ export const toolGuides = {
     ]
   },
   "prepayment-calculator": {
-    "title": "Loan Prepayment Calculator — Online FINANCE Tool",
+    "title": "Loan Partial Principal Prepayment Interest Savings Guide",
     "overview": "The Loan Prepayment Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Interest saved and tenure cut by prepaying a loan.",
     "formula": "Result = Compute_prepayment_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for loan prepayment calculator.",
@@ -1430,7 +1430,7 @@ export const toolGuides = {
     ]
   },
   "stamp-duty-calculator": {
-    "title": "Stamp Duty Calculator — Online FINANCE Tool",
+    "title": "Property Stamp Duty & Registration Charge Guide",
     "overview": "The Stamp Duty Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Estimate stamp duty and registration cost on a property.",
     "formula": "Result = Compute_stamp_duty_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for stamp duty calculator.",
@@ -1485,7 +1485,7 @@ export const toolGuides = {
     ]
   },
   "property-tax-calculator": {
-    "title": "Property Tax Calculator — Online FINANCE Tool",
+    "title": "Annual Municipal Property Tax Estimate Guide",
     "overview": "The Property Tax Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Annual property tax from assessed value and local rate.",
     "formula": "Result = Compute_property_tax_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for property tax calculator.",
@@ -1540,7 +1540,7 @@ export const toolGuides = {
     ]
   },
   "rent-vs-buy-calculator": {
-    "title": "Rent vs Buy Calculator — Online FINANCE Tool",
+    "title": "Home Renting vs Buying Financial Comparison Guide",
     "overview": "The Rent vs Buy Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Compare the long-term cost of renting against buying a home.",
     "formula": "Result = Compute_rent_vs_buy_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for rent vs buy calculator.",
@@ -1595,7 +1595,7 @@ export const toolGuides = {
     ]
   },
   "home-affordability-calculator": {
-    "title": "Home Affordability Calculator — Online FINANCE Tool",
+    "title": "Maximum Home Purchase Price Affordability Guide",
     "overview": "The Home Affordability Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. The home price you can afford based on income and down payment.",
     "formula": "Result = Compute_home_affordability_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for home affordability calculator.",
@@ -1650,7 +1650,7 @@ export const toolGuides = {
     ]
   },
   "break-even-calculator": {
-    "title": "Break-Even Calculator — Online FINANCE Tool",
+    "title": "Break-Even Point Units & Sales Revenue Guide",
     "overview": "The Break-Even Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Units you need to sell to cover fixed and variable costs.",
     "formula": "Result = Compute_break_even_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for break-even calculator.",
@@ -1705,7 +1705,7 @@ export const toolGuides = {
     ]
   },
   "profit-margin-calculator": {
-    "title": "Profit Margin Calculator — Online FINANCE Tool",
+    "title": "Gross & Net Profit Margin Percentage Guide",
     "overview": "The Profit Margin Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Gross and net margin from cost price and selling price.",
     "formula": "Result = Compute_profit_margin_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for profit margin calculator.",
@@ -1760,7 +1760,7 @@ export const toolGuides = {
     ]
   },
   "markup-calculator": {
-    "title": "Markup Calculator — Online FINANCE Tool",
+    "title": "Cost Price Markup Percentage Calculation Guide",
     "overview": "The Markup Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. Selling price from cost price and desired markup percentage.",
     "formula": "Result = Compute_markup_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for markup calculator.",
@@ -1815,7 +1815,7 @@ export const toolGuides = {
     ]
   },
   "freelance-rate-calculator": {
-    "title": "Freelance Rate Calculator — Online FINANCE Tool",
+    "title": "Freelance Net Hourly Rate Calculation Guide",
     "overview": "The Freelance Rate Calculator — Online FINANCE Tool provides fast, accurate, and transparent calculations directly in your browser. An hourly rate to hit a target annual income after expenses.",
     "formula": "Result = Compute_freelance_rate_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for freelance rate calculator.",
@@ -1870,7 +1870,7 @@ export const toolGuides = {
     ]
   },
   "bmi-calculator": {
-    "title": "BMI Calculator — Online HEALTH Tool",
+    "title": "Body Mass Index (BMI) WHO Classification Guide",
     "overview": "The BMI Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Body mass index from height and weight, with the WHO category.",
     "formula": "Result = Compute_bmi_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for bmi calculator.",
@@ -1925,7 +1925,7 @@ export const toolGuides = {
     ]
   },
   "calorie-calculator": {
-    "title": "Calories Calculator — Online HEALTH Tool",
+    "title": "BMR & TDEE Daily Calorie Requirement Guide",
     "overview": "The Calories Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Daily calorie needs from the Mifflin-St Jeor equation and activity level.",
     "formula": "Result = Compute_calorie_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for calories calculator.",
@@ -1980,7 +1980,7 @@ export const toolGuides = {
     ]
   },
   "water-intake-calculator": {
-    "title": "Water Intake Calculator — Online HEALTH Tool",
+    "title": "Daily Hydration & Water Intake Goal Guide",
     "overview": "The Water Intake Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. A daily water target from body weight and activity level.",
     "formula": "Result = Compute_water_intake_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for water intake calculator.",
@@ -2035,7 +2035,7 @@ export const toolGuides = {
     ]
   },
   "bmr-calculator": {
-    "title": "BMR Calculator — Online HEALTH Tool",
+    "title": "Basal Metabolic Rate (BMR) Mifflin-St Jeor Guide",
     "overview": "The BMR Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Basal metabolic rate — calories burned at complete rest.",
     "formula": "Result = Compute_bmr_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for bmr calculator.",
@@ -2090,7 +2090,7 @@ export const toolGuides = {
     ]
   },
   "ideal-weight-calculator": {
-    "title": "Ideal Weight Calculator — Healthy Weight Range by Height",
+    "title": "Ideal Body Weight (IBW) Clinical Formulas Guide",
     "overview": "The Ideal Body Weight (IBW) calculator estimates a clinically healthy body weight range based on height, biological sex, and established medical formulas (Devine, Robinson, Miller, and Hamwi equations). IBW serves as a reference benchmark for nutritional guidelines and medication dosing.",
     "formula": "Devine Formula (Men): IBW = 50 kg + 2.3 kg × (Height in inches - 60) | Devine Formula (Women): IBW = 45.5 kg + 2.3 kg × (Height in inches - 60)",
     "explanation": "IBW equations start with a baseline weight for 5 feet of height and add a fixed weight multiplier for each additional inch.",
@@ -2138,7 +2138,7 @@ export const toolGuides = {
     ]
   },
   "body-fat-calculator": {
-    "title": "Body Fat % Calculator — Online HEALTH Tool",
+    "title": "Body Fat Percentage US Navy Method Guide",
     "overview": "The Body Fat % Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Estimate body fat percentage using the US Navy method.",
     "formula": "Result = Compute_body_fat_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for body fat % calculator.",
@@ -2193,7 +2193,7 @@ export const toolGuides = {
     ]
   },
   "pregnancy-due-date-calculator": {
-    "title": "Pregnancy Due Date Calculator — Online HEALTH Tool",
+    "title": "Pregnancy Due Date & Gestational Age Guide",
     "overview": "The Pregnancy Due Date Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Estimated due date from the first day of your last period.",
     "formula": "Result = Compute_pregnancy_due_date_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for pregnancy due date calculator.",
@@ -2248,7 +2248,7 @@ export const toolGuides = {
     ]
   },
   "ovulation-calculator": {
-    "title": "Ovulation Calculator — Online HEALTH Tool",
+    "title": "Ovulation & Peak Fertile Window Tracking Guide",
     "overview": "The Ovulation Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Your most fertile days based on cycle length.",
     "formula": "Result = Compute_ovulation_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for ovulation calculator.",
@@ -2303,7 +2303,7 @@ export const toolGuides = {
     ]
   },
   "period-calculator": {
-    "title": "Period Calculator — Online HEALTH Tool",
+    "title": "Menstrual Cycle & Next Period Prediction Guide",
     "overview": "The Period Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Predict your next menstrual cycle dates.",
     "formula": "Result = Compute_period_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for period calculator.",
@@ -2358,7 +2358,7 @@ export const toolGuides = {
     ]
   },
   "macro-calculator": {
-    "title": "Macro Calculator — Online HEALTH Tool",
+    "title": "Macronutrient Protein Carbs & Fat Ratio Guide",
     "overview": "The Macro Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Daily protein, carb and fat targets from your calorie goal.",
     "formula": "Result = Compute_macro_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for macro calculator.",
@@ -2413,7 +2413,7 @@ export const toolGuides = {
     ]
   },
   "heart-rate-zone-calculator": {
-    "title": "Heart Rate Zone Calculator — Online HEALTH Tool",
+    "title": "Target Heart Rate Training Zone Calculation Guide",
     "overview": "The Heart Rate Zone Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Target heart rate zones for fat burn, cardio and peak effort.",
     "formula": "Result = Compute_heart_rate_zone_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for heart rate zone calculator.",
@@ -2468,7 +2468,7 @@ export const toolGuides = {
     ]
   },
   "waist-hip-ratio-calculator": {
-    "title": "Waist-to-Hip Ratio Calculator — Online HEALTH Tool",
+    "title": "Waist-to-Hip Ratio (WHR) Health Risk Guide",
     "overview": "The Waist-to-Hip Ratio Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. A quick indicator of cardiometabolic health risk.",
     "formula": "Result = Compute_waist_hip_ratio_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for waist-to-hip ratio calculator.",
@@ -2523,7 +2523,7 @@ export const toolGuides = {
     ]
   },
   "sleep-calculator": {
-    "title": "Sleep Cycle Calculator — Online HEALTH Tool",
+    "title": "Sleep Cycle 90-Minute REM Wake Time Guide",
     "overview": "The Sleep Cycle Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Best times to fall asleep or wake up based on 90-minute sleep cycles.",
     "formula": "Result = Compute_sleep_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for sleep cycle calculator.",
@@ -2578,7 +2578,7 @@ export const toolGuides = {
     ]
   },
   "calories-burned-calculator": {
-    "title": "Calories Burned Calculator — Online HEALTH Tool",
+    "title": "Calories Burned MET Multiplier Activity Guide",
     "overview": "The Calories Burned Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Calories burned walking, running or cycling a given distance and pace.",
     "formula": "Result = Compute_calories_burned_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for calories burned calculator.",
@@ -2633,7 +2633,7 @@ export const toolGuides = {
     ]
   },
   "percentage-calculator": {
-    "title": "Percentage Calculator — Online EDUCATION Tool",
+    "title": "Percentage Increase, Decrease & Difference Guide",
     "overview": "The Percentage Calculator — Online EDUCATION Tool provides fast, accurate, and transparent calculations directly in your browser. Marks to percentage, percentage change, and \"X is what % of Y\".",
     "formula": "Result = Compute_percentage_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for percentage calculator.",
@@ -2688,7 +2688,7 @@ export const toolGuides = {
     ]
   },
   "cgpa-calculator": {
-    "title": "CGPA Calculator — Online EDUCATION Tool",
+    "title": "CGPA to Percentage Conversion Slabs Guide",
     "overview": "Cumulative Grade Point Average (CGPA) represents the overall academic grade point average across multiple semesters or terms. This CGPA calculator converts semester GPA scores into a cumulative score and converts CGPA to percentage using standard university multiplier formulas (including CBSE 9.5 multiplier).",
     "formula": "CGPA = Σ (Semester GPA × Semester Credits) / Total Degree Credits | CBSE Percentage = CGPA × 9.5",
     "explanation": "CGPA averages performance across all completed terms. Multiplying CGPA by 9.5 converts 10-point CGPA into an equivalent percentage for Indian university admissions.",
@@ -2759,7 +2759,7 @@ export const toolGuides = {
     ]
   },
   "attendance-calculator": {
-    "title": "Attendance Calculator — Online EDUCATION Tool",
+    "title": "College Attendance Percentage Tracker Guide",
     "overview": "The Attendance Calculator — Online EDUCATION Tool provides fast, accurate, and transparent calculations directly in your browser. How many classes you can skip - or must attend - to hit a target %.",
     "formula": "Result = Compute_attendance_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for attendance calculator.",
@@ -2814,7 +2814,7 @@ export const toolGuides = {
     ]
   },
   "gpa-calculator": {
-    "title": "GPA Calculator — Online EDUCATION Tool",
+    "title": "Semester Grade Point Average (GPA) Credit Guide",
     "overview": "Grade Point Average (GPA) is a standard numerical metric summarizing academic performance over a semester or degree program. This GPA calculator supports standard 4.0, 5.0, and 10.0 grading scales, allowing students to calculate weighted GPA based on course letter grades and credit hours.",
     "formula": "GPA = Σ (Grade Points × Credit Hours) / Total Credit Hours",
     "explanation": "Each letter grade corresponds to a numerical grade point (e.g. A = 4.0, B = 3.0, C = 2.0). Multiplying grade points by course credit hours gives quality points.",
@@ -2863,7 +2863,7 @@ export const toolGuides = {
     ]
   },
   "grade-calculator": {
-    "title": "Grade Calculator — Online EDUCATION Tool",
+    "title": "Weighted Final Exam Target Score Guide",
     "overview": "The Grade Calculator — Online EDUCATION Tool provides fast, accurate, and transparent calculations directly in your browser. What you need on a final exam to hit a target course grade.",
     "formula": "Result = Compute_grade_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for grade calculator.",
@@ -2918,7 +2918,7 @@ export const toolGuides = {
     ]
   },
   "cgpa-to-percentage-calculator": {
-    "title": "CGPA to Percentage Converter — Online EDUCATION Tool",
+    "title": "CGPA to Percentage Conversion Formula Guide",
     "overview": "The CGPA to Percentage Converter — Online EDUCATION Tool provides fast, accurate, and transparent calculations directly in your browser. Convert CGPA (out of 10) to an equivalent percentage.",
     "formula": "Result = Compute_cgpa_to_percentage_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for cgpa to percentage converter.",
@@ -2973,7 +2973,7 @@ export const toolGuides = {
     ]
   },
   "age-calculator": {
-    "title": "Age Calculator — Online EVERYDAY Tool",
+    "title": "Exact Age Years Months & Days Calculation Guide",
     "overview": "The Age Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Exact age in years, months and days from a date of birth.",
     "formula": "Result = Compute_age_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for age calculator.",
@@ -3028,7 +3028,7 @@ export const toolGuides = {
     ]
   },
   "date-difference-calculator": {
-    "title": "Date Difference Calculator — Online EVERYDAY Tool",
+    "title": "Calendar Date Span & Duration Calculation Guide",
     "overview": "The Date Difference Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Days, weeks and months between any two dates.",
     "formula": "Result = Compute_date_difference_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for date difference calculator.",
@@ -3083,7 +3083,7 @@ export const toolGuides = {
     ]
   },
   "password-generator": {
-    "title": "Password Generator — Online EVERYDAY Tool",
+    "title": "Cryptographic Random Password Security Guide",
     "overview": "The Password Generator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Strong random passwords with control over length and character sets.",
     "formula": "Result = Compute_password_generator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for password generator.",
@@ -3138,7 +3138,7 @@ export const toolGuides = {
     ]
   },
   "qr-code-generator": {
-    "title": "QR Code Generator — Online EVERYDAY Tool",
+    "title": "2D Matrix Barcode & QR Payload Encoding Guide",
     "overview": "The QR Code Generator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Turn text, a link or contact details into a downloadable QR code.",
     "formula": "QRCode(Matrix) = Encode(InputText, ErrorCorrectionLevel: \"L\"|\"M\"|\"Q\"|\"H\")",
     "explanation": "Generates 2D barcode symbols storing URLs, plain text, Wi-Fi credentials, or vCards using standard ISO/IEC 18004 QR encoding algorithms.",
@@ -3193,7 +3193,7 @@ export const toolGuides = {
     ]
   },
   "uuid-generator": {
-    "title": "UUID Generator — Online EVERYDAY Tool",
+    "title": "Version 4 Universally Unique Identifier Guide",
     "overview": "The UUID Generator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Bulk-generate version 4 UUIDs for testing and seed data.",
     "formula": "Result = Compute_uuid_generator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for uuid generator.",
@@ -3248,7 +3248,7 @@ export const toolGuides = {
     ]
   },
   "random-number-generator": {
-    "title": "Random Number Generator — Online EVERYDAY Tool",
+    "title": "Random Integer Generation & Sampling Guide",
     "overview": "The Random Number Generator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Random integers in a range, with or without repeats.",
     "formula": "Result = Compute_random_number_generator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for random number generator.",
@@ -3303,7 +3303,7 @@ export const toolGuides = {
     ]
   },
   "barcode-generator": {
-    "title": "Barcode Generator — Online EVERYDAY Tool",
+    "title": "CODE128 Linear Barcode Generation Guide",
     "overview": "The Barcode Generator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. CODE128 barcodes from any text string.",
     "formula": "Result = Compute_barcode_generator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for barcode generator.",
@@ -3358,7 +3358,7 @@ export const toolGuides = {
     ]
   },
   "discount-calculator": {
-    "title": "Discount Calculator — Online EVERYDAY Tool",
+    "title": "Percentage Discount & Final Price Savings Guide",
     "overview": "The Discount Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Final price and amount saved after a percentage discount.",
     "formula": "Result = Compute_discount_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for discount calculator.",
@@ -3413,7 +3413,7 @@ export const toolGuides = {
     ]
   },
   "tip-calculator": {
-    "title": "Tip Calculator — Calculate Tip & Split Bill Per Person",
+    "title": "Restaurant Tip Percentage & Equal Split Bill Guide",
     "overview": "The Tip Calculator makes it effortless to compute gratuity percentages, total bill amounts, and per-person split payments instantly. Whether dining out with friends, traveling, or calculating service tips, get exact mathematical breakdowns with zero hassle.",
     "formula": "Total Tip = Bill Amount × (Tip % / 100) | Total Bill = Bill Amount + Total Tip | Per Person Share = Total Bill / Number of People",
     "explanation": "Calculates total gratuity from the base bill subtotal and divides the overall total equally among the total number of dining companions.",
@@ -3480,7 +3480,7 @@ export const toolGuides = {
     ]
   },
   "fuel-cost-calculator": {
-    "title": "Fuel Cost Calculator — Online EVERYDAY Tool",
+    "title": "Trip Fuel Consumption & Journey Cost Guide",
     "overview": "The Fuel Cost Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Trip fuel cost from distance, mileage and fuel price.",
     "formula": "Result = Compute_fuel_cost_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for fuel cost calculator.",
@@ -3535,7 +3535,7 @@ export const toolGuides = {
     ]
   },
   "word-counter": {
-    "title": "Word & Character Counter — Online EVERYDAY Tool",
+    "title": "Live Word, Character & Readability Metrics Guide",
     "overview": "The Word & Character Counter — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Live word, character and sentence count as you type.",
     "formula": "Result = Compute_word_counter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for word & character counter.",
@@ -3590,7 +3590,7 @@ export const toolGuides = {
     ]
   },
   "case-converter": {
-    "title": "Text Case Converter — Sentence Case, Title Case, Camel Case & More",
+    "title": "Text Case Formatting & String Transformation Guide",
     "overview": "The Text Case Converter lets you instantly transform plain text into UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, and kebab-case directly in your browser. Whether formatting headings, coding variable names, or cleaning up document text, convert cases with zero data transmission.",
     "formula": "Sentence Case: capitalize first letter of each sentence | Title Case: capitalize major words | camelCase: first word lowercase, subsequent words capitalized",
     "explanation": "Calculated via client-side regular expressions and string parsing algorithms that respect punctuation, whitespace, and programming casing rules.",
@@ -3659,7 +3659,7 @@ export const toolGuides = {
     ]
   },
   "typing-speed-test": {
-    "title": "Typing Speed Test — Online EVERYDAY Tool",
+    "title": "Words Per Minute (WPM) & Accuracy Testing Guide",
     "overview": "The Typing Speed Test — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Measure your WPM and accuracy against a sample passage.",
     "formula": "Result = Compute_typing_speed_test(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for typing speed test.",
@@ -3714,7 +3714,7 @@ export const toolGuides = {
     ]
   },
   "unit-converter": {
-    "title": "Unit Converter — Online EVERYDAY Tool",
+    "title": "Metric & Imperial Measurement Unit Conversion Guide",
     "overview": "The Unit Converter — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Length, weight, volume and temperature, converted instantly.",
     "formula": "Result = Compute_unit_converter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for unit converter.",
@@ -3769,7 +3769,7 @@ export const toolGuides = {
     ]
   },
   "time-zone-converter": {
-    "title": "Time Zone Converter — Online EVERYDAY Tool",
+    "title": "World Time Zone & UTC Offset Conversion Guide",
     "overview": "The Time Zone Converter — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Convert a time between any two time zones.",
     "formula": "Result = Compute_time_zone_converter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for time zone converter.",
@@ -3824,7 +3824,7 @@ export const toolGuides = {
     ]
   },
   "time-duration-calculator": {
-    "title": "Time Duration Calculator — Online EVERYDAY Tool",
+    "title": "Clock Time Duration & Elapsed Hours Guide",
     "overview": "The Time Duration Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Hours and minutes between two clock times.",
     "formula": "Result = Compute_time_duration_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for time duration calculator.",
@@ -3879,7 +3879,7 @@ export const toolGuides = {
     ]
   },
   "electricity-bill-calculator": {
-    "title": "Electricity Bill Calculator — Online EVERYDAY Tool",
+    "title": "Monthly Electricity Tariff & kWh Usage Guide",
     "overview": "The Electricity Bill Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Estimate your monthly bill from appliance wattage and usage hours.",
     "formula": "Result = Compute_electricity_bill_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for electricity bill calculator.",
@@ -3934,7 +3934,7 @@ export const toolGuides = {
     ]
   },
   "rent-split-calculator": {
-    "title": "Rent Split Calculator — Online EVERYDAY Tool",
+    "title": "Fair Roommate Rent Splitting Calculation Guide",
     "overview": "The Rent Split Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Fairly split rent among roommates by room size or income.",
     "formula": "Result = Compute_rent_split_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for rent split calculator.",
@@ -3989,7 +3989,7 @@ export const toolGuides = {
     ]
   },
   "countdown-timer": {
-    "title": "Countdown Timer — Online EVERYDAY Tool",
+    "title": "Event Countdown & Days Remaining Tracker Guide",
     "overview": "The Countdown Timer — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Days, hours and minutes left until any date and time.",
     "formula": "Result = Compute_countdown_timer(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for countdown timer.",
@@ -4044,7 +4044,7 @@ export const toolGuides = {
     ]
   },
   "notice-period-calculator": {
-    "title": "Notice Period Calculator — Online EVERYDAY Tool",
+    "title": "Resignation Notice Period & Last Working Day Guide",
     "overview": "The Notice Period Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Your last working day based on resignation date and notice period.",
     "formula": "Result = Compute_notice_period_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for notice period calculator.",
@@ -4099,7 +4099,7 @@ export const toolGuides = {
     ]
   },
   "percentage-change-calculator": {
-    "title": "Percentage Increase/Decrease Calculator — Online MATH Tool",
+    "title": "Percentage Change & Relative Variance Guide",
     "overview": "Percentage change measures the relative proportion change between an original value and a new value. It expresses growth as a percentage increase or decline as a percentage decrease, which is essential for analyzing sales growth, price shifts, and statistical metrics.",
     "formula": "Percentage Change = ((New Value - Old Value) / |Old Value|) × 100",
     "explanation": "A positive result indicates a percentage increase or growth. A negative result indicates a percentage decrease or reduction.",
@@ -4146,7 +4146,7 @@ export const toolGuides = {
     ]
   },
   "average-calculator": {
-    "title": "Average Calculator — Online MATH Tool",
+    "title": "Statistical Mean, Median & Mode Calculation Guide",
     "overview": "The Average Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Mean, median and mode of a list of numbers.",
     "formula": "Result = Compute_average_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for average calculator.",
@@ -4201,7 +4201,7 @@ export const toolGuides = {
     ]
   },
   "ratio-calculator": {
-    "title": "Ratio Calculator — Online MATH Tool",
+    "title": "Ratio Simplification & Proportional Solver Guide",
     "overview": "The Ratio Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Simplify a ratio or solve for a missing value.",
     "formula": "Result = Compute_ratio_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for ratio calculator.",
@@ -4256,7 +4256,7 @@ export const toolGuides = {
     ]
   },
   "lcm-hcf-calculator": {
-    "title": "LCM & HCF Calculator — What is LCM and HCF Explained with Formulas",
+    "title": "Least Common Multiple & Greatest Common Divisor Guide",
     "overview": "The Least Common Multiple (LCM) is the smallest positive integer divisible by two or more numbers without a remainder. The Highest Common Factor (HCF, also known as Greatest Common Divisor / GCD) is the largest positive integer that divides two or more numbers evenly without leaving a remainder. This tool calculates both LCM and HCF step-by-step using prime factorization and the Euclidean algorithm.",
     "formula": "HCF × LCM = Number A × Number B | Euclidean Algorithm: HCF(a, b) = HCF(b, a mod b)",
     "explanation": "Prime factorization decomposes numbers into prime powers. HCF takes the lowest exponent of common prime factors; LCM takes the highest exponent of all prime factors.",
@@ -4324,7 +4324,7 @@ export const toolGuides = {
     ]
   },
   "fraction-calculator": {
-    "title": "Fraction Calculator — Online MATH Tool",
+    "title": "Fraction Arithmetic & Common Denominator Guide",
     "overview": "The Fraction Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Add, subtract, multiply and divide fractions with steps shown.",
     "formula": "Result = Compute_fraction_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for fraction calculator.",
@@ -4379,7 +4379,7 @@ export const toolGuides = {
     ]
   },
   "square-root-calculator": {
-    "title": "Square Root & Cube Root Calculator — Online MATH Tool",
+    "title": "Square Root & Cube Root Estimation Guide",
     "overview": "The Square Root & Cube Root Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Square and cube roots, including non-perfect squares.",
     "formula": "Result = Compute_square_root_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for square root & cube root calculator.",
@@ -4434,7 +4434,7 @@ export const toolGuides = {
     ]
   },
   "standard-deviation-calculator": {
-    "title": "Standard Deviation Calculator — Online MATH Tool",
+    "title": "Sample & Population Standard Deviation Guide",
     "overview": "The Standard Deviation Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Mean, variance and standard deviation of a data set.",
     "formula": "Result = Compute_standard_deviation_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for standard deviation calculator.",
@@ -4489,7 +4489,7 @@ export const toolGuides = {
     ]
   },
   "scientific-calculator": {
-    "title": "Scientific Calculator — Online MATH Tool",
+    "title": "Trigonometric & Logarithmic Expression Guide",
     "overview": "The Scientific Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Trig, logs, exponents and more, in one keypad.",
     "formula": "Result = Compute_scientific_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for scientific calculator.",
@@ -4544,7 +4544,7 @@ export const toolGuides = {
     ]
   },
   "percentage-to-fraction-calculator": {
-    "title": "Percentage to Fraction/Decimal Converter — Online MATH Tool",
+    "title": "Percentage, Fraction & Decimal Conversion Guide",
     "overview": "The Percentage to Fraction/Decimal Converter — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Convert between percentages, fractions and decimals.",
     "formula": "Result = Compute_percentage_to_fraction_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for percentage to fraction/decimal converter.",
@@ -4599,7 +4599,7 @@ export const toolGuides = {
     ]
   },
   "prime-number-checker": {
-    "title": "Prime Number Checker — Online MATH Tool",
+    "title": "Trial Division Prime Number Testing Guide",
     "overview": "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. Numbers with more than two factors are called composite numbers. This checker tests primality instantly using trial division up to the square root of N (√N), identifying whether a candidate number is prime or composite.",
     "formula": "Primality Test: Check if N > 1 and whether any prime p ≤ √N divides N with zero remainder.",
     "explanation": "If N is composite, it can be factored into a × b = N. If both a and b were greater than √N, their product would exceed N. Thus, at least one factor must be less than or equal to √N.",
@@ -4645,7 +4645,7 @@ export const toolGuides = {
     ]
   },
   "factorial-calculator": {
-    "title": "Factorial Calculator — Online MATH Tool",
+    "title": "Factorial n! Permutation Calculation Guide",
     "overview": "The Factorial Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Factorial of any non-negative integer.",
     "formula": "Result = Compute_factorial_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for factorial calculator.",
@@ -4700,7 +4700,7 @@ export const toolGuides = {
     ]
   },
   "permutation-combination-calculator": {
-    "title": "Permutation & Combination Calculator — Online MATH Tool",
+    "title": "Permutations nPr & Combinations nCr Guide",
     "overview": "The Permutation & Combination Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. nPr and nCr for a given set size and selection size.",
     "formula": "Result = Compute_permutation_combination_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for permutation & combination calculator.",
@@ -4755,7 +4755,7 @@ export const toolGuides = {
     ]
   },
   "quadratic-equation-solver": {
-    "title": "Quadratic Equation Solver — Online MATH Tool",
+    "title": "Quadratic Equation Formula & Roots Guide",
     "overview": "The Quadratic Equation Solver — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Roots of ax² + bx + c = 0, real or complex.",
     "formula": "Result = Compute_quadratic_equation_solver(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for quadratic equation solver.",
@@ -4810,7 +4810,7 @@ export const toolGuides = {
     ]
   },
   "number-to-words-converter": {
-    "title": "Number to Words Converter — Convert Numbers to Words Online",
+    "title": "Number to Words Notation Converter Guide",
     "overview": "Converting numbers into words is essential for writing bank cheques, formal invoice totals, legal contracts, and financial receipts. This converter translates numerical values into written words using both the Indian numbering system (Lakh, Crore) and the International numbering system (Million, Billion).",
     "formula": "Indian System: Thousands, Lakhs (10^5), Crores (10^7) | International System: Thousands, Millions (10^6), Billions (10^9).",
     "explanation": "Indian system groups numbers in 3 digits initially, then 2 digits (e.g. 1,25,000). International system groups consistently in 3 digits (125,000).",
@@ -4858,7 +4858,7 @@ export const toolGuides = {
     ]
   },
   "json-formatter": {
-    "title": "JSON Formatter — Online DEVELOPER Tool",
+    "title": "JSON Syntax Formatting & Validation Guide",
     "overview": "The JSON Formatter — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Pretty-print, minify and validate JSON.",
     "formula": "FormattedJSON = JSON.stringify(JSON.parse(RawString), null, IndentationSpaces)",
     "explanation": "Validates syntax against RFC 8259 JSON standards, formats unindented JSON text with configurable spacing (2 or 4 spaces), or minifies code for API payloads.",
@@ -4913,7 +4913,7 @@ export const toolGuides = {
     ]
   },
   "base64-encoder-decoder": {
-    "title": "Base64 Encoder/Decoder — Online DEVELOPER Tool",
+    "title": "Base64 Binary Text Encoding & Decoding Guide",
     "overview": "The Base64 Encoder/Decoder — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Encode text to Base64 or decode it back.",
     "formula": "Result = Compute_base64_encoder_decoder(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for base64 encoder/decoder.",
@@ -4968,7 +4968,7 @@ export const toolGuides = {
     ]
   },
   "color-picker": {
-    "title": "Color Picker — Online DEVELOPER Tool",
+    "title": "HEX, RGB & HSL Color Space Conversion Guide",
     "overview": "The Color Picker — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Pick a color and read off HEX, RGB and HSL instantly.",
     "formula": "Result = Compute_color_picker(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for color picker.",
@@ -5023,7 +5023,7 @@ export const toolGuides = {
     ]
   },
   "regex-tester": {
-    "title": "Regex Tester — Online DEVELOPER Tool",
+    "title": "Regular Expression Pattern Matching Guide",
     "overview": "The Regex Tester — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Test a regular expression against sample text with live match highlighting.",
     "formula": "Result = Compute_regex_tester(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for regex tester.",
@@ -5078,7 +5078,7 @@ export const toolGuides = {
     ]
   },
   "html-formatter": {
-    "title": "HTML Formatter — Online DEVELOPER Tool",
+    "title": "HTML Markup Formatting & Indentation Guide",
     "overview": "The HTML Formatter — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Indent and clean up messy HTML markup.",
     "formula": "Result = Compute_html_formatter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for html formatter.",
@@ -5133,7 +5133,7 @@ export const toolGuides = {
     ]
   },
   "sql-formatter": {
-    "title": "SQL Formatter — Online DEVELOPER Tool",
+    "title": "SQL Query Indentation & Formatting Guide",
     "overview": "The SQL Formatter — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Readable indentation for SQL queries.",
     "formula": "Result = Compute_sql_formatter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for sql formatter.",
@@ -5188,7 +5188,7 @@ export const toolGuides = {
     ]
   },
   "css-minifier": {
-    "title": "CSS Minifier — Online DEVELOPER Tool",
+    "title": "CSS Minification & Whitespace Reduction Guide",
     "overview": "The CSS Minifier — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Strip whitespace and comments from CSS to shrink file size.",
     "formula": "Result = Compute_css_minifier(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for css minifier.",
@@ -5243,7 +5243,7 @@ export const toolGuides = {
     ]
   },
   "js-minifier": {
-    "title": "JS Minifier — Online DEVELOPER Tool",
+    "title": "JavaScript Minification & Bundle Size Guide",
     "overview": "The JS Minifier — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Compress JavaScript by removing whitespace and comments.",
     "formula": "Result = Compute_js_minifier(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for js minifier.",
@@ -5298,7 +5298,7 @@ export const toolGuides = {
     ]
   },
   "markdown-previewer": {
-    "title": "Markdown Previewer — Online DEVELOPER Tool",
+    "title": "Markdown to HTML Real-Time Rendering Guide",
     "overview": "The Markdown Previewer — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Live-render Markdown to HTML side by side.",
     "formula": "Result = Compute_markdown_previewer(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for markdown previewer.",
@@ -5353,7 +5353,7 @@ export const toolGuides = {
     ]
   },
   "url-encoder-decoder": {
-    "title": "URL Encoder/Decoder — Online DEVELOPER Tool",
+    "title": "URL Percent-Encoding & Parameter Decoding Guide",
     "overview": "The URL Encoder/Decoder — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Percent-encode or decode a URL or query string.",
     "formula": "Result = Compute_url_encoder_decoder(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for url encoder/decoder.",
@@ -5408,7 +5408,7 @@ export const toolGuides = {
     ]
   },
   "html-entity-converter": {
-    "title": "HTML Entity Encoder/Decoder — Online DEVELOPER Tool",
+    "title": "HTML Entity Character Encoding & Escape Guide",
     "overview": "The HTML Entity Encoder/Decoder — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Convert special characters to and from HTML entities.",
     "formula": "Result = Compute_html_entity_converter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for html entity encoder/decoder.",
@@ -5463,7 +5463,7 @@ export const toolGuides = {
     ]
   },
   "jwt-decoder": {
-    "title": "JWT Decoder — Online DEVELOPER Tool",
+    "title": "JSON Web Token (JWT) Header & Payload Guide",
     "overview": "The JWT Decoder — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Decode a JWT's header and payload without verifying signature server-side.",
     "formula": "Result = Compute_jwt_decoder(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for jwt decoder.",
@@ -5518,7 +5518,7 @@ export const toolGuides = {
     ]
   },
   "unix-timestamp-converter": {
-    "title": "Unix Timestamp Converter — Online DEVELOPER Tool",
+    "title": "Unix Epoch Timestamp & Date Conversion Guide",
     "overview": "The Unix Timestamp Converter — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Convert between Unix timestamps and human-readable dates.",
     "formula": "Result = Compute_unix_timestamp_converter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for unix timestamp converter.",
@@ -5573,7 +5573,7 @@ export const toolGuides = {
     ]
   },
   "diff-checker": {
-    "title": "Text Diff Checker — Online DEVELOPER Tool",
+    "title": "Line-by-Line Text Comparison & Diff Guide",
     "overview": "The Text Diff Checker — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Compare two blocks of text and highlight the differences.",
     "formula": "Result = Compute_diff_checker(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for text diff checker.",
@@ -5628,7 +5628,7 @@ export const toolGuides = {
     ]
   },
   "css-gradient-generator": {
-    "title": "CSS Gradient Generator — Online DEVELOPER Tool",
+    "title": "CSS Linear & Radial Color Gradient Guide",
     "overview": "The CSS Gradient Generator — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Build a linear or radial gradient and copy the CSS.",
     "formula": "Result = Compute_css_gradient_generator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for css gradient generator.",
@@ -5683,7 +5683,7 @@ export const toolGuides = {
     ]
   },
   "box-shadow-generator": {
-    "title": "CSS Box Shadow Generator — Online DEVELOPER Tool",
+    "title": "CSS Box-Shadow Elevation & Blur Guide",
     "overview": "The CSS Box Shadow Generator — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Design a box-shadow visually and copy the CSS.",
     "formula": "Result = Compute_box_shadow_generator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for css box shadow generator.",
@@ -5738,7 +5738,7 @@ export const toolGuides = {
     ]
   },
   "lorem-ipsum-generator": {
-    "title": "Lorem Ipsum Generator — Online DEVELOPER Tool",
+    "title": "Lorem Ipsum Placeholder Text Generation Guide",
     "overview": "The Lorem Ipsum Generator — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Placeholder text by paragraph, sentence or word count.",
     "formula": "Result = Compute_lorem_ipsum_generator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for lorem ipsum generator.",
@@ -5793,7 +5793,7 @@ export const toolGuides = {
     ]
   },
   "number-base-converter": {
-    "title": "Binary / Hex / Octal Converter — Online DEVELOPER Tool",
+    "title": "Binary, Hexadecimal & Decimal Base Guide",
     "overview": "The Binary / Hex / Octal Converter — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Convert numbers between binary, decimal, hex and octal.",
     "formula": "Result = Compute_number_base_converter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for binary / hex / octal converter.",
@@ -5848,7 +5848,7 @@ export const toolGuides = {
     ]
   },
   "px-to-rem-converter": {
-    "title": "PX to REM Converter — Online DEVELOPER Tool",
+    "title": "Pixels to REM & EM Unit Conversion Guide",
     "overview": "The PX to REM Converter — Online DEVELOPER Tool provides fast, accurate, and transparent calculations directly in your browser. Convert pixel values to REM/EM units for responsive CSS.",
     "formula": "Result = Compute_px_to_rem_converter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for px to rem converter.",
@@ -5903,7 +5903,7 @@ export const toolGuides = {
     ]
   },
   "invoice-generator": {
-    "title": "Invoice & GST Bill Generator — Online BUSINESS Tool",
+    "title": "Itemized GST Tax Invoice Generation Guide",
     "overview": "The Invoice & GST Bill Generator — Online BUSINESS Tool provides fast, accurate, and transparent calculations directly in your browser. Create itemized GST invoices and print or download as PDF.",
     "formula": "Result = Compute_invoice_generator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for invoice & gst bill generator.",
@@ -5958,7 +5958,7 @@ export const toolGuides = {
     ]
   },
   "profit-and-loss-calculator": {
-    "title": "Profit & Loss (P&L) Calculator — Online BUSINESS Tool",
+    "title": "Financial Profit & Loss Statement Margin Guide",
     "overview": "The Profit & Loss (P&L) Calculator — Online BUSINESS Tool provides fast, accurate, and transparent calculations directly in your browser. Gross, operating and net profit margins after costs and taxes.",
     "formula": "Result = Compute_profit_and_loss_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for profit & loss (p&l) calculator.",
@@ -6013,7 +6013,7 @@ export const toolGuides = {
     ]
   },
   "sales-tax-calculator": {
-    "title": "Sales Tax & VAT Calculator — Online BUSINESS Tool",
+    "title": "Sales Tax & VAT Inclusive/Exclusive Guide",
     "overview": "The Sales Tax & VAT Calculator — Online BUSINESS Tool provides fast, accurate, and transparent calculations directly in your browser. Add or extract sales tax and VAT from transaction amounts.",
     "formula": "Result = Compute_sales_tax_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for sales tax & vat calculator.",
@@ -6068,7 +6068,7 @@ export const toolGuides = {
     ]
   },
   "payroll-calculator": {
-    "title": "Payroll & Take-Home Salary Calculator — Online BUSINESS Tool",
+    "title": "Employee Payroll Take-Home & Deduction Guide",
     "overview": "The Payroll & Take-Home Salary Calculator — Online BUSINESS Tool provides fast, accurate, and transparent calculations directly in your browser. Employee take-home salary after EPF, professional tax and TDS deductions.",
     "formula": "Result = Compute_payroll_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for payroll & take-home salary calculator.",
@@ -6123,7 +6123,7 @@ export const toolGuides = {
     ]
   },
   "commission-calculator": {
-    "title": "Sales Commission Calculator — Online BUSINESS Tool",
+    "title": "Sales Commission & Tiered Bonus Payout Guide",
     "overview": "The Sales Commission Calculator — Online BUSINESS Tool provides fast, accurate, and transparent calculations directly in your browser. Calculate base commission, tiered bonus structures and effective payout rates.",
     "formula": "Result = Compute_commission_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for sales commission calculator.",
@@ -6178,7 +6178,7 @@ export const toolGuides = {
     ]
   },
   "markup-vs-margin-calculator": {
-    "title": "Markup vs Profit Margin Calculator — Online BUSINESS Tool",
+    "title": "Markup vs Profit Margin Conversion Guide",
     "overview": "The Markup vs Profit Margin Calculator — Online BUSINESS Tool provides fast, accurate, and transparent calculations directly in your browser. Convert between markup percentage and profit margin percentage.",
     "formula": "Result = Compute_markup_vs_margin_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for markup vs profit margin calculator.",
@@ -6233,7 +6233,7 @@ export const toolGuides = {
     ]
   },
   "mortgage-calculator": {
-    "title": "Mortgage Calculator — Monthly Payment & Interest",
+    "title": "Mortgage Monthly Payment & Amortization Schedule Guide",
     "overview": "A mortgage calculator estimates your monthly home loan payment, broken down into principal reduction and interest charges. It allows homebuyers to compare loan amounts, interest rates, property tax, and repayment tenures before purchasing real estate.",
     "formula": "Monthly Mortgage = Principal × [ r(1+r)^n ] / [ (1+r)^n - 1 ]",
     "explanation": "P = Home Loan Principal Amount, r = Monthly Interest Rate (Annual Rate / 12 / 100), n = Tenure in Months (e.g., 240 for 20 years).",
@@ -6302,7 +6302,7 @@ export const toolGuides = {
     ]
   },
   "pace-calculator": {
-    "title": "Running & Walking Pace Calculator — Online HEALTH Tool",
+    "title": "Running & Walking Pace Minutes Per Mile Guide",
     "overview": "The Running & Walking Pace Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Pace, speed and projected finish times for 5k, 10k or marathon.",
     "formula": "Result = Compute_pace_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for running & walking pace calculator.",
@@ -6357,7 +6357,7 @@ export const toolGuides = {
     ]
   },
   "body-surface-area-calculator": {
-    "title": "Body Surface Area (BSA) Calculator — Online HEALTH Tool",
+    "title": "Body Surface Area (BSA) Mosteller Formula Guide",
     "overview": "The Body Surface Area (BSA) Calculator — Online HEALTH Tool provides fast, accurate, and transparent calculations directly in your browser. Estimate BSA using Mosteller and Du Bois clinical formulas.",
     "formula": "Result = Compute_body_surface_area_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for body surface area (bsa) calculator.",
@@ -6412,7 +6412,7 @@ export const toolGuides = {
     ]
   },
   "gpa-to-percentage-converter": {
-    "title": "GPA to Percentage Converter — Online EDUCATION Tool",
+    "title": "GPA Scale to Percentage Grade Conversion Guide",
     "overview": "The GPA to Percentage Converter — Online EDUCATION Tool provides fast, accurate, and transparent calculations directly in your browser. Convert GPA scores (4.0, 5.0, 10.0 scales) to percentages and letter grades.",
     "formula": "Result = Compute_gpa_to_percentage_converter(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for gpa to percentage converter.",
@@ -6467,7 +6467,7 @@ export const toolGuides = {
     ]
   },
   "aspect-ratio-calculator": {
-    "title": "Aspect Ratio Calculator — Online EVERYDAY Tool",
+    "title": "Display Aspect Ratio & Screen Resolution Guide",
     "overview": "The Aspect Ratio Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Find 16:9, 4:3, 1:1 image and screen dimensions.",
     "formula": "Result = Compute_aspect_ratio_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for aspect ratio calculator.",
@@ -6522,7 +6522,7 @@ export const toolGuides = {
     ]
   },
   "exponent-calculator": {
-    "title": "Exponent & Power Calculator — Online MATH Tool",
+    "title": "Base Number Exponents & Power Calculation Guide",
     "overview": "The Exponent & Power Calculator — Online MATH Tool provides fast, accurate, and transparent calculations directly in your browser. Calculate base numbers raised to positive or negative exponents.",
     "formula": "Result = Compute_exponent_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for exponent & power calculator.",
@@ -6577,7 +6577,7 @@ export const toolGuides = {
     ]
   },
   "ev-vs-petrol-calculator": {
-    "title": "EV vs Petrol Fuel Cost & Carbon Calculator — Online EVERYDAY Tool",
+    "title": "Electric Vehicle vs Petrol Vehicle Cost Guide",
     "overview": "The EV vs Petrol Fuel Cost & Carbon Calculator — Online EVERYDAY Tool provides fast, accurate, and transparent calculations directly in your browser. Compare monthly running costs, fuel savings, and CO2 carbon reduction between EV and Petrol vehicles.",
     "formula": "Result = Compute_ev_vs_petrol_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for ev vs petrol fuel cost & carbon calculator.",
@@ -6632,7 +6632,7 @@ export const toolGuides = {
     ]
   },
   "freelance-tax-hourly-rate-calculator": {
-    "title": "Freelance & Side-Hustle Net Hourly Rate Calculator — Online BUSINESS Tool",
+    "title": "Freelance Net Hourly Rate & Tax Liability Guide",
     "overview": "The Freelance & Side-Hustle Net Hourly Rate Calculator — Online BUSINESS Tool provides fast, accurate, and transparent calculations directly in your browser. Calculate your true net hourly rate after unpaid hours, operational expenses, income tax and GST.",
     "formula": "Result = Compute_freelance_tax_hourly_rate_calculator(Input_Parameters)",
     "explanation": "Calculated using verified mathematical and algorithmic models tailored specifically for freelance & side-hustle net hourly rate calculator.",
