@@ -412,48 +412,48 @@ function createHtml(template, {
   let html = template
 
   html = html.replace(
-    /<title>[\s\S]*?<\/title>/i,
-    `<title>${esc(title)}</title>`
+    /<title[^>]*>[\s\S]*?<\/title>/i,
+    `<title data-rh="true">${esc(title)}</title>`
   )
 
   html = html.replace(
-    /<meta name="description"[^>]*>/i,
-    `<meta name="description" content="${esc(description)}" />`
+    /<meta\s+(?:data-rh="true"\s+)?name="description"[^>]*>/i,
+    `<meta data-rh="true" name="description" content="${esc(description)}" />`
   )
 
   html = html.replace(
-    /<link rel="canonical"[^>]*>/gi,
+    /<link\s+(?:data-rh="true"\s+)?rel="canonical"[^>]*>/gi,
     ''
   )
 
   html = html.replace(
-    /<meta property="og:title"[^>]*>/i,
-    `<meta property="og:title" content="${esc(title)}" />`
+    /<meta\s+(?:data-rh="true"\s+)?property="og:title"[^>]*>/i,
+    `<meta data-rh="true" property="og:title" content="${esc(title)}" />`
   )
 
   html = html.replace(
-    /<meta property="og:description"[^>]*>/i,
-    `<meta property="og:description" content="${esc(description)}" />`
+    /<meta\s+(?:data-rh="true"\s+)?property="og:description"[^>]*>/i,
+    `<meta data-rh="true" property="og:description" content="${esc(description)}" />`
   )
 
   html = html.replace(
-    /<meta property="og:url"[^>]*>/i,
-    `<meta property="og:url" content="${canonical}" />`
+    /<meta\s+(?:data-rh="true"\s+)?property="og:url"[^>]*>/i,
+    `<meta data-rh="true" property="og:url" content="${canonical}" />`
   )
 
   html = html.replace(
-    /<meta name="twitter:title"[^>]*>/i,
-    `<meta name="twitter:title" content="${esc(title)}" />`
+    /<meta\s+(?:data-rh="true"\s+)?name="twitter:title"[^>]*>/i,
+    `<meta data-rh="true" name="twitter:title" content="${esc(title)}" />`
   )
 
   html = html.replace(
-    /<meta name="twitter:description"[^>]*>/i,
-    `<meta name="twitter:description" content="${esc(description)}" />`
+    /<meta\s+(?:data-rh="true"\s+)?name="twitter:description"[^>]*>/i,
+    `<meta data-rh="true" name="twitter:description" content="${esc(description)}" />`
   )
 
   html = html.replace(
-    /<meta name="robots"[^>]*>/i,
-    `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />`
+    /<meta\s+(?:data-rh="true"\s+)?name="robots"[^>]*>/i,
+    `<meta data-rh="true" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />`
   )
 
   if (path !== '/') {
@@ -487,7 +487,7 @@ function createHtml(template, {
   html = html.replace(
     '</head>',
     `
-    <link rel="canonical" href="${canonical}" />
+    <link data-rh="true" rel="canonical" href="${canonical}" />
     ${articleMeta}
     <script type="application/ld+json">${cleanSchema}</script>
     ${faqSchemaTag}
