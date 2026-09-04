@@ -9,16 +9,15 @@ export default function SIPCalculator() {
   const [rate, setRate] = useState(12)
   const [years, setYears] = useState(15)
 
-  const { maturity, invested, gains, yearlyData, csvString } = useMemo(() => {
+  const { maturity, invested, gains, yearlyData, pdfRows } = useMemo(() => {
     const M = Number(monthly) || 0
     const r = (Number(rate) || 0) / 12 / 100
     const n = (Number(years) || 0) * 12
-    if (!M || !n) return { maturity: 0, invested: 0, gains: 0, yearlyData: [], csvString: '' }
+    if (!M || !n) return { maturity: 0, invested: 0, gains: 0, yearlyData: [], pdfRows: [] }
     const fv = r === 0 ? M * n : M * ((Math.pow(1 + r, n) - 1) / r) * (1 + r)
     const inv = M * n
 
     const yData = []
-    let csv = 'Year,Invested Amount (INR),Est. Wealth Value (INR),Wealth Gained (INR)\n'
 
     for (let y = 1; y <= Number(years); y++) {
       const monthsCount = y * 12
@@ -27,14 +26,14 @@ export default function SIPCalculator() {
       yData.push({ year: y, invested: invY, value: val, gains: val - invY })
     }
 
-    const pdfRows = yData.map((r) => ({
+    const pdfRowsData = yData.map((r) => ({
       Year: `Year ${r.year}`,
       'Invested Amount': `₹${inr(r.invested)}`,
       'Wealth Gained': `₹${inr(r.gains)}`,
       'Est. Maturity Value': `₹${inr(r.value)}`
     }))
 
-    return { maturity: fv, invested: inv, gains: fv - inv, yearlyData: yData, pdfRows }
+    return { maturity: fv, invested: inv, gains: fv - inv, yearlyData: yData, pdfRows: pdfRowsData }
   }, [monthly, rate, years])
 
   const invPct = maturity > 0 ? ((invested / maturity) * 100).toFixed(1) : 50
