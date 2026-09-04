@@ -92,8 +92,8 @@ export const TOOL_SEO = {
     "description": "Calculate total interest saved and tenure cut achieved by making partial principal loan prepayments."
   },
   "mortgage-calculator": {
-    "title": "Mortgage Payment Calculator | Calciverse",
-    "description": "Calculate monthly mortgage payments, principal vs interest schedule, and total loan cost."
+    "title": "Mortgage Loan Calculator – Monthly Payment & Amortization Schedule | Calciverse",
+    "description": "Calculate monthly mortgage payments, principal vs interest schedule, and total loan payoff cost instantly."
   },
   "number-to-words-converter": {
     "title": "Number to Words Converter | Calciverse",
@@ -101,11 +101,11 @@ export const TOOL_SEO = {
   },
   "prime-number-checker": {
     "title": "Prime Number Checker – Is This Number Prime? | Calciverse",
-    "description": "Check whether a number is prime or composite instantly and learn how prime numbers are tested."
+    "description": "Check whether a number is prime or composite instantly with trial division formulas and factor listings."
   },
   "ideal-weight-calculator": {
-    "title": "Ideal Body Weight Calculator – Calculate Healthy Weight Range | Calciverse",
-    "description": "Calculate your ideal body weight (IBW) instantly based on height, age, and gender using Devine, Robinson, and Miller formulas. Free online calculator."
+    "title": "Ideal Body Weight Calculator by Height, Age & Gender | Calciverse",
+    "description": "Calculate your ideal body weight (IBW in kg & lbs) based on height, age, and gender using Devine, Robinson, and Miller formulas."
   },
   "bmi-calculator": {
     "title": "BMI Calculator – Body Mass Index & Healthy Weight Range | Calciverse.in",
@@ -148,8 +148,8 @@ export const TOOL_SEO = {
     "description": "See how interest compounds monthly, quarterly or yearly. Free online compound interest calculator with instant results on Calciverse."
   },
   "stamp-duty-calculator": {
-    "title": "Stamp Duty Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Estimate stamp duty and registration cost on a property. Free online stamp duty calculator with instant results on Calciverse."
+    "title": "Stamp Duty & Registration Fee Calculator (State-Wise India) | Calciverse",
+    "description": "Calculate property stamp duty and registration fees across Maharashtra, West Bengal, MP, TN, and all Indian states."
   },
   "property-tax-calculator": {
     "title": "Property Tax Calculator – Free Online Calculator & Tool | Calciverse",
@@ -268,8 +268,8 @@ export const TOOL_SEO = {
     "description": "Final price and amount saved after a percentage discount. Free online discount calculator with instant results on Calciverse."
   },
   "tip-calculator": {
-    "title": "Tip Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Split a bill and work out the tip per person. Free online tip calculator with instant results on Calciverse."
+    "title": "Tip Calculator – Quick Bill Split & Tip Per Person | Calciverse",
+    "description": "Calculate tip amounts, total bill, and split payments per person instantly for restaurants and groups."
   },
   "fuel-cost-calculator": {
     "title": "Fuel Cost Calculator – Free Online Calculator & Tool | Calciverse",
@@ -280,8 +280,8 @@ export const TOOL_SEO = {
     "description": "Live word, character and sentence count as you type. Free online word & character counter with instant results on Calciverse."
   },
   "case-converter": {
-    "title": "Text Case Converter – Free Online Calculator & Tool | Calciverse",
-    "description": "Switch text between UPPERCASE, lowercase, Title Case and more. Free online text case converter with instant results on Calciverse."
+    "title": "Text Case Converter – Camel Case, Title Case, Sentence Case | Calciverse",
+    "description": "Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and Sentence case online."
   },
   "typing-speed-test": {
     "title": "Typing Speed Test – Free Online Calculator & Tool | Calciverse",
@@ -312,16 +312,16 @@ export const TOOL_SEO = {
     "description": "Days, hours and minutes left until any date and time. Free online countdown timer with instant results on Calciverse."
   },
   "notice-period-calculator": {
-    "title": "Notice Period Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Your last working day based on resignation date and notice period. Free online notice period calculator with instant results on Calciverse."
+    "title": "Notice Period & Last Working Day Calculator | Calciverse",
+    "description": "Calculate exact last working day and total calendar days left based on your resignation date and notice period."
   },
   "average-calculator": {
     "title": "Average Calculator – Free Online Calculator & Tool | Calciverse",
     "description": "Mean, median and mode of a list of numbers. Free online average calculator with instant results on Calciverse."
   },
   "ratio-calculator": {
-    "title": "Ratio Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Simplify a ratio or solve for a missing value. Free online ratio calculator with instant results on Calciverse."
+    "title": "Ratio Calculator – Simplify Ratios & Solve for X | Calciverse",
+    "description": "Simplify ratios to lowest terms or solve proportion equations (A:B = C:D) with step-by-step math."
   },
   "fraction-calculator": {
     "title": "Fraction Calculator – Free Online Calculator & Tool | Calciverse",

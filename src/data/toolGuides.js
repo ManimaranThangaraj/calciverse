@@ -1461,6 +1461,10 @@ export const toolGuides = {
         "answer": "The Stamp Duty Calculator — Online FINANCE Tool calculates results instantly based on standard formulas, providing immediate feedback in your browser."
       },
       {
+        "question": "How is property stamp duty calculated in states like Maharashtra (Pune/Mumbai), West Bengal, MP, and TN?",
+        "answer": "Stamp duty rates vary by state in India, typically ranging between 4% and 7% of the property consideration or circle rate value, plus a 1% registration fee."
+      },
+      {
         "question": "Is the Stamp Duty Calculator free to use?",
         "answer": "Yes! All calculators, converters, and generators on Calciverse.in are 100% free with unlimited access, zero registration requirements, and no hidden fees."
       },
@@ -2120,6 +2124,10 @@ export const toolGuides = {
       {
         "question": "Why do different ideal weight formulas produce slightly different numbers?",
         "answer": "Different clinical formulas (Devine, Robinson, Miller, Hamwi) were developed in different medical eras for specific clinical objectives (such as drug dosage vs population statistics)."
+      },
+      {
+        "question": "How to calculate ideal body weight in kg for height and age?",
+        "answer": "Ideal body weight is calculated by converting height into inches over 5 feet, applying a base formula (e.g. 50 kg for men, 45.5 kg for women) plus 2.3 kg for each additional inch."
       },
       {
         "question": "Does ideal body weight account for muscle mass?",

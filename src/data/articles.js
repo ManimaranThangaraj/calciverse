@@ -539,6 +539,8 @@ export const articles = [
     "readMinutes": 6,
     "relatedTool": "gpa-calculator",
     "content": [
+      "## Quick Answer: How Credit Hours Affect Your GPA",
+      "Credit hours act as multipliers in GPA calculation. A course with more credit hours contributes more weighted quality points (Grade Points × Credit Hours) to your cumulative total, meaning an 'A' or 'F' in a 4-credit lecture impacts your GPA twice as much as in a 2-credit lab.",
       "## Why Credit Hours Matter in GPA Calculation",
       "In university grading systems, not all courses carry equal weight. The impact of a grade on your cumulative GPA depends directly on the credit value (credit hours) assigned to that course.",
       "## The Weighted GPA Formula",
@@ -686,7 +688,9 @@ export const articles = [
     "readMinutes": 7,
     "relatedTool": "case-converter",
     "content": [
-      "Text capitalization rules can seem subtle until a inconsistent title or syntax error breaks your work. Choosing between Sentence case, Title case, and Camel case depends entirely on whether you are writing editorial content, designing user interfaces, or coding software components.",
+      "Text capitalization rules can seem subtle until an inconsistent title or syntax error breaks your work. Choosing between Sentence case, Title case, and Camel case depends entirely on whether you are writing editorial content, designing user interfaces, or coding software components.",
+      "## Camel Case vs Sentence Case vs Title Case Comparison",
+      "Sentence case capitalizes only the first word and proper nouns (e.g. \"This is sentence case\"). Title case capitalizes major words (e.g. \"This Is Title Case\"). Camel case concatenates words without spaces, capitalizing each new word (lowerCamelCase, e.g. \"thisIsCamelCase\").",
       "## Sentence Case vs Title Case vs Camel Case: Summary",
       "Sentence case capitalizes only the first word of a sentence and any proper nouns (for example: \"This is sentence case in practice\"). It is the default standard for body text, blog paragraph copy, and modern minimal UI headers.",
       "Title case capitalizes the first letter of all major words while leaving short conjunctions, articles, and prepositions lowercase (for example: \"This Is Title Case in Practice\"). It is widely used in book titles, traditional headline journalism, and formal navigation menus.",
@@ -905,6 +909,7 @@ export const articles = [
       "A prime number is a natural number greater than 1 that has exactly two positive divisors: 1 and itself. If a number can be divided evenly by any other number besides 1 and itself, it is called a composite number.",
       "- 2 is the smallest prime number and the only even prime number.\n- 3, 5, 7, 11, and 13 are prime numbers.\n- 1 is neither prime nor composite by definition.\n- 4, 6, 8, 9, and 10 are composite numbers because they have additional factors.",
       "## How to Check if a Number Is Prime",
+      "To check if a number n is prime, test for divisibility by prime numbers only up to √n. If no prime number less than or equal to √n divides n with zero remainder, then n is guaranteed to be prime.",
       "The naive way to test primality is brute-force division: trying to divide a candidate number n by every integer from 2 up to n - 1. However, this is extremely inefficient for larger numbers.",
       "### Method 1: Check Divisors Only Up to √n (The Square-Root Shortcut)",
       "The most important rule in primality testing is that you only need to check prime divisors up to the square root of n (√n).",
