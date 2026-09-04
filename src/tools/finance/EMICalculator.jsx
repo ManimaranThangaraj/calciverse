@@ -10,28 +10,40 @@ export default function EMICalculator() {
   const [rate, setRate] = useState(8.5)
   const [years, setYears] = useState(20)
 
-  const { emi, totalInterest, totalPayment, csvString } = useMemo(() => {
+  const { emi, totalInterest, totalPayment, pdfRows } = useMemo(() => {
     const P = Number(principal) || 0
     const r = (Number(rate) || 0) / 12 / 100
     const n = (Number(years) || 0) * 12
-    if (!P || !n) return { emi: 0, totalInterest: 0, totalPayment: 0, csvString: '' }
+    if (!P || !n) return { emi: 0, totalInterest: 0, totalPayment: 0, pdfRows: [] }
     const emiVal = r === 0 ? P / n : (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
     const total = emiVal * n
 
-    let csv = 'Month,Year,Principal Paid (INR),Interest Paid (INR),Total Payment (INR),Remaining Balance (INR)\n'
     let balance = P
+    const yMap = {}
     for (let m = 1; m <= n; m++) {
       const intM = balance * r
       const prinM = Math.min(emiVal - intM, balance)
       balance = Math.max(0, balance - prinM)
       const yr = Math.ceil(m / 12)
-      csv += `${m},${yr},${prinM.toFixed(0)},${intM.toFixed(0)},${emiVal.toFixed(0)},${balance.toFixed(0)}\n`
+      if (!yMap[yr]) yMap[yr] = { Year: `Year ${yr}`, 'Principal Paid': 0, 'Interest Paid': 0, 'Total Paid': 0, Balance: 0 }
+      yMap[yr]['Principal Paid'] += prinM
+      yMap[yr]['Interest Paid'] += intM
+      yMap[yr]['Total Paid'] += emiVal
+      yMap[yr]['Balance'] = balance
     }
 
-    return { emi: emiVal, totalInterest: total - P, totalPayment: total, csvString: csv }
+    const rows = Object.values(yMap).map((r) => ({
+      Year: r.Year,
+      'Principal Paid': `₹${inr(r['Principal Paid'])}`,
+      'Interest Paid': `₹${inr(r['Interest Paid'])}`,
+      'Total Payment': `₹${inr(r['Total Paid'])}`,
+      'Remaining Balance': `₹${inr(r['Balance'])}`
+    }))
+
+    return { emi: emiVal, totalInterest: total - P, totalPayment: total, pdfRows: rows }
   }, [principal, rate, years])
 
-  const summaryText = `Loan: ₹${inr(principal)} @ ${rate}% for ${years} years\nMonthly EMI: ₹${inr(emi)}\nTotal Interest: ₹${inr(totalInterest)}\nTotal Payable: ₹${inr(totalPayment)}`
+  const summaryText = `Loan Amount: ₹${inr(principal)}\nInterest Rate: ${rate}% p.a.\nTenure: ${years} years\nMonthly EMI: ₹${inr(emi)}\nTotal Interest: ₹${inr(totalInterest)}\nTotal Payment: ₹${inr(totalPayment)}`
 
   return (
     <div>
@@ -50,8 +62,8 @@ export default function EMICalculator() {
         toolName="Home Loan EMI Calculator"
         summaryText={summaryText}
         shareUrl="https://calciverse.in/tool/emi-calculator"
-        csvFilename="emi_amortization_schedule.csv"
-        csvData={csvString}
+        pdfTitle="Home Loan EMI Amortization Report"
+        pdfRows={pdfRows}
       />
 
       <AmortizationSchedule

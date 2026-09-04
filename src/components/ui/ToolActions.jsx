@@ -4,8 +4,8 @@ export default function ToolActions({
   summaryText = '',
   toolName = 'Calciverse Calculator',
   shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://calciverse.in',
-  csvFilename = 'schedule.csv',
-  csvData = null
+  pdfTitle = '',
+  pdfRows = null
 }) {
   const [copiedText, setCopiedText] = useState(false)
   const [copiedLink, setCopiedLink] = useState(false)
@@ -36,16 +36,84 @@ export default function ToolActions({
     }
   }
 
-  const handleDownloadCSV = () => {
-    if (!csvData) return
-    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.setAttribute('download', csvFilename)
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const handleDownloadPDF = () => {
+    const title = pdfTitle || toolName
+    const printWindow = window.open('', '_blank')
+    if (!printWindow) return
+
+    const summaryHtml = summaryText
+      .split('\n')
+      .map((line) => `<p style="margin: 4px 0; font-size: 14px; color: #334155;">${line}</p>`)
+      .join('')
+
+    let tableHtml = ''
+    if (pdfRows && pdfRows.length > 0) {
+      const headers = Object.keys(pdfRows[0])
+      tableHtml = `
+        <h3 style="margin-top: 24px; color: #0f172a; font-size: 16px;">Detailed Schedule</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+          <thead>
+            <tr style="background-color: #e2e8f0; color: #0f172a; font-weight: bold; text-align: left;">
+              ${headers.map((h) => `<th style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">${h}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody>
+            ${pdfRows
+              .map(
+                (row) => `
+              <tr style="border: 1px solid #e2e8f0;">
+                ${headers.map((h) => `<td style="padding: 6px 8px;">${row[h]}</td>`).join('')}
+              </tr>
+            `
+              )
+              .join('')}
+          </tbody>
+        </table>
+      `
+    }
+
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>${title} - Calciverse PDF Report</title>
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 24px; color: #1e293b; }
+            .header { border-bottom: 2px solid #ea580c; padding-bottom: 12px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+            .logo { font-size: 22px; font-weight: bold; color: #ea580c; }
+            .badge { background: #ffedd5; color: #c2410c; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+            .summary-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+            .footer { margin-top: 30px; border-top: 1px solid #e2e8f0; pt: 12px; font-size: 11px; color: #64748b; text-align: center; }
+            @media print {
+              body { padding: 0; }
+              @page { margin: 1.5cm; }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <div class="logo">Calciverse.in</div>
+            <div class="badge">${title}</div>
+          </div>
+          <div class="summary-box">
+            <h2 style="margin: 0 0 12px 0; font-size: 18px; color: #0f172a;">Calculation Summary Report</h2>
+            ${summaryHtml}
+          </div>
+          ${tableHtml}
+          <div class="footer">
+            Generated on ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })} via Calciverse (https://calciverse.in) • Free Calculators & Tools
+          </div>
+          <script>
+            window.onload = function() {
+              window.print();
+            }
+          </script>
+        </body>
+      </html>
+    `
+
+    printWindow.document.write(htmlContent)
+    printWindow.document.close()
   }
 
   return (
@@ -74,15 +142,13 @@ export default function ToolActions({
         <span>🔗</span> {copiedLink ? 'Copied Link!' : 'Share Tool Link'}
       </button>
 
-      {csvData && (
-        <button
-          type="button"
-          onClick={handleDownloadCSV}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-saffron bg-saffron-soft/30 px-3 py-1.5 text-xs font-semibold text-saffron hover:bg-saffron hover:text-slate-950 transition-colors shadow-sm ml-auto"
-        >
-          <span>📥</span> Download Schedule (CSV)
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={handleDownloadPDF}
+        className="inline-flex items-center gap-1.5 rounded-lg border border-saffron bg-saffron-soft/30 px-3.5 py-1.5 text-xs font-semibold text-saffron hover:bg-saffron hover:text-slate-950 transition-colors shadow-sm ml-auto"
+      >
+        <span>📄</span> Download PDF
+      </button>
     </div>
   )
 }

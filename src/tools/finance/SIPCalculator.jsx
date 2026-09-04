@@ -25,10 +25,16 @@ export default function SIPCalculator() {
       const val = r === 0 ? M * monthsCount : M * ((Math.pow(1 + r, monthsCount) - 1) / r) * (1 + r)
       const invY = M * monthsCount
       yData.push({ year: y, invested: invY, value: val, gains: val - invY })
-      csv += `${y},${invY.toFixed(0)},${val.toFixed(0)},${(val - invY).toFixed(0)}\n`
     }
 
-    return { maturity: fv, invested: inv, gains: fv - inv, yearlyData: yData, csvString: csv }
+    const pdfRows = yData.map((r) => ({
+      Year: `Year ${r.year}`,
+      'Invested Amount': `₹${inr(r.invested)}`,
+      'Wealth Gained': `₹${inr(r.gains)}`,
+      'Est. Maturity Value': `₹${inr(r.value)}`
+    }))
+
+    return { maturity: fv, invested: inv, gains: fv - inv, yearlyData: yData, pdfRows }
   }, [monthly, rate, years])
 
   const invPct = maturity > 0 ? ((invested / maturity) * 100).toFixed(1) : 50
@@ -65,8 +71,8 @@ export default function SIPCalculator() {
         toolName="SIP Return Calculator"
         summaryText={summaryText}
         shareUrl="https://calciverse.in/tool/sip-calculator"
-        csvFilename="sip_wealth_projection.csv"
-        csvData={csvString}
+        pdfTitle="SIP Wealth Projection Report"
+        pdfRows={pdfRows}
       />
 
       {/* Year-by-Year Growth Table */}
@@ -75,12 +81,12 @@ export default function SIPCalculator() {
           <h4 className="font-display text-sm font-semibold text-ink mb-3">Year-by-Year Wealth Growth</h4>
           <div className="max-h-64 overflow-y-auto rounded-lg border border-line bg-paper">
             <table className="w-full text-left text-xs">
-              <thead className="sticky top-0 bg-slate-100 dark:bg-slate-900 font-semibold text-ink border-b border-line">
+              <thead className="sticky top-0 bg-slate-200 text-slate-900 dark:bg-slate-800 dark:text-slate-100 font-bold border-b border-line shadow-sm">
                 <tr>
-                  <th className="px-3 py-2">Year</th>
-                  <th className="px-3 py-2">Invested</th>
-                  <th className="px-3 py-2">Wealth Gained</th>
-                  <th className="px-3 py-2 text-right">Est. Value</th>
+                  <th className="px-3 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Year</th>
+                  <th className="px-3 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Invested</th>
+                  <th className="px-3 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Wealth Gained</th>
+                  <th className="px-3 py-2.5 text-right text-slate-900 dark:text-slate-100 font-bold">Est. Value</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line/40 text-ink-soft font-mono tabular-nums">

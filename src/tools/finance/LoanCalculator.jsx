@@ -27,20 +27,14 @@ export default function LoanCalculator() {
     })
     const base = list.find((item) => item.isBase) || list[1]
 
-    let csv = 'Month,Year,Principal Paid (INR),Interest Paid (INR),Total Payment (INR),Remaining Balance (INR)\n'
-    let balance = P
-    const n = (Number(years) || 0) * 12
-    if (P && n && base.emi) {
-      for (let m = 1; m <= n; m++) {
-        const intM = balance * r
-        const prinM = Math.min(base.emi - intM, balance)
-        balance = Math.max(0, balance - prinM)
-        const yr = Math.ceil(m / 12)
-        csv += `${m},${yr},${prinM.toFixed(0)},${intM.toFixed(0)},${base.emi.toFixed(0)},${balance.toFixed(0)}\n`
-      }
-    }
+    const pdfRows = list.map((r) => ({
+      Tenure: `${r.years} Years`,
+      'Monthly EMI': `₹${inr(r.emi)}`,
+      'Total Interest': `₹${inr(r.totalInterest)}`,
+      'Total Payable': `₹${inr(r.emi * r.years * 12)}`
+    }))
 
-    return { rows: list, baseRow: base, csvString: csv }
+    return { rows: list, baseRow: base, pdfRows }
   }, [principal, rate, years])
 
   const summaryText = `Loan Amount: ₹${inr(principal)} @ ${rate}% for ${years} years\nMonthly EMI: ₹${inr(baseRow.emi)}\nTotal Interest: ₹${inr(baseRow.totalInterest)}`
@@ -56,10 +50,10 @@ export default function LoanCalculator() {
       <div className="mt-6 overflow-hidden rounded-lg border border-line">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-paper text-left text-xs uppercase tracking-wide text-ink-soft/70">
-              <th className="px-4 py-2.5">Tenure</th>
-              <th className="px-4 py-2.5">Monthly EMI</th>
-              <th className="px-4 py-2.5">Total interest</th>
+            <tr className="bg-slate-200 text-slate-900 dark:bg-slate-800 dark:text-slate-100 text-left text-xs uppercase tracking-wide font-bold">
+              <th className="px-4 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Tenure</th>
+              <th className="px-4 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Monthly EMI</th>
+              <th className="px-4 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Total interest</th>
             </tr>
           </thead>
           <tbody>
@@ -78,8 +72,8 @@ export default function LoanCalculator() {
         toolName="Personal & Car Loan Calculator"
         summaryText={summaryText}
         shareUrl="https://calciverse.in/tool/loan-calculator"
-        csvFilename="loan_amortization_schedule.csv"
-        csvData={csvString}
+        pdfTitle="Loan Comparison Report"
+        pdfRows={pdfRows}
       />
 
       <AmortizationSchedule

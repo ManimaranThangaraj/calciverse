@@ -103,13 +103,13 @@ export default function AmortizationSchedule({
       {/* Schedule Table */}
       <div className="mt-5 max-h-80 overflow-y-auto rounded-lg border border-line bg-paper">
         <table className="w-full text-left text-xs">
-          <thead className="sticky top-0 bg-slate-100 dark:bg-slate-900 font-semibold text-ink border-b border-line">
+          <thead className="sticky top-0 bg-slate-200 text-slate-900 dark:bg-slate-800 dark:text-slate-100 font-bold border-b border-line shadow-sm">
             <tr>
-              <th className="px-3 py-2.5">{showMonthly ? 'Month' : 'Year'}</th>
-              <th className="px-3 py-2.5">Principal Paid</th>
-              <th className="px-3 py-2.5">Interest Paid</th>
-              <th className="px-3 py-2.5">Total Payment</th>
-              <th className="px-3 py-2.5 text-right">Balance</th>
+              <th className="px-3 py-2.5 text-slate-900 dark:text-slate-100 font-bold">{showMonthly ? 'Month' : 'Year'}</th>
+              <th className="px-3 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Principal Paid</th>
+              <th className="px-3 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Interest Paid</th>
+              <th className="px-3 py-2.5 text-slate-900 dark:text-slate-100 font-bold">Total Payment</th>
+              <th className="px-3 py-2.5 text-right text-slate-900 dark:text-slate-100 font-bold">Balance</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-line/40 text-ink-soft font-mono tabular-nums">

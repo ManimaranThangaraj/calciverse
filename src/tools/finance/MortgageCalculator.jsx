@@ -26,15 +26,27 @@ export default function MortgageCalculator() {
     const totalPay = emiVal * n
     const totalInterest = totalPay - principal
 
-    let csv = 'Month,Year,Principal Paid (INR),Interest Paid (INR),Total Payment (INR),Remaining Balance (INR)\n'
+    const yMap = {}
     let balance = principal
     for (let m = 1; m <= n; m++) {
       const intM = balance * r
       const prinM = Math.min(emiVal - intM, balance)
       balance = Math.max(0, balance - prinM)
       const yr = Math.ceil(m / 12)
-      csv += `${m},${yr},${prinM.toFixed(0)},${intM.toFixed(0)},${emiVal.toFixed(0)},${balance.toFixed(0)}\n`
+      if (!yMap[yr]) yMap[yr] = { Year: `Year ${yr}`, 'Principal Paid': 0, 'Interest Paid': 0, 'Total Paid': 0, Balance: 0 }
+      yMap[yr]['Principal Paid'] += prinM
+      yMap[yr]['Interest Paid'] += intM
+      yMap[yr]['Total Paid'] += emiVal
+      yMap[yr]['Balance'] = balance
     }
+
+    const rows = Object.values(yMap).map((r) => ({
+      Year: r.Year,
+      'Principal Paid': `₹${Math.round(r['Principal Paid']).toLocaleString('en-IN')}`,
+      'Interest Paid': `₹${Math.round(r['Interest Paid']).toLocaleString('en-IN')}`,
+      'Total Payment': `₹${Math.round(r['Total Paid']).toLocaleString('en-IN')}`,
+      'Remaining Balance': `₹${Math.round(r['Balance']).toLocaleString('en-IN')}`
+    }))
 
     return {
       principalRaw: principal,
@@ -43,7 +55,7 @@ export default function MortgageCalculator() {
       emi: `₹${Math.round(emiVal).toLocaleString('en-IN')}`,
       interest: `₹${Math.round(totalInterest).toLocaleString('en-IN')}`,
       total: `₹${Math.round(totalPay).toLocaleString('en-IN')}`,
-      csvString: csv
+      pdfRows: rows
     }
   }, [homePrice, downPayment, interestRate, tenureYears])
 
@@ -69,8 +81,8 @@ export default function MortgageCalculator() {
         toolName="Home Mortgage Calculator"
         summaryText={summaryText}
         shareUrl="https://calciverse.in/tool/mortgage-calculator"
-        csvFilename="mortgage_amortization_schedule.csv"
-        csvData={stats.csvString}
+        pdfTitle="Home Mortgage Amortization Report"
+        pdfRows={stats.pdfRows}
       />
 
       <AmortizationSchedule
