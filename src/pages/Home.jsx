@@ -99,8 +99,9 @@ export default function Home() {
           <Link to="/category/everyday" className="text-xs font-semibold text-saffron hover:underline">View All →</Link>
         </div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {tools
-            .filter((t) => t.status === 'live' && t.featured)
+          {['case-converter', 'lcm-hcf-calculator', 'tip-calculator', 'emi-calculator', 'gst-calculator', 'income-tax-calculator', 'sip-calculator', 'bmi-calculator', 'age-calculator']
+            .map((slug) => tools.find((t) => t.slug === slug && t.status === 'live'))
+            .filter(Boolean)
             .map((t) => (
               <ToolCard key={t.slug} tool={t} />
             ))}

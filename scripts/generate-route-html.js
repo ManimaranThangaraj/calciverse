@@ -304,7 +304,16 @@ function renderBodyHtml(path, seo, article = null) {
   }
 
   if (path === '/') {
-    const popularTools = tools.filter((t) => t.status === 'live' && t.featured).slice(0, 24)
+    // Keep this slug list in sync with the "Popular Calculators & Text Tools"
+    // section in src/pages/Home.jsx — that's the client-side source of truth.
+    const POPULAR_SLUGS = [
+      'case-converter', 'lcm-hcf-calculator', 'tip-calculator', 'emi-calculator',
+      'gst-calculator', 'income-tax-calculator', 'sip-calculator', 'bmi-calculator',
+      'age-calculator'
+    ]
+    const popularTools = POPULAR_SLUGS
+      .map((slug) => tools.find((t) => t.slug === slug && t.status === 'live'))
+      .filter(Boolean)
     const featuredArticles = articles.filter((a) => a.status === 'live').slice(0, 10)
 
     let content = `
