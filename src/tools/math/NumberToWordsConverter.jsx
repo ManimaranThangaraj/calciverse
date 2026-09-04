@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { NumberField, ResultStat } from '../../components/ui/Field.jsx'
 import CopyButton from '../../components/ui/CopyButton.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 const ONES = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
 const TENS = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
@@ -78,11 +79,24 @@ export default function NumberToWordsConverter() {
     }
   }, [amount])
 
+  const getTextSummary = () =>
+    `Number to Words Conversion Summary:\n` +
+    `• Number: ${amount}\n` +
+    `• Indian Format: ${indianWords}\n` +
+    `• International Format: ${intlWords}\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <div className="max-w-md">
         <NumberField label="Enter Number" value={amount} onChange={setAmount} suffix="₹" step={1000} />
       </div>
+
+      <ToolActions
+        title="Number to Words Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
 
       <div className="mt-6 space-y-4">
         <div>
@@ -111,13 +125,14 @@ export default function NumberToWordsConverter() {
         <h3 className="text-lg font-semibold text-ink mb-3">Number to Words Quick Examples</h3>
         <div className="overflow-x-auto rounded-lg border border-line bg-paper">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-line bg-paper-raised text-xs font-semibold uppercase text-ink-soft">
+            <thead className="border-b border-line bg-slate-200 text-slate-900 dark:bg-slate-800 dark:text-slate-100 text-xs font-bold uppercase">
               <tr>
-                <th className="px-4 py-3">Number</th>
-                <th className="px-4 py-3">Indian System (Rupees)</th>
-                <th className="px-4 py-3">International System</th>
+                <th className="px-4 py-3 text-slate-900 dark:text-slate-100 font-bold">Number</th>
+                <th className="px-4 py-3 text-slate-900 dark:text-slate-100 font-bold">Indian System (Rupees)</th>
+                <th className="px-4 py-3 text-slate-900 dark:text-slate-100 font-bold">International System</th>
               </tr>
             </thead>
+
             <tbody className="divide-y divide-line text-ink">
               <tr>
                 <td className="px-4 py-2.5 font-mono">1</td>

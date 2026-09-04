@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField, ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 const inr = (n) => Math.round(n).toLocaleString('en-IN')
 
@@ -25,6 +26,16 @@ export default function RDCalculator() {
     return { invested: investedVal, interest: A - investedVal, total: A }
   }, [monthlyDeposit, rate, months])
 
+  const getTextSummary = () =>
+    `Recurring Deposit (RD) Summary:\n` +
+    `• Monthly Deposit: ₹${inr(monthlyDeposit)}\n` +
+    `• Interest Rate: ${rate}%\n` +
+    `• Tenure: ${months} Months\n` +
+    `• Total Amount Deposited: ₹${inr(invested)}\n` +
+    `• Total Interest Earned: ₹${inr(interest)}\n` +
+    `• Maturity Amount: ₹${inr(total)}\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <div className="grid gap-4 sm:grid-cols-3">
@@ -32,6 +43,13 @@ export default function RDCalculator() {
         <NumberField label="Interest rate (p.a.)" value={rate} onChange={setRate} suffix="%" step="0.1" />
         <NumberField label="Tenure (months)" value={months} onChange={setMonths} suffix="months" />
       </div>
+
+      <ToolActions
+        title="Recurring Deposit Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
+
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
         <ResultStat label="Total Deposited" value={`₹${inr(invested)}`} />
         <ResultStat label="Interest Earned" value={`₹${inr(interest)}`} />
@@ -43,3 +61,4 @@ export default function RDCalculator() {
     </div>
   )
 }
+

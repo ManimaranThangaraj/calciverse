@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField, SelectField, ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 const inr = (n) => Math.round(n).toLocaleString('en-IN')
 
@@ -19,6 +20,15 @@ export default function CompoundInterestCalculator() {
     return { interest: A - P, total: A }
   }, [principal, rate, years, frequency])
 
+  const getTextSummary = () =>
+    `Compound Interest Summary:\n` +
+    `• Principal Amount: ₹${inr(principal)}\n` +
+    `• Interest Rate: ${rate}%\n` +
+    `• Tenure: ${years} Years\n` +
+    `• Interest Earned: ₹${inr(interest)}\n` +
+    `• Total Maturity Amount: ₹${inr(total)}\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -37,6 +47,13 @@ export default function CompoundInterestCalculator() {
           ]}
         />
       </div>
+
+      <ToolActions
+        title="Compound Interest Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
+
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
         <ResultStat label="Principal Amount" value={`₹${inr(principal)}`} />
         <ResultStat label="Compound Interest" value={`₹${inr(interest)}`} emphasis />
@@ -48,3 +65,4 @@ export default function CompoundInterestCalculator() {
     </div>
   )
 }
+

@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField, SelectField, ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 const inr = (n) => n.toLocaleString('en-IN', { maximumFractionDigits: 0 })
 
@@ -18,6 +19,15 @@ export default function FDCalculator() {
     return { maturity: m, interest: m - P }
   }, [principal, rate, years, freq])
 
+  const getTextSummary = () =>
+    `Fixed Deposit (FD) Summary:\n` +
+    `• Deposit Amount: ₹${inr(principal)}\n` +
+    `• Interest Rate: ${rate}%\n` +
+    `• Tenure: ${years} Years\n` +
+    `• Total Interest Earned: ₹${inr(interest)}\n` +
+    `• Maturity Amount: ₹${inr(maturity)}\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <div className="grid gap-4 sm:grid-cols-2">
@@ -34,6 +44,13 @@ export default function FDCalculator() {
           ]}
         />
       </div>
+
+      <ToolActions
+        title="Fixed Deposit Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
+
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <ResultStat label="Maturity value" value={`₹${inr(maturity)}`} emphasis />
         <ResultStat label="Interest earned" value={`₹${inr(interest)}`} />
@@ -41,3 +58,4 @@ export default function FDCalculator() {
     </div>
   )
 }
+

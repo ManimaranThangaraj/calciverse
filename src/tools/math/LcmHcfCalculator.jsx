@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 function gcdTwo(a, b) {
   return b === 0 ? a : gcdTwo(b, a % b)
@@ -32,6 +33,13 @@ export default function LcmHcfCalculator() {
     return { lcm: currentLcm, hcf: currentGcd, numCount: nums.length }
   }, [inputText])
 
+  const getTextSummary = () =>
+    `LCM & HCF Calculation Summary:\n` +
+    `• Input Numbers: ${inputText}\n` +
+    `• HCF / GCD (Highest Common Factor): ${hcf}\n` +
+    `• LCM (Least Common Multiple): ${lcm}\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <label className="block">
@@ -44,6 +52,13 @@ export default function LcmHcfCalculator() {
           className="mt-1.5 w-full rounded-lg border border-line bg-paper-raised px-3 py-2.5 font-mono text-base outline-none focus:border-saffron transition-colors"
         />
       </label>
+
+      <ToolActions
+        title="LCM & HCF Calculation Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
+
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <ResultStat label="HCF / GCD (Highest Common Factor)" value={hcf} emphasis />
         <ResultStat label="LCM (Least Common Multiple)" value={lcm} emphasis />
@@ -54,3 +69,4 @@ export default function LcmHcfCalculator() {
     </div>
   )
 }
+

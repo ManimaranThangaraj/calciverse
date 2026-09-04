@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField, ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 function gcd(a, b) {
   return b === 0 ? a : gcd(b, a % b)
@@ -30,6 +31,13 @@ export default function RatioCalculator() {
     }
   }, [valA, valB, valC])
 
+  const getTextSummary = () =>
+    `Ratio Calculation Summary:\n` +
+    `• Ratio Input (A : B): ${valA} : ${valB}\n` +
+    `• Simplified Ratio: ${simplifiedRatio}\n` +
+    `• Proportion (C : X): ${valC} : ${missingX.toFixed(2)}\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <div className="grid gap-4 sm:grid-cols-3">
@@ -37,6 +45,13 @@ export default function RatioCalculator() {
         <NumberField label="Value B" value={valB} onChange={setValB} />
         <NumberField label="Target Value C (Solve A:B = C:X)" value={valC} onChange={setValC} />
       </div>
+
+      <ToolActions
+        title="Ratio Calculation Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
+
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <ResultStat label="Simplified Ratio (A : B)" value={simplifiedRatio} emphasis />
         <ResultStat label="Solved Missing Value (X)" value={missingX.toFixed(2)} />
@@ -47,3 +62,4 @@ export default function RatioCalculator() {
     </div>
   )
 }
+

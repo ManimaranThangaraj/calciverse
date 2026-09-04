@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField, ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 const inr = (n) => Math.round(n).toLocaleString('en-IN')
 
@@ -26,6 +27,16 @@ export default function PPFCalculator() {
     return { invested: P * n, interest: totalInterest, total: currentBalance }
   }, [yearlyDeposit, rate, years])
 
+  const getTextSummary = () =>
+    `Public Provident Fund (PPF) Summary:\n` +
+    `• Yearly Investment: ₹${inr(yearlyDeposit)}\n` +
+    `• Interest Rate: ${rate}%\n` +
+    `• Tenure: ${years} Years\n` +
+    `• Total Amount Invested: ₹${inr(invested)}\n` +
+    `• Total Interest Gained: ₹${inr(interest)}\n` +
+    `• PPF Maturity Corpus: ₹${inr(total)}\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <div className="grid gap-4 sm:grid-cols-3">
@@ -33,6 +44,13 @@ export default function PPFCalculator() {
         <NumberField label="Interest rate (p.a.)" value={rate} onChange={setRate} suffix="%" step="0.1" />
         <NumberField label="Tenure (Min 15 yrs)" value={years} onChange={setYears} suffix="years" min={15} max={50} />
       </div>
+
+      <ToolActions
+        title="Public Provident Fund Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
+
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
         <ResultStat label="Total Invested" value={`₹${inr(invested)}`} />
         <ResultStat label="Total Interest" value={`₹${inr(interest)}`} />
@@ -44,3 +62,4 @@ export default function PPFCalculator() {
     </div>
   )
 }
+

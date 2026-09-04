@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField, ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 const inr = (n) => Math.max(0, Math.round(n)).toLocaleString('en-IN')
 
@@ -54,12 +55,27 @@ export default function IncomeTaxCalculator() {
   const recommended = newRegime.total < oldRegime.total ? 'New Regime' : 'Old Regime'
   const savings = Math.abs(newRegime.total - oldRegime.total)
 
+  const getTextSummary = () =>
+    `Income Tax Comparison (FY 2025-26):\n` +
+    `• Gross Annual Income: ₹${inr(grossIncome)}\n` +
+    `• New Tax Regime Payable: ₹${inr(newRegime.total)}\n` +
+    `• Old Tax Regime Payable: ₹${inr(oldRegime.total)}\n` +
+    `• Recommendation: Save with ${recommended} (Save ₹${inr(savings)})\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <div className="grid gap-4 sm:grid-cols-2">
         <NumberField label="Gross Annual Income" value={grossIncome} onChange={setGrossIncome} suffix="₹" step={10000} />
         <NumberField label="Old Regime Deductions (80C, 80D, HRA)" value={deductions} onChange={setDeductions} suffix="₹" step={5000} hint="Applies to Old Regime only" />
       </div>
+
+      <ToolActions
+        title="Income Tax Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
+
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <div className="rounded-xl border border-line bg-paper p-4">

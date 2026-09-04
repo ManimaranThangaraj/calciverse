@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField, SelectField, ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 export default function IdealWeightCalculator() {
   const [gender, setGender] = useState('male')
@@ -36,12 +37,29 @@ export default function IdealWeightCalculator() {
     }
   }, [gender, heightCm])
 
+  const getTextSummary = () =>
+    `Ideal Body Weight Summary:\n` +
+    `• Gender: ${gender === 'male' ? 'Male' : 'Female'}\n` +
+    `• Height: ${heightCm} cm\n` +
+    `• WHO Healthy BMI Weight Range: ${bmiRange}\n` +
+    `• Devine Formula Target: ${devine.toFixed(1)} kg\n` +
+    `• Robinson Formula Target: ${robinson.toFixed(1)} kg\n` +
+    `• Miller Formula Target: ${miller.toFixed(1)} kg\n\n` +
+    `Calculated on Calciverse: ${window.location.href}`
+
   return (
     <div>
       <div className="grid gap-4 sm:grid-cols-2">
         <SelectField label="Gender" value={gender} onChange={setGender} options={[{ label: 'Male', value: 'male' }, { label: 'Female', value: 'female' }]} />
         <NumberField label="Height" value={heightCm} onChange={setHeightCm} suffix="cm" />
       </div>
+
+      <ToolActions
+        title="Ideal Weight Summary"
+        getTextSummary={getTextSummary}
+        onDownloadPDF={getTextSummary}
+      />
+
       <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <ResultStat label="WHO Healthy BMI Range" value={bmiRange} emphasis />
         <ResultStat label="Devine Formula" value={`${devine.toFixed(1)} kg`} />
@@ -54,3 +72,4 @@ export default function IdealWeightCalculator() {
     </div>
   )
 }
+
