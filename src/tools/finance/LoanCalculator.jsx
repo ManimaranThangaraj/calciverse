@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField } from '../../components/ui/Field.jsx'
 import AmortizationSchedule from '../../components/ui/AmortizationSchedule.jsx'
-import ToolActions from '../../components/ui/ToolActions.jsx'
 
 const inr = (n) => n.toLocaleString('en-IN', { maximumFractionDigits: 0 })
 
@@ -15,7 +14,7 @@ export default function LoanCalculator() {
   const [rate, setRate] = useState(10.5)
   const [years, setYears] = useState(5)
 
-  const { rows, baseRow, csvString } = useMemo(() => {
+  const { rows, baseRow } = useMemo(() => {
     const P = Number(principal) || 0
     const r = (Number(rate) || 0) / 12 / 100
     const list = [-1, 0, 1].map((delta) => {
@@ -26,18 +25,8 @@ export default function LoanCalculator() {
       return { years: y, emi, totalInterest: total - P, isBase: delta === 0 }
     })
     const base = list.find((item) => item.isBase) || list[1]
-
-    const pdfRows = list.map((r) => ({
-      Tenure: `${r.years} Years`,
-      'Monthly EMI': `₹${inr(r.emi)}`,
-      'Total Interest': `₹${inr(r.totalInterest)}`,
-      'Total Payable': `₹${inr(r.emi * r.years * 12)}`
-    }))
-
-    return { rows: list, baseRow: base, pdfRows }
+    return { rows: list, baseRow: base }
   }, [principal, rate, years])
-
-  const summaryText = `Loan Amount: ₹${inr(principal)} @ ${rate}% for ${years} years\nMonthly EMI: ₹${inr(baseRow.emi)}\nTotal Interest: ₹${inr(baseRow.totalInterest)}`
 
   return (
     <div>
@@ -68,19 +57,13 @@ export default function LoanCalculator() {
         </table>
       </div>
 
-      <ToolActions
-        toolName="Personal & Car Loan Calculator"
-        summaryText={summaryText}
-        shareUrl="https://calciverse.in/tool/loan-calculator"
-        pdfTitle="Loan Comparison Report"
-        pdfRows={pdfRows}
-      />
-
       <AmortizationSchedule
         principal={Number(principal)}
         rate={Number(rate)}
         years={Number(years)}
         emi={baseRow.emi}
+        toolName="Personal Loan Calculator"
+        shareUrl="https://calciverse.in/tool/loan-calculator"
       />
 
       <p className="mt-4 text-xs text-ink-soft/60">Compares your chosen tenure against one year shorter and one year longer, so you can see the interest trade-off at a glance.</p>

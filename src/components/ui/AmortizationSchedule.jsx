@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import ToolActions from './ToolActions.jsx'
 
 const inr = (n) => n.toLocaleString('en-IN', { maximumFractionDigits: 0 })
 
@@ -6,24 +7,24 @@ export default function AmortizationSchedule({
   principal = 0,
   rate = 0,
   years = 0,
-  emi = 0
+  emi = 0,
+  toolName = 'Loan EMI Calculator',
+  shareUrl = 'https://calciverse.in/tool/emi-calculator'
 }) {
   const [showMonthly, setShowMonthly] = useState(false)
 
-  const { yearlyData, monthlyData, totalInterest, totalPayment, csvString } = useMemo(() => {
+  const { yearlyData, monthlyData, totalInterest, totalPayment, yearlyPdfRows, monthlyPdfRows } = useMemo(() => {
     const P = Number(principal) || 0
     const r = (Number(rate) || 0) / 12 / 100
     const totalMonths = (Number(years) || 0) * 12
 
     if (!P || !totalMonths || !emi) {
-      return { yearlyData: [], monthlyData: [], totalInterest: 0, totalPayment: 0, csvString: '' }
+      return { yearlyData: [], monthlyData: [], totalInterest: 0, totalPayment: 0, yearlyPdfRows: [], monthlyPdfRows: [] }
     }
 
     let balance = P
     const mData = []
     const yMap = {}
-
-    let csv = 'Month,Year,Principal Paid (INR),Interest Paid (INR),Total Payment (INR),Remaining Balance (INR)\n'
 
     for (let m = 1; m <= totalMonths; m++) {
       const interestForMonth = balance * r
@@ -41,8 +42,6 @@ export default function AmortizationSchedule({
         balance
       })
 
-      csv += `${m},${yr},${principalForMonth.toFixed(0)},${interestForMonth.toFixed(0)},${emi.toFixed(0)},${balance.toFixed(0)}\n`
-
       if (!yMap[yr]) {
         yMap[yr] = { year: yr, principalPaid: 0, interestPaid: 0, totalPaid: 0, balance: 0 }
       }
@@ -56,12 +55,29 @@ export default function AmortizationSchedule({
     const totInt = mData.reduce((acc, cur) => acc + cur.interestPaid, 0)
     const totPay = P + totInt
 
+    const yPdf = yData.map((row) => ({
+      'Year': `Year ${row.year}`,
+      'Principal Paid': `₹${inr(row.principalPaid)}`,
+      'Interest Paid': `₹${inr(row.interestPaid)}`,
+      'Total Payment': `₹${inr(row.totalPaid)}`,
+      'Remaining Balance': `₹${inr(row.balance)}`
+    }))
+
+    const mPdf = mData.map((row) => ({
+      'Month': `Month ${row.month} (Yr ${row.year})`,
+      'Principal Paid': `₹${inr(row.principalPaid)}`,
+      'Interest Paid': `₹${inr(row.interestPaid)}`,
+      'Total Payment': `₹${inr(row.totalPaid)}`,
+      'Remaining Balance': `₹${inr(row.balance)}`
+    }))
+
     return {
       yearlyData: yData,
       monthlyData: mData,
       totalInterest: totInt,
       totalPayment: totPay,
-      csvString: csv
+      yearlyPdfRows: yPdf,
+      monthlyPdfRows: mPdf
     }
   }, [principal, rate, years, emi])
 
@@ -69,6 +85,10 @@ export default function AmortizationSchedule({
 
   const principalPct = totalPayment > 0 ? ((principal / totalPayment) * 100).toFixed(1) : 50
   const interestPct = totalPayment > 0 ? ((totalInterest / totalPayment) * 100).toFixed(1) : 50
+
+  const summaryText = `Loan Principal: ₹${inr(principal)}\nInterest Rate: ${rate}% p.a.\nTenure: ${years} years\nMonthly EMI: ₹${inr(emi)}\nTotal Interest Payable: ₹${inr(totalInterest)}\nTotal Amount Payable: ₹${inr(totalPayment)}`
+
+  const activePdfRows = showMonthly ? monthlyPdfRows : yearlyPdfRows
 
   return (
     <div className="mt-8 rounded-xl border border-line bg-paper-raised p-5 shadow-sm">
@@ -99,6 +119,15 @@ export default function AmortizationSchedule({
           <div style={{ width: `${interestPct}%` }} className="bg-amber-500 transition-all duration-500" title="Interest Portion" />
         </div>
       </div>
+
+      {/* Share & PDF Export Toolbar */}
+      <ToolActions
+        toolName={toolName}
+        summaryText={summaryText}
+        shareUrl={shareUrl}
+        pdfTitle={`${toolName} ${showMonthly ? '(Monthly Breakdown)' : '(Yearly Breakdown)'}`}
+        pdfRows={activePdfRows}
+      />
 
       {/* Schedule Table */}
       <div className="mt-5 max-h-80 overflow-y-auto rounded-lg border border-line bg-paper">

@@ -38,8 +38,22 @@ export default function ToolActions({
 
   const handleDownloadPDF = () => {
     const title = pdfTitle || toolName
-    const printWindow = window.open('', '_blank')
-    if (!printWindow) return
+
+    // Remove existing print iframe if present
+    let iframe = document.getElementById('calciverse-pdf-iframe')
+    if (iframe && iframe.parentNode) {
+      iframe.parentNode.removeChild(iframe)
+    }
+
+    iframe = document.createElement('iframe')
+    iframe.id = 'calciverse-pdf-iframe'
+    iframe.style.position = 'fixed'
+    iframe.style.right = '0'
+    iframe.style.bottom = '0'
+    iframe.style.width = '0px'
+    iframe.style.height = '0px'
+    iframe.style.border = '0px'
+    document.body.appendChild(iframe)
 
     const summaryHtml = summaryText
       .split('\n')
@@ -50,10 +64,10 @@ export default function ToolActions({
     if (pdfRows && pdfRows.length > 0) {
       const headers = Object.keys(pdfRows[0])
       tableHtml = `
-        <h3 style="margin-top: 24px; color: #0f172a; font-size: 16px;">Detailed Schedule</h3>
+        <h3 style="margin-top: 24px; color: #0f172a; font-size: 16px;">Detailed Breakdown (${pdfRows.length} items)</h3>
         <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
           <thead>
-            <tr style="background-color: #e2e8f0; color: #0f172a; font-weight: bold; text-align: left;">
+            <tr style="background-color: #f1f5f9; color: #0f172a; font-weight: bold; text-align: left;">
               ${headers.map((h) => `<th style="padding: 8px; border: 1px solid #cbd5e1; font-weight: bold;">${h}</th>`).join('')}
             </tr>
           </thead>
@@ -83,7 +97,7 @@ export default function ToolActions({
             .logo { font-size: 22px; font-weight: bold; color: #ea580c; }
             .badge { background: #ffedd5; color: #c2410c; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
             .summary-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
-            .footer { margin-top: 30px; border-top: 1px solid #e2e8f0; pt: 12px; font-size: 11px; color: #64748b; text-align: center; }
+            .footer { margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 11px; color: #64748b; text-align: center; }
             @media print {
               body { padding: 0; }
               @page { margin: 1.5cm; }
@@ -103,17 +117,19 @@ export default function ToolActions({
           <div class="footer">
             Generated on ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })} via Calciverse (https://calciverse.in) • Free Calculators & Tools
           </div>
-          <script>
-            window.onload = function() {
-              window.print();
-            }
-          </script>
         </body>
       </html>
     `
 
-    printWindow.document.write(htmlContent)
-    printWindow.document.close()
+    const doc = iframe.contentWindow.document
+    doc.open()
+    doc.write(htmlContent)
+    doc.close()
+
+    setTimeout(() => {
+      iframe.contentWindow.focus()
+      iframe.contentWindow.print()
+    }, 300)
   }
 
   return (

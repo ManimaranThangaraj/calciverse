@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react'
 import { NumberField, ResultStat } from '../../components/ui/Field.jsx'
 import AmortizationSchedule from '../../components/ui/AmortizationSchedule.jsx'
-import ToolActions from '../../components/ui/ToolActions.jsx'
 
 export default function MortgageCalculator() {
   const [homePrice, setHomePrice] = useState(5000000)
@@ -17,7 +16,7 @@ export default function MortgageCalculator() {
     const years = Number(tenureYears) || 0
 
     if (principal <= 0 || rate <= 0 || years <= 0) {
-      return { emi: '₹0', interest: '₹0', total: '₹0', principal: '₹0', emiRaw: 0, principalRaw: 0, csvString: '' }
+      return { emi: '₹0', interest: '₹0', total: '₹0', principal: '₹0', emiRaw: 0, principalRaw: 0 }
     }
 
     const r = rate / 12 / 100
@@ -26,40 +25,15 @@ export default function MortgageCalculator() {
     const totalPay = emiVal * n
     const totalInterest = totalPay - principal
 
-    const yMap = {}
-    let balance = principal
-    for (let m = 1; m <= n; m++) {
-      const intM = balance * r
-      const prinM = Math.min(emiVal - intM, balance)
-      balance = Math.max(0, balance - prinM)
-      const yr = Math.ceil(m / 12)
-      if (!yMap[yr]) yMap[yr] = { Year: `Year ${yr}`, 'Principal Paid': 0, 'Interest Paid': 0, 'Total Paid': 0, Balance: 0 }
-      yMap[yr]['Principal Paid'] += prinM
-      yMap[yr]['Interest Paid'] += intM
-      yMap[yr]['Total Paid'] += emiVal
-      yMap[yr]['Balance'] = balance
-    }
-
-    const rows = Object.values(yMap).map((r) => ({
-      Year: r.Year,
-      'Principal Paid': `₹${Math.round(r['Principal Paid']).toLocaleString('en-IN')}`,
-      'Interest Paid': `₹${Math.round(r['Interest Paid']).toLocaleString('en-IN')}`,
-      'Total Payment': `₹${Math.round(r['Total Paid']).toLocaleString('en-IN')}`,
-      'Remaining Balance': `₹${Math.round(r['Balance']).toLocaleString('en-IN')}`
-    }))
-
     return {
       principalRaw: principal,
       emiRaw: emiVal,
       principal: `₹${principal.toLocaleString('en-IN')}`,
       emi: `₹${Math.round(emiVal).toLocaleString('en-IN')}`,
       interest: `₹${Math.round(totalInterest).toLocaleString('en-IN')}`,
-      total: `₹${Math.round(totalPay).toLocaleString('en-IN')}`,
-      pdfRows: rows
+      total: `₹${Math.round(totalPay).toLocaleString('en-IN')}`
     }
   }, [homePrice, downPayment, interestRate, tenureYears])
-
-  const summaryText = `Property Price: ₹${Number(homePrice).toLocaleString('en-IN')} (Down Payment: ₹${Number(downPayment).toLocaleString('en-IN')})\nLoan Amount: ${stats.principal} @ ${interestRate}% for ${tenureYears} yrs\nMonthly EMI: ${stats.emi}\nTotal Interest: ${stats.interest}`
 
   return (
     <div className="space-y-6">
@@ -77,19 +51,13 @@ export default function MortgageCalculator() {
         <ResultStat label="Total Payment" value={stats.total} />
       </div>
 
-      <ToolActions
-        toolName="Home Mortgage Calculator"
-        summaryText={summaryText}
-        shareUrl="https://calciverse.in/tool/mortgage-calculator"
-        pdfTitle="Home Mortgage Amortization Report"
-        pdfRows={stats.pdfRows}
-      />
-
       <AmortizationSchedule
         principal={stats.principalRaw}
         rate={Number(interestRate)}
         years={Number(tenureYears)}
         emi={stats.emiRaw}
+        toolName="Home Mortgage Calculator"
+        shareUrl="https://calciverse.in/tool/mortgage-calculator"
       />
     </div>
   )
