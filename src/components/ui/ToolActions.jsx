@@ -2,7 +2,9 @@ import { useState } from 'react'
 
 export default function ToolActions({
   summaryText = '',
+  getTextSummary = null,
   toolName = 'Calciverse Calculator',
+  title = '',
   shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://calciverse.in',
   pdfTitle = '',
   pdfRows = null
@@ -10,15 +12,19 @@ export default function ToolActions({
   const [copiedText, setCopiedText] = useState(false)
   const [copiedLink, setCopiedLink] = useState(false)
 
+  const activeSummary = typeof getTextSummary === 'function' ? getTextSummary() : summaryText
+  const activeName = title || toolName
+  const activePdfTitle = pdfTitle || activeName
+
   const handleWhatsAppShare = () => {
-    const text = `📊 *${toolName} Calculation Result*\n\n${summaryText}\n\nCalculate yours on Calciverse: ${shareUrl}`
+    const text = `📊 *${activeName} Result*\n\n${activeSummary}\n\nCalculate yours on Calciverse: ${shareUrl}`
     const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`
     window.open(waUrl, '_blank', 'noopener,noreferrer')
   }
 
   const handleCopySummary = async () => {
     try {
-      await navigator.clipboard.writeText(`${toolName} Result:\n${summaryText}\nCalculated via Calciverse (${shareUrl})`)
+      await navigator.clipboard.writeText(`${activeName} Result:\n${activeSummary}\nCalculated via Calciverse (${shareUrl})`)
       setCopiedText(true)
       setTimeout(() => setCopiedText(false), 2000)
     } catch {
@@ -37,7 +43,7 @@ export default function ToolActions({
   }
 
   const handleDownloadPDF = () => {
-    const title = pdfTitle || toolName
+    const reportTitle = activePdfTitle
 
     // Remove existing print iframe if present
     let iframe = document.getElementById('calciverse-pdf-iframe')
@@ -55,16 +61,16 @@ export default function ToolActions({
     iframe.style.border = '0px'
     document.body.appendChild(iframe)
 
-    const summaryHtml = summaryText
+    const summaryHtml = activeSummary
       .split('\n')
       .map((line) => `<p style="margin: 4px 0; font-size: 14px; color: #334155;">${line}</p>`)
       .join('')
 
     let tableHtml = ''
-    if (pdfRows && pdfRows.length > 0) {
+    if (Array.isArray(pdfRows) && pdfRows.length > 0) {
       const headers = Object.keys(pdfRows[0])
       tableHtml = `
-        <h3 style="margin-top: 24px; color: #0f172a; font-size: 16px;">Detailed Breakdown (${pdfRows.length} items)</h3>
+        <h3 style="margin-top: 24px; color: #0f172a; font-size: 16px;">Amortization Schedule & Detailed Breakdown (${pdfRows.length} items)</h3>
         <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
           <thead>
             <tr style="background-color: #f1f5f9; color: #0f172a; font-weight: bold; text-align: left;">
@@ -90,7 +96,7 @@ export default function ToolActions({
       <!DOCTYPE html>
       <html>
         <head>
-          <title>${title} - Calciverse PDF Report</title>
+          <title>${reportTitle} - Calciverse PDF Report</title>
           <style>
             body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 24px; color: #1e293b; }
             .header { border-bottom: 2px solid #ea580c; padding-bottom: 12px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
@@ -107,7 +113,7 @@ export default function ToolActions({
         <body>
           <div class="header">
             <div class="logo">Calciverse.in</div>
-            <div class="badge">${title}</div>
+            <div class="badge">${reportTitle}</div>
           </div>
           <div class="summary-box">
             <h2 style="margin: 0 0 12px 0; font-size: 18px; color: #0f172a;">Calculation Summary Report</h2>
@@ -131,6 +137,8 @@ export default function ToolActions({
       iframe.contentWindow.print()
     }, 300)
   }
+
+  const hasAmortizationSchedule = Array.isArray(pdfRows) && pdfRows.length > 0
 
   return (
     <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-line/60 pt-4">
@@ -158,13 +166,16 @@ export default function ToolActions({
         <span>🔗</span> {copiedLink ? 'Copied Link!' : 'Share Tool Link'}
       </button>
 
-      <button
-        type="button"
-        onClick={handleDownloadPDF}
-        className="inline-flex items-center gap-1.5 rounded-lg border border-saffron bg-saffron-soft/30 px-3.5 py-1.5 text-xs font-semibold text-saffron hover:bg-saffron hover:text-slate-950 transition-colors shadow-sm ml-auto"
-      >
-        <span>📄</span> Download PDF
-      </button>
+      {hasAmortizationSchedule && (
+        <button
+          type="button"
+          onClick={handleDownloadPDF}
+          className="inline-flex items-center gap-1.5 rounded-lg border border-saffron bg-saffron-soft/30 px-3.5 py-1.5 text-xs font-semibold text-saffron hover:bg-saffron hover:text-slate-950 transition-colors shadow-sm ml-auto"
+        >
+          <span>📄</span> Download PDF
+        </button>
+      )}
     </div>
   )
 }
+
