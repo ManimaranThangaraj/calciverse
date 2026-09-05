@@ -13,6 +13,31 @@ export default function ToolGuide({ tool, category }) {
 
   return (
     <div className="mt-12 border-t border-line pt-10 space-y-10">
+      {/* Category Disclaimer Banner */}
+      {tool.category === 'finance' && (
+        <div className="rounded-xl border border-saffron/30 bg-saffron-soft/20 p-4 flex items-start gap-3 text-xs text-ink-soft">
+          <AlertTriangle className="text-saffron shrink-0 mt-0.5" size={18} />
+          <div>
+            <strong className="block text-ink font-semibold mb-0.5">Educational Financial Disclaimer</strong>
+            <span>
+              This calculator provides mathematical estimates for educational and planning purposes only. Actual bank loan EMIs, interest rates, tax liabilities, or mutual fund returns may vary depending on institution processing fees, compounding schedules, or statutory updates. Consult a certified financial advisor or Chartered Accountant before making official commitments.
+            </span>
+          </div>
+        </div>
+      )}
+
+      {tool.category === 'health' && (
+        <div className="rounded-xl border border-signal/30 bg-signal/10 p-4 flex items-start gap-3 text-xs text-ink-soft">
+          <ShieldCheck className="text-signal shrink-0 mt-0.5" size={18} />
+          <div>
+            <strong className="block text-ink font-semibold mb-0.5">Informational Medical Disclaimer</strong>
+            <span>
+              This health tool provides population-level physiological estimations based on standard clinical guidelines (such as WHO adult cutoffs and Mifflin-St Jeor formulas). Results are intended for general health tracking and do not substitute professional medical diagnosis, clinical evaluation, or advice from a licensed healthcare provider.
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Section 1: Detailed Tool Overview & Purpose */}
       <section className="space-y-3">
         <div className="flex items-center gap-2 text-xl font-bold font-display text-ink">
