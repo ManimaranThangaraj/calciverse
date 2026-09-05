@@ -1,12 +1,154 @@
-import { Link } from 'react-router-dom'
+import { useState, useRef, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
 import LiveTicker from '../components/LiveTicker.jsx'
 import CategoryIcon from '../components/CategoryIcon.jsx'
 import ToolCard from '../components/ToolCard.jsx'
 import AdSlot from '../components/AdSlot.jsx'
 import { categories } from '../data/categories.js'
-import { tools, liveTools, counts } from '../data/tools.js'
-import { liveArticles } from '../data/articles.js'
+import { tools } from '../data/tools.js'
+import { articles, liveArticles } from '../data/articles.js'
+import { Search, Calculator, BookOpen, ArrowRight, X } from 'lucide-react'
+
+function HomeSearch() {
+  const [query, setQuery] = useState('')
+  const [isFocused, setIsFocused] = useState(false)
+  const navigate = useNavigate()
+  const searchRef = useRef(null)
+
+  const trimmed = query.trim().toLowerCase()
+
+  const matchingTools = trimmed
+    ? tools
+        .filter(
+          (t) =>
+            t.status === 'live' &&
+            (t.name.toLowerCase().includes(trimmed) ||
+              t.description.toLowerCase().includes(trimmed) ||
+              t.category.toLowerCase().includes(trimmed) ||
+              t.slug.toLowerCase().includes(trimmed))
+        )
+        .slice(0, 5)
+    : []
+
+  const matchingArticles = trimmed
+    ? articles
+        .filter(
+          (a) =>
+            a.status === 'live' &&
+            (a.title.toLowerCase().includes(trimmed) ||
+              a.excerpt.toLowerCase().includes(trimmed) ||
+              a.category.toLowerCase().includes(trimmed))
+        )
+        .slice(0, 3)
+    : []
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setIsFocused(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  return (
+    <div ref={searchRef} className="relative mt-6 max-w-xl">
+      <div className="relative flex items-center">
+        <Search className="absolute left-4 text-ink-soft" size={20} />
+        <input
+          type="text"
+          placeholder="Search 120+ calculators & guides... (e.g. EMI, GST, BMI, Salary)"
+          value={query}
+          onFocus={() => setIsFocused(true)}
+          onChange={(e) => {
+            setQuery(e.target.value)
+            setIsFocused(true)
+          }}
+          className="w-full rounded-2xl border border-line bg-paper-raised pl-12 pr-10 py-3.5 text-sm text-ink placeholder:text-ink-soft/60 shadow-sm focus:border-saffron focus:outline-none transition-all"
+        />
+        {query && (
+          <button
+            onClick={() => setQuery('')}
+            className="absolute right-3.5 p-1 text-ink-soft hover:text-ink transition-colors"
+          >
+            <X size={16} />
+          </button>
+        )}
+      </div>
+
+      {/* Dropdown Live Results */}
+      {isFocused && trimmed && (
+        <div className="absolute left-0 right-0 top-full z-30 mt-2 rounded-2xl border border-line bg-paper-raised p-4 shadow-xl space-y-4 max-h-[60vh] overflow-y-auto">
+          {matchingTools.length === 0 && matchingArticles.length === 0 ? (
+            <p className="text-xs text-ink-soft italic py-2 text-center">No matching tools or guides found for "{query}".</p>
+          ) : (
+            <>
+              {matchingTools.length > 0 && (
+                <div>
+                  <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-ink-soft mb-2">
+                    <Calculator size={14} className="text-saffron" />
+                    <span>Calculators & Tools</span>
+                  </div>
+                  <div className="grid gap-2">
+                    {matchingTools.map((t) => (
+                      <button
+                        key={t.slug}
+                        onClick={() => {
+                          setIsFocused(false)
+                          navigate(`/tool/${t.slug}`)
+                        }}
+                        className="flex items-center justify-between text-left rounded-xl border border-line bg-paper p-2.5 hover:border-saffron hover:bg-paper-raised transition-all group"
+                      >
+                        <div>
+                          <div className="font-semibold text-xs text-ink group-hover:text-saffron transition-colors">
+                            {t.name}
+                          </div>
+                          <div className="text-[11px] text-ink-soft line-clamp-1">{t.description}</div>
+                        </div>
+                        <ArrowRight size={14} className="text-ink-soft/40 group-hover:text-saffron shrink-0 ml-2 transition-transform group-hover:translate-x-0.5" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {matchingArticles.length > 0 && (
+                <div>
+                  <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-ink-soft mb-2">
+                    <BookOpen size={14} className="text-signal" />
+                    <span>Guides & Articles</span>
+                  </div>
+                  <div className="space-y-1.5">
+                    {matchingArticles.map((a) => (
+                      <button
+                        key={a.slug}
+                        onClick={() => {
+                          setIsFocused(false)
+                          navigate(`/articles/${a.slug}`)
+                        }}
+                        className="w-full flex items-center justify-between text-left rounded-xl border border-line bg-paper p-2.5 hover:border-saffron hover:bg-paper-raised transition-all group"
+                      >
+                        <div>
+                          <div className="font-semibold text-xs text-ink group-hover:text-saffron transition-colors">
+                            {a.title}
+                          </div>
+                          <div className="text-[11px] text-ink-soft line-clamp-1">{a.excerpt}</div>
+                        </div>
+                        <ArrowRight size={14} className="text-ink-soft/40 group-hover:text-saffron shrink-0 ml-2 transition-transform group-hover:translate-x-0.5" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
 
 const STATS = [
   { label: 'Calculators', live: tools.filter(t => t.kind === 'calculator' && t.status === 'live').length },
@@ -35,6 +177,10 @@ export default function Home() {
           <p className="mt-4 max-w-md text-base text-ink-soft">
             No sign-up, no clutter. Calculators, converters and generators for money, marks, health and code — plus articles that explain the number behind the number.
           </p>
+
+          {/* Home Search Bar Component */}
+          <HomeSearch />
+
           <div className="mt-6 flex flex-wrap gap-3">
             <Link to="/category/finance" className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 dark:bg-saffron dark:text-slate-950 dark:hover:bg-saffron/90 transition-colors">
               Browse Finance tools
