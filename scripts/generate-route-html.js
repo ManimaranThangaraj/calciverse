@@ -147,7 +147,7 @@ function renderBodyHtml(path, seo, article = null) {
     }
 
     content += `</div>`
-    return content
+    return content + renderStaticFooterHtml()
   }
 
   if (path.startsWith('/articles/')) {
@@ -176,7 +176,7 @@ function renderBodyHtml(path, seo, article = null) {
     }
 
     content += `</div></article>`
-    return content
+    return content + renderStaticFooterHtml()
   }
 
   if (path.startsWith('/category/')) {
@@ -204,7 +204,7 @@ function renderBodyHtml(path, seo, article = null) {
         </section>
       </div>
     `
-    return content
+    return content + renderStaticFooterHtml()
   }
 
   if (path === '/articles') {
@@ -229,11 +229,11 @@ function renderBodyHtml(path, seo, article = null) {
         </section>
       </div>
     `
-    return content
+    return content + renderStaticFooterHtml()
   }
 
   if (path === '/about') {
-    return `
+    let content = `
       <div class="mx-auto max-w-3xl px-5 py-10">
         <h1>About Calciverse</h1>
         <p>${esc(seo.description)}</p>
@@ -243,10 +243,11 @@ function renderBodyHtml(path, seo, article = null) {
         </section>
       </div>
     `
+    return content + renderStaticFooterHtml()
   }
 
   if (path === '/contact') {
-    return `
+    let content = `
       <div class="mx-auto max-w-3xl px-5 py-10">
         <h1>Contact Calciverse</h1>
         <p>${esc(seo.description)}</p>
@@ -256,10 +257,11 @@ function renderBodyHtml(path, seo, article = null) {
         </section>
       </div>
     `
+    return content + renderStaticFooterHtml()
   }
 
   if (path === '/privacy-policy') {
-    return `
+    let content = `
       <div class="mx-auto max-w-3xl px-5 py-10">
         <h1>Privacy Policy</h1>
         <p>${esc(seo.description)}</p>
@@ -269,10 +271,11 @@ function renderBodyHtml(path, seo, article = null) {
         </section>
       </div>
     `
+    return content + renderStaticFooterHtml()
   }
 
   if (path === '/terms') {
-    return `
+    let content = `
       <div class="mx-auto max-w-3xl px-5 py-10">
         <h1>Terms of Service</h1>
         <p>${esc(seo.description)}</p>
@@ -282,10 +285,11 @@ function renderBodyHtml(path, seo, article = null) {
         </section>
       </div>
     `
+    return content + renderStaticFooterHtml()
   }
 
   if (path === '/disclaimer') {
-    return `
+    let content = `
       <div class="mx-auto max-w-3xl px-5 py-10">
         <h1>Financial & Medical Disclaimer</h1>
         <p>${esc(seo.description)}</p>
@@ -295,11 +299,10 @@ function renderBodyHtml(path, seo, article = null) {
         </section>
       </div>
     `
+    return content + renderStaticFooterHtml()
   }
 
   if (path === '/') {
-    // Keep this slug list in sync with the "Popular Calculators & Text Tools"
-    // section in src/pages/Home.jsx — that's the client-side source of truth.
     const POPULAR_SLUGS = [
       'case-converter', 'lcm-hcf-calculator', 'tip-calculator', 'emi-calculator',
       'gst-calculator', 'income-tax-calculator', 'sip-calculator', 'bmi-calculator',
@@ -362,12 +365,60 @@ function renderBodyHtml(path, seo, article = null) {
               .join('')}
           </ul>
         </section>
+
+        <section class="py-6 border-t border-gray-200 mt-6">
+          <h2>About Calciverse — Precision Web Utilities Platform</h2>
+          <p>Calciverse.in is a free, privacy-first web utility suite engineered by <strong>Manimaran Thangaraj</strong>. Designed to eliminate bloated, ad-cluttered calculator websites that hide formulas, slow down devices, or harvest personal data, Calciverse delivers 120+ instant calculators, converters, and generators across finance, tax planning, biological health, academic scoring, and developer utilities.</p>
+          <p>Every calculation runs 100% locally inside your web browser memory using modern JavaScript. Financial numbers, loan details, or personal metrics are never transmitted to Calciverse servers or stored online.</p>
+          <p>Financial formulas align strictly with Reserve Bank of India (RBI) reducing-balance loan models, commercial banking algorithms, and official Income Tax Department slabs (FY 2026-27). Health calculators adhere to World Health Organization (WHO) and CDC standards.</p>
+        </section>
       </div>
     `
-    return content
+    return content + renderStaticFooterHtml()
   }
 
   return ''
+}
+
+function renderStaticFooterHtml() {
+  return `
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 13px; color: #64748b;">
+      <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+        <div>
+          <strong style="color: #0f172a; display: block; margin-bottom: 8px;">Finance & Tax</strong>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="/tool/emi-calculator">Home Loan EMI Calculator</a></li>
+            <li><a href="/tool/income-tax-calculator">Income Tax FY 2026-27</a></li>
+            <li><a href="/tool/sip-calculator">SIP Return Calculator</a></li>
+            <li><a href="/tool/gst-calculator">GST Calculator India</a></li>
+            <li><a href="/tool/fd-calculator">Fixed Deposit (FD)</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong style="color: #0f172a; display: block; margin-bottom: 8px;">Health & Math</strong>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="/tool/bmi-calculator">BMI Health Calculator</a></li>
+            <li><a href="/tool/ideal-weight-calculator">Ideal Body Weight</a></li>
+            <li><a href="/tool/percentage-calculator">Percentage Calculator</a></li>
+            <li><a href="/tool/cgpa-calculator">CGPA to % Converter</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong style="color: #0f172a; display: block; margin-bottom: 8px;">Company & Trust Pages</strong>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+            <li><a href="/about">About Calciverse</a></li>
+            <li><a href="/contact">Contact & Support</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/disclaimer">Accuracy Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="max-width: 1100px; margin: 20px auto 0; padding-top: 12px; border-top: 1px solid #e2e8f0; font-size: 11px; text-align: center;">
+        © 2026 Calciverse.in • Developed by Manimaran Thangaraj • All calculations execute locally for informational reference.
+      </div>
+    </footer>
+  `
 }
 
 function createHtml(template, {

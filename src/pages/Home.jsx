@@ -266,6 +266,41 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* High-Substance Platform Overview & Verification Standards Section */}
+      <section className="mx-auto max-w-6xl px-5 pb-20 border-t border-line pt-12">
+        <div className="rounded-2xl border border-line bg-paper-raised p-8 space-y-6">
+          <div>
+            <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">About Calciverse — Precision Web Utilities Platform</h2>
+            <p className="mt-2 text-sm text-ink-soft leading-relaxed max-w-3xl">
+              Calciverse.in is a free, privacy-first web utility suite engineered by <strong>Manimaran Thangaraj</strong>. Built to eliminate bloated, ad-cluttered calculator websites that hide formulas, slow down devices, or harvest personal data, Calciverse delivers 120+ instant calculators, converters, and generators across finance, tax planning, biological health, academic scoring, and developer utilities.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-3 pt-2">
+            <div className="rounded-xl border border-line bg-paper p-5 space-y-2">
+              <h3 className="font-display text-base font-bold text-ink">100% Client-Side Privacy</h3>
+              <p className="text-xs text-ink-soft leading-relaxed">
+                Calculations execute locally inside your web browser memory using modern JavaScript. Your financial parameters, salary numbers, loan details, or personal metrics are never transmitted to Calciverse servers or stored online.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-line bg-paper p-5 space-y-2">
+              <h3 className="font-display text-base font-bold text-ink">Verified Statutory Standards</h3>
+              <p className="text-xs text-ink-soft leading-relaxed">
+                Financial formulas align strictly with Reserve Bank of India (RBI) reducing-balance loan models, commercial banking algorithms, and official Income Tax Department slabs (FY 2026-27). Health calculators adhere to World Health Organization (WHO) and CDC standards.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-line bg-paper p-5 space-y-2">
+              <h3 className="font-display text-base font-bold text-ink">Transparent & Free Forever</h3>
+              <p className="text-xs text-ink-soft leading-relaxed">
+                Every tool includes explicit mathematical equations, step-by-step worked examples, sensitivity analyses, and FAQs. Zero mandatory registrations, hidden paywalls, or intrusive popups.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
