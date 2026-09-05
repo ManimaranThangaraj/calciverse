@@ -28,18 +28,12 @@ const esc = (value = '') =>
 function formatTitle(title) {
   if (!title) return 'Free Online Calculators & Tools | Calciverse'
   const str = String(title).replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim()
-  if (str.length <= 55) return str
-
+  if (str.length <= 60) return str
   const parts = str.split(/\s+[\|\—\–\-]\s+/)
-  const core = parts[0].trim()
-  const suffix = ' | Calciverse'
-
-  if (core.length + suffix.length <= 55) {
-    return `${core}${suffix}`
+  if (parts.length > 1 && parts[0].trim().length + 13 <= 60) {
+    return `${parts[0].trim()} | Calciverse`
   }
-
-  const maxCore = 55 - suffix.length // 42 chars
-  return `${core.substring(0, maxCore - 3).trim()}...${suffix}`
+  return `${str.substring(0, 57).trim()}...`
 }
 
 function getToolSEO(tool) {
