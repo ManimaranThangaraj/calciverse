@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const SITE_URL = 'https://calciverse.in'
-const TODAY = '2026-08-31'
+const TODAY = new Date().toISOString().split('T')[0]
 
 // Extract live slugs directly from data objects
 const toolSlugs = tools.filter((t) => t.status === 'live').map((t) => t.slug)

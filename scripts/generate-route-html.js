@@ -28,12 +28,19 @@ const esc = (value = '') =>
 function formatTitle(title) {
   if (!title) return 'Free Online Calculators & Tools | Calciverse'
   const str = String(title).replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim()
-  if (str.length <= 60) return str
+  if (str.length <= 65) return str
   const parts = str.split(/\s+[\|\—\–\-]\s+/)
-  if (parts.length > 1 && parts[0].trim().length + 13 <= 60) {
-    return `${parts[0].trim()} | Calciverse`
+  if (parts.length > 1) {
+    const mainPart = parts[0].trim()
+    if (mainPart.length + 13 <= 65) {
+      return `${mainPart} | Calciverse`
+    }
+    if (mainPart.length <= 65) {
+      return mainPart
+    }
+    return `${mainPart.substring(0, 62).trim()}...`
   }
-  return `${str.substring(0, 57).trim()}...`
+  return `${str.substring(0, 62).trim()}...`
 }
 
 function getToolSEO(tool) {
@@ -72,9 +79,16 @@ function renderBodyHtml(path, seo, article = null) {
     const relatedTools = tools
       .filter((t) => t.category === tool.category && t.slug !== slug && t.status === 'live')
       .slice(0, 6)
+    const categoryObj = categories.find((c) => c.slug === tool.category)
+    const categoryName = categoryObj ? categoryObj.name : 'Tools'
 
     let content = `
       <div class="mx-auto max-w-4xl px-5 py-8">
+        <nav style="font-size: 14px; margin-bottom: 16px; color: #64748b;">
+          <a href="/" style="color: #2563eb; text-decoration: none;">Home</a> / 
+          <a href="/category/${esc(tool.category || 'finance')}" style="color: #2563eb; text-decoration: none;">${esc(categoryName)}</a> / 
+          <span>${esc(tool.name)}</span>
+        </nav>
         <h1>${esc(tool.name)}</h1>
         <p>${esc(tool.description || seo.description)}</p>
     `
@@ -558,7 +572,36 @@ function createHtml(template, {
       description
     }
 
-    let extraSchemas = [softwareSchema]
+    const categoryObj = tool ? categories.find((c) => c.slug === tool.category) : null
+    const categoryName = categoryObj ? categoryObj.name : 'Tools'
+    const categoryUrl = categoryObj ? `${SITE_URL}/category/${categoryObj.slug}` : `${SITE_URL}/`
+
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${SITE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: categoryName,
+          item: categoryUrl
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: toolName,
+          item: canonical
+        }
+      ]
+    }
+
+    let extraSchemas = [softwareSchema, breadcrumbSchema]
 
     if (guide && Array.isArray(guide.faqs) && guide.faqs.length > 0) {
       extraSchemas.push({

@@ -11,12 +11,19 @@ const SITE_URL = 'https://calciverse.in'
 function formatTitle(title) {
   if (!title) return 'Free Online Calculators & Tools | Calciverse'
   const str = String(title).replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim()
-  if (str.length <= 60) return str
+  if (str.length <= 65) return str
   const parts = str.split(/\s+[\|\—\–\-]\s+/)
-  if (parts.length > 1 && parts[0].trim().length + 13 <= 60) {
-    return `${parts[0].trim()} | Calciverse`
+  if (parts.length > 1) {
+    const mainPart = parts[0].trim()
+    if (mainPart.length + 13 <= 65) {
+      return `${mainPart} | Calciverse`
+    }
+    if (mainPart.length <= 65) {
+      return mainPart
+    }
+    return `${mainPart.substring(0, 62).trim()}...`
   }
-  return `${str.substring(0, 57).trim()}...`
+  return `${str.substring(0, 62).trim()}...`
 }
 
 export default function SEO({

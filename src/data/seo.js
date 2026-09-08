@@ -4,400 +4,400 @@ export const TOOL_SEO = {
     "description": "Calculate monthly loan EMI, total interest, and amortisation schedule for home, car, and personal loans."
   },
   "gst-calculator": {
-    "title": "GST Calculator India | Calciverse",
-    "description": "Calculate GST online in India. Add or remove 5%, 12%, 18% or 28% GST, CGST and SGST instantly."
+    "title": "GST Calculator India – Add & Remove 5%, 12%, 18%, 28% | Calciverse",
+    "description": "Free GST Calculator online in India. Add or remove 5%, 12%, 18%, or 28% GST, CGST, and SGST with instant net/gross breakdowns."
   },
   "income-tax-calculator": {
-    "title": "Income Tax Calculator FY 2026 | Calciverse",
-    "description": "Calculate income tax for FY 2026-27 under Old and New Tax Regimes. Compare tax liability and deductions."
+    "title": "Income Tax Calculator FY 2026-27 | Calciverse",
+    "description": "Calculate income tax for FY 2026-27 under Old and New Tax Regimes. Compare tax liability, slabs, and deductions."
   },
   "sip-calculator": {
-    "title": "SIP Return Calculator | Calciverse",
-    "description": "Calculate SIP maturity value, total investment, and estimated mutual fund wealth returns."
+    "title": "SIP Calculator India – Mutual Fund Return & Wealth | Calciverse",
+    "description": "Calculate SIP maturity value, total investment growth, and estimated mutual fund wealth returns online."
   },
   "fd-calculator": {
-    "title": "FD Maturity Calculator | Calciverse",
-    "description": "Calculate fixed deposit maturity value and total compounding interest earned."
+    "title": "FD Maturity Calculator – Fixed Deposit Interest | Calciverse",
+    "description": "Calculate fixed deposit maturity value and total compounding interest earned across Indian banks."
   },
   "rd-calculator": {
-    "title": "RD Maturity Calculator | Calciverse",
+    "title": "RD Maturity Calculator – Recurring Deposit Interest | Calciverse",
     "description": "Calculate recurring deposit maturity value and total interest earned from monthly RD deposits."
   },
   "ppf-calculator": {
-    "title": "PPF Corpus Calculator | Calciverse",
-    "description": "Calculate Public Provident Fund (PPF) maturity corpus and interest earned over 15 years."
+    "title": "PPF Corpus Calculator – 15-Year Maturity Interest | Calciverse",
+    "description": "Calculate Public Provident Fund (PPF) maturity corpus and compound interest earned over 15 years."
   },
   "epf-calculator": {
-    "title": "EPF Balance Calculator | Calciverse",
+    "title": "EPF Balance Calculator – Provident Fund & Pension | Calciverse",
     "description": "Calculate Employee Provident Fund (EPF) balance, EPS pension scheme, and employer monthly contributions."
   },
   "nps-calculator": {
-    "title": "NPS Pension Calculator | Calciverse",
+    "title": "NPS Pension Calculator – National Pension System | Calciverse",
     "description": "Estimate National Pension System (NPS) retirement corpus, lump-sum withdrawal, and monthly pension."
   },
   "lumpsum-calculator": {
-    "title": "Lumpsum Return Calculator | Calciverse",
+    "title": "Lumpsum Return Calculator – Mutual Fund Growth | Calciverse",
     "description": "Calculate future value of a one-time lumpsum mutual fund investment based on expected annual return."
   },
   "cagr-calculator": {
-    "title": "CAGR Return Calculator | Calciverse",
+    "title": "CAGR Return Calculator – Compound Annual Growth Rate | Calciverse",
     "description": "Calculate compound annual growth rate (CAGR) between starting and ending investment values."
   },
   "roi-calculator": {
-    "title": "ROI Return Calculator | Calciverse",
-    "description": "Calculate Return on Investment (ROI %) and annualized gain for real estate, stocks, or business."
+    "title": "ROI Calculator – Return on Investment Percentage | Calciverse",
+    "description": "Calculate Return on Investment (ROI %), annualized rate of return, and total net profit for stocks, real estate, and business."
   },
   "retirement-calculator": {
-    "title": "Retirement Corpus Calculator | Calciverse",
+    "title": "Retirement Corpus Calculator – Inflation-Adjusted | Calciverse",
     "description": "Calculate exact retirement corpus needed to maintain target monthly lifestyle after inflation."
   },
   "inflation-calculator": {
-    "title": "Inflation Calculator India | Calciverse",
+    "title": "Inflation Calculator India – Future Purchasing Power | Calciverse",
     "description": "Find what today money will be worth after years of inflation and estimate future purchasing power."
   },
   "salary-calculator": {
-    "title": "Salary Take-Home Calculator | Calciverse",
+    "title": "Salary Take-Home Calculator – In-Hand Pay & CTC | Calciverse",
     "description": "Convert Annual CTC to monthly in-hand take-home salary after EPF, Professional Tax, and TDS."
   },
   "salary-hike-calculator": {
-    "title": "Salary Hike Calculator | Calciverse",
+    "title": "Salary Hike Calculator – Appraisal Increment % | Calciverse",
     "description": "Calculate salary increment percentage, appraisal hike amount, and new monthly take-home pay."
   },
   "hra-calculator": {
-    "title": "HRA Exemption Calculator | Calciverse",
+    "title": "HRA Exemption Calculator – Section 10(13A) Tax | Calciverse",
     "description": "Calculate how much of your House Rent Allowance (HRA) is tax-exempt under Section 10(13A)."
   },
   "gratuity-calculator": {
-    "title": "Gratuity Calculator Online | Calciverse",
+    "title": "Gratuity Calculator Online – Payout & Formula | Calciverse",
     "description": "Calculate gratuity payout based on last drawn basic salary and completed years of service."
   },
   "tds-calculator": {
-    "title": "TDS Calculator Online | Calciverse",
-    "description": "Calculate Tax Deducted at Source (TDS) amount online for salary, bank FD interest, or contractor fees."
+    "title": "TDS Calculator Online – Tax Deducted at Source | Calciverse",
+    "description": "Calculate Tax Deducted at Source (TDS) online for salary payments, bank FD interest, contractor fees, and property."
   },
   "capital-gains-calculator": {
-    "title": "Capital Gains Tax Calculator | Calciverse",
+    "title": "Capital Gains Tax Calculator – STCG & LTCG India | Calciverse",
     "description": "Calculate STCG and LTCG tax on stocks, mutual funds, and real estate property sales in India."
   },
   "credit-card-interest-calculator": {
-    "title": "Credit Card Interest Calculator | Calciverse",
-    "description": "Calculate credit card interest charges, daily APR compounding, and payoff schedules."
+    "title": "Credit Card Interest Calculator – Payoff & APR | Calciverse",
+    "description": "Calculate credit card monthly interest charges, daily APR compounding, minimum payments, and payoff schedules."
   },
   "loan-eligibility-calculator": {
-    "title": "Loan Eligibility Calculator | Calciverse",
+    "title": "Loan Eligibility Calculator – Max Loan Amount | Calciverse",
     "description": "Estimate maximum home or personal loan amount you qualify for based on monthly income and FOIR."
   },
   "prepayment-calculator": {
-    "title": "Loan Prepayment Calculator | Calciverse",
-    "description": "Calculate total interest saved and tenure cut achieved by making partial principal loan prepayments."
+    "title": "Loan Prepayment Calculator – Calculate Interest Saved | Calciverse",
+    "description": "Calculate total interest saved and tenure reduction achieved by making partial principal loan prepayments."
   },
   "mortgage-calculator": {
-    "title": "Mortgage Loan Calculator – Monthly Payment & Amortization Schedule | Calciverse",
+    "title": "Mortgage Loan Calculator – Monthly Payment & EMI | Calciverse",
     "description": "Calculate monthly mortgage payments, principal vs interest schedule, and total loan payoff cost instantly."
   },
   "number-to-words-converter": {
-    "title": "Number to Words Converter | Calciverse",
-    "description": "Convert numbers to words using Indian and International numbering systems instantly."
+    "title": "Number to Words Converter – Indian & Western | Calciverse",
+    "description": "Convert numbers to words using Indian (Lakhs/Crores) and International (Millions/Billions) numbering systems."
   },
   "prime-number-checker": {
-    "title": "Prime Number Checker – Is This Number Prime? | Calciverse",
-    "description": "Check whether a number is prime or composite instantly with trial division formulas and factor listings."
+    "title": "Prime Number Checker – Check If a Number Is Prime | Calciverse",
+    "description": "Check whether any number is prime or composite instantly with trial division formulas and step-by-step factor listings."
   },
   "ideal-weight-calculator": {
-    "title": "Ideal Body Weight Calculator by Height, Age & Gender | Calciverse",
+    "title": "Ideal Body Weight Calculator (IBW by Height & Age) | Calciverse",
     "description": "Calculate your ideal body weight (IBW in kg & lbs) based on height, age, and gender using Devine, Robinson, and Miller formulas."
   },
   "bmi-calculator": {
-    "title": "BMI Calculator – Body Mass Index & Healthy Weight Range | Calciverse.in",
+    "title": "BMI Calculator – Body Mass Index & Weight Range | Calciverse",
     "description": "Calculate your Body Mass Index (BMI) from height and weight instantly. View official WHO BMI categories and healthy weight target ranges."
   },
   "calorie-calculator": {
-    "title": "Calorie Calculator – Daily Calories, BMR & TDEE | Calciverse.in",
+    "title": "Calorie Calculator – Daily Calories, BMR & TDEE | Calciverse",
     "description": "Calculate your estimated daily calorie needs, BMR, and TDEE based on your age, height, weight, and physical activity level."
   },
   "percentage-calculator": {
-    "title": "Percentage Calculator – Calculate Percentages Easily Online | Calciverse.in",
+    "title": "Percentage Calculator – Calculate Percentages Online | Calciverse",
     "description": "Calculate percentages, percentage increase and decrease, and find what percentage one number is of another instantly."
   },
   "cgpa-calculator": {
-    "title": "CGPA Calculator – Calculate Cumulative Grade Point Average | Calciverse.in",
+    "title": "CGPA Calculator – Cumulative Grade Point Average | Calciverse",
     "description": "Calculate your cumulative CGPA score from semester grades and convert CGPA to percentage easily with official formulas."
   },
   "gpa-calculator": {
-    "title": "GPA Calculator – Calculate Grade Point Average & Marks | Calciverse.in",
+    "title": "GPA Calculator – Grade Point Average & Marks | Calciverse",
     "description": "Calculate your semester GPA based on subject letter grades and course credit hours instantly online."
   },
   "lcm-hcf-calculator": {
-    "title": "LCM and HCF Calculator — Step-by-Step Prime Factorization | Calciverse.in",
-    "description": "Calculate the Least Common Multiple (LCM) and Highest Common Factor (HCF / GCD) of numbers with step-by-step prime factorization formulas."
+    "title": "LCM and HCF Calculator – Step-by-Step Factors | Calciverse",
+    "description": "Calculate the Least Common Multiple (LCM) and Highest Common Factor (HCF / GCD) of numbers with step-by-step prime factorization."
   },
   "percentage-change-calculator": {
-    "title": "Percentage Change Calculator – Increase & Decrease % | Calciverse.in",
+    "title": "Percentage Change Calculator – Increase & Decrease % | Calciverse",
     "description": "Calculate percentage change, percentage increase, and percentage difference between two numbers."
   },
   "loan-calculator": {
-    "title": "Loan Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Compare total interest and payoff across loan terms. Free online loan calculator with instant results on Calciverse."
+    "title": "Loan EMI Calculator – Monthly Payments & Interest | Calciverse",
+    "description": "Compare total interest and monthly EMI across loan terms. Free online loan calculator with instant amortization breakdown."
   },
   "simple-interest-calculator": {
-    "title": "Simple Interest Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Interest on a principal amount at a flat annual rate. Free online simple interest calculator with instant results on Calciverse."
+    "title": "Simple Interest Calculator – Flat Rate Calculation | Calciverse",
+    "description": "Calculate simple interest earned or owed on a principal amount at a flat annual rate with instant totals."
   },
   "compound-interest-calculator": {
-    "title": "Compound Interest Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "See how interest compounds monthly, quarterly or yearly. Free online compound interest calculator with instant results on Calciverse."
+    "title": "Compound Interest Calculator – Monthly & Annual Growth | Calciverse",
+    "description": "See how interest compounds monthly, quarterly, or yearly over time with detailed investment growth breakdown."
   },
   "stamp-duty-calculator": {
-    "title": "Stamp Duty & Registration Fee Calculator (State-Wise India) | Calciverse",
-    "description": "Calculate property stamp duty and registration fees across Maharashtra, West Bengal, MP, TN, and all Indian states."
+    "title": "Stamp Duty Calculator India – Property & Registry | Calciverse",
+    "description": "Calculate property stamp duty and registration fees across Maharashtra, MP, West Bengal, TN, and all Indian states."
   },
   "property-tax-calculator": {
-    "title": "Property Tax Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Annual property tax from assessed value and local rate. Free online property tax calculator with instant results on Calciverse."
+    "title": "Property Tax Calculator – Annual Tax Amount | Calciverse",
+    "description": "Calculate annual property tax based on assessed property value, property location, and municipal tax rates."
   },
   "rent-vs-buy-calculator": {
-    "title": "Rent vs Buy Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Compare the long-term cost of renting against buying a home. Free online rent vs buy calculator with instant results on Calciverse."
+    "title": "Rent vs Buy Calculator – Home Buying Decision | Calciverse",
+    "description": "Compare the long-term financial cost of renting against buying a house with interest, appreciation, and tax factors."
   },
   "home-affordability-calculator": {
-    "title": "Home Affordability Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "The home price you can afford based on income and down payment. Free online home affordability calculator with instant results on Calciverse."
+    "title": "Home Affordability Calculator – Max House Price | Calciverse",
+    "description": "Calculate the maximum home purchase price you can afford based on household income, down payment, and monthly debt."
   },
   "break-even-calculator": {
-    "title": "Break-Even Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Units you need to sell to cover fixed and variable costs. Free online break-even calculator with instant results on Calciverse."
+    "title": "Break-Even Calculator – Units & Revenue Goal | Calciverse",
+    "description": "Calculate the exact sales volume and revenue required to cover fixed and variable business operating costs."
   },
   "profit-margin-calculator": {
-    "title": "Profit Margin Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Gross and net margin from cost price and selling price. Free online profit margin calculator with instant results on Calciverse."
+    "title": "Profit Margin Calculator – Gross & Net Margin % | Calciverse",
+    "description": "Calculate gross profit, net profit margin percentage, and revenue markup from sales price and item cost."
   },
   "markup-calculator": {
-    "title": "Markup Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Selling price from cost price and desired markup percentage. Free online markup calculator with instant results on Calciverse."
+    "title": "Markup Calculator – Selling Price & Profit % | Calciverse",
+    "description": "Calculate selling price, gross profit margin, and markup percentage from item unit cost."
   },
   "freelance-rate-calculator": {
-    "title": "Freelance Rate Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "An hourly rate to hit a target annual income after expenses. Free online freelance rate calculator with instant results on Calciverse."
+    "title": "Freelance Rate Calculator – Hourly Target Rate | Calciverse",
+    "description": "Calculate your ideal freelance hourly rate to reach your target annual income after taxes and business overhead."
   },
   "water-intake-calculator": {
-    "title": "Water Intake Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "A daily water target from body weight and activity level. Free online water intake calculator with instant results on Calciverse."
+    "title": "Water Intake Calculator – Daily Hydration Target | Calciverse",
+    "description": "Calculate your daily recommended water intake based on body weight, climate, and daily exercise activity."
   },
   "bmr-calculator": {
-    "title": "BMR Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Basal metabolic rate — calories burned at complete rest. Free online bmr calculator with instant results on Calciverse."
+    "title": "BMR Calculator – Basal Metabolic Rate & Calories | Calciverse",
+    "description": "Calculate your Basal Metabolic Rate (BMR) and daily calorie needs using Harris-Benedict and Mifflin-St Jeor formulas."
   },
   "body-fat-calculator": {
-    "title": "Body Fat % Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Estimate body fat percentage using the US Navy method. Free online body fat % calculator with instant results on Calciverse."
+    "title": "Body Fat % Calculator – US Navy Body Fat Method | Calciverse",
+    "description": "Estimate your body fat percentage and lean mass using US Navy waist, neck, and height circumference measurements."
   },
   "pregnancy-due-date-calculator": {
-    "title": "Pregnancy Due Date Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Estimated due date from the first day of your last period. Free online pregnancy due date calculator with instant results on Calciverse."
+    "title": "Pregnancy Due Date Calculator – Estimated Delivery | Calciverse",
+    "description": "Calculate your estimated pregnancy due date and trimester timeline based on the first day of your last period."
   },
   "ovulation-calculator": {
-    "title": "Ovulation Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Your most fertile days based on cycle length. Free online ovulation calculator with instant results on Calciverse."
+    "title": "Ovulation Calculator – Fertile Window & Period | Calciverse",
+    "description": "Calculate your fertile window, peak ovulation dates, and next menstrual cycle based on average cycle length."
   },
   "period-calculator": {
-    "title": "Period Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Predict your next menstrual cycle dates. Free online period calculator with instant results on Calciverse."
+    "title": "Period Calculator – Next Menstrual Cycle Dates | Calciverse",
+    "description": "Predict your upcoming menstrual cycle dates and ovulation days with accuracy based on your cycle history."
   },
   "macro-calculator": {
-    "title": "Macro Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Daily protein, carb and fat targets from your calorie goal. Free online macro calculator with instant results on Calciverse."
+    "title": "Macro Calculator – Protein, Carbs & Fat Targets | Calciverse",
+    "description": "Calculate your daily macronutrient breakdown (grams of protein, carbohydrates, and fat) for weight loss or muscle building."
   },
   "heart-rate-zone-calculator": {
-    "title": "Heart Rate Zone Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Target heart rate zones for fat burn, cardio and peak effort. Free online heart rate zone calculator with instant results on Calciverse."
+    "title": "Heart Rate Zone Calculator – Target Training Zones | Calciverse",
+    "description": "Calculate target heart rate training zones for fat burning, aerobic cardio, and peak athletic performance."
   },
   "waist-hip-ratio-calculator": {
-    "title": "Waist-to-Hip Ratio Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "A quick indicator of cardiometabolic health risk. Free online waist-to-hip ratio calculator with instant results on Calciverse."
+    "title": "Waist-to-Hip Ratio Calculator – Health Risk Index | Calciverse",
+    "description": "Calculate your waist-to-hip ratio (WHR) to assess body fat distribution and cardiometabolic health risks."
   },
   "sleep-calculator": {
-    "title": "Sleep Cycle Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Best times to fall asleep or wake up based on 90-minute sleep cycles. Free online sleep cycle calculator with instant results on Calciverse."
+    "title": "Sleep Cycle Calculator – Optimal Wake Up Times | Calciverse",
+    "description": "Calculate the best times to fall asleep or wake up refreshed based on natural 90-minute sleep cycle science."
   },
   "calories-burned-calculator": {
-    "title": "Calories Burned Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Calories burned walking, running or cycling a given distance and pace. Free online calories burned calculator with instant results on Calciverse."
+    "title": "Calories Burned Calculator – Exercise & Walking | Calciverse",
+    "description": "Calculate total calories burned during walking, running, cycling, or gym workouts based on body weight and duration."
   },
   "attendance-calculator": {
-    "title": "Attendance Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "How many classes you can skip - or must attend - to hit a target %. Free online attendance calculator with instant results on Calciverse."
+    "title": "Attendance Calculator – Target Attendance % | Calciverse",
+    "description": "Calculate how many classes you can afford to skip or must attend to maintain your target attendance percentage."
   },
   "grade-calculator": {
-    "title": "Grade Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "What you need on a final exam to hit a target course grade. Free online grade calculator with instant results on Calciverse."
+    "title": "Grade Calculator – Final Exam Required Score | Calciverse",
+    "description": "Calculate what score you need on your final exam to achieve your desired target overall course grade."
   },
   "cgpa-to-percentage-calculator": {
-    "title": "CGPA to Percentage Converter – Free Online Calculator & Tool | Calciverse",
-    "description": "Convert CGPA (out of 10) to an equivalent percentage. Free online cgpa to percentage converter with instant results on Calciverse."
+    "title": "CGPA to Percentage Converter – Official Formula | Calciverse",
+    "description": "Convert cumulative CGPA (out of 10 or 4) to equivalent percentage using official university conversion formulas."
   },
   "age-calculator": {
-    "title": "Age Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Exact age in years, months and days from a date of birth. Free online age calculator with instant results on Calciverse."
+    "title": "Age Calculator – Exact Age in Years, Months, Days | Calciverse",
+    "description": "Calculate exact age in years, months, weeks, and days from date of birth with upcoming birthday countdown."
   },
   "date-difference-calculator": {
-    "title": "Date Difference Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Days, weeks and months between any two dates. Free online date difference calculator with instant results on Calciverse."
+    "title": "Date Difference Calculator – Days Between Dates | Calciverse",
+    "description": "Calculate exact number of days, weeks, months, and years between any two dates instantly."
   },
   "password-generator": {
-    "title": "Password Generator – Free Online Calculator & Tool | Calciverse",
-    "description": "Strong random passwords with control over length and character sets. Free online password generator with instant results on Calciverse."
+    "title": "Password Generator – Secure Random Passwords | Calciverse",
+    "description": "Generate strong, custom random passwords with uppercase, lowercase, numbers, and symbols for high security."
   },
   "qr-code-generator": {
-    "title": "QR Code Generator – Free Online Calculator & Tool | Calciverse",
-    "description": "Turn text, a link or contact details into a downloadable QR code. Free online qr code generator with instant results on Calciverse."
+    "title": "QR Code Generator – Free Downloadable QR Codes | Calciverse",
+    "description": "Create custom QR codes from website URLs, plain text, or WiFi credentials with instant PNG download."
   },
   "uuid-generator": {
-    "title": "UUID Generator – Free Online Calculator & Tool | Calciverse",
-    "description": "Bulk-generate version 4 UUIDs for testing and seed data. Free online uuid generator with instant results on Calciverse."
+    "title": "UUID v4 Generator – Bulk Random UUIDs | Calciverse",
+    "description": "Generate bulk version-4 universally unique identifiers (UUIDs / GUIDs) for database seed data and software development."
   },
   "random-number-generator": {
-    "title": "Random Number Generator – Free Online Calculator & Tool | Calciverse",
-    "description": "Random integers in a range, with or without repeats. Free online random number generator with instant results on Calciverse."
+    "title": "Random Number Generator – Custom Range Integers | Calciverse",
+    "description": "Generate random numbers within any minimum and maximum range, with options for unique or repeating results."
   },
   "barcode-generator": {
-    "title": "Barcode Generator – Free Online Calculator & Tool | Calciverse",
-    "description": "CODE128 barcodes from any text string. Free online barcode generator with instant results on Calciverse."
+    "title": "Barcode Generator – CODE128 & EAN Barcodes | Calciverse",
+    "description": "Generate printable CODE128 barcodes from text strings or product codes instantly online."
   },
   "discount-calculator": {
-    "title": "Discount Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Final price and amount saved after a percentage discount. Free online discount calculator with instant results on Calciverse."
+    "title": "Discount Calculator – Final Price & Money Saved | Calciverse",
+    "description": "Calculate final sale price and total money saved after single or stacked percentage discounts."
   },
   "tip-calculator": {
     "title": "Tip Calculator – Quick Bill Split & Tip Per Person | Calciverse",
     "description": "Calculate tip amounts, total bill, and split payments per person instantly for restaurants and groups."
   },
   "fuel-cost-calculator": {
-    "title": "Fuel Cost Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Trip fuel cost from distance, mileage and fuel price. Free online fuel cost calculator with instant results on Calciverse."
+    "title": "Fuel Cost Calculator – Road Trip Trip Expense | Calciverse",
+    "description": "Calculate total fuel expense and per-person cost for road trips based on distance, vehicle mileage, and gas price."
   },
   "word-counter": {
-    "title": "Word & Character Counter – Free Online Calculator & Tool | Calciverse",
-    "description": "Live word, character and sentence count as you type. Free online word & character counter with instant results on Calciverse."
+    "title": "Word & Character Counter – Live Reading Time | Calciverse",
+    "description": "Count words, characters, sentences, paragraphs, and estimated reading time live as you type."
   },
   "case-converter": {
     "title": "Text Case Converter – Camel Case, Title Case, Sentence Case | Calciverse",
     "description": "Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and Sentence case online."
   },
   "typing-speed-test": {
-    "title": "Typing Speed Test – Free Online Calculator & Tool | Calciverse",
-    "description": "Measure your WPM and accuracy against a sample passage. Free online typing speed test with instant results on Calciverse."
+    "title": "Typing Speed Test – WPM & Accuracy Test | Calciverse",
+    "description": "Test your typing speed in Words Per Minute (WPM) and accuracy percentage with instant real-time feedback."
   },
   "unit-converter": {
-    "title": "Unit Converter – Free Online Calculator & Tool | Calciverse",
-    "description": "Length, weight, volume and temperature, converted instantly. Free online unit converter with instant results on Calciverse."
+    "title": "Unit Converter – Length, Weight, Volume & Temp | Calciverse",
+    "description": "Convert units for length, mass, volume, temperature, speed, and area instantly across metric and imperial systems."
   },
   "time-zone-converter": {
-    "title": "Time Zone Converter – Free Online Calculator & Tool | Calciverse",
-    "description": "Convert a time between any two time zones. Free online time zone converter with instant results on Calciverse."
+    "title": "Time Zone Converter – Global Time Difference | Calciverse",
+    "description": "Convert times across global time zones (UTC, EST, PST, IST, GMT) and schedule cross-timezone meetings."
   },
   "time-duration-calculator": {
-    "title": "Time Duration Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Hours and minutes between two clock times. Free online time duration calculator with instant results on Calciverse."
+    "title": "Time Duration Calculator – Hours & Minutes | Calciverse",
+    "description": "Calculate total hours, minutes, and seconds elapsed between any start time and end time."
   },
   "electricity-bill-calculator": {
-    "title": "Electricity Bill Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Estimate your monthly bill from appliance wattage and usage hours. Free online electricity bill calculator with instant results on Calciverse."
+    "title": "Electricity Bill Calculator – Monthly kWh & Cost | Calciverse",
+    "description": "Estimate your monthly electricity bill based on appliance wattage, usage hours per day, and power tariff per kWh."
   },
   "rent-split-calculator": {
-    "title": "Rent Split Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Fairly split rent among roommates by room size or income. Free online rent split calculator with instant results on Calciverse."
+    "title": "Rent Split Calculator – Fair Roommate Split | Calciverse",
+    "description": "Calculate fair rent split among roommates based on room square footage, private bathroom, or income ratio."
   },
   "countdown-timer": {
-    "title": "Countdown Timer – Free Online Calculator & Tool | Calciverse",
-    "description": "Days, hours and minutes left until any date and time. Free online countdown timer with instant results on Calciverse."
+    "title": "Countdown Timer – Online Event Countdown | Calciverse",
+    "description": "Create a live countdown timer showing remaining days, hours, minutes, and seconds until any target event."
   },
   "notice-period-calculator": {
     "title": "Notice Period & Last Working Day Calculator | Calciverse",
     "description": "Calculate exact last working day and total calendar days left based on your resignation date and notice period."
   },
   "average-calculator": {
-    "title": "Average Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Mean, median and mode of a list of numbers. Free online average calculator with instant results on Calciverse."
+    "title": "Average Calculator – Mean, Median & Mode | Calciverse",
+    "description": "Calculate mean average, median, mode, and range for any set of numbers with step-by-step math."
   },
   "ratio-calculator": {
     "title": "Ratio Calculator – Simplify Ratios & Solve for X | Calciverse",
     "description": "Simplify ratios to lowest terms or solve proportion equations (A:B = C:D) with step-by-step math."
   },
   "fraction-calculator": {
-    "title": "Fraction Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Add, subtract, multiply and divide fractions with steps shown. Free online fraction calculator with instant results on Calciverse."
+    "title": "Fraction Calculator – Add, Subtract, Multiply Fractions | Calciverse",
+    "description": "Perform fraction addition, subtraction, multiplication, and division with step-by-step simplified answers."
   },
   "square-root-calculator": {
-    "title": "Square Root & Cube Root Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Square and cube roots, including non-perfect squares. Free online square root & cube root calculator with instant results on Calciverse."
+    "title": "Square Root & Cube Root Calculator | Calciverse",
+    "description": "Calculate exact square roots and cube roots for perfect and non-perfect squares with radical simplification."
   },
   "standard-deviation-calculator": {
-    "title": "Standard Deviation Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Mean, variance and standard deviation of a data set. Free online standard deviation calculator with instant results on Calciverse."
+    "title": "Standard Deviation Calculator – Sample & Population | Calciverse",
+    "description": "Calculate mean, variance, and standard deviation for sample and population data sets with step-by-step formulas."
   },
   "scientific-calculator": {
-    "title": "Scientific Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Trig, logs, exponents and more, in one keypad. Free online scientific calculator with instant results on Calciverse."
+    "title": "Scientific Calculator – Advanced Online Math | Calciverse",
+    "description": "Perform advanced scientific calculations including trigonometry, logarithms, exponents, and factorials online."
   },
   "percentage-to-fraction-calculator": {
-    "title": "Percentage to Fraction/Decimal Converter – Free Online Calculator & Tool | Calciverse",
-    "description": "Convert between percentages, fractions and decimals. Free online percentage to fraction/decimal converter with instant results on Calciverse."
+    "title": "Percentage to Fraction/Decimal Converter | Calciverse",
+    "description": "Convert percentages to simplified fractions and decimals with step-by-step mathematical conversion rules."
   },
   "factorial-calculator": {
-    "title": "Factorial Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "Factorial of any non-negative integer. Free online factorial calculator with instant results on Calciverse."
+    "title": "Factorial Calculator – n! Step-by-Step | Calciverse",
+    "description": "Calculate the factorial (n!) of any non-negative integer with full step-by-step multiplication expansion."
   },
   "permutation-combination-calculator": {
-    "title": "Permutation & Combination Calculator – Free Online Calculator & Tool | Calciverse",
-    "description": "nPr and nCr for a given set size and selection size. Free online permutation & combination calculator with instant results on Calciverse."
+    "title": "Permutation & Combination Calculator (nPr & nCr) | Calciverse",
+    "description": "Calculate permutations (nPr) and combinations (nCr) for set selections with step-by-step formulas."
   },
   "quadratic-equation-solver": {
-    "title": "Quadratic Equation Solver – Free Online Calculator & Tool | Calciverse",
-    "description": "Roots of ax² + bx + c = 0, real or complex. Free online quadratic equation solver with instant results on Calciverse."
+    "title": "Quadratic Equation Solver – Real & Complex Roots | Calciverse",
+    "description": "Solve quadratic equations ax² + bx + c = 0 to find real or complex roots using the quadratic formula."
   },
   "json-formatter": {
-    "title": "JSON Formatter – Free Online Calculator & Tool | Calciverse",
-    "description": "Pretty-print, minify and validate JSON. Free online json formatter with instant results on Calciverse."
+    "title": "JSON Formatter – Pretty-Print & Validate JSON | Calciverse",
+    "description": "Format, validate, prettify, and minify JSON strings with live syntax error detection."
   },
   "base64-encoder-decoder": {
-    "title": "Base64 Encoder/Decoder – Free Online Calculator & Tool | Calciverse",
-    "description": "Encode text to Base64 or decode it back. Free online base64 encoder/decoder with instant results on Calciverse."
+    "title": "Base64 Encoder/Decoder – Encode & Decode Text | Calciverse",
+    "description": "Encode plain text to Base64 format or decode Base64 strings back to UTF-8 readable text."
   },
   "color-picker": {
-    "title": "Color Picker – Free Online Calculator & Tool | Calciverse",
-    "description": "Pick a color and read off HEX, RGB and HSL instantly. Free online color picker with instant results on Calciverse."
+    "title": "Color Picker – HEX, RGB & HSL Converter | Calciverse",
+    "description": "Select colors visually and copy HEX, RGB, HSL, and HSV color codes instantly for web design."
   },
   "regex-tester": {
-    "title": "Regex Tester – Free Online Calculator & Tool | Calciverse",
-    "description": "Test a regular expression against sample text with live match highlighting. Free online regex tester with instant results on Calciverse."
+    "title": "Regex Tester – Test Regular Expressions Live | Calciverse",
+    "description": "Test JavaScript regular expressions against target text with live match highlighting and regex flag support."
   },
   "html-formatter": {
-    "title": "HTML Formatter – Free Online Calculator & Tool | Calciverse",
-    "description": "Indent and clean up messy HTML markup. Free online html formatter with instant results on Calciverse."
+    "title": "HTML Formatter – Prettify & Indent Markup | Calciverse",
+    "description": "Clean up, format, and properly indent messy HTML code strings for better readability."
   },
   "sql-formatter": {
-    "title": "SQL Formatter – Free Online Calculator & Tool | Calciverse",
-    "description": "Readable indentation for SQL queries. Free online sql formatter with instant results on Calciverse."
+    "title": "SQL Formatter – Prettify SQL Queries | Calciverse",
+    "description": "Format and auto-indent complex SQL SELECT, INSERT, UPDATE queries for MySQL, PostgreSQL, and SQL Server."
   },
   "css-minifier": {
-    "title": "CSS Minifier – Free Online Calculator & Tool | Calciverse",
-    "description": "Strip whitespace and comments from CSS to shrink file size. Free online css minifier with instant results on Calciverse."
+    "title": "CSS Minifier – Compress CSS Files | Calciverse",
+    "description": "Minify CSS code by stripping unnecessary whitespace, comments, and line breaks to shrink web page sizes."
   },
   "js-minifier": {
-    "title": "JS Minifier – Free Online Calculator & Tool | Calciverse",
-    "description": "Compress JavaScript by removing whitespace and comments. Free online js minifier with instant results on Calciverse."
+    "title": "JS Minifier – Compress JavaScript Code | Calciverse",
+    "description": "Compress JavaScript code by removing comments, whitespace, and formatting to improve site speed."
   },
   "markdown-previewer": {
-    "title": "Markdown Previewer – Free Online Calculator & Tool | Calciverse",
-    "description": "Live-render Markdown to HTML side by side. Free online markdown previewer with instant results on Calciverse."
+    "title": "Markdown Previewer – Live HTML Rendering | Calciverse",
+    "description": "Write and preview GitHub-Flavored Markdown (GFM) side-by-side with live HTML export."
   },
   "url-encoder-decoder": {
-    "title": "URL Encoder/Decoder – Free Online Calculator & Tool | Calciverse",
-    "description": "Percent-encode or decode a URL or query string. Free online url encoder/decoder with instant results on Calciverse."
+    "title": "URL Encoder/Decoder – Percent Encoding | Calciverse",
+    "description": "Percent-encode special characters in URLs or decode URL-encoded query strings back to normal text."
   },
   "html-entity-converter": {
-    "title": "HTML Entity Encoder/Decoder – Free Online Calculator & Tool | Calciverse",
-    "description": "Convert special characters to and from HTML entities. Free online html entity encoder/decoder with instant results on Calciverse."
+    "title": "HTML Entity Encoder/Decoder – Special Characters | Calciverse",
+    "description": "Convert special characters to HTML entities (&amp;, &lt;, &gt;) and decode entities back to readable text."
   },
   "jwt-decoder": {
     "title": "JWT Decoder – Free Online Calculator & Tool | Calciverse",
