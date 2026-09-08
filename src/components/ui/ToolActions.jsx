@@ -11,6 +11,7 @@ export default function ToolActions({
 }) {
   const [copiedText, setCopiedText] = useState(false)
   const [copiedLink, setCopiedLink] = useState(false)
+  const [copiedEmbed, setCopiedEmbed] = useState(false)
 
   const activeSummary = typeof getTextSummary === 'function' ? getTextSummary() : summaryText
   const activeName = title || toolName
@@ -138,6 +139,17 @@ export default function ToolActions({
     }, 300)
   }
 
+  const handleCopyEmbed = async () => {
+    const embedCode = `<iframe src="${shareUrl}" width="100%" height="650" frameborder="0" style="border:1px solid #e2e8f0; border-radius:12px; max-width:100%;"></iframe>\n<p style="font-size:12px; font-family:sans-serif; text-align:center; margin-top:6px; color:#64748b;">Powered by <a href="${shareUrl}" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:underline;">${activeName} on Calciverse</a></p>`
+    try {
+      await navigator.clipboard.writeText(embedCode)
+      setCopiedEmbed(true)
+      setTimeout(() => setCopiedEmbed(false), 2500)
+    } catch {
+      /* ignore */
+    }
+  }
+
   const hasAmortizationSchedule = Array.isArray(pdfRows) && pdfRows.length > 0
 
   return (
@@ -164,6 +176,15 @@ export default function ToolActions({
         className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-paper-raised px-3 py-1.5 text-xs font-semibold text-ink hover:border-saffron transition-colors"
       >
         <span>🔗</span> {copiedLink ? 'Copied Link!' : 'Share Tool Link'}
+      </button>
+
+      <button
+        type="button"
+        onClick={handleCopyEmbed}
+        className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-paper-raised px-3 py-1.5 text-xs font-semibold text-ink hover:border-saffron transition-colors"
+        title="Copy HTML embed code for your blog or website"
+      >
+        <span>💻</span> {copiedEmbed ? 'Copied Embed Code!' : 'Embed Widget'}
       </button>
 
       {hasAmortizationSchedule && (
