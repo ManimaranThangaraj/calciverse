@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "sitemap": "node scripts/generate-sitemap.js",
+    "indexnow": "node scripts/ping-indexnow.js",
     "build": "node scripts/generate-sitemap.js && vite build && node scripts/generate-route-html.js",
     "lint": "oxlint",
     "preview": "vite preview"
