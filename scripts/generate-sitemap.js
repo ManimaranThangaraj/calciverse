@@ -53,16 +53,24 @@ function getPriorityAndChangeFreq(path) {
 }
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${allUrls
   .map((u) => {
     const lastmodDate = articleDateMap.get(u) || TODAY
     const { priority, changefreq } = getPriorityAndChangeFreq(u)
+    let imageTag = ''
+    if (u.startsWith('/tool/')) {
+      const slug = u.replace('/tool/', '')
+      imageTag = `\n    <image:image>\n      <image:loc>${SITE_URL}/logo.png</image:loc>\n      <image:title>${slug.replace(/-/g, ' ')} calculator</image:title>\n    </image:image>`
+    } else if (u.startsWith('/articles/')) {
+      imageTag = `\n    <image:image>\n      <image:loc>${SITE_URL}/logo.png</image:loc>\n      <image:title>Calciverse guide</image:title>\n    </image:image>`
+    }
     return `  <url>
     <loc>${SITE_URL}${u}</loc>
     <lastmod>${lastmodDate}</lastmod>
     <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
+    <priority>${priority}</priority>${imageTag}
   </url>`
   })
   .join('\n')}

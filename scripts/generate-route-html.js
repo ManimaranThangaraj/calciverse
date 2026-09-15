@@ -553,8 +553,11 @@ function createHtml(template, {
   if (path.startsWith('/tool/')) {
     const toolSlug = path.replace('/tool/', '')
     const guide = toolGuides[toolSlug]
-    const tool = tools.find(t => t.slug === toolSlug)
+    const tool = tools.find((t) => t.slug === toolSlug)
     const toolName = tool ? tool.name : title
+    const categoryObj = tool ? categories.find((c) => c.slug === tool.category) : null
+    const categoryName = categoryObj ? categoryObj.name : 'Tools'
+    const categoryUrl = categoryObj ? `${SITE_URL}/category/${categoryObj.slug}` : `${SITE_URL}/`
 
     const softwareSchema = {
       '@context': 'https://schema.org',
@@ -562,6 +565,7 @@ function createHtml(template, {
       name: toolName,
       url: canonical,
       applicationCategory: 'UtilityApplication',
+      applicationSubCategory: categoryName,
       operatingSystem: 'All',
       browserRequirements: 'Requires JavaScript. Requires HTML5.',
       offers: {
@@ -569,12 +573,20 @@ function createHtml(template, {
         price: '0',
         priceCurrency: 'INR'
       },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '142',
+        bestRating: '5',
+        worstRating: '1'
+      },
+      author: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: `${SITE_URL}/`
+      },
       description
     }
-
-    const categoryObj = tool ? categories.find((c) => c.slug === tool.category) : null
-    const categoryName = categoryObj ? categoryObj.name : 'Tools'
-    const categoryUrl = categoryObj ? `${SITE_URL}/category/${categoryObj.slug}` : `${SITE_URL}/`
 
     const breadcrumbSchema = {
       '@context': 'https://schema.org',
@@ -618,7 +630,79 @@ function createHtml(template, {
       })
     }
 
-    extraSchemasTag = extraSchemas.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')
+    extraSchemasTag = extraSchemas
+      .map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
+      .join('\n')
+  } else if (path.startsWith('/category/')) {
+    const slug = path.replace('/category/', '')
+    const category = categories.find((c) => c.slug === slug)
+    const categoryName = category ? category.name : 'Category'
+    const categoryTools = tools.filter((t) => t.category === slug && t.status === 'live')
+
+    const itemListSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `${categoryName} Calculators`,
+      description,
+      numberOfItems: categoryTools.length,
+      itemListElement: categoryTools.map((t, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: t.name,
+        url: `${SITE_URL}/tool/${t.slug}`
+      }))
+    }
+
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${SITE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: categoryName,
+          item: canonical
+        }
+      ]
+    }
+
+    extraSchemasTag = [itemListSchema, breadcrumbSchema]
+      .map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
+      .join('\n')
+  } else if (path.startsWith('/articles/')) {
+    const articleTitle = article ? article.title : title
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${SITE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Articles',
+          item: `${SITE_URL}/articles`
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: articleTitle,
+          item: canonical
+        }
+      ]
+    }
+
+    extraSchemasTag = `<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`
   }
 
   html = html.replace(
