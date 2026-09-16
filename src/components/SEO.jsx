@@ -268,16 +268,23 @@ export default function SEO({
     <Helmet>
       <title>{finalTitle}</title>
       <meta name="description" content={pageDesc} />
-      {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
+      {noindex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      )}
       <link rel="canonical" href={canonicalUrl} />
       <meta property="og:title" content={finalTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={cleanPath.startsWith('/articles/') ? 'article' : type} />
       <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="en_IN" />
+      <meta property="og:image" content={`${SITE_URL}/logo.png`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={pageDesc} />
+      <meta name="twitter:image" content={`${SITE_URL}/logo.png`} />
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json">
           {JSON.stringify(schema)}
