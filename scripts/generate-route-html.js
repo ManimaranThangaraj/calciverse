@@ -382,7 +382,7 @@ function renderBodyHtml(path, seo, article = null) {
 
         <section class="py-6 border-t border-gray-200 mt-6">
           <h2>About Calciverse — Precision Web Utilities Platform</h2>
-          <p>Calciverse.in is a free, privacy-first web utility suite engineered by <strong>Manimaran Thangaraj</strong>. Designed to eliminate bloated, ad-cluttered calculator websites that hide formulas, slow down devices, or harvest personal data, Calciverse delivers 120+ instant calculators, converters, and generators across finance, tax planning, biological health, academic scoring, and developer utilities.</p>
+          <p>Calciverse.in is a free, privacy-first web utility suite engineered by <strong>Manimaran Thangaraj</strong>. Designed to eliminate bloated, ad-cluttered calculator websites that hide formulas, slow down devices, or harvest personal data, Calciverse delivers 121 instant calculators, converters, and generators plus 60 in-depth educational guides across finance, tax planning, biological health, academic scoring, and developer utilities.</p>
           <p>Every calculation runs 100% locally inside your web browser memory using modern JavaScript. Financial numbers, loan details, or personal metrics are never transmitted to Calciverse servers or stored online.</p>
           <p>Financial formulas align strictly with Reserve Bank of India (RBI) reducing-balance loan models, commercial banking algorithms, and official Income Tax Department slabs (FY 2026-27). Health calculators adhere to World Health Organization (WHO) and CDC standards.</p>
         </section>
