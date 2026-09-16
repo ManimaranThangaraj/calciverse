@@ -29,9 +29,11 @@ export default function ToolPage() {
     }
   }
 
-  const handlePrint = () => {
+  const handleWhatsAppShare = () => {
     if (typeof window !== 'undefined') {
-      window.print()
+      const text = `Check out the free ${tool.name} on Calciverse:\n${window.location.href}`
+      const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`
+      window.open(url, '_blank', 'noopener,noreferrer')
     }
   }
 
@@ -48,20 +50,20 @@ export default function ToolPage() {
             {/* Quick Action Toolbar */}
             <div className="flex items-center gap-2">
               <button
+                onClick={handleWhatsAppShare}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all"
+                title="Share Calculator on WhatsApp"
+              >
+                <Share2 size={14} />
+                <span>Share on WhatsApp</span>
+              </button>
+              <button
                 onClick={handleCopyLink}
                 className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-paper-raised px-3 py-1.5 text-xs font-medium text-ink-soft hover:border-saffron hover:text-saffron transition-all"
                 title="Copy Direct URL Link"
               >
                 {copied ? <Check size={14} className="text-signal" /> : <Copy size={14} />}
-                <span>{copied ? 'Link Copied!' : 'Share Tool'}</span>
-              </button>
-              <button
-                onClick={handlePrint}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-paper-raised px-3 py-1.5 text-xs font-medium text-ink-soft hover:border-saffron hover:text-saffron transition-all"
-                title="Print or Save PDF"
-              >
-                <Printer size={14} />
-                <span>Print / PDF</span>
+                <span>{copied ? 'Link Copied!' : 'Copy Link'}</span>
               </button>
             </div>
           </div>
@@ -109,7 +111,7 @@ export default function ToolPage() {
                 Popular Calculators across Calciverse
               </h2>
               <Link to="/" className="text-xs font-semibold text-saffron hover:underline inline-flex items-center gap-1">
-                Explore All 120+ Tools <ArrowRight size={14} />
+                Explore All {tools.length}+ Tools <ArrowRight size={14} />
               </Link>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
