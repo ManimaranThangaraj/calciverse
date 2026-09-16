@@ -58,6 +58,7 @@ export default function SEO({
     : ''
 
   const staticMatch = STATIC_SEO[cleanPath]
+  const schemas = []
 
   if (cleanPath === '/' || cleanPath === '') {
     pageTitle = STATIC_SEO['/'].title
@@ -260,6 +261,8 @@ export default function SEO({
   } else {
     pageTitle = title ? `${title} | Calciverse` : `${SITE_NAME} — Free Online Calculators`
   }
+
+  const finalTitle = formatTitle(pageTitle)
 
   return (
     <Helmet>
