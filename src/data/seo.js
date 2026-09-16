@@ -502,6 +502,34 @@ export const TOOL_SEO = {
   "hash-generator": {
     "title": "Crypto Hash Generator – SHA-256, SHA-512 & SHA-1 | Calciverse",
     "description": "Generate SHA-256, SHA-512, and SHA-1 cryptographic text hashes 100% locally in your browser memory."
+  },
+  "sip-lumpsum-combined-calculator": {
+    "title": "SIP + Lumpsum Calculator – Combined Mutual Fund Wealth | Calciverse",
+    "description": "Calculate total mutual fund maturity value when combining a one-time lumpsum investment with monthly SIP contributions."
+  },
+  "water-fasting-calculator": {
+    "title": "Intermittent & Water Fasting Weight Loss Calculator | Calciverse",
+    "description": "Estimate body fat loss and total weight loss from water fasting and caloric deficit."
+  },
+  "ratio-to-percentage-calculator": {
+    "title": "Ratio to Percentage Calculator – Convert A:B to % | Calciverse",
+    "description": "Convert ratios A:B into percentage share proportions and fraction values online."
+  },
+  "weighted-gpa-calculator": {
+    "title": "Weighted GPA Calculator – AP, Honors & IB 5.0 Scale | Calciverse",
+    "description": "Calculate high school weighted GPA on a 5.0 scale for AP, Honors, and IB courses vs unweighted 4.0 GPA."
+  },
+  "cogs-calculator": {
+    "title": "COGS Calculator – Cost of Goods Sold & Inventory | Calciverse",
+    "description": "Calculate Cost of Goods Sold (COGS) from beginning inventory, net purchases, direct labor, and ending inventory."
+  },
+  "reading-time-calculator": {
+    "title": "Reading Time & Speech Duration Calculator | Calciverse",
+    "description": "Estimate silent reading time, speech duration, and presentation speed for any blog post or script text."
+  },
+  "chmod-calculator": {
+    "title": "Linux Chmod Calculator – Octal & Symbolic Permissions | Calciverse",
+    "description": "Calculate octal (755, 644) and symbolic (rwxr-xr-x) Linux file permissions with visual checkbox controls."
   }
 };
 

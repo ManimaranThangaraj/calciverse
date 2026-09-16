@@ -6828,10 +6828,198 @@ export const toolGuides = {
         "answer": "Yes! All hashing operations use your browser's native Web Crypto API. No data is sent over the network."
       }
     ]
+  },
+  "sip-lumpsum-combined-calculator": {
+    "title": "SIP + Lumpsum Combined Mutual Fund Wealth Calculator",
+    "overview": "Calculates future total maturity value when combining a one-time initial lumpsum investment with recurring monthly SIP contributions.",
+    "formula": "FV_Total = L×(1+r)^n + P×[((1+r_m)^n_m - 1)/r_m]×(1+r_m)",
+    "explanation": "Combines annual compound interest formula for lumpsum with monthly annuity compounding for SIP.",
+    "example": {
+      "title": "Worked Example: SIP + Lumpsum Investment",
+      "inputs": "Lumpsum = ₹1,00,000 | Monthly SIP = ₹5,000 | Expected Return = 12% | Tenure = 10 Years",
+      "steps": [
+        "Lumpsum Growth (10 Yrs @ 12%) = ₹3,10,585",
+        "SIP Growth (₹5k/mo @ 12%) = ₹11,61,695",
+        "Total Maturity Value = ₹14,72,280"
+      ],
+      "summary": "Total Invested = ₹7,00,000 | Wealth Created = ₹7,72,280 | Maturity = ₹14,72,280"
+    },
+    "metricsText": "Combining a lumpsum injection with monthly SIP disciplined savings maximizes compounding velocity over long horizons.",
+    "useCases": [
+      "Bonus + Salary Investing: Invest annual work bonus upfront while maintaining monthly SIPs.",
+      "Portfolio Planning: Estimate total wealth for major life goals."
+    ],
+    "faqs": [
+      {
+        "question": "Can I combine SIP and Lumpsum in one calculator?",
+        "answer": "Yes! This calculator projects the total combined maturity growth of both your one-time lumpsum and monthly SIP investments."
+      }
+    ]
+  },
+  "water-fasting-calculator": {
+    "title": "Water Fasting & Intermittent Caloric Deficit Calculator",
+    "overview": "Estimates fat loss and body weight reduction during water fasting and intermittent caloric restriction based on Basal Metabolic Rate (BMR).",
+    "formula": "Fat_Loss_kg = (BMR × Activity_Multiplier × Days) / 7700",
+    "explanation": "Calculates daily caloric expenditure and estimates fat mass loss and initial glycogen/water weight depletion.",
+    "example": {
+      "title": "Worked Example: 3-Day Water Fast",
+      "inputs": "Weight = 80 kg | Fasting Duration = 3 Days | Activity = Sedentary",
+      "steps": [
+        "Daily TDEE = ~2,000 kcal/day",
+        "Total 3-Day Calorie Deficit = 6,000 kcal",
+        "Estimated Fat Loss = 6,000 / 7,700 = ~0.78 kg fat + ~1.2 kg water"
+      ],
+      "summary": "Projected Fat Loss = 0.78 kg | Projected Total Weight Loss = ~2.0 kg"
+    },
+    "metricsText": "Initial fast weight loss consists of water and glycogen depletion; true fat loss depends on total caloric deficit.",
+    "useCases": [
+      "Fasting Tracking: Estimate body weight changes during 24h, 36h, or multi-day fasts.",
+      "Fitness Planning: Understand glycogen vs fat mass dynamics."
+    ],
+    "faqs": [
+      {
+        "question": "How much weight can you lose on a water fast?",
+        "answer": "Weight loss depends on your TDEE and fast duration. Typically, ~0.25 to 0.35 kg of pure body fat is burned per 24 hours of fasting."
+      }
+    ]
+  },
+  "ratio-to-percentage-calculator": {
+    "title": "Ratio to Percentage Converter & Share Calculator",
+    "overview": "Converts any ratio A:B into percentage share values and relative proportions of the total sum.",
+    "formula": "Percentage_A = (A / (A + B)) × 100",
+    "explanation": "Divides each ratio component by total parts and converts to percentage format.",
+    "example": {
+      "title": "Worked Example: Ratio 3 : 5 Conversion",
+      "inputs": "Ratio = 3 : 5 (Total Parts = 8)",
+      "steps": [
+        "Part A % = (3 / 8) × 100 = 37.50%",
+        "Part B % = (5 / 8) × 100 = 62.50%"
+      ],
+      "summary": "Share A = 37.50% | Share B = 62.50%"
+    },
+    "metricsText": "Converting ratios to percentages simplifies financial equity splits, recipe proportions, and statistical distributions.",
+    "useCases": [
+      "Business Ownership: Convert partner equity ratios to percentage ownership shares.",
+      "Academic Math: Solve ratio and fraction percentage homework problems."
+    ],
+    "faqs": [
+      {
+        "question": "How do you convert a ratio to a percentage?",
+        "answer": "Add the ratio numbers together to get total parts, divide each ratio part by total parts, and multiply by 100."
+      }
+    ]
+  },
+  "weighted-gpa-calculator": {
+    "title": "High School Weighted GPA Calculator (5.0 Scale)",
+    "overview": "Calculates weighted GPA on a 5.0 scale for AP, Honors, and IB courses vs unweighted 4.0 GPA.",
+    "formula": "Weighted_GPA = Sum((Grade_Points + Weight_Bonus) × Credits) / Total_Credits",
+    "explanation": "Adds +0.5 for Honors courses and +1.0 for AP and IB courses to standard 4.0 grade points.",
+    "example": {
+      "title": "Worked Example: Weighted GPA Calculation",
+      "inputs": "AP Calculus (A, 4 credits) + Honors Chemistry (B, 3 credits)",
+      "steps": [
+        "AP Calculus: (4.0 + 1.0) × 4 = 20.0 points",
+        "Honors Chemistry: (3.0 + 0.5) × 3 = 10.5 points",
+        "Weighted GPA = (20.0 + 10.5) / 7 = 4.36 / 5.00"
+      ],
+      "summary": "Unweighted GPA = 3.57 | Weighted GPA = 4.36"
+    },
+    "metricsText": "Weighted GPAs give college admissions officers an accurate reflection of course difficulty and academic rigor.",
+    "useCases": [
+      "College Admissions: Calculate weighted GPA for US college applications (Common App).",
+      "Academic Planning: See how taking AP or IB classes impacts overall grade average."
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between Weighted and Unweighted GPA?",
+        "answer": "Unweighted GPA measures grades on a flat 4.0 scale regardless of course difficulty, while Weighted GPA awards extra points (+0.5 to +1.0) for AP, Honors, or IB classes."
+      }
+    ]
+  },
+  "cogs-calculator": {
+    "title": "Cost of Goods Sold (COGS) Business Calculator",
+    "overview": "Calculates total direct costs associated with producing or purchasing goods sold during an accounting period.",
+    "formula": "COGS = Beginning_Inventory + Net_Purchases + Direct_Labor - Ending_Inventory",
+    "explanation": "Measures direct product expenses to determine gross profit margin on financial income statements.",
+    "example": {
+      "title": "Worked Example: COGS Calculation",
+      "inputs": "Beginning Inventory = ₹50,000 | Purchases = ₹1,20,000 | Direct Labor = ₹30,000 | Ending Inventory = ₹40,000",
+      "steps": [
+        "Total Goods Available for Sale = 50,000 + 1,20,000 + 30,000 = ₹2,00,000",
+        "COGS = ₹2,00,000 - ₹40,000 = ₹1,60,000"
+      ],
+      "summary": "Total COGS = ₹1,60,000"
+    },
+    "metricsText": "Lowering COGS directly expands gross profit margin without requiring price increases.",
+    "useCases": [
+      "Financial Accounting: Prepare P&L statements and calculate tax deductions.",
+      "Inventory Management: Track cost efficiency across manufacturing and retail operations."
+    ],
+    "faqs": [
+      {
+        "question": "What is included in Cost of Goods Sold (COGS)?",
+        "answer": "COGS includes direct raw material costs, inventory purchase price, freight-in costs, and direct manufacturing labor."
+      }
+    ]
+  },
+  "reading-time-calculator": {
+    "title": "Text Reading & Speech Presentation Duration Calculator",
+    "overview": "Estimates silent reading time, normal speech duration, and fast presentation speed for blog articles, scripts, and speeches.",
+    "formula": "Reading_Time_Min = Word_Count / 225",
+    "explanation": "Uses standard adult reading speed (225 wpm) and speaking speed (130-160 wpm).",
+    "example": {
+      "title": "Worked Example: 900-Word Speech",
+      "inputs": "Word Count = 900 Words",
+      "steps": [
+        "Silent Reading Time = 900 / 225 = 4.0 Minutes",
+        "Normal Speech Time = 900 / 130 = 6.9 Minutes",
+        "Fast Presentation Time = 900 / 160 = 5.6 Minutes"
+      ],
+      "summary": "Silent Read: ~4 min | Speech: ~7 min"
+    },
+    "metricsText": "Adding estimated reading times to blog posts improves user engagement and reduces bounce rates.",
+    "useCases": [
+      "Content Marketing: Calculate estimated read times for blog posts.",
+      "Public Speaking: Time speech transcripts to fit presentation schedules."
+    ],
+    "faqs": [
+      {
+        "question": "How fast does the average person read?",
+        "answer": "The average adult reads silently at a speed of 200 to 250 words per minute (wpm)."
+      }
+    ]
+  },
+  "chmod-calculator": {
+    "title": "Linux Chmod Permissions Octal & Symbolic Calculator",
+    "overview": "Calculates numeric octal permissions (e.g. 755, 644) and symbolic notation (rwxr-xr-x) for Linux and Unix web servers.",
+    "formula": "Octal_Digit = Read(4) + Write(2) + Execute(1)",
+    "explanation": "Calculates permissions separately for Owner (User), Group, and Others (Public).",
+    "example": {
+      "title": "Worked Example: Chmod 755",
+      "inputs": "Owner: rwx (4+2+1=7) | Group: r-x (4+0+1=5) | Others: r-x (4+0+1=5)",
+      "steps": [
+        "User = 7 | Group = 5 | Others = 5",
+        "Octal Notation = 755",
+        "Symbolic Notation = rwxr-xr-x"
+      ],
+      "summary": "Chmod Command: chmod 755 filename"
+    },
+    "metricsText": "Correct chmod permissions prevent unauthorized server access while allowing web servers to read and execute scripts.",
+    "useCases": [
+      "Web Hosting: Set correct file permissions for WordPress (644 files, 755 directories).",
+      "System Administration: Configure Linux user/group security levels."
+    ],
+    "faqs": [
+      {
+        "question": "What is Chmod 755?",
+        "answer": "Chmod 755 grants Read, Write, Execute to file owner, and Read, Execute to group members and public users."
+      }
+    ]
   }
 };
 
 export function getGuideBySlug(slug) {
   return toolGuides[slug] || null
 }
+
 
