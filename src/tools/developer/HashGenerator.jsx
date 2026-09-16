@@ -1,11 +1,10 @@
-import { useState, useEffect, useId } from 'react'
+import { useState, useEffect } from 'react'
+import { ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 export default function HashGenerator() {
   const [inputText, setInputText] = useState('Calciverse Privacy First Tools')
   const [hashes, setHashes] = useState({ sha1: '', sha256: '', sha512: '' })
-  const [copiedKey, setCopiedKey] = useState('')
-
-  const textId = useId()
 
   useEffect(() => {
     async function generateHashes() {
@@ -35,74 +34,32 @@ export default function HashGenerator() {
     generateHashes()
   }, [inputText])
 
-  const handleCopy = (key, text) => {
-    navigator.clipboard.writeText(text)
-    setCopiedKey(key)
-    setTimeout(() => setCopiedKey(''), 2000)
-  }
+  const summaryText = `Input String: "${inputText}"\nSHA-256: ${hashes.sha256}\nSHA-512: ${hashes.sha512}\nSHA-1: ${hashes.sha1}`
 
   return (
-    <div className="space-y-6">
-      <div>
-        <label htmlFor={textId} className="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
-          Input Text String
-        </label>
+    <div>
+      <label className="block mb-4">
+        <span className="text-sm font-medium text-ink-soft">Input Text String</span>
         <textarea
-          id={textId}
           rows={3}
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           placeholder="Enter plain text to generate cryptographic hashes..."
-          className="w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm font-semibold text-ink outline-none focus:border-saffron resize-none"
+          className="mt-1.5 w-full rounded-lg border border-line bg-paper-raised px-3 py-2.5 text-sm font-mono text-ink outline-none transition-all focus:border-saffron focus:ring-1 focus:ring-saffron"
         />
+      </label>
+
+      <div className="space-y-4 mt-6">
+        <ResultStat label="SHA-256 Hash" value={hashes.sha256 || '...'} emphasis />
+        <ResultStat label="SHA-512 Hash" value={hashes.sha512 || '...'} />
+        <ResultStat label="SHA-1 Hash" value={hashes.sha1 || '...'} />
       </div>
 
-      <div className="space-y-4">
-        <div className="rounded-2xl border border-line bg-paper p-5 space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-saffron">SHA-256 Hash</span>
-            <button
-              onClick={() => handleCopy('sha256', hashes.sha256)}
-              className="rounded-lg border border-line bg-paper-raised px-2.5 py-1 text-xs font-semibold text-ink hover:border-saffron transition-colors"
-            >
-              {copiedKey === 'sha256' ? 'Copied!' : 'Copy'}
-            </button>
-          </div>
-          <div className="font-mono text-xs text-ink break-all select-all bg-paper-raised p-3 rounded-lg border border-line">
-            {hashes.sha256 || '...'}
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-line bg-paper p-5 space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-signal">SHA-512 Hash</span>
-            <button
-              onClick={() => handleCopy('sha512', hashes.sha512)}
-              className="rounded-lg border border-line bg-paper-raised px-2.5 py-1 text-xs font-semibold text-ink hover:border-saffron transition-colors"
-            >
-              {copiedKey === 'sha512' ? 'Copied!' : 'Copy'}
-            </button>
-          </div>
-          <div className="font-mono text-xs text-ink break-all select-all bg-paper-raised p-3 rounded-lg border border-line">
-            {hashes.sha512 || '...'}
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-line bg-paper p-5 space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-ink-soft">SHA-1 Hash</span>
-            <button
-              onClick={() => handleCopy('sha1', hashes.sha1)}
-              className="rounded-lg border border-line bg-paper-raised px-2.5 py-1 text-xs font-semibold text-ink hover:border-saffron transition-colors"
-            >
-              {copiedKey === 'sha1' ? 'Copied!' : 'Copy'}
-            </button>
-          </div>
-          <div className="font-mono text-xs text-ink break-all select-all bg-paper-raised p-3 rounded-lg border border-line">
-            {hashes.sha1 || '...'}
-          </div>
-        </div>
-      </div>
+      <ToolActions
+        toolName="Crypto Hash Generator"
+        summaryText={summaryText}
+        shareUrl="https://calciverse.in/tool/hash-generator"
+      />
     </div>
   )
 }

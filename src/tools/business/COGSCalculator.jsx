@@ -1,4 +1,8 @@
-import { useState, useId } from 'react'
+import { useState, useMemo } from 'react'
+import { NumberField, ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
+
+const inr = (n) => n.toLocaleString('en-IN', { maximumFractionDigits: 0 })
 
 export default function COGSCalculator() {
   const [beginningInventory, setBeginningInventory] = useState(50000)
@@ -6,101 +10,39 @@ export default function COGSCalculator() {
   const [directLabor, setDirectLabor] = useState(30000)
   const [endingInventory, setEndingInventory] = useState(40000)
 
-  const begId = useId()
-  const purId = useId()
-  const labId = useId()
-  const endId = useId()
-
-  const calculateCOGS = () => {
+  const { totalGoodsAvailable, cogs } = useMemo(() => {
     const beg = Number(beginningInventory) || 0
     const pur = Number(purchases) || 0
     const lab = Number(directLabor) || 0
     const end = Number(endingInventory) || 0
 
-    const totalGoodsAvailable = beg + pur + lab
-    const cogs = Math.max(0, totalGoodsAvailable - end)
+    const totAvailable = beg + pur + lab
+    const cogsVal = Math.max(0, totAvailable - end)
 
-    return { totalGoodsAvailable, cogs }
-  }
+    return { totalGoodsAvailable: totAvailable, cogs: cogsVal }
+  }, [beginningInventory, purchases, directLabor, endingInventory])
 
-  const result = calculateCOGS()
-
-  const fmt = (v) =>
-    new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(v)
+  const summaryText = `Beginning Inventory: ₹${inr(beginningInventory)}\nPurchases: ₹${inr(purchases)}\nDirect Labor/Freight: ₹${inr(directLabor)}\nEnding Inventory: ₹${inr(endingInventory)}\nCost of Goods Sold (COGS): ₹${inr(cogs)}`
 
   return (
-    <div className="space-y-6">
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label htmlFor={begId} className="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
-            Beginning Inventory (₹)
-          </label>
-          <input
-            id={begId}
-            type="number"
-            value={beginningInventory}
-            onChange={(e) => setBeginningInventory(e.target.value)}
-            className="w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm font-semibold text-ink outline-none focus:border-saffron"
-          />
-        </div>
-
-        <div>
-          <label htmlFor={purId} className="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
-            Inventory Purchases (₹)
-          </label>
-          <input
-            id={purId}
-            type="number"
-            value={purchases}
-            onChange={(e) => setPurchases(e.target.value)}
-            className="w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm font-semibold text-ink outline-none focus:border-saffron"
-          />
-        </div>
-
-        <div>
-          <label htmlFor={labId} className="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
-            Direct Labor & Freight Costs (₹)
-          </label>
-          <input
-            id={labId}
-            type="number"
-            value={directLabor}
-            onChange={(e) => setDirectLabor(e.target.value)}
-            className="w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm font-semibold text-ink outline-none focus:border-saffron"
-          />
-        </div>
-
-        <div>
-          <label htmlFor={endId} className="block text-xs font-semibold text-ink uppercase tracking-wider mb-2">
-            Ending Inventory (₹)
-          </label>
-          <input
-            id={endId}
-            type="number"
-            value={endingInventory}
-            onChange={(e) => setEndingInventory(e.target.value)}
-            className="w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm font-semibold text-ink outline-none focus:border-saffron"
-          />
-        </div>
+    <div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <NumberField label="Beginning Inventory" value={beginningInventory} onChange={setBeginningInventory} suffix="₹" />
+        <NumberField label="Inventory Purchases" value={purchases} onChange={setPurchases} suffix="₹" />
+        <NumberField label="Direct Labor & Freight" value={directLabor} onChange={setDirectLabor} suffix="₹" />
+        <NumberField label="Ending Inventory" value={endingInventory} onChange={setEndingInventory} suffix="₹" />
       </div>
 
-      <div className="rounded-2xl border border-line bg-paper p-6 space-y-4">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-ink border-b border-line pb-2">
-          Cost of Goods Sold (COGS) Breakdown
-        </h3>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-line bg-paper-raised p-4">
-            <span className="block text-xs text-ink-soft">Total Goods Available for Sale</span>
-            <strong className="text-xl font-bold text-ink">{fmt(result.totalGoodsAvailable)}</strong>
-          </div>
-
-          <div className="rounded-xl border border-line bg-paper-raised p-4">
-            <span className="block text-xs text-ink-soft">Cost of Goods Sold (COGS)</span>
-            <strong className="text-2xl font-bold text-signal">{fmt(result.cogs)}</strong>
-          </div>
-        </div>
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <ResultStat label="Cost of Goods Sold (COGS)" value={`₹${inr(cogs)}`} emphasis />
+        <ResultStat label="Total Goods Available for Sale" value={`₹${inr(totalGoodsAvailable)}`} />
       </div>
+
+      <ToolActions
+        toolName="Cost of Goods Sold (COGS) Calculator"
+        summaryText={summaryText}
+        shareUrl="https://calciverse.in/tool/cogs-calculator"
+      />
     </div>
   )
 }

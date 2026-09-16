@@ -1,41 +1,39 @@
-import { useState, useId } from 'react'
+import { useState, useMemo } from 'react'
+import { ResultStat } from '../../components/ui/Field.jsx'
+import ToolActions from '../../components/ui/ToolActions.jsx'
 
 export default function ChmodCalculator() {
   const [perms, setPerms] = useState({
-    uRead: true, uWrite: true, uExec: true, // 7
-    gRead: true, gWrite: false, gExec: true, // 5
-    oRead: true, oWrite: false, oExec: true  // 5
+    uRead: true, uWrite: true, uExec: true,
+    gRead: true, gWrite: false, gExec: true,
+    oRead: true, oWrite: false, oExec: true
   })
 
-  const inputId = useId()
-
   const toggle = (key) => {
-    setPerms({ ...perms, [key]: !perms[key] })
+    setPerms((prev) => ({ ...prev, [key]: !prev[key] }))
   }
 
-  const getOctal = () => {
+  const { octal, symbolic } = useMemo(() => {
     const u = (perms.uRead ? 4 : 0) + (perms.uWrite ? 2 : 0) + (perms.uExec ? 1 : 0)
     const g = (perms.gRead ? 4 : 0) + (perms.gWrite ? 2 : 0) + (perms.gExec ? 1 : 0)
     const o = (perms.oRead ? 4 : 0) + (perms.oWrite ? 2 : 0) + (perms.oExec ? 1 : 0)
-    return `${u}${g}${o}`
-  }
 
-  const getSymbolic = () => {
     const r = (b) => (b ? 'r' : '-')
     const w = (b) => (b ? 'w' : '-')
     const x = (b) => (b ? 'x' : '-')
-    return `${r(perms.uRead)}${w(perms.uWrite)}${x(perms.uExec)}${r(perms.gRead)}${w(perms.gWrite)}${x(perms.gExec)}${r(perms.oRead)}${w(perms.oWrite)}${x(perms.oExec)}`
-  }
+    const sym = `${r(perms.uRead)}${w(perms.uWrite)}${x(perms.uExec)}${r(perms.gRead)}${w(perms.gWrite)}${x(perms.gExec)}${r(perms.oRead)}${w(perms.oWrite)}${x(perms.oExec)}`
 
-  const octal = getOctal()
-  const symbolic = getSymbolic()
+    return { octal: `${u}${g}${o}`, symbolic: sym }
+  }, [perms])
+
+  const summaryText = `Linux Chmod Octal: ${octal}\nSymbolic: ${symbolic}\nCommand: chmod ${octal} filename`
 
   return (
-    <div className="space-y-6">
-      <div className="grid gap-6 sm:grid-cols-3">
+    <div>
+      <div className="grid gap-4 sm:grid-cols-3">
         {/* Owner */}
-        <div className="rounded-xl border border-line bg-paper p-4 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-saffron">Owner / User Permissions</h4>
+        <div className="rounded-xl border border-line bg-paper-raised p-4 space-y-3">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-saffron">Owner (User)</h4>
           <div className="space-y-2 text-xs font-medium text-ink">
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" checked={perms.uRead} onChange={() => toggle('uRead')} className="rounded border-line text-saffron focus:ring-saffron" />
@@ -53,8 +51,8 @@ export default function ChmodCalculator() {
         </div>
 
         {/* Group */}
-        <div className="rounded-xl border border-line bg-paper p-4 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-signal">Group Permissions</h4>
+        <div className="rounded-xl border border-line bg-paper-raised p-4 space-y-3">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-signal">Group</h4>
           <div className="space-y-2 text-xs font-medium text-ink">
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" checked={perms.gRead} onChange={() => toggle('gRead')} className="rounded border-line text-signal focus:ring-signal" />
@@ -72,8 +70,8 @@ export default function ChmodCalculator() {
         </div>
 
         {/* Others */}
-        <div className="rounded-xl border border-line bg-paper p-4 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-ink-soft">Public / Others Permissions</h4>
+        <div className="rounded-xl border border-line bg-paper-raised p-4 space-y-3">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-ink-soft">Others (Public)</h4>
           <div className="space-y-2 text-xs font-medium text-ink">
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" checked={perms.oRead} onChange={() => toggle('oRead')} className="rounded border-line text-ink focus:ring-ink" />
@@ -91,25 +89,21 @@ export default function ChmodCalculator() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-line bg-paper p-6 space-y-4">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-ink border-b border-line pb-2">
-          Linux Chmod Permission Values
-        </h3>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-line bg-paper-raised p-4 space-y-1">
-            <span className="block text-xs text-ink-soft">Octal Notation</span>
-            <strong className="text-2xl font-bold font-mono text-saffron">{octal}</strong>
-            <span className="block text-[11px] text-ink-soft">Command: <code>chmod {octal} filename</code></span>
-          </div>
-
-          <div className="rounded-xl border border-line bg-paper-raised p-4 space-y-1">
-            <span className="block text-xs text-ink-soft">Symbolic Notation</span>
-            <strong className="text-2xl font-bold font-mono text-signal">{symbolic}</strong>
-            <span className="block text-[11px] text-ink-soft">r=read, w=write, x=execute</span>
-          </div>
-        </div>
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <ResultStat label="Octal Notation" value={octal} emphasis />
+        <ResultStat label="Symbolic Notation" value={symbolic} />
       </div>
+
+      <div className="mt-6 rounded-xl border border-line bg-paper-raised p-4 text-xs font-mono text-ink-soft">
+        <span className="text-ink-soft/70 block text-[11px] font-sans">Linux Terminal Command</span>
+        <code className="text-saffron font-bold text-sm select-all">chmod {octal} filename</code>
+      </div>
+
+      <ToolActions
+        toolName="Linux Chmod Calculator"
+        summaryText={summaryText}
+        shareUrl="https://calciverse.in/tool/chmod-calculator"
+      />
     </div>
   )
 }
