@@ -482,6 +482,26 @@ export const TOOL_SEO = {
   "freelance-tax-hourly-rate-calculator": {
     "title": "Freelance Hourly Rate Calculator | Calciverse",
     "description": "Calculate your true net hourly rate after unpaid hours, operational expenses, income tax and GST."
+  },
+  "swp-calculator": {
+    "title": "SWP Calculator India – Systematic Withdrawal Plan | Calciverse",
+    "description": "Calculate monthly mutual fund SWP payouts, total interest earned, and final remaining corpus online."
+  },
+  "step-up-sip-calculator": {
+    "title": "Step-Up SIP Calculator – Top-Up Mutual Fund Returns | Calciverse",
+    "description": "Calculate future mutual fund maturity wealth when increasing monthly SIP investments by an annual step-up percentage."
+  },
+  "lean-body-mass-calculator": {
+    "title": "Lean Body Mass (LBM) Calculator – Boer, James & Hume | Calciverse",
+    "description": "Calculate lean muscle mass, fat mass, and body fat percentage using Boer, James, and Hume clinical formulas."
+  },
+  "slug-generator": {
+    "title": "URL Slug Generator – Create SEO Friendly Web Slugs | Calciverse",
+    "description": "Convert plain text titles and article headlines into clean, lowercase, SEO-friendly URL slugs online."
+  },
+  "hash-generator": {
+    "title": "Crypto Hash Generator – SHA-256, SHA-512 & SHA-1 | Calciverse",
+    "description": "Generate SHA-256, SHA-512, and SHA-1 cryptographic text hashes 100% locally in your browser memory."
   }
 };
 

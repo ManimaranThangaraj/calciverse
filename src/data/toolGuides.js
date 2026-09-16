@@ -6693,9 +6693,145 @@ export const toolGuides = {
         "url": "https://www.gst.gov.in"
       }
     ]
+  },
+  "swp-calculator": {
+    "title": "Systematic Withdrawal Plan (SWP) Calculator & Formulas",
+    "overview": "A Systematic Withdrawal Plan (SWP) allows mutual fund investors to withdraw a fixed dollar/rupee amount at regular monthly intervals while leaving the remaining investment corpus to compound.",
+    "formula": "Balance_m = Balance_(m-1) × (1 + r) - W",
+    "explanation": "Where r is monthly expected return rate and W is fixed monthly payout.",
+    "example": {
+      "title": "Worked Real-World Example: SWP Monthly Payout",
+      "inputs": "Initial Investment = ₹10,00,000 | Monthly Payout = ₹8,000 | Return = 8% p.a. | Tenure = 10 Years",
+      "steps": [
+        "Monthly Return (r) = 8% / 12 = 0.667%",
+        "Over 120 months, total withdrawn = 120 × ₹8,000 = ₹9,60,000",
+        "Residual Corpus remaining after 10 years = ₹5,52,000+"
+      ],
+      "summary": "Total Withdrawn = ₹9,60,000 | Remaining Corpus = ₹5,52,000+"
+    },
+    "metricsText": "SWP is ideal for retirees or investors seeking predictable monthly cash flow without liquidating their entire mutual fund corpus.",
+    "useCases": [
+      "Retirement Income: Generate steady monthly pension-like income.",
+      "Capital Preservation: Withdraw gains while retaining principal corpus growth."
+    ],
+    "faqs": [
+      {
+        "question": "What is an SWP in Mutual Funds?",
+        "answer": "SWP stands for Systematic Withdrawal Plan. It allows you to redeem a fixed sum of money periodically from your mutual fund scheme."
+      }
+    ]
+  },
+  "step-up-sip-calculator": {
+    "title": "Step-Up / Top-Up SIP Investment Calculator",
+    "overview": "A Step-Up SIP (also called Top-Up SIP) allows investors to automatically increase their monthly mutual fund contribution by a fixed percentage each year as their salary grows.",
+    "formula": "P_year = P_(year-1) × (1 + step_up_% / 100)",
+    "explanation": "Calculates future maturity wealth compounded monthly with yearly incremented principal.",
+    "example": {
+      "title": "Worked Example: Step-Up SIP",
+      "inputs": "Initial Monthly SIP = ₹5,000 | Annual Step-Up = 10% | Expected Return = 12% | Tenure = 10 Years",
+      "steps": [
+        "Year 1: ₹5,000/mo | Year 2: ₹5,500/mo | Year 3: ₹6,050/mo",
+        "Total Amount Invested over 10 Years = ₹9,56,245",
+        "Total Wealth Created at 12% return = ₹17,35,000+"
+      ],
+      "summary": "Invested: ₹9.56 Lakh | Wealth Created: ₹17.35 Lakh"
+    },
+    "metricsText": "Stepping up your SIP by just 10% annually can result in up to 50% higher wealth creation over a 10-20 year period.",
+    "useCases": [
+      "Career Growth: Align mutual fund investments with annual salary appraisals.",
+      "Long Term Wealth: Accelerate financial goals like child education or retirement."
+    ],
+    "faqs": [
+      {
+        "question": "What is a Step-Up SIP?",
+        "answer": "A Step-Up SIP automatically increases your monthly investment contribution by a fixed percentage (e.g. 10%) every year."
+      }
+    ]
+  },
+  "lean-body-mass-calculator": {
+    "title": "Lean Body Mass (LBM) Clinical Calculator",
+    "overview": "Lean Body Mass (LBM) represents total body weight minus fat mass. It includes muscles, bones, organs, and body water.",
+    "formula": "LBM (Boer) Male = 0.407×W + 0.267×H - 19.2 | Female = 0.252×W + 0.473×H - 48.3",
+    "explanation": "Uses Boer, James, and Hume clinical equations derived from height and weight.",
+    "example": {
+      "title": "Worked Example: Lean Body Mass Calculation",
+      "inputs": "Male | Weight = 70 kg | Height = 175 cm",
+      "steps": [
+        "Boer Formula LBM = 0.407(70) + 0.267(175) - 19.2 = 55.9 kg",
+        "Fat Mass = 70 - 55.9 = 14.1 kg",
+        "Body Fat % = (14.1 / 70) × 100 = 20.1%"
+      ],
+      "summary": "Lean Mass = ~56 kg | Fat Mass = ~14 kg | Body Fat = ~20%"
+    },
+    "metricsText": "Tracking LBM helps athletes and fitness enthusiasts ensure they are losing fat rather than burning lean muscle tissue.",
+    "useCases": [
+      "Body Composition Tracking: Monitor muscle retention during weight loss phases.",
+      "Protein Requirement Calculation: Estimate daily protein intake based on lean body mass."
+    ],
+    "faqs": [
+      {
+        "question": "What is Lean Body Mass?",
+        "answer": "Lean Body Mass is the total weight of your body excluding all fat mass (muscles, bones, fluids, organs)."
+      }
+    ]
+  },
+  "slug-generator": {
+    "title": "SEO URL Slug Generator Tool",
+    "overview": "Converts plain text headlines, blog titles, and product names into clean, lowercase, hyphenated URL slugs suitable for web publishing.",
+    "formula": "Slug = Lowercase(StripSpecialSymbols(ReplaceSpacesWithHyphens(Text)))",
+    "explanation": "Cleans special characters, collapses whitespace, and formats text for web standards.",
+    "example": {
+      "title": "Worked Example: URL Slug Generation",
+      "inputs": "Title: 'How to Calculate Home Loan EMI in 2026!'",
+      "steps": [
+        "Strip special symbols '!' -> 'How to Calculate Home Loan EMI in 2026'",
+        "Convert to lowercase -> 'how to calculate home loan emi in 2026'",
+        "Replace spaces with hyphens -> 'how-to-calculate-home-loan-emi-in-2026'"
+      ],
+      "summary": "Output: how-to-calculate-home-loan-emi-in-2026"
+    },
+    "metricsText": "Clean, descriptive URL slugs boost search engine indexability and click-through rates on search results.",
+    "useCases": [
+      "Web Content Publishing: Generate SEO friendly article permalinks.",
+      "Developer Utilities: Normalize string titles for database IDs and paths."
+    ],
+    "faqs": [
+      {
+        "question": "What is a URL Slug?",
+        "answer": "A URL slug is the user-readable part of a web address that identifies a specific page in a clean, hyphenated format."
+      }
+    ]
+  },
+  "hash-generator": {
+    "title": "Cryptographic Text Hash Generator (SHA-256, SHA-512)",
+    "overview": "Generates one-way cryptographic hash strings using Web Crypto API algorithms (SHA-256, SHA-512, SHA-1).",
+    "formula": "Hash = SHA256(Text_UTF8)",
+    "explanation": "Executes 100% locally in browser memory without sending text strings to any server.",
+    "example": {
+      "title": "Worked Example: Text Hashing",
+      "inputs": "String: 'Calciverse'",
+      "steps": [
+        "Convert text string to UTF-8 byte array.",
+        "Pass byte array to crypto.subtle.digest('SHA-256').",
+        "Convert binary digest output to hexadecimal string."
+      ],
+      "summary": "Output: Hexadecimal SHA-256 hash string."
+    },
+    "metricsText": "Cryptographic hashes are deterministic fixed-length hexadecimal representations used in security and data integrity verification.",
+    "useCases": [
+      "Security Auditing: Verify file integrity and text checksums.",
+      "Developer Testing: Test SHA-256 / SHA-512 outputs locally."
+    ],
+    "faqs": [
+      {
+        "question": "Is the Hash Generator private?",
+        "answer": "Yes! All hashing operations use your browser's native Web Crypto API. No data is sent over the network."
+      }
+    ]
   }
 };
 
 export function getGuideBySlug(slug) {
   return toolGuides[slug] || null
 }
+

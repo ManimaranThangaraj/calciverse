@@ -273,7 +273,7 @@ export default function Home() {
           <div>
             <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">About Calciverse — Precision Web Utilities Platform</h2>
             <p className="mt-2 text-sm text-ink-soft leading-relaxed max-w-3xl">
-              Calciverse.in is a free, privacy-first web utility suite engineered by <strong>Manimaran Thangaraj</strong>. Built to eliminate bloated, ad-cluttered calculator websites that hide formulas, slow down devices, or harvest personal data, Calciverse delivers 121 instant calculators, converters, and generators plus 60 in-depth educational guides across finance, tax planning, biological health, academic scoring, and developer utilities.
+              Calciverse.in is a free, privacy-first web utility suite engineered by <strong>Manimaran Thangaraj</strong>. Built to eliminate bloated, ad-cluttered calculator websites that hide formulas, slow down devices, or harvest personal data, Calciverse delivers 126 instant calculators, converters, and generators plus 60 in-depth educational guides across finance, tax planning, biological health, academic scoring, and developer utilities.
             </p>
           </div>
 

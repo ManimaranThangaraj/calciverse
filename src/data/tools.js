@@ -403,6 +403,21 @@ export const tools = [
   { slug: 'freelance-tax-hourly-rate-calculator', name: 'Freelance & Side-Hustle Net Hourly Rate Calculator', category: 'business', kind: 'calculator', status: 'live',
     description: 'Calculate your true net hourly rate after unpaid hours, operational expenses, income tax and GST.',
     component: lazy(() => import('../tools/business/FreelanceTaxHourlyRateCalculator.jsx')) },
+  { slug: 'swp-calculator', name: 'SWP Calculator (Systematic Withdrawal Plan)', category: 'finance', kind: 'calculator', status: 'live', featured: true,
+    description: 'Calculate monthly mutual fund payouts, total withdrawals, and final remaining corpus.',
+    component: lazy(() => import('../tools/finance/SWPCalculator.jsx')) },
+  { slug: 'step-up-sip-calculator', name: 'Step-Up SIP Calculator', category: 'finance', kind: 'calculator', status: 'live', featured: true,
+    description: 'Calculate mutual fund maturity value when monthly investment increases annually.',
+    component: lazy(() => import('../tools/finance/StepUpSIPCalculator.jsx')) },
+  { slug: 'lean-body-mass-calculator', name: 'Lean Body Mass (LBM) Calculator', category: 'health', kind: 'calculator', status: 'live',
+    description: 'Calculate lean muscle mass, fat mass, and body fat % using Boer, James, and Hume clinical formulas.',
+    component: lazy(() => import('../tools/health/LeanBodyMassCalculator.jsx')) },
+  { slug: 'slug-generator', name: 'URL Slug Generator', category: 'developer', kind: 'generator', status: 'live',
+    description: 'Convert plain text strings into clean, SEO-friendly URL slugs.',
+    component: lazy(() => import('../tools/developer/SlugGenerator.jsx')) },
+  { slug: 'hash-generator', name: 'Crypto Hash Generator (SHA-256 / SHA-512)', category: 'developer', kind: 'generator', status: 'live',
+    description: 'Generate SHA-256, SHA-512, and SHA-1 cryptographic text hashes 100% locally in browser.',
+    component: lazy(() => import('../tools/developer/HashGenerator.jsx')) },
 ]
 
 export const liveTools = tools.filter((t) => t.status === 'live')
