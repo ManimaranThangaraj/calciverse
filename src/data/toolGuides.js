@@ -7015,6 +7015,269 @@ export const toolGuides = {
         "answer": "Chmod 755 grants Read, Write, Execute to file owner, and Read, Execute to group members and public users."
       }
     ]
+  },
+  "payback-period-calculator": {
+    "title": "Payback Period Calculation Guide",
+    "overview": "The Payback Period Calculator determines the exact time required to recover the initial investment cost.",
+    "formula": "Payback Period = Initial Investment / Annual Cash Inflow",
+    "explanation": "Calculates how long a project or business purchase takes to break even.",
+    "example": {
+      "title": "Worked Real-World Example: Payback Period Calculator",
+      "inputs": "Investment: ₹5,000,000, Annual Cash Flow: ₹1,250,000",
+      "steps": [
+        "Divide Initial Investment by Annual Cash Flow.",
+        "₹5,000,000 / ₹1,250,000 = 4.0 Years."
+      ],
+      "summary": "The investment pays for itself in exactly 4 years."
+    },
+    "metricsText": "Payback period helps investors evaluate liquidity and capital risk.",
+    "useCases": [
+      "Capital Budgeting: Evaluate corporate machinery or solar panel purchases.",
+      "Business Valuation: Compare return speed across investment projects."
+    ],
+    "faqs": [
+      {
+        "question": "What is a good payback period?",
+        "answer": "A shorter payback period is generally preferred as it indicates lower investment risk and faster capital recovery."
+      }
+    ]
+  },
+  "mortgage-refinance-calculator": {
+    "title": "Mortgage Refinance Savings Guide",
+    "overview": "Calculate how much money you save by refinancing your loan at a lower interest rate.",
+    "formula": "Monthly Savings = Old EMI - New EMI",
+    "explanation": "Estimates monthly EMI reductions and total cumulative interest savings from refinancing.",
+    "example": {
+      "title": "Worked Real-World Example: Refinance Calculator",
+      "inputs": "Balance: ₹3,000,000, Old Rate: 9.5%, New Rate: 8.2%, Tenure: 15 yrs",
+      "steps": [
+        "Calculate Old Monthly EMI at 9.5% = ₹31,327.",
+        "Calculate New Monthly EMI at 8.2% = ₹29,021.",
+        "Monthly Savings = ₹2,306; Total 15-Year Savings = ₹415,080."
+      ],
+      "summary": "Refinancing saves ₹2,306 every month and over ₹4.15 Lakhs in total interest."
+    },
+    "metricsText": "Refinancing reduces monthly debt burden and total lifetime interest.",
+    "useCases": [
+      "Home Loans: Switch home loans to banks offering lower interest rates.",
+      "Debt Optimization: Lower monthly cash outflows."
+    ],
+    "faqs": [
+      {
+        "question": "When should I refinance my loan?",
+        "answer": "Refinancing is beneficial when market interest rates drop by 0.5% or more and the total savings outweigh prepayment and processing fees."
+      }
+    ]
+  },
+  "one-rep-max-calculator": {
+    "title": "One Rep Max (1RM) Fitness Guide",
+    "overview": "Calculate your maximum 1-rep lift weight using proven Epley and Brzycki strength equations.",
+    "formula": "1RM (Epley) = Weight × (1 + Reps / 30)",
+    "explanation": "Estimates maximum squat, bench press, or deadlift capacity without risking injury.",
+    "example": {
+      "title": "Worked Real-World Example: 1RM Calculator",
+      "inputs": "Weight: 100 kg, Reps: 5",
+      "steps": [
+        "Epley 1RM = 100 × (1 + 5/30) = 116.7 kg.",
+        "Brzycki 1RM = 100 × (36 / (37 - 5)) = 112.5 kg."
+      ],
+      "summary": "Estimated 1 Rep Max is approximately 114.6 kg."
+    },
+    "metricsText": "1RM calculations allow powerlifters and athletes to program training percentages safely.",
+    "useCases": [
+      "Strength Training: Program workout sets based on 70%, 80%, or 90% of 1RM.",
+      "Powerlifting: Benchmark maximum strength gains."
+    ],
+    "faqs": [
+      {
+        "question": "What is 1RM?",
+        "answer": "1RM (One Repetition Maximum) is the maximum weight you can lift for a single repetition with proper form."
+      }
+    ]
+  },
+  "macro-ratio-split-calculator": {
+    "title": "Keto & Macro Ratio Guide",
+    "overview": "Calculate exact grams of Protein, Carbohydrates, and Fats for Keto, Low-Carb, or High-Protein diets.",
+    "formula": "Grams = (Daily Calories × Macro %) / Caloric Density",
+    "explanation": "Converts total daily calories into macronutrient gram targets.",
+    "example": {
+      "title": "Worked Real-World Example: Macro Split",
+      "inputs": "Calories: 2,000 kcal, Diet: Balanced (30% Protein / 40% Carbs / 30% Fat)",
+      "steps": [
+        "Protein: (2000 × 0.30) / 4 = 150g.",
+        "Carbs: (2000 × 0.40) / 4 = 200g.",
+        "Fat: (2000 × 0.30) / 9 = 67g."
+      ],
+      "summary": "Target 150g Protein, 200g Carbs, and 67g Fat daily."
+    },
+    "metricsText": "Tracking macro splits optimizes body composition for weight loss or muscle building.",
+    "useCases": [
+      "Bodybuilding: Calculate high-protein macros.",
+      "Keto Dieting: Limit carbohydrates to under 5% of daily intake."
+    ],
+    "faqs": [
+      {
+        "question": "Why do carbs and protein have 4 calories per gram while fat has 9?",
+        "answer": "Fat is more energy-dense than protein and carbohydrates, yielding 9 kcal per gram compared to 4 kcal per gram."
+      }
+    ]
+  },
+  "percentage-error-calculator": {
+    "title": "Percentage Error Scientific Guide",
+    "overview": "Calculate the percent error between an experimental measurement and the true theoretical value.",
+    "formula": "% Error = (|Experimental - True| / |True|) × 100",
+    "explanation": "Quantifies experimental precision and error margins in scientific measurements.",
+    "example": {
+      "title": "Worked Real-World Example: Percent Error",
+      "inputs": "Experimental: 9.6 m/s², True Value: 9.8 m/s²",
+      "steps": [
+        "Absolute Error = |9.6 - 9.8| = 0.2.",
+        "Percent Error = (0.2 / 9.8) × 100 = 2.04%."
+      ],
+      "summary": "The experimental measurement has a 2.04% error rate."
+    },
+    "metricsText": "Percent error measures accuracy in physics, chemistry, and engineering experiments.",
+    "useCases": [
+      "Physics Experiments: Measure acceleration due to gravity error.",
+      "Quality Control: Determine manufacturing dimensional error variance."
+    ],
+    "faqs": [
+      {
+        "question": "Can percentage error be negative?",
+        "answer": "Percentage error is typically expressed as an absolute positive value using magnitude |Experimental - True|."
+      }
+    ]
+  },
+  "grade-point-converter": {
+    "title": "Marks to Grade Point (GPA) Guide",
+    "overview": "Convert percentage marks to 10-point GPA scale and CBSE CGPA equivalent.",
+    "formula": "GPA (10 Scale) = Marks % / 10 | CBSE CGPA = Marks % / 9.5",
+    "explanation": "Converts academic percentage scores into standardized grade point averages.",
+    "example": {
+      "title": "Worked Real-World Example: Grade Point Converter",
+      "inputs": "Marks: 85%",
+      "steps": [
+        "10-Point GPA = 85 / 10 = 8.50.",
+        "CBSE CGPA = 85 / 9.5 = 8.95.",
+        "Letter Grade = A."
+      ],
+      "summary": "85% marks equals an 8.50 GPA on a 10-point scale."
+    },
+    "metricsText": "Grade point conversion standardizes academic scores for university applications.",
+    "useCases": [
+      "University Admissions: Convert board exam percentage to GPA.",
+      "Student Scoring: Evaluate semester grade performance."
+    ],
+    "faqs": [
+      {
+        "question": "How do you convert percentage to CBSE CGPA?",
+        "answer": "Divide your overall percentage score by 9.5 to calculate your equivalent CBSE CGPA."
+      }
+    ]
+  },
+  "css-px-to-vw-calculator": {
+    "title": "PX to VW / VH Converter Guide",
+    "overview": "Convert pixel font sizes and element dimensions to viewport width (vw) and height (vh) units for CSS.",
+    "formula": "vw = (px / viewport_width) × 100",
+    "explanation": "Calculates responsive viewport units for modern web design layouts.",
+    "example": {
+      "title": "Worked Real-World Example: PX to VW Converter",
+      "inputs": "Pixel Size: 32px, Viewport Width: 1440px",
+      "steps": [
+        "vw = (32 / 1440) × 100 = 2.222vw."
+      ],
+      "summary": "32px at 1440px viewport screen equals 2.222vw."
+    },
+    "metricsText": "Viewport units make text and layouts scale smoothly across mobile and desktop screens.",
+    "useCases": [
+      "Responsive Web Design: Scale font sizes dynamically.",
+      "CSS Typography: Fluid typography implementation."
+    ],
+    "faqs": [
+      {
+        "question": "What is 1vw in CSS?",
+        "answer": "1vw equals 1% of the total width of the browser viewport window."
+      }
+    ]
+  },
+  "color-contrast-checker": {
+    "title": "WCAG Color Contrast Ratio Guide",
+    "overview": "Check text and background color contrast against WCAG 2.1 AA and AAA accessibility standards.",
+    "formula": "Contrast Ratio = (L1 + 0.05) / (L2 + 0.05)",
+    "explanation": "Measures relative luminance ratio between text color and background color.",
+    "example": {
+      "title": "Worked Real-World Example: Contrast Checker",
+      "inputs": "Text: #12213A, Background: #FFFFFF",
+      "steps": [
+        "Luminance Text = 0.015, Luminance Background = 1.00.",
+        "Ratio = (1.00 + 0.05) / (0.015 + 0.05) = 16.15:1."
+      ],
+      "summary": "Passes WCAG AA (4.5:1) and WCAG AAA (7.0:1) with flying colors."
+    },
+    "metricsText": "High contrast ensures web text is readable for users with visual impairments.",
+    "useCases": [
+      "Web Accessibility: Ensure WCAG 2.1 compliance.",
+      "UI/UX Design: Select accessible color schemes."
+    ],
+    "faqs": [
+      {
+        "question": "What is the minimum contrast ratio for WCAG AA?",
+        "answer": "WCAG AA requires a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text."
+      }
+    ]
+  },
+  "unit-price-comparison-calculator": {
+    "title": "Unit Price Value Comparison Guide",
+    "overview": "Compare unit prices across store item package sizes to find the best savings value.",
+    "formula": "Unit Price = Item Price / Package Quantity",
+    "explanation": "Determines the true cost per gram, milliliter, or unit across competing store products.",
+    "example": {
+      "title": "Worked Real-World Example: Unit Price",
+      "inputs": "Item A: ₹250 for 500g | Item B: ₹420 for 1000g",
+      "steps": [
+        "Item A Unit Price = ₹250 / 500g = ₹0.50 per gram.",
+        "Item B Unit Price = ₹420 / 1000g = ₹0.42 per gram."
+      ],
+      "summary": "Item B is 16.0% cheaper per unit than Item A."
+    },
+    "metricsText": "Unit price comparison reveals true grocery and retail product savings.",
+    "useCases": [
+      "Grocery Shopping: Compare bulk packs vs standard packs.",
+      "Retail Buying: Identify true discount value."
+    ],
+    "faqs": [
+      {
+        "question": "Why is buying in bulk not always cheaper?",
+        "answer": "Stores sometimes price smaller items on sale lower per unit than larger bulk containers. Unit price calculations reveal the true deal."
+      }
+    ]
+  },
+  "working-days-calculator": {
+    "title": "Working Business Days Guide",
+    "overview": "Calculate net business working days between two dates excluding weekends.",
+    "formula": "Working Days = Total Days - Weekend Days (Sat & Sun)",
+    "explanation": "Calculates business days for project planning and HR leave management.",
+    "example": {
+      "title": "Worked Real-World Example: Business Days",
+      "inputs": "Start: 2026-10-01, End: 2026-10-31",
+      "steps": [
+        "Total Calendar Days = 31.",
+        "Weekend Days (Sat/Sun) = 9.",
+        "Net Working Days = 31 - 9 = 22 Days."
+      ],
+      "summary": "October 2026 has 22 working business days."
+    },
+    "metricsText": "Working days calculation simplifies project timelines and delivery scheduling.",
+    "useCases": [
+      "Project Management: Estimate sprint & delivery schedules.",
+      "HR & Payroll: Calculate working days per month."
+    ],
+    "faqs": [
+      {
+        "question": "Does this tool exclude public holidays?",
+        "answer": "This tool calculates Monday-Friday business days. You can subtract local national holidays from the resulting working days."
+      }
+    ]
   }
 };
 

@@ -530,6 +530,46 @@ export const TOOL_SEO = {
   "chmod-calculator": {
     "title": "Linux Chmod Calculator – Octal & Symbolic Permissions | Calciverse",
     "description": "Calculate octal (755, 644) and symbolic (rwxr-xr-x) Linux file permissions with visual checkbox controls."
+  },
+  "payback-period-calculator": {
+    "title": "Payback Period Calculator – Investment Breakeven | Calciverse",
+    "description": "Calculate payback period in years and months to recover initial business investment cost."
+  },
+  "mortgage-refinance-calculator": {
+    "title": "Mortgage Refinance Calculator – EMI Savings | Calciverse",
+    "description": "Calculate monthly loan EMI savings and total interest saved by refinancing your mortgage."
+  },
+  "one-rep-max-calculator": {
+    "title": "One Rep Max (1RM) Calculator – Epley & Brzycki | Calciverse",
+    "description": "Calculate maximum 1RM lift weight for bench press, squat, and deadlift using Epley and Brzycki formulas."
+  },
+  "macro-ratio-split-calculator": {
+    "title": "Keto & Macro Ratio Split Calculator | Calciverse",
+    "description": "Calculate daily protein, carb, and fat grams for Keto, Low-Carb, and High-Protein fitness diets."
+  },
+  "percentage-error-calculator": {
+    "title": "Percentage Error Calculator – Experimental Vs True | Calciverse",
+    "description": "Calculate percent error and absolute error between experimental measured and theoretical true values."
+  },
+  "grade-point-converter": {
+    "title": "Marks to Grade Point (GPA) Converter | Calciverse",
+    "description": "Convert percentage marks to 10-point scale GPA and CBSE equivalent CGPA instantly."
+  },
+  "css-px-to-vw-calculator": {
+    "title": "PX to VW / VH Converter – Responsive CSS Units | Calciverse",
+    "description": "Convert pixel values to viewport width (vw) and viewport height (vh) units for responsive CSS layouts."
+  },
+  "color-contrast-checker": {
+    "title": "WCAG Color Contrast Ratio Checker | Calciverse",
+    "description": "Check WCAG 2.1 AA/AAA accessibility contrast ratios between text and background colors."
+  },
+  "unit-price-comparison-calculator": {
+    "title": "Unit Price Value Comparison Calculator | Calciverse",
+    "description": "Compare store item bulk prices vs smaller packs to calculate unit price savings."
+  },
+  "working-days-calculator": {
+    "title": "Working Business Days Calculator – Mon to Fri | Calciverse",
+    "description": "Calculate net working business days (Mon-Fri) between dates excluding weekend days."
   }
 };
 
