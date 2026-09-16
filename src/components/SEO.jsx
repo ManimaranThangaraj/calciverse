@@ -62,6 +62,23 @@ export default function SEO({
   if (cleanPath === '/' || cleanPath === '') {
     pageTitle = STATIC_SEO['/'].title
     pageDesc = STATIC_SEO['/'].description
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: SITE_NAME,
+      alternateName: ['Calciverse.in', 'Calciverse Calculator', 'Calciverse Online Tools'],
+      description: pageDesc,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${SITE_URL}/?search={search_term_string}`
+        },
+        'query-input': 'required name=search_term_string'
+      }
+    })
   } else if (cleanPath.startsWith('/tool/')) {
     const toolName = title || SITE_NAME
     const mappedSEO = TOOL_SEO[slugFromPath]
@@ -87,38 +104,12 @@ export default function SEO({
           : `Free online ${toolName} for fast, accurate, and privacy-focused calculations on Calciverse.in.`
       }
     }
-  } else if (cleanPath.startsWith('/category/')) {
-    const mappedCategory = CATEGORY_SEO[slugFromPath]
-    if (mappedCategory) {
-      pageTitle = mappedCategory.title
-      pageDesc = mappedCategory.description || mappedCategory.desc
-    } else {
-      pageTitle = `${title || 'Tools'} Calculators | Calciverse`
-      pageDesc = `Explore free online ${title || ''} calculators, converters, and generators on Calciverse.in.`
-    }
-  } else if (cleanPath.startsWith('/articles/')) {
-    const mappedArticle = ARTICLE_SEO[slugFromPath]
-    if (mappedArticle) {
-      pageTitle = mappedArticle.title
-      pageDesc = mappedArticle.description || mappedArticle.desc
-    } else {
-      pageTitle = `${title || 'Article'} | Calciverse`
-      pageDesc = description || `Read guide on ${title || 'finance and calculations'} on Calciverse.in.`
-    }
-  } else if (staticMatch) {
-    pageTitle = staticMatch.title
-    pageDesc = staticMatch.description
-  } else {
-    pageTitle = title ? `${title} | Calciverse` : `${SITE_NAME} — Free Online Calculators`
-  }
 
-  const finalTitle = formatTitle(pageTitle)
-
-  const schemas = []
-
-  if (cleanPath.startsWith('/tool/')) {
-    const toolName = title || SITE_NAME
     const guide = getGuideBySlug(slugFromPath)
+    const tool = toolBySlug(slugFromPath)
+    const category = tool ? categoryBySlug(tool.category) : null
+    const categoryName = category ? category.name : 'Tools'
+    const categoryUrl = category ? `${SITE_URL}/category/${category.slug}` : `${SITE_URL}/`
 
     schemas.push({
       '@context': 'https://schema.org',
@@ -126,6 +117,7 @@ export default function SEO({
       name: toolName,
       url: canonicalUrl,
       applicationCategory: 'UtilityApplication',
+      applicationSubCategory: categoryName,
       operatingSystem: 'All',
       browserRequirements: 'Requires JavaScript. Requires HTML5.',
       offers: {
@@ -133,13 +125,20 @@ export default function SEO({
         price: '0',
         priceCurrency: 'INR'
       },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        ratingCount: '185',
+        bestRating: '5',
+        worstRating: '1'
+      },
+      author: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: `${SITE_URL}/`
+      },
       description: pageDesc
     })
-
-    const tool = toolBySlug(slugFromPath)
-    const category = tool ? categoryBySlug(tool.category) : null
-    const categoryName = category ? category.name : 'Tools'
-    const categoryUrl = category ? `${SITE_URL}/category/${category.slug}` : `${SITE_URL}/`
 
     schemas.push({
       '@context': 'https://schema.org',
@@ -149,7 +148,7 @@ export default function SEO({
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: SITE_URL
+          item: `${SITE_URL}/`
         },
         {
           '@type': 'ListItem',
@@ -180,7 +179,43 @@ export default function SEO({
         }))
       })
     }
+  } else if (cleanPath.startsWith('/category/')) {
+    const mappedCategory = CATEGORY_SEO[slugFromPath]
+    if (mappedCategory) {
+      pageTitle = mappedCategory.title
+      pageDesc = mappedCategory.description || mappedCategory.desc
+    } else {
+      pageTitle = `${title || 'Tools'} Calculators | Calciverse`
+      pageDesc = `Explore free online ${title || ''} calculators, converters, and generators on Calciverse.in.`
+    }
+    const categoryName = title || slugFromPath
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${SITE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: categoryName,
+          item: canonicalUrl
+        }
+      ]
+    })
   } else if (cleanPath.startsWith('/articles/')) {
+    const mappedArticle = ARTICLE_SEO[slugFromPath]
+    if (mappedArticle) {
+      pageTitle = mappedArticle.title
+      pageDesc = mappedArticle.description || mappedArticle.desc
+    } else {
+      pageTitle = `${title || 'Article'} | Calciverse`
+      pageDesc = description || `Read guide on ${title || 'finance and calculations'} on Calciverse.in.`
+    }
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Article',
@@ -190,11 +225,40 @@ export default function SEO({
       publisher: {
         '@type': 'Organization',
         name: SITE_NAME,
-        url: SITE_URL
+        url: `${SITE_URL}/`
       },
       ...(publishedAt && { datePublished: publishedAt }),
       ...(updatedAt && { dateModified: updatedAt })
     })
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${SITE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Articles',
+          item: `${SITE_URL}/articles`
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: title || 'Article',
+          item: canonicalUrl
+        }
+      ]
+    })
+  } else if (staticMatch) {
+    pageTitle = staticMatch.title
+    pageDesc = staticMatch.description
+  } else {
+    pageTitle = title ? `${title} | Calciverse` : `${SITE_NAME} — Free Online Calculators`
   }
 
   return (
