@@ -59,7 +59,7 @@ function HomeSearch() {
         <Search className="absolute left-4 text-ink-soft" size={20} />
         <input
           type="text"
-          placeholder="Search 120+ calculators & guides... (e.g. EMI, GST, BMI, Salary)"
+          placeholder={`Search ${tools.filter(t => t.status === 'live').length}+ calculators & guides... (e.g. EMI, GST, BMI, Salary)`}
           value={query}
           onFocus={() => setIsFocused(true)}
           onChange={(e) => {

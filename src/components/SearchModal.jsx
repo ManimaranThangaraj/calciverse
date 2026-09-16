@@ -77,7 +77,7 @@ export default function SearchModal({ isOpen, onClose }) {
           <input
             ref={inputRef}
             type="text"
-            placeholder="Search 120+ calculators, tools, and guides... (e.g. EMI, GST, BMI, Salary)"
+            placeholder={`Search ${tools.filter(t => t.status === 'live').length}+ calculators, tools, and guides... (e.g. EMI, GST, BMI, Salary)`}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full bg-transparent px-3 py-1 text-base text-ink placeholder:text-ink-soft/60 focus:outline-none"

@@ -75,7 +75,7 @@ export default function QuickSearch({ isOpen, onClose }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Search 120+ free calculators (e.g., EMI, GST, BMI, CGPA, Tax)..."
+            placeholder={`Search ${liveTools.length}+ free calculators (e.g., EMI, GST, BMI, CGPA, Tax)...`}
             className="w-full bg-transparent text-sm sm:text-base font-medium text-ink outline-none placeholder:text-ink-soft/60"
           />
           {query && (
@@ -148,7 +148,7 @@ export default function QuickSearch({ isOpen, onClose }) {
             <span><kbd className="px-1.5 py-0.5 rounded bg-paper border border-line font-mono text-[10px]">↑↓</kbd> Navigate</span>
             <span><kbd className="px-1.5 py-0.5 rounded bg-paper border border-line font-mono text-[10px]">↵</kbd> Select</span>
           </div>
-          <span><strong>120+</strong> Privacy-First Free Tools</span>
+          <span><strong>{liveTools.length}+</strong> Privacy-First Free Tools</span>
         </div>
       </div>
     </div>
