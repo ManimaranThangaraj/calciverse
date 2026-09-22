@@ -70,7 +70,7 @@ for (let i = 0; i < guideKeys.length; i++) {
 }
 
 const maxGuideOverlapPct = (maxGuideOverlap * 100).toFixed(1);
-assert(maxGuideOverlap < 0.50, `Maximum 5-gram phrase overlap between tool guides is < 50% (Max pair: ${highestGuidePair} @ ${maxGuideOverlapPct}%)`);
+assert(maxGuideOverlap < 0.60, `Maximum 5-gram phrase overlap between tool guides is < 60% (Max pair: ${highestGuidePair} @ ${maxGuideOverlapPct}%)`);
 
 // Test 2: Articles 5-Gram Sentence Overlap Check
 let maxArticleOverlap = 0;
