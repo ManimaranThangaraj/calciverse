@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const ADSENSE_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || ''
+const ADSENSE_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || 'ca-pub-3328643502138366'
 
 export default function AdSlot({ slot, format = 'auto', className = '', label = 'Advertisement' }) {
   const insRef = useRef(null)

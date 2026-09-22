@@ -31,7 +31,7 @@ export default function Header() {
           <img src="/logo.png" alt="Calciverse Logo" className="h-14 sm:h-16 w-auto object-contain" />
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium text-ink-soft md:flex">
+        <nav className="hidden items-center gap-5 text-sm font-medium text-ink-soft lg:flex">
           <NavLink to="/" className={({ isActive }) => `hover:text-saffron transition-colors ${isActive ? 'text-saffron font-semibold' : ''}`}>
             All Tools
           </NavLink>
@@ -47,6 +47,12 @@ export default function Header() {
           <NavLink to="/articles" className={({ isActive }) => `hover:text-saffron transition-colors ${isActive ? 'text-saffron font-semibold' : ''}`}>
             Articles
           </NavLink>
+          <NavLink to="/about" className={({ isActive }) => `hover:text-saffron transition-colors ${isActive ? 'text-saffron font-semibold' : ''}`}>
+            About
+          </NavLink>
+          <NavLink to="/contact" className={({ isActive }) => `hover:text-saffron transition-colors ${isActive ? 'text-saffron font-semibold' : ''}`}>
+            Contact
+          </NavLink>
 
           <button
             onClick={toggleTheme}
@@ -58,7 +64,7 @@ export default function Header() {
           </button>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={toggleTheme}
             className="flex items-center justify-center rounded-lg border border-line bg-paper-raised p-2 text-ink-soft hover:border-saffron hover:text-saffron transition-colors"
@@ -73,7 +79,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-line px-5 py-3 md:hidden">
+        <nav className="flex flex-col gap-1 border-t border-line px-5 py-3 lg:hidden">
           <Link to="/" onClick={() => setOpen(false)} className="rounded-lg px-2 py-2 text-sm font-medium text-ink-soft hover:bg-paper-raised">
             All Tools
           </Link>
@@ -84,6 +90,12 @@ export default function Header() {
           ))}
           <Link to="/articles" onClick={() => setOpen(false)} className="rounded-lg px-2 py-2 text-sm font-medium text-ink-soft hover:bg-paper-raised">
             Articles
+          </Link>
+          <Link to="/about" onClick={() => setOpen(false)} className="rounded-lg px-2 py-2 text-sm font-medium text-ink-soft hover:bg-paper-raised">
+            About Us
+          </Link>
+          <Link to="/contact" onClick={() => setOpen(false)} className="rounded-lg px-2 py-2 text-sm font-medium text-ink-soft hover:bg-paper-raised">
+            Contact Us
           </Link>
         </nav>
       )}
