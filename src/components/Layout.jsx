@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import SearchModal from './SearchModal.jsx'
+import CookieBanner from './CookieBanner.jsx'
 
 export default function Layout() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -15,6 +16,8 @@ export default function Layout() {
       </main>
       <Footer />
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      <CookieBanner />
     </div>
   )
 }
+

@@ -248,12 +248,24 @@ function renderBodyHtml(path, seo, article = null) {
 
   if (path === '/about') {
     let content = `
-      <div class="mx-auto max-w-3xl px-5 py-10">
+      <div class="mx-auto max-w-4xl px-5 py-10">
         <h1>About Calciverse</h1>
         <p>${esc(seo.description)}</p>
         <section>
-          <h2>Our Mission</h2>
-          <p>Calciverse provides fast, accurate, and privacy-focused online calculators, converters, and financial planning utilities. All computations execute locally in your browser memory without server data logging or invasive sign-up forms.</p>
+          <h2>Welcome to Calciverse.in</h2>
+          <p>Calciverse.in is a premium, free web utility platform designed to deliver fast, accurate, and transparent calculation tools across finance, health, education, everyday utilities, and developer tools. Created and engineered by <strong>Manimaran Thangaraj</strong>, Calciverse was built to eliminate bloated, ad-cluttered calculator websites that hide formulas, slow down devices, or harvest user data.</p>
+        </section>
+        <section>
+          <h2>Client-Side Calculator Processing & Data Privacy</h2>
+          <p>Every calculator tool executed on Calciverse runs locally within your browser memory using modern JavaScript. Calculator inputs are processed locally in your browser and are not sent to Calciverse's own application server for calculation.</p>
+        </section>
+        <section>
+          <h2>Verified Accuracy & Standards</h2>
+          <p>Our financial formulas align strictly with standard banking algorithms, Reserve Bank of India (RBI) reducing-balance loan models, and Income Tax Department of India tax slabs (FY 2026-27). Health calculators adhere to World Health Organization (WHO) and clinical physiological guidelines.</p>
+        </section>
+        <section>
+          <h2>About the Developer</h2>
+          <p>Calciverse is independently developed and maintained by <strong>Manimaran Thangaraj</strong>. For feedback, feature requests, or partnership inquiries, reach out through our <a href="/contact">Contact Page</a> or email <a href="mailto:calciverse.in@gmail.com">calciverse.in@gmail.com</a>.</p>
         </section>
       </div>
     `
@@ -262,12 +274,14 @@ function renderBodyHtml(path, seo, article = null) {
 
   if (path === '/contact') {
     let content = `
-      <div class="mx-auto max-w-3xl px-5 py-10">
-        <h1>Contact Calciverse</h1>
+      <div class="mx-auto max-w-4xl px-5 py-10">
+        <h1>Contact Us</h1>
         <p>${esc(seo.description)}</p>
         <section>
-          <h2>Get in Touch</h2>
-          <p>Have suggestions for new calculators, bug reports, or partnership inquiries? Reach out to our team at support@calciverse.in.</p>
+          <h2>Get in Touch with Calciverse</h2>
+          <p>Have a question, suggestion, wrong formula report, or feature request? We value your input and respond to every message within 24 to 48 business hours.</p>
+          <p>Direct Email: <a href="mailto:calciverse.in@gmail.com">calciverse.in@gmail.com</a></p>
+          <p>Location: Operated & Managed from Tamil Nadu, India. Serving users globally.</p>
         </section>
       </div>
     `
@@ -276,12 +290,38 @@ function renderBodyHtml(path, seo, article = null) {
 
   if (path === '/privacy-policy') {
     let content = `
-      <div class="mx-auto max-w-3xl px-5 py-10">
+      <div class="mx-auto max-w-4xl px-5 py-10">
         <h1>Privacy Policy</h1>
         <p>${esc(seo.description)}</p>
         <section>
-          <h2>100% Client-Side Computation</h2>
-          <p>At Calciverse, your data privacy is paramount. Numerical inputs, personal parameters, and financial figures entered into our tools are processed entirely within your web browser. We do not store, log, or transmit calculation data to external application servers.</p>
+          <h2>1. Introduction</h2>
+          <p>At <strong>Calciverse.in</strong>, we prioritize the privacy and security of our visitors. This Privacy Policy document outlines the types of information collected and recorded by Calciverse.in and how we use it. If you have questions or require more information, contact us at <a href="mailto:calciverse.in@gmail.com">calciverse.in@gmail.com</a>.</p>
+        </section>
+        <section>
+          <h2>2. Client-Side Calculator Processing</h2>
+          <p>All calculator tools—including financial EMI, SIP, Income Tax, GST, health BMI, BMR, and developer generators—execute locally within your browser client memory. Calculator inputs are not sent to Calciverse application servers for calculation, nor stored in database storage.</p>
+        </section>
+        <section>
+          <h2>3. Google AdSense & Third-Party Advertising</h2>
+          <p>Calciverse.in displays advertisements served by <strong>Google AdSense</strong> to support our free digital tools platform.</p>
+          <ul>
+            <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to Calciverse.in or other websites.</li>
+            <li>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to our site and/or other sites on the Internet.</li>
+            <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noreferrer">Google Ads Settings</a>.</li>
+            <li>Alternatively, users can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noreferrer">www.aboutads.info</a>.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>4. Log Files and Web Analytics</h2>
+          <p>Calciverse.in utilizes Vercel Analytics to gather aggregate, non-personally identifiable website performance telemetry (page view counts, region, viewport size). We do NOT use Google Analytics. Standard web server log files may record IP addresses, browser types, and timestamp data for security and server health maintenance.</p>
+        </section>
+        <section>
+          <h2>5. Cookies and Local Storage</h2>
+          <p>Calciverse.in uses standard browser cookies and localStorage exclusively for theme preferences (Dark/Light mode), performance caching, and serving contextually relevant advertisements.</p>
+        </section>
+        <section>
+          <h2>6. CCPA & GDPR Compliance</h2>
+          <p>We honor California Consumer Privacy Act (CCPA) rights and General Data Protection Regulation (GDPR) data protection rights. Every user is entitled to access, rectification, erasure, and data portability. Contact <a href="mailto:calciverse.in@gmail.com">calciverse.in@gmail.com</a> to exercise any rights.</p>
         </section>
       </div>
     `
@@ -290,12 +330,22 @@ function renderBodyHtml(path, seo, article = null) {
 
   if (path === '/terms') {
     let content = `
-      <div class="mx-auto max-w-3xl px-5 py-10">
-        <h1>Terms of Service</h1>
+      <div class="mx-auto max-w-4xl px-5 py-10">
+        <h1>Terms of Use</h1>
         <p>${esc(seo.description)}</p>
         <section>
-          <h2>Terms of Use</h2>
-          <p>Calciverse provides free digital tools for educational, informational, and general calculation purposes. Users are encouraged to verify critical financial, tax, or medical results with certified professionals.</p>
+          <h2>1. Acceptance of Terms</h2>
+          <p>By accessing or using Calciverse.in, you agree to be bound by these Terms of Use and Privacy Policy.</p>
+        </section>
+        <section>
+          <h2>2. Informational & Educational Purpose Only</h2>
+          <p>All mathematical tools, financial calculators, health calculators, tax estimators, converters, and articles hosted on Calciverse.in are provided strictly for informational and educational purposes.</p>
+          <p><strong>Financial Disclaimer:</strong> Calculation outputs do not constitute formal financial, investment, or credit advice.</p>
+          <p><strong>Medical Disclaimer:</strong> Health calculators provide general physiological estimates and do not substitute professional medical diagnosis.</p>
+        </section>
+        <section>
+          <h2>3. Governing Law</h2>
+          <p>These Terms shall be governed by and construed in accordance with the laws of India.</p>
         </section>
       </div>
     `
@@ -304,12 +354,20 @@ function renderBodyHtml(path, seo, article = null) {
 
   if (path === '/disclaimer') {
     let content = `
-      <div class="mx-auto max-w-3xl px-5 py-10">
-        <h1>Financial & Medical Disclaimer</h1>
+      <div class="mx-auto max-w-4xl px-5 py-10">
+        <h1>Accuracy & Legal Disclaimer</h1>
         <p>${esc(seo.description)}</p>
         <section>
-          <h2>General Information Disclaimer</h2>
-          <p>Calculators and guides on Calciverse are provided for informational and illustrative purposes only. They do not constitute formal financial advice, tax filing instructions, or clinical medical diagnosis.</p>
+          <h2>General Estimation Notice</h2>
+          <p>Calculators, converters, generators, and informational content provided on Calciverse.in are mathematical estimates designed to assist users in planning and preliminary decision-making. Outputs generated by this website should be treated as illustrative reference points, not as definitive legal, financial, tax, or medical conclusions.</p>
+        </section>
+        <section>
+          <h2>1. Financial & Investment Calculators</h2>
+          <p>Financial calculations rely on simplified mathematical assumptions. Actual results from commercial banks or mutual fund houses may vary due to processing fees or compounding rules.</p>
+        </section>
+        <section>
+          <h2>2. Health & Fitness Calculators</h2>
+          <p>Health tools use standard physiological formulas and do not account for individual medical histories or clinical conditions.</p>
         </section>
       </div>
     `
