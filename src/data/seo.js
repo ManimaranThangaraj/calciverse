@@ -858,7 +858,7 @@ export const STATIC_SEO = {
   },
   '/about': {
     title: 'About Us — Free High-Precision Utility Calculators | Calciverse',
-    description: 'Learn about Calciverse mission to provide fast, privacy-focused, zero-ads online tools for finance, education, and health calculations.'
+    description: 'Learn about Calciverse mission to provide fast, privacy-focused, transparent online tools for finance, education, and health calculations.'
   },
   '/contact': {
     title: 'Contact Us — Feedback & Calculator Requests | Calciverse',
