@@ -284,14 +284,14 @@ export function Privacy() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-display text-xl font-bold text-ink">3. Google AdSense & Third-Party Advertising</h2>
+          <h2 className="font-display text-xl font-bold text-ink">3. Google AdSense & DoubleClick DART Cookies</h2>
           <p>
             Calciverse.in displays advertisements served by <strong>Google AdSense</strong> to support our free digital tools platform.
           </p>
           <ul className="list-disc list-inside space-y-1.5 text-sm text-ink-soft">
             <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to Calciverse.in or other websites.</li>
-            <li>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to our site and/or other sites on the Internet.</li>
-            <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noreferrer" className="text-saffron underline">Google Ads Settings</a>.</li>
+            <li>Google's use of the <strong>DoubleClick DART cookie</strong> enables it and its partners to serve ads to users based on their visit to Calciverse.in and/or other sites on the Internet.</li>
+            <li>Users may opt out of personalized advertising and the use of DART cookies by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noreferrer" className="text-saffron underline">Google Ads Settings</a>.</li>
             <li>Alternatively, users can opt out of third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noreferrer" className="text-saffron underline">www.aboutads.info</a>.</li>
           </ul>
         </section>

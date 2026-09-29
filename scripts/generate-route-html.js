@@ -302,12 +302,12 @@ function renderBodyHtml(path, seo, article = null) {
           <p>All calculator tools—including financial EMI, SIP, Income Tax, GST, health BMI, BMR, and developer generators—execute locally within your browser client memory. Calculator inputs are not sent to Calciverse application servers for calculation, nor stored in database storage.</p>
         </section>
         <section>
-          <h2>3. Google AdSense & Third-Party Advertising</h2>
+          <h2>3. Google AdSense & DoubleClick DART Cookies</h2>
           <p>Calciverse.in displays advertisements served by <strong>Google AdSense</strong> to support our free digital tools platform.</p>
           <ul>
             <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to Calciverse.in or other websites.</li>
-            <li>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to our site and/or other sites on the Internet.</li>
-            <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noreferrer">Google Ads Settings</a>.</li>
+            <li>Google's use of the <strong>DoubleClick DART cookie</strong> enables it and its partners to serve ads to users based on their visit to Calciverse.in and/or other sites on the Internet.</li>
+            <li>Users may opt out of personalized advertising and the use of DART cookies by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noreferrer">Google Ads Settings</a>.</li>
             <li>Alternatively, users can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noreferrer">www.aboutads.info</a>.</li>
           </ul>
         </section>
