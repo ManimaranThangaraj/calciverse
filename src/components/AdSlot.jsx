@@ -1,14 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
 
+// During AdSense onboarding and site review, Google strictly forbids placing manual ad units
+// or requesting ads with placeholder/fake slot IDs (which trigger 400/403 errors and policy rejections).
+// Only the official verification script in <head> should be active until approval.
+const ADSENSE_APPROVED = import.meta.env.VITE_ADSENSE_APPROVED === 'true'
 const ADSENSE_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || 'ca-pub-3328643502138366'
 
 export default function AdSlot({ slot, format = 'auto', className = '', label = 'Advertisement' }) {
   const insRef = useRef(null)
   const pushed = useRef(false)
-  const [isFilled, setIsFilled] = useState(true) // Render container by default for crawler visibility
+  const [isFilled, setIsFilled] = useState(false)
+
+  // Ignore dummy/placeholder slots (e.g., '0000000001') and unapproved accounts
+  const isRealSlot = slot && !slot.startsWith('000000') && slot.length >= 8
 
   useEffect(() => {
-    if (!ADSENSE_CLIENT) return
+    if (!ADSENSE_CLIENT || !ADSENSE_APPROVED || !isRealSlot) return
 
     if (!pushed.current) {
       try {
@@ -19,7 +26,6 @@ export default function AdSlot({ slot, format = 'auto', className = '', label = 
       }
     }
 
-    // Observer to detect when AdSense actually serves and renders an ad
     const observer = new MutationObserver(() => {
       if (insRef.current) {
         const hasIframe = insRef.current.querySelector('iframe') !== null
@@ -37,9 +43,9 @@ export default function AdSlot({ slot, format = 'auto', className = '', label = 
     }
 
     return () => observer.disconnect()
-  }, [slot])
+  }, [slot, isRealSlot])
 
-  if (!ADSENSE_CLIENT) {
+  if (!ADSENSE_CLIENT || !ADSENSE_APPROVED || !isRealSlot) {
     return null
   }
 
@@ -50,7 +56,7 @@ export default function AdSlot({ slot, format = 'auto', className = '', label = 
         className="adsbygoogle block min-h-[90px]"
         style={{ display: 'block' }}
         data-ad-client={ADSENSE_CLIENT}
-        {...(slot ? { 'data-ad-slot': slot } : {})}
+        data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive="true"
       />
