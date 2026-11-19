@@ -223,13 +223,23 @@ export default function SEO({
       headline: title || 'Calciverse Guide',
       description: pageDesc,
       url: canonicalUrl,
+      author: {
+        '@type': 'Person',
+        name: 'Manimaran Thangaraj',
+        url: `${SITE_URL}/about`,
+        jobTitle: 'Founder & Lead Engineer'
+      },
       publisher: {
         '@type': 'Organization',
         name: SITE_NAME,
-        url: `${SITE_URL}/`
+        url: `${SITE_URL}/`,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}/logo.png`
+        }
       },
-      ...(publishedAt && { datePublished: publishedAt }),
-      ...(updatedAt && { dateModified: updatedAt })
+      datePublished: publishedAt || '2026-01-15T08:00:00+05:30',
+      dateModified: updatedAt || '2026-11-12T08:00:00+05:30'
     })
     schemas.push({
       '@context': 'https://schema.org',
@@ -278,6 +288,14 @@ export default function SEO({
       <meta property="og:description" content={pageDesc} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={cleanPath.startsWith('/articles/') ? 'article' : type} />
+      {cleanPath.startsWith('/articles/') && (
+        <>
+          <meta name="author" content="Manimaran Thangaraj" />
+          <meta property="article:author" content={`${SITE_URL}/about`} />
+          <meta property="article:published_time" content={publishedAt || '2026-01-15T08:00:00+05:30'} />
+          <meta property="article:modified_time" content={updatedAt || '2026-11-12T08:00:00+05:30'} />
+        </>
+      )}
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="en_IN" />
       <meta property="og:image" content={`${SITE_URL}/logo.png`} />

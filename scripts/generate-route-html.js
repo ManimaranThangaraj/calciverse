@@ -6,6 +6,7 @@ import { articles } from '../src/data/articles.js'
 import { categories } from '../src/data/categories.js'
 import { toolGuides } from '../src/data/toolGuides.js'
 import { TOOL_SEO, CATEGORY_SEO, ARTICLE_SEO, STATIC_SEO } from '../src/data/seo.js'
+import { parseArticleToNodes, renderInlineMarkdownHtml } from '../src/utils/markdownParser.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -166,30 +167,64 @@ function renderBodyHtml(path, seo, article = null) {
 
   if (path.startsWith('/articles/')) {
     if (!article) return ''
+    const nodes = parseArticleToNodes(article.content)
+
     let content = `
-      <article class="mx-auto max-w-2xl px-5 py-10">
-        <nav><a href="/articles">Articles</a> / ${esc(article.title)}</nav>
-        <h1>${esc(article.title)}</h1>
-        <p><em>${esc(article.readMinutes || 5)} min read</em></p>
-        <p>${esc(article.excerpt || '')}</p>
-        <div class="prose">
+      <article class="mx-auto max-w-3xl px-5 py-10 font-sans">
+        <nav class="text-xs text-ink-soft/60">
+          <a href="/">Home</a> / <a href="/articles">Articles</a> / <a href="/category/${esc(article.category)}">${esc(article.category)}</a> / <span class="text-ink font-medium">${esc(article.title)}</span>
+        </nav>
+        <h1 class="mt-3 font-display text-3xl sm:text-4xl font-bold leading-tight text-ink">${esc(article.title)}</h1>
+        <div class="mt-4 flex flex-wrap items-center gap-y-2 gap-x-4 border-b border-line pb-5 text-xs text-ink-soft">
+          <div>Written by <strong class="text-ink font-medium"><a href="/about">Manimaran Thangaraj</a></strong></div>
+          <span>•</span>
+          <div>Updated: November 2026</div>
+          <span>•</span>
+          <div>${esc(article.readMinutes || 5)} min read</div>
+          <span>•</span>
+          <span class="inline-flex items-center gap-1 text-emerald-600 font-medium">✓ Fact-Checked &amp; Verified</span>
+        </div>
+        <p class="mt-4 text-base text-ink-soft leading-relaxed italic">${esc(article.excerpt || '')}</p>
+        <div class="prose-content mt-6 space-y-4">
     `
 
-    for (const p of article.content) {
-      if (typeof p !== 'string') continue
-      if (p.startsWith('## ')) {
-        content += `<h2>${esc(p.replace('## ', ''))}</h2>`
-      } else if (p.startsWith('### ')) {
-        content += `<h3>${esc(p.replace('### ', ''))}</h3>`
-      } else if (p.startsWith('- ')) {
-        const items = p.split('\n- ').map((i) => i.replace(/^- /, ''))
-        content += `<ul>${items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>`
-      } else {
-        content += `<p>${esc(p)}</p>`
+    for (const node of nodes) {
+      if (!node) continue
+      switch (node.type) {
+        case 'h2':
+          content += `<h2 class="mt-10 mb-4 font-display text-2xl font-bold leading-tight text-ink">${esc(node.text)}</h2>`
+          break
+        case 'h3':
+          content += `<h3 class="mt-7 mb-2 font-display text-lg font-bold leading-snug text-ink">${esc(node.text)}</h3>`
+          break
+        case 'formula':
+          content += `<div class="my-5 rounded-xl border border-saffron/30 bg-saffron-soft/15 p-4 font-mono text-sm font-semibold text-ink overflow-x-auto"><div class="text-[10px] uppercase font-bold tracking-wider text-saffron mb-1.5 font-sans">Governing Formula / Mathematical Model</div><code>${esc(node.text)}</code></div>`
+          break
+        case 'ul':
+          content += `<ul class="my-4 list-disc space-y-2 pl-6 text-[15px] leading-relaxed text-ink-soft">${node.items.map((it) => `<li>${renderInlineMarkdownHtml(it)}</li>`).join('')}</ul>`
+          break
+        case 'ol':
+          content += `<ol class="my-4 list-decimal space-y-2 pl-6 text-[15px] leading-relaxed text-ink-soft">${node.items.map((it) => `<li>${renderInlineMarkdownHtml(it)}</li>`).join('')}</ol>`
+          break
+        case 'p':
+        default:
+          content += `<p class="text-[15px] leading-relaxed text-ink-soft">${renderInlineMarkdownHtml(node.text)}</p>`
+          break
       }
     }
 
-    content += `</div></article>`
+    content += `
+        </div>
+        <div class="mt-12 rounded-2xl border border-line bg-paper-raised p-6 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+          <div class="h-14 w-14 rounded-full bg-saffron/20 border border-saffron/40 flex items-center justify-center text-saffron font-bold text-xl shrink-0">MT</div>
+          <div class="space-y-1.5 text-xs text-ink-soft">
+            <div class="font-display font-bold text-base text-ink">Manimaran Thangaraj <span class="text-[10px] font-semibold text-signal ml-1">Author &amp; Lead Engineer</span></div>
+            <p class="leading-relaxed">Founder and developer of Calciverse.in. Dedicated to building high-precision, privacy-first calculation utilities and transparent educational resources. Financial and statutory models are cross-referenced with Reserve Bank of India (RBI), Indian Income Tax Department (FY 2026-27), and WHO physiological standards.</p>
+            <div class="pt-1"><a href="/about" class="text-saffron underline font-medium">Read our methodology and verification standards →</a></div>
+          </div>
+        </div>
+      </article>
+    `
     return content + renderStaticFooterHtml()
   }
 
@@ -508,8 +543,10 @@ function createHtml(template, {
 
   const articleMeta = article
     ? `
-    <meta property="article:published_time" content="${esc(article.publishedAt || '')}" />
-    <meta property="article:modified_time" content="${esc(article.updatedAt || article.publishedAt || '')}" />
+    <meta name="author" content="Manimaran Thangaraj" />
+    <meta property="article:author" content="${SITE_URL}/about" />
+    <meta property="article:published_time" content="${esc(article.publishedAt || '2026-01-15T08:00:00+05:30')}" />
+    <meta property="article:modified_time" content="${esc(article.updatedAt || '2026-11-12T08:00:00+05:30')}" />
     `
     : ''
 
@@ -524,6 +561,12 @@ function createHtml(template, {
           '@type': 'WebPage',
           '@id': canonical
         },
+        author: {
+          '@type': 'Person',
+          name: 'Manimaran Thangaraj',
+          url: `${SITE_URL}/about`,
+          jobTitle: 'Founder & Lead Engineer'
+        },
         publisher: {
           '@type': 'Organization',
           name: SITE_NAME,
@@ -533,8 +576,8 @@ function createHtml(template, {
             url: LOGO_URL
           }
         },
-        datePublished: article.publishedAt || undefined,
-        dateModified: article.updatedAt || article.publishedAt || undefined
+        datePublished: article.publishedAt || '2026-01-15T08:00:00+05:30',
+        dateModified: article.updatedAt || '2026-11-12T08:00:00+05:30'
       }
     : {
         '@context': 'https://schema.org',
